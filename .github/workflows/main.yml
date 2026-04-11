@@ -10,9 +10,8 @@ jobs:
   update-pricing:
     runs-on: ubuntu-latest
     steps:
-
       - name: Install dependencies
-        run: pip install anthropic
+        run: python3 -m pip install anthropic
         
       - name: Run LLM Pricing Tracker Agent
         env:
