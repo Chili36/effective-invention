@@ -31,7 +31,7 @@ jobs:
           client = anthropic.Anthropic()
 
           session = client.beta.sessions.create(
-              agent="ag_01FUBHf7vKMQ6EM7kKEswtjp",
+              agent="agent_011CZwijZihnPvZcL6HjQo9F",
               environment_id="env_01B6Hn4X4d7soRPUNnjmoT4A",
               vault_ids=["vlt_011CZwiqKEjCEEq7PfdLYt3Y"],
               title="Weekly pricing update",
