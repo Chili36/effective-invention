@@ -45,4 +45,4 @@ jobs:
 
           client.beta.sessions.archive(session.id, betas=["managed-agents-2026-04-01"])
           print("Done.")
-          EOF
+EOF
