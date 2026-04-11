@@ -23,11 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install anthropic
 
-      - name: Run LLM Pricing Tracker Agent
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Write script
         run: |
-          python - <<'EOF'
+          cat > run_agent.py <<'PY'
           import anthropic
 
           client = anthropic.Anthropic()
@@ -42,13 +40,17 @@ jobs:
 
           client.beta.sessions.events.send(
               session_id=session.id,
-              events=[{
-                  "type": "user.message",
-                  "content": [{
-                      "type": "text",
-                      "text": "Search for the latest 2026 pricing for Anthropic, OpenAI, and Mistral models, mark legacy models, and commit updated model cards to the repo."
-                  }]
-              }],
+              events=[
+                  {
+                      "type": "user.message",
+                      "content": [
+                          {
+                              "type": "text",
+                              "text": "Search for the latest 2026 pricing for Anthropic, OpenAI, and Mistral models, mark legacy models, and commit updated model cards to the repo."
+                          }
+                      ],
+                  }
+              ],
               betas=["managed-agents-2026-04-01"],
           )
 
@@ -67,4 +69,9 @@ jobs:
           )
 
           print("Done.")
-          EOF
+          PY
+
+      - name: Run LLM Pricing Tracker Agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python run_agent.py
