@@ -48,7 +48,7 @@ jobs:
                               "type": "text",
                               "text": "Search for the latest 2026 pricing for Anthropic, OpenAI, and Mistral models, mark legacy models, and commit updated model cards to the repo."
                           }
-                      ],
+                      ]
                   }
               ],
               betas=["managed-agents-2026-04-01"],
