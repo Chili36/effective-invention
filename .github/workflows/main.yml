@@ -1,0 +1,51 @@
+# .github/workflows/llm-pricing-update.yml
+name: LLM Pricing Update
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'   # Every Monday at 9am UTC
+  workflow_dispatch:        # Also lets you trigger it manually
+
+jobs:
+  update-pricing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run LLM Pricing Tracker Agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python3 - <<'EOF'
+          import anthropic, time
+
+          client = anthropic.Anthropic()
+
+          # 1. Create a session (agent was created once, reused here)
+          session = client.beta.sessions.create(
+              agent="ag_01FUBHf7vKMQ6EM7kKEswtjp",
+              environment_id="env_01B6Hn4X4d7soRPUNnjmoT4A",
+              vault_ids=["vlt_011CZwiqKEjCEEq7PfdLYt3Y"],
+              title="Weekly pricing update",
+              betas=["managed-agents-2026-04-01"],
+          )
+
+          # 2. Send the task
+          client.beta.sessions.events.send(
+              session_id=session.id,
+              events=[{"type": "user.message", "content": [{"type": "text",
+                "text": "Search for the latest 2026 pricing for Anthropic, OpenAI, and Mistral models, mark legacy models, and commit updated model cards to the repo."}]}],
+              betas=["managed-agents-2026-04-01"],
+          )
+
+          # 3. Stream until idle
+          with client.beta.sessions.events.stream(
+              session_id=session.id,
+              betas=["managed-agents-2026-04-01"],
+          ) as stream:
+              for event in stream:
+                  if getattr(event, "type", None) == "session.status_idle":
+                      print("Agent finished.")
+                      break
+
+          # 4. Archive the session
+          client.beta.sessions.archive(session.id, betas=["managed-agents-2026-04-01"])
+          EOF
