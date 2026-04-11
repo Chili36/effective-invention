@@ -1,251 +1,250 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Source:** [Anthropic Claude API Pricing Docs](https://platform.claude.com/docs/en/about-claude/pricing)  
-> **Date Scraped:** 2026-04-11 (refresh #2)  
-> **Prices in USD per million tokens (MTok)**  
-> **⚠️ Price Change Alert:** ✅ No changes — all prices confirmed stable vs. previous scrape.
+> **Last updated:** 2026-04-11  
+> **Source:** https://www.metacto.com/blogs/anthropic-api-pricing-a-full-breakdown-of-costs-and-integration · https://platform.claude.com/docs/en/about-claude/pricing · https://platform.claude.com/docs/en/release-notes/overview  
+> **Scraped / verified:** 2026-04-11  
+
+All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
 ---
 
-## Model Pricing Overview
-
-| Model | Input ($/MTok) | 5-min Cache Write | 1-hr Cache Write | Cache Hit | Output ($/MTok) | Status |
-|---|---|---|---|---|---|---|
-| Claude Opus 4.6 | $5.00 | $6.25 | $10.00 | $0.50 | $25.00 | ✅ Active |
-| Claude Opus 4.5 | $5.00 | $6.25 | $10.00 | $0.50 | $25.00 | ✅ Active |
-| Claude Opus 4.1 | $15.00 | $18.75 | $30.00 | $1.50 | $75.00 | ✅ Active |
-| Claude Opus 4 | $15.00 | $18.75 | $30.00 | $1.50 | $75.00 | ✅ Active |
-| Claude Sonnet 4.6 | $3.00 | $3.75 | $6.00 | $0.30 | $15.00 | ✅ Active |
-| Claude Sonnet 4.5 | $3.00 | $3.75 | $6.00 | $0.30 | $15.00 | ✅ Active |
-| Claude Sonnet 4 | $3.00 | $3.75 | $6.00 | $0.30 | $15.00 | ✅ Active |
-| Claude Sonnet 3.7 | $3.00 | $3.75 | $6.00 | $0.30 | $15.00 | ⚠️ Deprecated |
-| Claude Haiku 4.5 | $1.00 | $1.25 | $2.00 | $0.10 | $5.00 | ✅ Active |
-| Claude Haiku 3.5 | $0.80 | $1.00 | $1.60 | $0.08 | $4.00 | ✅ Active |
-| Claude Opus 3 | $15.00 | $18.75 | $30.00 | $1.50 | $75.00 | ⚠️ Deprecated |
-| Claude Haiku 3 | $0.25 | $0.30 | $0.50 | $0.03 | $1.25 | ✅ Active |
-
----
-
-## Batch API Pricing (50% off standard)
-
-| Model | Batch Input | Batch Output |
-|---|---|---|
-| Claude Opus 4.6 | $2.50 / MTok | $12.50 / MTok |
-| Claude Opus 4.5 | $2.50 / MTok | $12.50 / MTok |
-| Claude Opus 4.1 | $7.50 / MTok | $37.50 / MTok |
-| Claude Opus 4 | $7.50 / MTok | $37.50 / MTok |
-| Claude Sonnet 4.6 | $1.50 / MTok | $7.50 / MTok |
-| Claude Sonnet 4.5 | $1.50 / MTok | $7.50 / MTok |
-| Claude Sonnet 4 | $1.50 / MTok | $7.50 / MTok |
-| Claude Haiku 4.5 | $0.50 / MTok | $2.50 / MTok |
-
----
-
-## Individual Model Cards
+## ✅ Active / Recommended Models
 
 ### Claude Opus 4.6
 
-| Field | Detail |
+| Field | Value |
 |---|---|
 | **Provider** | Anthropic |
-| **Model Name** | Claude Opus 4.6 |
 | **Model ID** | `claude-opus-4-6` |
-| **Input Price** | $5.00 / MTok |
-| **Output Price** | $25.00 / MTok |
-| **Batch Input** | $2.50 / MTok (50% off) |
-| **Batch Output** | $12.50 / MTok (50% off) |
-| **5-min Cache Write** | $6.25 / MTok |
-| **1-hr Cache Write** | $10.00 / MTok |
-| **Cache Hit** | $0.50 / MTok |
-| **Context Window** | 1,000,000 tokens (standard pricing throughout — no long-context surcharge) |
-| **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
-| **Fast Mode** | Available at 6× standard rates ($30 input / $150 output per MTok) — beta |
-| **Data Residency** | US-only inference: +10% pricing multiplier |
-| **Rate Limits** | Tier-based (Tier 1–4 + Enterprise) |
-| **Status** | ✅ Active — Current flagship model |
-| **Notes** | Full 1M context at standard rates; long-context surcharge removed as of early 2026. |
-
----
-
-### Claude Opus 4.5
-
-| Field | Detail |
-|---|---|
-| **Provider** | Anthropic |
-| **Model Name** | Claude Opus 4.5 |
-| **Model ID** | `claude-opus-4-5-20251101` |
-| **Input Price** | $5.00 / MTok |
-| **Output Price** | $25.00 / MTok |
-| **Batch Input** | $2.50 / MTok |
-| **Batch Output** | $12.50 / MTok |
-| **Context Window** | 200,000 tokens |
-| **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
-| **Status** | ✅ Active |
-| **Notes** | Released November 2025. Coding, agents, computer use. Effort-control parameter. |
-
----
-
-### Claude Opus 4.1
-
-| Field | Detail |
-|---|---|
-| **Provider** | Anthropic |
-| **Model Name** | Claude Opus 4.1 |
-| **Input Price** | $15.00 / MTok |
-| **Output Price** | $75.00 / MTok |
-| **Batch Input** | $7.50 / MTok |
-| **Batch Output** | $37.50 / MTok |
-| **Context Window** | 200,000 tokens |
-| **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI |
-| **Status** | ✅ Active (legacy premium tier) |
-| **Notes** | Upgraded agentic performance and real-world coding. Released August 2025. |
+| **Released** | February 5, 2026 |
+| **Status** | ✅ Active — Flagship |
+| **Input price** | $5.00 / MTok |
+| **Output price** | $25.00 / MTok |
+| **Fast Mode (input)** | $30.00 / MTok |
+| **Fast Mode (output)** | $150.00 / MTok |
+| **Cache write (5 min)** | $6.25 / MTok |
+| **Cache write (1 hr)** | $10.00 / MTok |
+| **Cache read** | $0.50 / MTok |
+| **Batch input** | $2.50 / MTok |
+| **Batch output** | $12.50 / MTok |
+| **Context window** | 1,000,000 tokens (at standard pricing — no surcharge) |
+| **Max output** | 32,000 tokens (sync) / 300,000 tokens (Batch API with beta header) |
+| **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
+| **Rate limits** | Tiered by usage tier; contact Anthropic for enterprise limits |
+| **Notable** | Full 1M context at standard rate; Fast Mode 6× pricing for low-latency; extended thinking billed as output tokens |
 
 ---
 
 ### Claude Sonnet 4.6
 
-| Field | Detail |
+| Field | Value |
 |---|---|
 | **Provider** | Anthropic |
-| **Model Name** | Claude Sonnet 4.6 |
-| **Input Price** | $3.00 / MTok |
-| **Output Price** | $15.00 / MTok |
-| **Batch Input** | $1.50 / MTok |
-| **Batch Output** | $7.50 / MTok |
-| **5-min Cache Write** | $3.75 / MTok |
-| **1-hr Cache Write** | $6.00 / MTok |
-| **Cache Hit** | $0.30 / MTok |
-| **Context Window** | 1,000,000 tokens (standard pricing throughout) |
-| **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
-| **Status** | ✅ Active |
-| **Notes** | High-throughput general-purpose model. 1M-context surcharge removed early 2026. |
-
----
-
-### Claude Sonnet 4.5
-
-| Field | Detail |
-|---|---|
-| **Provider** | Anthropic |
-| **Model Name** | Claude Sonnet 4.5 |
-| **Input Price** | $3.00 / MTok |
-| **Output Price** | $15.00 / MTok |
-| **Batch Input** | $1.50 / MTok |
-| **Batch Output** | $7.50 / MTok |
-| **Context Window** | 200,000 tokens |
-| **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
-| **Status** | ✅ Active |
-
----
-
-### Claude Sonnet 4
-
-| Field | Detail |
-|---|---|
-| **Provider** | Anthropic |
-| **Model Name** | Claude Sonnet 4 |
-| **Input Price** | $3.00 / MTok |
-| **Output Price** | $15.00 / MTok |
-| **Batch Input** | $1.50 / MTok |
-| **Batch Output** | $7.50 / MTok |
-| **Context Window** | 200,000 tokens (1M token public beta as of Aug 2025) |
-| **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI |
-| **Status** | ✅ Active |
+| **Model ID** | `claude-sonnet-4-6` |
+| **Released** | February 17, 2026 |
+| **Status** | ✅ Active — Balanced |
+| **Input price** | $3.00 / MTok |
+| **Output price** | $15.00 / MTok |
+| **Cache write (5 min)** | $3.75 / MTok |
+| **Cache write (1 hr)** | $6.00 / MTok |
+| **Cache read** | $0.30 / MTok |
+| **Batch input** | $1.50 / MTok |
+| **Batch output** | $7.50 / MTok |
+| **Context window** | 1,000,000 tokens (at standard pricing — no surcharge) |
+| **Max output** | 16,000 tokens (sync) / 300,000 tokens (Batch API with beta header) |
+| **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
+| **Notable** | Improved agentic search; 1M context no premium; extended thinking supported; 1M beta for Sonnet 4.5 retired April 30 2026 — migrate here |
 
 ---
 
 ### Claude Haiku 4.5
 
-| Field | Detail |
+| Field | Value |
 |---|---|
 | **Provider** | Anthropic |
-| **Model Name** | Claude Haiku 4.5 |
-| **Input Price** | $1.00 / MTok |
-| **Output Price** | $5.00 / MTok |
-| **5-min Cache Write** | $1.25 / MTok |
-| **1-hr Cache Write** | $2.00 / MTok |
-| **Cache Hit** | $0.10 / MTok |
-| **Context Window** | 200,000 tokens |
-| **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
+| **Model ID** | `claude-haiku-4-5` |
+| **Released** | Late 2025 |
+| **Status** | ✅ Active — Speed / Volume |
+| **Input price** | $1.00 / MTok |
+| **Output price** | $5.00 / MTok |
+| **Cache write (5 min)** | $1.25 / MTok |
+| **Cache write (1 hr)** | $2.00 / MTok |
+| **Cache read** | $0.10 / MTok |
+| **Batch input** | $0.50 / MTok |
+| **Batch output** | $2.50 / MTok |
+| **Context window** | 200,000 tokens |
+| **Max output** | 8,000 tokens |
+| **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
+| **Notable** | Fastest model; extended thinking supported; recommended replacement for Haiku 3 and Haiku 3.5 |
+
+---
+
+### Claude Opus 4.5
+
+| Field | Value |
+|---|---|
+| **Provider** | Anthropic |
+| **Model ID** | `claude-opus-4-5` |
+| **Released** | November 24, 2025 |
+| **Status** | ✅ Active — Previous Flagship |
+| **Input price** | $5.00 / MTok |
+| **Output price** | $25.00 / MTok |
+| **Cache write (5 min)** | $6.25 / MTok |
+| **Cache read** | $0.50 / MTok |
+| **Batch input** | $2.50 / MTok |
+| **Batch output** | $12.50 / MTok |
+| **Context window** | 200,000 tokens |
+| **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
+| **Notable** | Strong coding and reasoning; same price as Opus 4.6 but 200K context |
+
+---
+
+### Claude Sonnet 4.5
+
+| Field | Value |
+|---|---|
+| **Provider** | Anthropic |
+| **Model ID** | `claude-sonnet-4-5` |
+| **Released** | 2025 |
 | **Status** | ✅ Active |
-| **Notes** | Fastest and most affordable model; optimized for high-volume, low-latency tasks. |
+| **Input price** | $3.00 / MTok |
+| **Output price** | $15.00 / MTok |
+| **Long context input (>200K)** | $6.00 / MTok *(beta retiring April 30, 2026)* |
+| **Long context output (>200K)** | $22.50 / MTok *(beta retiring April 30, 2026)* |
+| **Cache write (5 min)** | $3.75 / MTok |
+| **Cache read** | $0.30 / MTok |
+| **Batch input** | $1.50 / MTok |
+| **Batch output** | $7.50 / MTok |
+| **Context window** | 200,000 tokens standard; 1M via beta (retiring April 30, 2026) |
+| **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
+| **Notable** | Migrate to Sonnet 4.6 for 1M context at standard pricing |
 
 ---
 
-### Claude Haiku 3.5
+### Claude Sonnet 4
 
-| Field | Detail |
+| Field | Value |
 |---|---|
 | **Provider** | Anthropic |
-| **Model Name** | Claude Haiku 3.5 |
-| **Input Price** | $0.80 / MTok |
-| **Output Price** | $4.00 / MTok |
-| **Context Window** | 200,000 tokens |
-| **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI |
-| **Status** | ✅ Active |
+| **Model ID** | `claude-sonnet-4` |
+| **Status** | ✅ Supported (older generation) |
+| **Input price** | $3.00 / MTok |
+| **Output price** | $15.00 / MTok |
+| **Batch input** | $1.50 / MTok |
+| **Batch output** | $7.50 / MTok |
+| **Context window** | 200,000 tokens |
+| **Availability** | API, AWS Bedrock, Google Vertex AI |
+| **Notable** | 1M context beta retiring April 30, 2026 — migrate to Sonnet 4.6 |
 
 ---
 
-### Claude Haiku 3
+## ⚠️ Legacy / Deprecated / Retired Models
 
-| Field | Detail |
+> These models are no longer recommended for new projects. Some have been retired entirely (API calls return errors). Migrate to current-generation models.
+
+---
+
+### ⚠️ LEGACY — Claude Opus 4.1
+
+| Field | Value |
 |---|---|
 | **Provider** | Anthropic |
-| **Model Name** | Claude Haiku 3 |
-| **Input Price** | $0.25 / MTok |
-| **Output Price** | $1.25 / MTok |
-| **Context Window** | 200,000 tokens |
-| **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI |
-| **Status** | ✅ Active (legacy) |
+| **Model ID** | `claude-opus-4-1` |
+| **Status** | ⚠️ LEGACY — Available but superseded |
+| **Input price** | $15.00 / MTok |
+| **Output price** | $75.00 / MTok |
+| **Context window** | 200,000 tokens |
+| **Availability** | API, AWS Bedrock, Google Vertex AI |
+| **Migration** | Upgrade to **Claude Opus 4.6** ($5/$25) — 67% cheaper, better performance |
 
 ---
 
-## Feature-Specific Pricing
+### ⚠️ LEGACY — Claude Opus 4
 
-### Batch API
-- **Discount:** 50% off standard input and output token prices.
-- **Use case:** Asynchronous large-volume processing; results within 24 hours.
-- Applies to every Claude model without exception.
+| Field | Value |
+|---|---|
+| **Provider** | Anthropic |
+| **Model ID** | `claude-opus-4` |
+| **Status** | ⚠️ LEGACY — Available but superseded |
+| **Input price** | $15.00 / MTok |
+| **Output price** | $75.00 / MTok |
+| **Context window** | 200,000 tokens |
+| **Availability** | API, AWS Bedrock, Google Vertex AI |
+| **Migration** | Upgrade to **Claude Opus 4.6** ($5/$25) — 67% cheaper, better performance |
 
-### Prompt Caching
+---
 
-| Cache Operation | Multiplier | Duration |
+### ⚠️ LEGACY — Claude Haiku 3 *(DEPRECATED — retiring April 19, 2026)*
+
+| Field | Value |
+|---|---|
+| **Provider** | Anthropic |
+| **Model ID** | `claude-3-haiku-20240307` |
+| **Status** | ⚠️ LEGACY — **DEPRECATED · Retirement: April 19, 2026** |
+| **Input price** | $0.25 / MTok |
+| **Output price** | $1.25 / MTok |
+| **Context window** | 200,000 tokens |
+| **Availability** | API (until April 19, 2026 only) |
+| **Migration** | Migrate to **Claude Haiku 4.5** ($1/$5) immediately |
+
+---
+
+### ⚠️ LEGACY — Claude Haiku 3.5 *(RETIRED)*
+
+| Field | Value |
+|---|---|
+| **Provider** | Anthropic |
+| **Model ID** | `claude-3-5-haiku-20241022` |
+| **Status** | ⚠️ LEGACY — **RETIRED** (API calls return errors) |
+| **Last price** | $0.80 input / $4.00 output per MTok |
+| **Migration** | Use **Claude Haiku 4.5** ($1/$5) |
+
+---
+
+### ⚠️ LEGACY — Claude Sonnet 3.7 *(RETIRED)*
+
+| Field | Value |
+|---|---|
+| **Provider** | Anthropic |
+| **Model ID** | `claude-3-7-sonnet-20250219` |
+| **Status** | ⚠️ LEGACY — **RETIRED February 19, 2026** (API calls return errors) |
+| **Last price** | $3.00 input / $15.00 output per MTok |
+| **Migration** | Use **Claude Sonnet 4.6** ($3/$15) |
+
+---
+
+### ⚠️ LEGACY — Claude 3 Series *(RETIRED)*
+
+| Model | Status | Migration |
 |---|---|---|
-| 5-minute cache write | 1.25× base input | 5 minutes |
-| 1-hour cache write | 2× base input | 1 hour |
-| Cache read (hit) | 0.1× base input | Same as preceding write |
-
-> Cache pays off after just one read for 5-minute TTL; after two reads for 1-hour TTL. Effective savings up to 90%.
-
-### Web Search Tool
-- **$10 per 1,000 searches**, plus standard token costs.
-
-### Code Execution Tool
-- Free when bundled with web search or web fetch.
-- Standalone: 1,550 free hours/month per org; additional at **$0.05/hr/container**.
-
-### Fast Mode (Opus 4.6 only — Beta)
-- **$30 / MTok input**, **$150 / MTok output** (6× standard rates).
-- Not available with Batch API.
-
-### Data Residency
-- US-only inference: **+10% (1.1×) pricing multiplier** on all token categories (Opus 4.6 and newer).
-
-### Claude Managed Agents
-- Billed on tokens (standard model rates) **plus** session runtime at **$0.08 per session-hour**.
+| Claude 3 Opus | ⚠️ RETIRED (Jan 5, 2026) | → Claude Opus 4.6 |
+| Claude 3.5 Sonnet (v1 & v2) | ⚠️ RETIRED | → Claude Sonnet 4.6 |
+| Claude 3 Sonnet | ⚠️ RETIRED | → Claude Sonnet 4.6 |
+| Claude 3 Haiku | ⚠️ RETIRING April 19, 2026 | → Claude Haiku 4.5 |
 
 ---
 
-## Rate Limits
-- Enforced by usage tier: Tier 1–4, plus Enterprise custom limits.
-- Weekly rate limits added (Aug 2025) for heavy Claude Code users.
+### ⚠️ LEGACY — Claude 2.x Series *(RETIRED)*
 
-## Availability
-- **Direct API:** [console.anthropic.com](https://console.anthropic.com)
-- **AWS Bedrock:** Regional & global endpoints; regional adds 10% premium (Claude 4.5+ models).
-- **Google Vertex AI:** Global, multi-region, and regional endpoints; 10% premium for non-global.
-- **Microsoft Foundry:** Available for select models.
+| Model | Last Known Price |
+|---|---|
+| Claude 2.0 / 2.1 | ~$8.00 input / $24.00 output per MTok |
+
+> **Status:** RETIRED. API access discontinued. Migrate to current Claude 4 generation.
 
 ---
 
-*Source: [platform.claude.com/docs/en/about-claude/pricing](https://platform.claude.com/docs/en/about-claude/pricing) — Verified 2026-04-11*
+## 💡 Cost Optimization Notes
+
+| Feature | Savings |
+|---|---|
+| **Batch API** | 50% off input + output (all models, 24 hr turnaround) |
+| **Prompt caching — cache read (5-min TTL)** | 90% off repeated input tokens |
+| **Prompt caching — cache write (5-min TTL)** | 1.25× standard input (break-even after 2 reads) |
+| **Prompt caching — cache write (1-hr TTL)** | 2× standard input (break-even after 8 reads) |
+| **Batch + caching stacked** | Up to 95% total cost reduction |
+| **US-only inference (data residency)** | 1.1× pricing on models released after Feb 1, 2026 |
+
+---
+
+*Sources verified April 11, 2026.*
