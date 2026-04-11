@@ -1,21 +1,117 @@
 # 🟢 OpenAI — GPT Model Cards
 
-> **Source:** [OpenAI API Pricing](https://openai.com/api/pricing/) | [OpenAI API Model Comparison](https://developers.openai.com/api/docs/models/compare)  
-> **Date Scraped:** 2026-04-11  
-> **Prices in USD per million tokens (MTok)**
+> **Source:** [OpenAI API Pricing](https://developers.openai.com/api/docs/pricing)  
+> **Date Scraped:** 2026-04-11 (refresh #2)  
+> **Prices in USD per million tokens (MTok)**  
+> **⚠️ Price Change Alert:** 🆕 `gpt-5.4-pro` added; long-context tier for `gpt-5.4` added; cached input confirmed for `gpt-5.4-mini` and `gpt-5.4-nano`.
 
 ---
 
-## Model Pricing Overview
+## Flagship Model Pricing (Standard — Short Context < 270K tokens)
 
-| Model | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) | Context Window | Max Output | Knowledge Cutoff |
-|---|---|---|---|---|---|---|
-| GPT-5.4 | $2.50 | $0.25 | $15.00 | 1,050,000 | 128K | Aug 31, 2025 |
-| GPT-5.4 mini | $0.75 | — | $4.50 | 400,000 | 128K | Aug 31, 2025 |
-| GPT-5.4 nano | $0.20 | — | $1.25 | 400,000 | 128K | Aug 31, 2025 |
-| GPT-5.2 | $1.75 | $0.18 | $14.00 | 400,000 | 128K | Aug 31, 2025 |
-| GPT-4.1 | $2.00 | $0.50 | $8.00 | 1,047,576 | 32,768 | Jun 1, 2024 |
-| o4-mini | $1.10 | $0.28 | $4.40 | 200,000 | 100K | Jun 1, 2024 |
+| Model | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) |
+|---|---|---|---|
+| gpt-5.4 | $2.50 | $0.25 | $15.00 |
+| gpt-5.4-mini | $0.75 | $0.075 | $4.50 |
+| gpt-5.4-nano | $0.20 | $0.020 | $1.25 |
+| 🆕 gpt-5.4-pro | $30.00 | — | $180.00 |
+
+## Flagship Model Pricing (Standard — Long Context > 270K tokens)
+
+| Model | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) |
+|---|---|---|---|
+| 🆕 gpt-5.4 | $5.00 | $0.50 | $22.50 |
+| 🆕 gpt-5.4-pro | $60.00 | — | $270.00 |
+
+> **Note:** `gpt-5.4-mini` and `gpt-5.4-nano` do not have a separate long-context tier.
+
+## Flagship Model Pricing — Batch (50% off Standard)
+
+| Model | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) |
+|---|---|---|---|
+| gpt-5.4 | $1.25 | $0.13 | $7.50 |
+| gpt-5.4-mini | $0.375 | $0.0375 | $2.25 |
+| gpt-5.4-nano | $0.10 | $0.01 | $0.625 |
+| gpt-5.4-pro | $15.00 | — | $90.00 |
+
+> Batch API processes requests asynchronously within 24 hours.
+
+## Flagship Model Pricing — Priority (Higher Cost, Low Latency)
+
+| Model | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) |
+|---|---|---|---|
+| gpt-5.4 | $5.00 | $0.50 | $30.00 |
+
+---
+
+## Specialized & Legacy Models
+
+| Model | Category | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) | Context |
+|---|---|---|---|---|---|
+| gpt-5.3-chat-latest | ChatGPT | $1.75 | $0.175 | $14.00 | 400K |
+| gpt-5.3-codex | Codex | $1.75 | $0.175 | $14.00 | 400K |
+| gpt-4.1 | General | $2.00 | $0.50 | $8.00 | 1.04M |
+| o4-mini | Reasoning | $1.10 | $0.28 | $4.40 | 200K |
+| computer-use-preview | Computer Use | $1.50 | — | $6.00 | — |
+
+> `gpt-5.3-codex` in Priority mode: $3.50 / $0.35 / $28.00 per MTok.
+
+## Deep Research Models (Batch only)
+
+| Model | Input ($/MTok) | Output ($/MTok) |
+|---|---|---|
+| o3-deep-research | $5.00 | $20.00 |
+| o4-mini-deep-research | $1.00 | $4.00 |
+
+---
+
+## Realtime & Audio Models
+
+| Model | Modality | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) |
+|---|---|---|---|---|
+| gpt-realtime-1.5 | Audio | $32.00 | $0.40 | $64.00 |
+| gpt-realtime-1.5 | Text | $4.00 | $0.40 | $16.00 |
+| gpt-realtime-1.5 | Image | $5.00 | $0.50 | — |
+| gpt-realtime-mini | Audio | $10.00 | $0.30 | $20.00 |
+| gpt-realtime-mini | Text | $0.60 | $0.06 | $2.40 |
+| gpt-realtime-mini | Image | $0.80 | $0.08 | — |
+
+---
+
+## Image Generation Models
+
+| Model | Modality | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) |
+|---|---|---|---|---|
+| gpt-image-1.5 | Image | $8.00 | $2.00 | $32.00 |
+| gpt-image-1.5 | Text | $5.00 | $1.25 | $10.00 |
+| gpt-image-1-mini | Image | $2.50 | $0.25 | $8.00 |
+| gpt-image-1-mini | Text | $2.00 | $0.20 | — |
+
+> Per-image output pricing for DALL·E models listed in the image generation guide.
+
+---
+
+## Video Generation Models (per second)
+
+| Model | Resolution | Price / second |
+|---|---|---|
+| sora-2 | 720p | $0.10 |
+| sora-2-pro | 720p | $0.30 |
+| sora-2-pro | 1024p | $0.50 |
+| sora-2-pro | 1080p | $0.70 |
+
+> Batch: 50% off — sora-2 at $0.05/sec, sora-2-pro 720p at $0.15/sec.
+
+---
+
+## Fine-Tuning (o4-mini)
+
+| Model | Training | Input ($/MTok) | Cached ($/MTok) | Output ($/MTok) |
+|---|---|---|---|---|
+| o4-mini-2025-04-16 | $100.00 / hr | $4.00 | $1.00 | $16.00 |
+| o4-mini-2025-04-16 (data sharing) | $100.00 / hr | $2.00 | $0.50 | $8.00 |
+
+> Batch fine-tuning: $2.00/$0.50/$8.00 (standard) or $1.00/$0.25/$4.00 (data sharing).
 
 ---
 
@@ -28,20 +124,38 @@
 | **Provider** | OpenAI |
 | **Model Name** | GPT-5.4 |
 | **Model ID** | `gpt-5.4` |
-| **Input Price** | $2.50 / MTok |
-| **Cached Input** | $0.25 / MTok (90% off standard) |
-| **Output Price** | $15.00 / MTok |
-| **Batch Input** | $1.25 / MTok (50% off) |
-| **Batch Output** | $7.50 / MTok (50% off) |
+| **Input Price** | $2.50 / MTok (short ctx) · $5.00 / MTok (long ctx >270K) |
+| **Cached Input** | $0.25 / MTok (short ctx) · $0.50 / MTok (long ctx) |
+| **Output Price** | $15.00 / MTok (short ctx) · $22.50 / MTok (long ctx) |
+| **Batch Input** | $1.25 / MTok |
+| **Batch Output** | $7.50 / MTok |
+| **Priority Input** | $5.00 / MTok |
+| **Priority Output** | $30.00 / MTok |
 | **Context Window** | 1,050,000 tokens |
-| **Max Output Tokens** | 128,000 |
 | **Knowledge Cutoff** | Aug 31, 2025 |
 | **Availability** | OpenAI API (v1/chat/completions, v1/responses, v1/batch) |
-| **Supported Features** | Streaming, Function calling, Structured outputs, Distillation, Image input |
-| **Rate Limits (TPM)** | Tier 1: 500K · Tier 2: 1M · Tier 3: 2M · Tier 4: 4M · Tier 5: 40M |
+| **Supported Features** | Streaming, Function calling, Structured outputs, Distillation, Image input, Computer use |
 | **Data Residency** | +10% for regional processing endpoints |
-| **Status** | ✅ Active — Flagship model |
+| **Status** | ✅ Active — Current flagship model |
 | **Notes** | Best intelligence at scale for agentic, coding, and professional workflows. |
+
+---
+
+### 🆕 GPT-5.4 Pro
+
+| Field | Detail |
+|---|---|
+| **Provider** | OpenAI |
+| **Model Name** | GPT-5.4 Pro |
+| **Model ID** | `gpt-5.4-pro` |
+| **First Tracked** | 2026-04-11 |
+| **Input Price** | $30.00 / MTok (short ctx) · $60.00 / MTok (long ctx >270K) |
+| **Output Price** | $180.00 / MTok (short ctx) · $270.00 / MTok (long ctx) |
+| **Batch Input** | $15.00 / MTok |
+| **Batch Output** | $90.00 / MTok |
+| **Data Residency** | +10% for regional processing endpoints |
+| **Status** | ✅ Active — Extended reasoning / Pro tier |
+| **Notes** | Premium reasoning model; 6× the cost of standard GPT-5.4. Built for ChatGPT Pro-class workloads. |
 
 ---
 
@@ -53,13 +167,13 @@
 | **Model Name** | GPT-5.4 mini |
 | **Model ID** | `gpt-5.4-mini` |
 | **Input Price** | $0.75 / MTok |
+| **Cached Input** | $0.075 / MTok *(confirmed this refresh)* |
 | **Output Price** | $4.50 / MTok |
 | **Context Window** | 400,000 tokens |
-| **Max Output Tokens** | 128,000 |
 | **Knowledge Cutoff** | Aug 31, 2025 |
 | **Availability** | OpenAI API |
 | **Status** | ✅ Active |
-| **Notes** | Strongest mini model for coding, computer use, and subagents. ~25% cheaper input than Claude Haiku 4.5. |
+| **Notes** | Strongest mini model for coding, computer use, and subagents. |
 
 ---
 
@@ -71,34 +185,30 @@
 | **Model Name** | GPT-5.4 nano |
 | **Model ID** | `gpt-5.4-nano` |
 | **Input Price** | $0.20 / MTok |
+| **Cached Input** | $0.020 / MTok *(confirmed this refresh)* |
 | **Output Price** | $1.25 / MTok |
 | **Context Window** | 400,000 tokens |
-| **Max Output Tokens** | 128,000 |
 | **Knowledge Cutoff** | Aug 31, 2025 |
 | **Availability** | OpenAI API |
 | **Status** | ✅ Active |
-| **Notes** | Cheapest GPT-5.4-class model for simple high-volume tasks. 12× cheaper input than GPT-5.4 Standard. |
+| **Notes** | Cheapest GPT-5.4-class model for simple high-volume tasks. |
 
 ---
 
-### GPT-5.2
+### GPT-5.3 Chat / Codex
 
 | Field | Detail |
 |---|---|
 | **Provider** | OpenAI |
-| **Model Name** | GPT-5.2 |
-| **Model ID** | `gpt-5.2` |
+| **Model Name** | GPT-5.3 Chat / Codex |
+| **Model IDs** | `gpt-5.3-chat-latest` · `gpt-5.3-codex` |
 | **Input Price** | $1.75 / MTok |
-| **Cached Input** | $0.18 / MTok |
+| **Cached Input** | $0.175 / MTok |
 | **Output Price** | $14.00 / MTok |
 | **Context Window** | 400,000 tokens |
-| **Max Output Tokens** | 128,000 |
-| **Knowledge Cutoff** | Aug 31, 2025 |
-| **Availability** | OpenAI API (v1/chat/completions, v1/responses, v1/assistants, v1/batch, v1/fine-tuning) |
-| **Supported Features** | Streaming, Function calling, Structured outputs, Fine-tuning, Distillation, Predicted outputs, Image input |
-| **Rate Limits (TPM)** | Tier 1: 500K · Tier 2: 1M · Tier 3: 2M · Tier 4: 4M · Tier 5: 40M |
-| **Status** | ✅ Active |
-| **Notes** | Best model for coding and agentic tasks across industries. |
+| **Availability** | OpenAI API |
+| **Status** | ✅ Active (specialized ChatGPT / Codex tier) |
+| **Notes** | Codex Priority mode: $3.50/$28.00 per MTok. |
 
 ---
 
@@ -113,14 +223,11 @@
 | **Cached Input** | $0.50 / MTok |
 | **Output Price** | $8.00 / MTok |
 | **Context Window** | 1,047,576 tokens |
-| **Max Output Tokens** | 32,768 |
 | **Knowledge Cutoff** | Jun 1, 2024 |
-| **Availability** | OpenAI API (v1/chat/completions, v1/responses, v1/assistants, v1/batch, v1/fine-tuning) |
-| **Supported Features** | Streaming, Function calling, Structured outputs, Fine-tuning, Distillation, Predicted outputs, Image input |
-| **Fine-Tuning Pricing** | Training: ~$3.00 / MTok; Inference input: ~$3.00 / MTok; Inference output: ~$12.00 / MTok |
-| **Rate Limits (TPM)** | Tier 1: 30K · Tier 2: 450K · Tier 3: 800K · Tier 4: 2M · Tier 5: 30M |
+| **Availability** | OpenAI API (incl. fine-tuning) |
+| **Fine-Tuning** | Training ~$3.00/MTok; Inference ~$3.00 input / $12.00 output per MTok |
 | **Status** | ✅ Active |
-| **Notes** | Smartest non-reasoning model; 1M context window; advanced agentic planning. |
+| **Notes** | 1M context; strong instruction-following and coding benchmark scores. |
 
 ---
 
@@ -135,55 +242,53 @@
 | **Cached Input** | $0.28 / MTok |
 | **Output Price** | $4.40 / MTok |
 | **Context Window** | 200,000 tokens |
-| **Max Output Tokens** | 100,000 |
 | **Knowledge Cutoff** | Jun 1, 2024 |
-| **Availability** | OpenAI API (v1/chat/completions, v1/responses, v1/assistants, v1/batch, v1/fine-tuning) |
-| **Supported Features** | Streaming, Function calling, Structured outputs, Fine-tuning, Distillation, Predicted outputs, Image input |
-| **Rate Limits (TPM)** | Tier 1: 100K · Tier 2: 2M · Tier 3: 4M · Tier 4: 10M · Tier 5: 150M |
+| **Availability** | OpenAI API (incl. fine-tuning) |
 | **Status** | ✅ Active (succeeded by GPT-5 mini) |
-| **Notes** | Fast, cost-efficient reasoning model excelling in math, coding, and visual tasks. |
+| **Notes** | Chain-of-thought reasoning model. Reasoning tokens billed as output. |
 
 ---
 
 ## Feature-Specific Pricing
 
+### Context Tiers
+- **Short context** (<270K tokens): standard prices.
+- **Long context** (>270K tokens): 2× input / 1.5× output premium for `gpt-5.4` and `gpt-5.4-pro`.
+
 ### Batch API
-- **Discount:** 50% off standard input and output prices.
-- Processes requests asynchronously within 24 hours.
-- Example: GPT-5.4 Standard → Batch: $1.25 input / $7.50 output per MTok.
+- **50% off** all token costs (input + output); results within 24 hours.
+
+### Flex Processing
+- Same pricing as Batch; slower response times; not guaranteed availability.
+
+### Priority Processing
+- Available for `gpt-5.4` only: **2× input / 2× output** vs. standard.
 
 ### Prompt Caching
-- OpenAI automatically caches repeated input content.
-- Example: GPT-5.4 Standard cached input = **$0.25 / MTok** (90% discount vs. standard $2.50).
-- Applications with consistent system prompts benefit most.
+- OpenAI automatically caches repeated input prefixes.
+- Example: `gpt-5.4` short-ctx cached = $0.25/MTok (90% off standard $2.50).
 
 ### Data Residency / Regional Processing
-- Regional processing endpoints for `gpt-5.4`, `gpt-5.4-mini`, `gpt-5.4-nano`, and `gpt-5.4-pro` incur **+10% uplift**.
+- Regional endpoints for `gpt-5.4`, `gpt-5.4-mini`, `gpt-5.4-nano`, `gpt-5.4-pro`: **+10% uplift**.
 - Applies to models released after March 5, 2026.
 
-### Fine-Tuning
-- GPT-4.1: ~$3.00 / MTok training; ~$3.00 input / $12.00 output for fine-tuned inference.
-- GPT-4.1 Mini: ~$0.80 / MTok training; ~$0.80 input / $3.20 output.
+### Web Search Tool
+- `gpt-4o` / `gpt-4.1` models: **$10 / 1,000 calls**; search content tokens billed at model rates.
+- Reasoning models incl. `gpt-5` and newer: **$25 / 1,000 calls**; search content tokens are free.
+
+### Container / Code Interpreter
+- 1 GB: $0.03; 4 GB: $0.12; 16 GB: $0.48; 64 GB: $1.92 per 20-minute session.
+
+### File Search
+- Storage: **$0.10 / GB per day** (1 GB free).
+- Tool call (Responses API): **$2.50 / 1,000 calls**.
 
 ---
-
-## Rate Limit Tiers
-
-Rate limits vary by model and usage tier (Tier 1–5). Example TPM limits for GPT-5.4:
-
-| Tier | TPM Limit |
-|---|---|
-| Free | N/A |
-| Tier 1 | 500,000 |
-| Tier 2 | 1,000,000 |
-| Tier 3 | 2,000,000 |
-| Tier 4 | 4,000,000 |
-| Tier 5 | 40,000,000 |
 
 ## Availability
 - **Direct API:** [platform.openai.com](https://platform.openai.com)
-- **Azure OpenAI Service:** Pay-as-you-go (comparable rates); Provisioned Throughput Units (PTUs) available for reserved capacity.
+- **Azure OpenAI Service:** Comparable PAYG rates; PTUs available for reserved capacity.
 
 ---
 
-*Source: [openai.com/api/pricing](https://openai.com/api/pricing/) | [developers.openai.com/api/docs/models/compare](https://developers.openai.com/api/docs/models/compare) — Verified 2026-04-11*
+*Source: [developers.openai.com/api/docs/pricing](https://developers.openai.com/api/docs/pricing) — Verified 2026-04-11*

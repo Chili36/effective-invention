@@ -1,8 +1,9 @@
 # 🟠 Anthropic — Claude Model Cards
 
 > **Source:** [Anthropic Claude API Pricing Docs](https://platform.claude.com/docs/en/about-claude/pricing)  
-> **Date Scraped:** 2026-04-11  
-> **Prices in USD per million tokens (MTok)**
+> **Date Scraped:** 2026-04-11 (refresh #2)  
+> **Prices in USD per million tokens (MTok)**  
+> **⚠️ Price Change Alert:** ✅ No changes — all prices confirmed stable vs. previous scrape.
 
 ---
 
@@ -25,6 +26,21 @@
 
 ---
 
+## Batch API Pricing (50% off standard)
+
+| Model | Batch Input | Batch Output |
+|---|---|---|
+| Claude Opus 4.6 | $2.50 / MTok | $12.50 / MTok |
+| Claude Opus 4.5 | $2.50 / MTok | $12.50 / MTok |
+| Claude Opus 4.1 | $7.50 / MTok | $37.50 / MTok |
+| Claude Opus 4 | $7.50 / MTok | $37.50 / MTok |
+| Claude Sonnet 4.6 | $1.50 / MTok | $7.50 / MTok |
+| Claude Sonnet 4.5 | $1.50 / MTok | $7.50 / MTok |
+| Claude Sonnet 4 | $1.50 / MTok | $7.50 / MTok |
+| Claude Haiku 4.5 | $0.50 / MTok | $2.50 / MTok |
+
+---
+
 ## Individual Model Cards
 
 ### Claude Opus 4.6
@@ -41,13 +57,13 @@
 | **5-min Cache Write** | $6.25 / MTok |
 | **1-hr Cache Write** | $10.00 / MTok |
 | **Cache Hit** | $0.50 / MTok |
-| **Context Window** | 1,000,000 tokens (standard pricing, no long-context surcharge) |
+| **Context Window** | 1,000,000 tokens (standard pricing throughout — no long-context surcharge) |
 | **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
-| **Fast Mode** | Available at 6× standard rates ($30 input / $150 output per MTok) |
+| **Fast Mode** | Available at 6× standard rates ($30 input / $150 output per MTok) — beta |
 | **Data Residency** | US-only inference: +10% pricing multiplier |
 | **Rate Limits** | Tier-based (Tier 1–4 + Enterprise) |
-| **Status** | ✅ Active — Flagship model |
-| **Notes** | Full 1M context at standard rates; 1M-context surcharge removed as of early 2026. |
+| **Status** | ✅ Active — Current flagship model |
+| **Notes** | Full 1M context at standard rates; long-context surcharge removed as of early 2026. |
 
 ---
 
@@ -65,7 +81,7 @@
 | **Context Window** | 200,000 tokens |
 | **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
 | **Status** | ✅ Active |
-| **Notes** | Released November 2025. Best-in-class for coding, agents, and computer use. Includes effort control parameter. |
+| **Notes** | Released November 2025. Coding, agents, computer use. Effort-control parameter. |
 
 ---
 
@@ -81,7 +97,7 @@
 | **Batch Output** | $37.50 / MTok |
 | **Context Window** | 200,000 tokens |
 | **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI |
-| **Status** | ✅ Active (legacy tier) |
+| **Status** | ✅ Active (legacy premium tier) |
 | **Notes** | Upgraded agentic performance and real-world coding. Released August 2025. |
 
 ---
@@ -99,7 +115,7 @@
 | **5-min Cache Write** | $3.75 / MTok |
 | **1-hr Cache Write** | $6.00 / MTok |
 | **Cache Hit** | $0.30 / MTok |
-| **Context Window** | 1,000,000 tokens (standard pricing, no long-context surcharge) |
+| **Context Window** | 1,000,000 tokens (standard pricing throughout) |
 | **Availability** | Anthropic API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
 | **Status** | ✅ Active |
 | **Notes** | High-throughput general-purpose model. 1M-context surcharge removed early 2026. |
@@ -189,6 +205,7 @@
 ### Batch API
 - **Discount:** 50% off standard input and output token prices.
 - **Use case:** Asynchronous large-volume processing; results within 24 hours.
+- Applies to every Claude model without exception.
 
 ### Prompt Caching
 
@@ -198,28 +215,30 @@
 | 1-hour cache write | 2× base input | 1 hour |
 | Cache read (hit) | 0.1× base input | Same as preceding write |
 
-> Cache pays off after just one read for 5-minute TTL; after two reads for 1-hour TTL.
+> Cache pays off after just one read for 5-minute TTL; after two reads for 1-hour TTL. Effective savings up to 90%.
 
 ### Web Search Tool
 - **$10 per 1,000 searches**, plus standard token costs.
 
 ### Code Execution Tool
 - Free when bundled with web search or web fetch.
-- Standalone: 1,550 free hours/month per org; additional hours at **$0.05/hr/container**.
+- Standalone: 1,550 free hours/month per org; additional at **$0.05/hr/container**.
 
-### Fast Mode (Opus 4.6 only, Beta)
+### Fast Mode (Opus 4.6 only — Beta)
 - **$30 / MTok input**, **$150 / MTok output** (6× standard rates).
 - Not available with Batch API.
 
 ### Data Residency
-- US-only inference: **+10% pricing multiplier** on all token categories (Opus 4.6 and newer).
+- US-only inference: **+10% (1.1×) pricing multiplier** on all token categories (Opus 4.6 and newer).
+
+### Claude Managed Agents
+- Billed on tokens (standard model rates) **plus** session runtime at **$0.08 per session-hour**.
 
 ---
 
 ## Rate Limits
 - Enforced by usage tier: Tier 1–4, plus Enterprise custom limits.
-- Weekly rate limits added (Aug 2025) specifically for heavy Claude Code users.
-- Typical Tier 1 limits (Claude 3 Sonnet example): ~5 RPM, 20K TPM, 300K tokens/day.
+- Weekly rate limits added (Aug 2025) for heavy Claude Code users.
 
 ## Availability
 - **Direct API:** [console.anthropic.com](https://console.anthropic.com)
