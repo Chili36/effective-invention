@@ -74,4 +74,9 @@ jobs:
       - name: Run LLM Pricing Tracker Agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python run_agent.py
+        run: |
+          # Strip whitespace/newlines from the secret. GitHub secrets saved
+          # with a trailing newline cause httpx.LocalProtocolError because
+          # HTTP headers cannot contain newlines.
+          export ANTHROPIC_API_KEY="$(printf '%s' "$ANTHROPIC_API_KEY" | tr -d '[:space:]')"
+          python run_agent.py
