@@ -1,20 +1,20 @@
 # 🤖 LLM Pricing Tracker
 
-Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, and **Mistral AI**.
+Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-04-11 (refresh #3)  
+> **Last updated:** 2026-04-12 (refresh #4)  
 > **Sources:** Official provider pricing pages + third-party verification — scraped/verified on date above.
 
 ---
 
 ## 📋 Quick-Reference Index — Active Models
 
-### 🟠 Anthropic — Claude Models
+### 🟠 Tier 1 — Anthropic Claude
 
 | Model | Input ($/MTok) | Output ($/MTok) | Context Window | Availability |
 |---|---|---|---|---|
-| **Claude Opus 4.6** | $5.00 | $25.00 | **1M tokens** (standard) | API, AWS Bedrock, Vertex AI, MS Foundry |
-| **Claude Sonnet 4.6** | $3.00 | $15.00 | **1M tokens** (standard) | API, AWS Bedrock, Vertex AI, MS Foundry |
+| **Claude Opus 4.6** | $5.00 | $25.00 | **1M tokens** | API, AWS Bedrock, Vertex AI, MS Foundry |
+| **Claude Sonnet 4.6** | $3.00 | $15.00 | **1M tokens** | API, AWS Bedrock, Vertex AI, MS Foundry |
 | **Claude Haiku 4.5** | $1.00 | $5.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
 | Claude Opus 4.5 | $5.00 | $25.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
 | Claude Sonnet 4.5 | $3.00 | $15.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
@@ -24,7 +24,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 ---
 
-### 🟢 OpenAI — Models
+### 🟢 Tier 1 — OpenAI (Proprietary)
 
 | Model | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) | Context Window | Availability |
 |---|---|---|---|---|---|
@@ -42,7 +42,22 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 ---
 
-### 🔵 Mistral AI — Models
+### 🔵 Tier 1 — Google Gemini
+
+| Model | Input ($/MTok) | Output ($/MTok) | Context Window | Notes |
+|---|---|---|---|---|
+| **Gemini 3.1 Pro Preview** | $2.00 / $4.00* | $12.00 / $18.00* | **1M tokens** | *Tiered at >200K; Preview |
+| **Gemini 3.1 Flash-Lite Preview** | $0.25 | $1.50 | **1M tokens** | Preview |
+| **Gemini 2.5 Pro** | $1.25 / $2.50* | $10.00 / $15.00* | **1M tokens** | *Tiered at >200K; GA |
+| **Gemini 2.5 Flash** | $0.30 | $2.50 | **1M tokens** | GA; optional thinking mode |
+| **Gemini 2.5 Flash-Lite** | $0.10 | $0.40 | **1M tokens** | GA; cheapest Gemini |
+| Gemini 2.0 Flash | $0.10 | $0.40 | 1M tokens | Active; prev-gen |
+
+> 💡 Batch API: 50% off · Context caching: 90% off repeated prefixes · Free tier via AI Studio · Pro models: double input cost for prompts >200K
+
+---
+
+### 🟡 Tier 1 — Mistral AI
 
 | Model | Input ($/MTok) | Output ($/MTok) | Context Window | Availability |
 |---|---|---|---|---|
@@ -55,23 +70,40 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Ministral 8B | $0.10 | $0.10 | 256K tokens | API (Mistral AI Studio) |
 | Ministral 3B | $0.10 | $0.10 | 556K tokens | API (Mistral AI Studio) |
 
-> 💡 EU data residency by default · Free experimentation tier (no CC required) · Open-weight models (Apache 2.0) available for self-hosting
+> 💡 EU data residency by default · Free experimentation tier · Open-weight models (Apache 2.0) for self-hosting
+
+---
+
+### 🟣 Tier 2 — OpenRouter Picks (One Best Model Per Provider)
+
+| Provider | Model | Input ($/MTok) | Output ($/MTok) | Context Window |
+|---|---|---|---|---|
+| **OpenAI open-weight** | gpt-oss-120b | $0.039 | $0.190 | 131K tokens |
+| **DeepSeek** | DeepSeek V3.2 | $0.26 | $0.38 | 163K tokens |
+| **Qwen (Alibaba)** | Qwen3.6 Plus | Free (preview)* | Free (preview)* | **1M tokens** |
+| **Nvidia** | Nemotron 3 Super 120B | $0.10 | $0.50 | 262K tokens |
+| **MiniMax** | MiniMax M2.7 | $0.30 | $1.20 | 205K tokens |
+| **xAI (Grok)** | Grok 4.1 Fast | $0.20 | $0.50 | **2M tokens** |
+
+> 💡 *Qwen3.6 Plus free preview ended ~April 7, 2026. Paid pricing TBD. Fallback: Qwen3.5 Plus at $0.26/$1.56.
 
 ---
 
 ## 📁 Model Card Files
 
-| Provider | File | Description |
-|---|---|---|
-| Anthropic | [anthropic.md](./anthropic.md) | Full model cards incl. caching, batch, fast mode, deprecation dates |
-| OpenAI | [openai.md](./openai.md) | Full model cards incl. context tiers, reasoning models, batch pricing |
-| Mistral AI | [mistral.md](./mistral.md) | Full model cards incl. open-weight models, Le Chat plans, EU compliance |
+| Provider | Tier | File | Description |
+|---|---|---|---|
+| Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards incl. caching, batch, fast mode, deprecation dates |
+| OpenAI | 1 | [openai.md](./openai.md) | Full model cards incl. context tiers, reasoning models, batch pricing |
+| Google Gemini | 1 | [gemini.md](./gemini.md) | Full model cards incl. context tiers, thinking tokens, free tier |
+| Mistral AI | 1 | [mistral.md](./mistral.md) | Full model cards incl. open-weight models, Le Chat plans, EU compliance |
+| OpenRouter Picks | 2 | [openrouter-picks.md](./openrouter-picks.md) | One best-performing model per Tier 2 provider, all via OpenRouter |
 
 ---
 
 ## ⚠️ Legacy / Deprecated / Retired Models
 
-> These models are no longer recommended for new deployments. Retire or migrate ASAP.
+> These models are no longer recommended for new deployments.
 
 ### 🟠 Anthropic — Legacy
 
@@ -80,7 +112,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | ⚠️ Claude Opus 4.1 | LEGACY | $15.00 | $75.00 | → Claude Opus 4.6 (67% cheaper) |
 | ⚠️ Claude Opus 4 | LEGACY | $15.00 | $75.00 | → Claude Opus 4.6 |
 | ⚠️ Claude Haiku 3 | **DEPRECATED · Retiring Apr 19, 2026** | $0.25 | $1.25 | → Claude Haiku 4.5 |
-| ⚠️ Claude Haiku 3.5 | **RETIRED** (API returns errors) | $0.80 | $4.00 | → Claude Haiku 4.5 |
+| ⚠️ Claude Haiku 3.5 | **RETIRED** | $0.80 | $4.00 | → Claude Haiku 4.5 |
 | ⚠️ Claude Sonnet 3.7 | **RETIRED** Feb 19, 2026 | $3.00 | $15.00 | → Claude Sonnet 4.6 |
 | ⚠️ Claude 3 Opus | **RETIRED** Jan 5, 2026 | $15.00 | $75.00 | → Claude Opus 4.6 |
 | ⚠️ Claude 3.5 Sonnet | **RETIRED** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
@@ -98,7 +130,16 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | ⚠️ GPT-4 Turbo | **RETIRED** | — | — | → GPT-4.1 |
 | ⚠️ GPT-3.5 Turbo | **RETIRED** | — | — | → GPT-4.1 nano |
 
-### 🔵 Mistral AI — Legacy
+### 🔵 Google Gemini — Legacy
+
+| Model | Status | Migration Target |
+|---|---|---|
+| ⚠️ Gemini 3 Pro Preview | **RETIRED** March 9, 2026 | → Gemini 3.1 Pro Preview |
+| ⚠️ Gemini 2.0 Flash-Lite | **DEPRECATED · Shutdown June 1, 2026** | → Gemini 2.5 Flash-Lite |
+| ⚠️ Gemini 1.5 Pro | LEGACY | → Gemini 2.5 Pro |
+| ⚠️ Gemini 1.5 Flash | LEGACY | → Gemini 2.5 Flash |
+
+### 🟡 Mistral AI — Legacy
 
 | Model | Status | Migration Target |
 |---|---|---|
@@ -112,30 +153,36 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Date | Provider | Model | Change |
 |---|---|---|---|
+| 2026-04-12 | Google | **Gemini 3.1 Pro Preview** | ✅ Added — $2/$12 (≤200K), $4/$18 (>200K), 1M context — replaced Gemini 3 Pro Preview |
+| 2026-04-12 | Google | **Gemini 3.1 Flash-Lite Preview** | ✅ Added — $0.25/$1.50, 1M context |
+| 2026-04-12 | Google | **Gemini 2.5 Pro / Flash / Flash-Lite** | ✅ Confirmed GA pricing — $1.25/$10, $0.30/$2.50, $0.10/$0.40 |
+| 2026-04-12 | Google | **Gemini 2.0 Flash-Lite** | ⚠️ DEPRECATED — shutting down June 1, 2026 |
+| 2026-04-12 | Google | **Gemini 3 Pro Preview** | ⚠️ RETIRED March 9, 2026 |
+| 2026-04-12 | OpenRouter | **gpt-oss-120b** | ✅ Added — $0.039/$0.19, 131K context |
+| 2026-04-12 | OpenRouter | **DeepSeek V3.2** | ✅ Added — $0.26/$0.38, 163K context |
+| 2026-04-12 | OpenRouter | **Qwen3.6 Plus** | ✅ Added — free preview (April 2026); paid pricing TBD |
+| 2026-04-12 | OpenRouter | **Nemotron 3 Super 120B** | ✅ Added — $0.10/$0.50, 262K context |
+| 2026-04-12 | OpenRouter | **MiniMax M2.7** | ✅ Added — $0.30/$1.20, 205K context |
+| 2026-04-12 | OpenRouter | **Grok 4.1 Fast** | ✅ Added — $0.20/$0.50, 2M context |
 | 2026-04-11 | Anthropic | **Claude Opus 4.6** | ✅ Confirmed $5/$25 · 1M context at standard pricing · Fast Mode $30/$150 |
-| 2026-04-11 | Anthropic | **Claude Sonnet 4.6** | ✅ Confirmed $3/$15 · 1M context standard · 1M beta on Sonnet 4.5 retiring Apr 30 |
+| 2026-04-11 | Anthropic | **Claude Sonnet 4.6** | ✅ Confirmed $3/$15 · 1M context standard |
 | 2026-04-11 | Anthropic | **Claude Haiku 3** | ⚠️ DEPRECATION CONFIRMED — Retiring April 19, 2026 |
-| 2026-04-11 | Anthropic | **Claude Haiku 3.5** | ⚠️ RETIRED — API now returns errors |
-| 2026-04-11 | Anthropic | **Claude Sonnet 3.7** | ⚠️ RETIRED Feb 19, 2026 |
 | 2026-04-11 | OpenAI | **GPT-5.4 family** | ✅ Confirmed launch Mar 5, 2026 · $2.50/$15 (short), $5/$22.50 (long ctx >270K) |
-| 2026-04-11 | OpenAI | **GPT-5.4 Pro** | ✅ Confirmed $30/$180 |
 | 2026-04-11 | OpenAI | **GPT-5.4 mini** | ✅ Confirmed $0.75/$4.50 (launched Mar 17, 2026) |
-| 2026-04-11 | OpenAI | **GPT-5.4 nano** | ✅ Confirmed $0.20/$1.25 (launched Mar 17, 2026) |
-| 2026-04-11 | OpenAI | **o4-mini** | ✅ Confirmed $1.10/$4.40 · replaced o3-mini |
-| 2026-04-11 | OpenAI | **GPT-4o** | ⚠️ Marked LEGACY — superseded by GPT-4.1 |
+| 2026-04-11 | OpenAI | **GPT-5.4 nano** | ✅ Confirmed $0.20/$1.25 |
 | 2026-04-11 | Mistral | **Mistral Large 3** | ✅ Confirmed $0.50/$1.50 at 262K context |
 | 2026-04-11 | Mistral | **Mistral Small 3.1** | ✅ Confirmed $0.20/$0.60 |
-| 2026-04-11 | Mistral | **Mistral Large 2** | ⚠️ Marked LEGACY |
 
 ---
 
 ## ℹ️ Notes
 - All prices are in **USD** and listed **per million tokens (MTok)**.
-- **Batch API discounts (50%)** are available from both Anthropic and OpenAI. Mistral does **not** currently offer a batch discount tier.
+- **Batch API discounts (50%)** are available from Anthropic, OpenAI, and Google Gemini. Mistral does **not** currently offer a batch discount tier.
 - **Prompt/context caching** discounts apply where noted. Mistral does **not** offer prompt caching.
 - Enterprise/volume pricing is available from all providers on a negotiated basis.
-- Model availability on third-party platforms (AWS Bedrock, Vertex AI, Azure AI Foundry) may differ slightly from direct API pricing.
-- **OpenAI GPT-5.4 family** uses short context (<270K) and long context (>270K) pricing tiers.
-- **Mistral** processes all API data in the EU by default — a key compliance advantage for GDPR-regulated workloads.
+- **OpenAI GPT-5.4** uses short context (<270K) and long context (>270K) pricing tiers.
+- **Google Gemini Pro** models (2.5 Pro, 3.1 Pro) double input cost for prompts >200K tokens.
+- **Mistral** processes all API data in the EU by default — key compliance advantage for GDPR workloads.
 - **Anthropic** offers US-only inference (data residency) at 1.1× pricing for models released after February 1, 2026.
-- ⚠️ Models marked **RETIRED** will return API errors. Models marked **DEPRECATED** have a retirement date and should be migrated away from immediately.
+- **Tier 2 OpenRouter Picks** use OpenRouter prices which are typically at or near direct provider API rates.
+- ⚠️ Models marked **RETIRED** return API errors. Models marked **DEPRECATED** have a retirement date.
