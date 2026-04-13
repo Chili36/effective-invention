@@ -2,7 +2,7 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-04-12 (refresh #4)  
+> **Last updated:** 2026-04-13 (refresh #5)  
 > **Sources:** Official provider pricing pages + third-party verification — scraped/verified on date above.
 
 ---
@@ -19,8 +19,10 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Claude Opus 4.5 | $5.00 | $25.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
 | Claude Sonnet 4.5 | $3.00 | $15.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
 | Claude Sonnet 4 | $3.00 | $15.00 | 200K tokens | API, AWS Bedrock, Vertex AI |
+| Claude Haiku 3.5 *(prev-gen, still active)* | $0.80 | $4.00 | 128K tokens | API, AWS Bedrock, Vertex AI |
 
-> 💡 Batch API: 50% off · Prompt caching: up to 90% off · Opus 4.6 Fast Mode: $30/$150 (6× base)
+> 💡 Batch API: 50% off · Prompt caching: up to 90% off · Opus 4.6 Fast Mode: $30/$150 (6× base)  
+> ⚠️ Claude Haiku 3 retiring **April 19, 2026** (6 days) — migrate to Haiku 4.5 immediately
 
 ---
 
@@ -34,6 +36,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | **GPT-5.4 mini** | $0.75 | $0.075 | $4.50 | 400K tokens | API |
 | **GPT-5.4 nano** | $0.20 | $0.020 | $1.25 | 400K tokens | API |
 | GPT-4.1 | $2.00 | $0.50 | $8.00 | 1.04M tokens | API |
+| **GPT-4.1 mini** *(added Apr 13)* | $0.40 | $0.10 | $1.60 | 1.00M tokens | API |
 | GPT-4.1 nano | $0.10 | — | $0.40 | 1M+ tokens | API |
 | o3 *(reasoning)* | $2.00 | $0.50 | $8.00 | 200K tokens | API |
 | o4-mini *(reasoning)* | $1.10 | $0.275 | $4.40 | 200K tokens | API |
@@ -70,7 +73,8 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Ministral 8B | $0.10 | $0.10 | 256K tokens | API (Mistral AI Studio) |
 | Ministral 3B | $0.10 | $0.10 | 556K tokens | API (Mistral AI Studio) |
 
-> 💡 EU data residency by default · Free experimentation tier · Open-weight models (Apache 2.0) for self-hosting
+> 💡 EU data residency by default · Free experimentation tier · Open-weight models (Apache 2.0) for self-hosting  
+> ⚠️ Some sources (devtk.ai, Jan–Feb 2026) list Mistral Large 3 at $2/$6; more recent listings show $0.50/$1.50 for the 2512 version. Verify on official Mistral console.
 
 ---
 
@@ -111,10 +115,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 |---|---|---|---|---|
 | ⚠️ Claude Opus 4.1 | LEGACY | $15.00 | $75.00 | → Claude Opus 4.6 (67% cheaper) |
 | ⚠️ Claude Opus 4 | LEGACY | $15.00 | $75.00 | → Claude Opus 4.6 |
-| ⚠️ Claude Haiku 3 | **DEPRECATED · Retiring Apr 19, 2026** | $0.25 | $1.25 | → Claude Haiku 4.5 |
-| ⚠️ Claude Haiku 3.5 | **RETIRED** | $0.80 | $4.00 | → Claude Haiku 4.5 |
-| ⚠️ Claude Sonnet 3.7 | **RETIRED** Feb 19, 2026 | $3.00 | $15.00 | → Claude Sonnet 4.6 |
-| ⚠️ Claude 3 Opus | **RETIRED** Jan 5, 2026 | $15.00 | $75.00 | → Claude Opus 4.6 |
+| ⚠️ Claude Haiku 3 | **DEPRECATED · 🚨 Retiring Apr 19, 2026** | $0.25 | $1.25 | → Claude Haiku 4.5 |
+| ⚠️ Claude Sonnet 3.7 | **DEPRECATED** (API still accessible; no new projects) | $3.00 | $15.00 | → Claude Sonnet 4.6 |
+| ⚠️ Claude 3 Opus | **DEPRECATED** (API still accessible; phasing out) | $15.00 | $75.00 | → Claude Opus 4.6 |
 | ⚠️ Claude 3.5 Sonnet | **RETIRED** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
 | ⚠️ Claude 2.x | **RETIRED** | ~$8.00 | ~$24.00 | → Claude Sonnet 4.6 |
 
@@ -153,6 +156,12 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Date | Provider | Model | Change |
 |---|---|---|---|
+| 2026-04-13 | Anthropic | **Claude Haiku 3.5** | ✏️ CORRECTED — Restored to Active ($0.80/$4); was incorrectly marked RETIRED. Official pricing page confirms still accessible. |
+| 2026-04-13 | Anthropic | **Claude Sonnet 3.7** | ✏️ CORRECTED — Status updated to DEPRECATED (not RETIRED; API still accessible per official pricing page). |
+| 2026-04-13 | Anthropic | **Claude 3 Opus** | ✏️ CORRECTED — Status updated to DEPRECATED (not RETIRED; still listed on official pricing page). |
+| 2026-04-13 | Anthropic | **Claude Haiku 3** | ⚠️ IMMINENT — Retirement April 19, 2026 is now 6 days away. Migrate to Haiku 4.5 immediately. |
+| 2026-04-13 | OpenAI | **GPT-4.1 mini** | ✅ ADDED — $0.40/$1.60 per MTok; 1M context; bridges gap between GPT-4.1 nano and GPT-4.1. |
+| 2026-04-13 | Mistral | **Le Chat Team plan** | ✏️ CORRECTED — $24.99/user/month (was incorrectly listed as ~$20K/month enterprise). Verified on mistral.ai/pricing. |
 | 2026-04-12 | Google | **Gemini 3.1 Pro Preview** | ✅ Added — $2/$12 (≤200K), $4/$18 (>200K), 1M context — replaced Gemini 3 Pro Preview |
 | 2026-04-12 | Google | **Gemini 3.1 Flash-Lite Preview** | ✅ Added — $0.25/$1.50, 1M context |
 | 2026-04-12 | Google | **Gemini 2.5 Pro / Flash / Flash-Lite** | ✅ Confirmed GA pricing — $1.25/$10, $0.30/$2.50, $0.10/$0.40 |
@@ -185,4 +194,5 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 - **Mistral** processes all API data in the EU by default — key compliance advantage for GDPR workloads.
 - **Anthropic** offers US-only inference (data residency) at 1.1× pricing for models released after February 1, 2026.
 - **Tier 2 OpenRouter Picks** use OpenRouter prices which are typically at or near direct provider API rates.
-- ⚠️ Models marked **RETIRED** return API errors. Models marked **DEPRECATED** have a retirement date.
+- ⚠️ Models marked **RETIRED** return API errors. Models marked **DEPRECATED** have a known retirement date or are actively phasing out but may still be API-accessible.
+- ✏️ **Correction policy:** When verified data from official pricing pages contradicts a prior entry, the old entry is corrected and logged in the Price Change Log above.

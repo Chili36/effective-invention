@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-04-11  
-> **Source:** https://openai.com/api/pricing/ · https://pecollective.com/tools/openai-api-pricing/ · https://www.cloudzero.com/blog/openai-pricing/ · https://curlscape.com/blog/openai-api-pricing-guide-2026  
-> **Scraped / verified:** 2026-04-11  
+> **Last updated:** 2026-04-13  
+> **Source:** https://openai.com/api/pricing/ · https://pecollective.com/tools/openai-api-pricing/ · https://curlscape.com/blog/openai-api-pricing-guide-2026  
+> **Scraped / verified:** 2026-04-13  
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -99,7 +99,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 |---|---|
 | **Provider** | OpenAI |
 | **Model ID** | `gpt-4.1` |
-| **Released** | 2025 |
+| **Released** | April 14, 2025 |
 | **Status** | ✅ Active — Recommended for long-context workloads |
 | **Input price** | $2.00 / MTok |
 | **Cached input** | $0.50 / MTok |
@@ -109,6 +109,24 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Context window** | 1,040,000 tokens |
 | **Availability** | API |
 | **Notable** | Recommended replacement for GPT-4o; better instruction-following, coding, long-context; cheaper than GPT-4o ($2.50/$10) |
+
+---
+
+### GPT-4.1 mini *(Added Apr 13, 2026)*
+
+| Field | Value |
+|---|---|
+| **Provider** | OpenAI |
+| **Model ID** | `gpt-4.1-mini` |
+| **Status** | ✅ Active — Balanced, Long-Context Budget |
+| **Input price** | $0.40 / MTok |
+| **Cached input** | $0.10 / MTok |
+| **Output price** | $1.60 / MTok |
+| **Batch input** | $0.20 / MTok |
+| **Batch output** | $0.80 / MTok |
+| **Context window** | 1,000,000 tokens |
+| **Availability** | API |
+| **Notable** | 4× cheaper than GPT-4.1 with the same 1M context window; ideal for moderate-complexity tasks at scale; bridges gap between GPT-4.1 nano ($0.10/$0.40) and GPT-4.1 ($2/$8) |
 
 ---
 
@@ -260,8 +278,8 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Cached input tokens** | 50–90% off depending on model |
 | **GPT-5.4 short vs long ctx** | Stay under 270K input to avoid 2× surcharge |
 | **Regional processing** | +10% uplift for GPT-5.4 family data residency endpoints |
-| **Model tiering** | Use GPT-4.1 nano ($0.10/M) for simple tasks; reserve GPT-5.4 for complex ones |
+| **Model tiering** | GPT-4.1 nano ($0.10/M) → GPT-4.1 mini ($0.40/M) → GPT-4.1 ($2/M) → GPT-5.4 ($2.50/M) — choose by task complexity |
 
 ---
 
-*Sources verified April 11, 2026.*
+*Sources last verified: April 13, 2026 against openai.com/api/pricing/ and pecollective.com/tools/openai-api-pricing/*
