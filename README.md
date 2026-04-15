@@ -2,7 +2,7 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-04-13 (refresh #5)  
+> **Last updated:** 2026-04-15 (refresh #6)  
 > **Sources:** Official provider pricing pages + third-party verification — scraped/verified on date above.
 
 ---
@@ -18,11 +18,12 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | **Claude Haiku 4.5** | $1.00 | $5.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
 | Claude Opus 4.5 | $5.00 | $25.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
 | Claude Sonnet 4.5 | $3.00 | $15.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
-| Claude Sonnet 4 | $3.00 | $15.00 | 200K tokens | API, AWS Bedrock, Vertex AI |
 | Claude Haiku 3.5 *(prev-gen, still active)* | $0.80 | $4.00 | 128K tokens | API, AWS Bedrock, Vertex AI |
 
 > 💡 Batch API: 50% off · Prompt caching: up to 90% off · Opus 4.6 Fast Mode: $30/$150 (6× base)  
-> ⚠️ Claude Haiku 3 retiring **April 19, 2026** (6 days) — migrate to Haiku 4.5 immediately
+> ⚠️ Claude Haiku 3 retiring **April 19, 2026** (4 days) — migrate to Haiku 4.5 immediately  
+> 🔒 Claude Mythos Preview announced April 7 — restricted access only (Project Glasswing); no public API  
+> 🆙 Claude Opus 4.7 reportedly launching this week — model card will be added upon release
 
 ---
 
@@ -36,12 +37,13 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | **GPT-5.4 mini** | $0.75 | $0.075 | $4.50 | 400K tokens | API |
 | **GPT-5.4 nano** | $0.20 | $0.020 | $1.25 | 400K tokens | API |
 | GPT-4.1 | $2.00 | $0.50 | $8.00 | 1.04M tokens | API |
-| **GPT-4.1 mini** *(added Apr 13)* | $0.40 | $0.10 | $1.60 | 1.00M tokens | API |
+| **GPT-4.1 mini** | $0.40 | $0.10 | $1.60 | 1.00M tokens | API |
 | GPT-4.1 nano | $0.10 | — | $0.40 | 1M+ tokens | API |
 | o3 *(reasoning)* | $2.00 | $0.50 | $8.00 | 200K tokens | API |
 | o4-mini *(reasoning)* | $1.10 | $0.275 | $4.40 | 200K tokens | API |
 
-> 💡 Batch API: 50% off all models · Cached inputs: 50–90% off · Regional processing: +10% on GPT-5.4 family
+> 💡 Batch API: 50% off all models · Cached inputs: 50–90% off · Regional processing: +10% on GPT-5.4 family  
+> 🔒 GPT-5.4-Cyber announced April 14 — limited vetted access only; no public API pricing
 
 ---
 
@@ -65,16 +67,19 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Model | Input ($/MTok) | Output ($/MTok) | Context Window | Availability |
 |---|---|---|---|---|
 | **Mistral Large 3 (2512)** | $0.50 | $1.50 | 262K tokens | API (Mistral AI Studio) |
-| Mistral Medium 3 | $0.40 | $2.00 | 131K tokens | API (Mistral AI Studio) |
-| **Mistral Small 3.1** | $0.20 | $0.60 | 128K tokens | API (Mistral AI Studio) |
-| Codestral | $1.00 | $3.00 | 128K tokens | API (Mistral AI Studio) |
+| Mistral Medium 3.1 | $0.40 | $2.00 | 131K tokens | API (Mistral AI Studio) |
+| **Mistral Small 4** *(Mar 2026)* | $0.15 | ~$0.60* | 128K tokens | API (Mistral AI Studio) |
+| Codestral 2508 | $0.30 | $0.90 | 128K tokens | API (Mistral AI Studio) |
+| Devstral 2 | $0.40 | $2.00 | 128K tokens | API (Mistral AI Studio) |
+| Devstral Small 1.1 | $0.07 | $0.28 | 128K tokens | API (Mistral AI Studio) |
+| Voxtral Small 24B | $0.10 | $0.30 | 128K tokens | API (Mistral AI Studio) |
 | Mistral Nemo | $0.15 | $0.15 | 128K tokens | API (Mistral AI Studio) |
 | Ministral 14B | $0.20 | $0.20 | 256K tokens | API (Mistral AI Studio) |
 | Ministral 8B | $0.10 | $0.10 | 256K tokens | API (Mistral AI Studio) |
 | Ministral 3B | $0.10 | $0.10 | 556K tokens | API (Mistral AI Studio) |
 
 > 💡 EU data residency by default · Free experimentation tier · Open-weight models (Apache 2.0) for self-hosting  
-> ⚠️ Some sources (devtk.ai, Jan–Feb 2026) list Mistral Large 3 at $2/$6; more recent listings show $0.50/$1.50 for the 2512 version. Verify on official Mistral console.
+> *Mistral Small 4 output pricing subject to verification on official Mistral console (source: flowlyn.com Apr 2026)
 
 ---
 
@@ -113,9 +118,10 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Status | Input ($/MTok) | Output ($/MTok) | Migration Target |
 |---|---|---|---|---|
+| ⚠️ Claude Sonnet 4 | **DEPRECATED · 🚨 Retiring Jun 15, 2026** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
 | ⚠️ Claude Opus 4.1 | LEGACY | $15.00 | $75.00 | → Claude Opus 4.6 (67% cheaper) |
-| ⚠️ Claude Opus 4 | LEGACY | $15.00 | $75.00 | → Claude Opus 4.6 |
-| ⚠️ Claude Haiku 3 | **DEPRECATED · 🚨 Retiring Apr 19, 2026** | $0.25 | $1.25 | → Claude Haiku 4.5 |
+| ⚠️ Claude Opus 4 | **DEPRECATED · 🚨 Retiring Jun 15, 2026** | $15.00 | $75.00 | → Claude Opus 4.6 |
+| ⚠️ Claude Haiku 3 | **DEPRECATED · 🚨 Retiring Apr 19, 2026 (4 days!)** | $0.25 | $1.25 | → Claude Haiku 4.5 |
 | ⚠️ Claude Sonnet 3.7 | **DEPRECATED** (API still accessible; no new projects) | $3.00 | $15.00 | → Claude Sonnet 4.6 |
 | ⚠️ Claude 3 Opus | **DEPRECATED** (API still accessible; phasing out) | $15.00 | $75.00 | → Claude Opus 4.6 |
 | ⚠️ Claude 3.5 Sonnet | **RETIRED** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
@@ -127,6 +133,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 |---|---|---|---|---|
 | ⚠️ GPT-5.3 / Codex | LEGACY · Phasing out Jun 2026 | $1.75 | $14.00 | → GPT-5.4 |
 | ⚠️ GPT-5.2 | LEGACY · Retiring Jun 2026 | $1.75 | $14.00 | → GPT-5.4 |
+| ⚠️ GPT-5.1 | **RETIRED March 11, 2026** | — | — | → GPT-5.4 / GPT-5.3 |
 | ⚠️ GPT-4o | LEGACY | $2.50 | $10.00 | → GPT-4.1 (cheaper, 1M ctx) |
 | ⚠️ GPT-4o mini | LEGACY | $0.15 | $0.60 | → GPT-5.4 nano or GPT-4.1 nano |
 | ⚠️ o1 | LEGACY (very expensive) | $15.00 | $60.00 | → o3 (87% cheaper) |
@@ -146,9 +153,12 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Status | Migration Target |
 |---|---|---|
+| ⚠️ Mistral Small 3.2 24B | LEGACY · Superseded Mar 2026 | → Mistral Small 4 |
+| ⚠️ Mistral Small 3.1 | LEGACY · Superseded Jun 2025 | → Mistral Small 4 |
 | ⚠️ Mistral Large 2 (2407) | LEGACY | → Mistral Large 3 |
-| ⚠️ Mistral Small 3 (older) | LEGACY | → Mistral Small 3.1 |
-| ⚠️ Mixtral 8×7B (API) | LEGACY (still self-hostable) | → Mistral Medium 3 (API) |
+| ⚠️ Mistral Medium 3 (original) | LEGACY · Superseded Aug 2025 | → Mistral Medium 3.1 |
+| ⚠️ Codestral 2501 | LEGACY · Superseded Aug 2025 | → Codestral 2508 |
+| ⚠️ Mixtral 8×7B (API) | LEGACY (still self-hostable) | → Mistral Medium 3.1 (API) |
 
 ---
 
@@ -156,10 +166,22 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Date | Provider | Model | Change |
 |---|---|---|---|
+| 2026-04-15 | Anthropic | **Claude Sonnet 4** | ⚠️ DEPRECATED — Retirement scheduled June 15, 2026. Migrate to Sonnet 4.6. |
+| 2026-04-15 | Anthropic | **Claude Opus 4** | ⚠️ DEPRECATED — Retirement scheduled June 15, 2026. Migrate to Opus 4.6. |
+| 2026-04-15 | Anthropic | **Claude Haiku 3** | ⚠️ IMMINENT — Retirement April 19, 2026 is now 4 days away. Migrate to Haiku 4.5 immediately. |
+| 2026-04-15 | Anthropic | **Claude Mythos Preview** | 🔒 Announced April 7 — restricted access only (Project Glasswing cybersecurity initiative). No public API. |
+| 2026-04-15 | OpenAI | **GPT-5.4-Cyber** | 🔒 Announced April 14 — limited vetted access only. Not available via public API. |
+| 2026-04-15 | OpenAI | **GPT-5.1** | ⚠️ RETIRED March 11, 2026. Added to legacy section. |
+| 2026-04-15 | Mistral | **Mistral Small 4** | ✅ ADDED — Released March 3, 2026; $0.15/M input; now current `mistral-small-latest` |
+| 2026-04-15 | Mistral | **Mistral Small 3.2 24B** | ⚠️ MOVED TO LEGACY — Superseded by Small 4 ($0.07/$0.20, released Jun 2025) |
+| 2026-04-15 | Mistral | **Mistral Small 3.1** | ⚠️ MOVED TO LEGACY — Superseded by Small 3.2 and then Small 4 |
+| 2026-04-15 | Mistral | **Codestral 2508** | ✅ UPDATED — Version 2508 (Aug 2025) at $0.30/$0.90; 70% cheaper than old Codestral 2501 ($1.00/$3.00) |
+| 2026-04-15 | Mistral | **Mistral Medium 3.1** | ✅ ADDED — August 2025 update to the Medium tier; $0.40/$2.00 |
+| 2026-04-15 | Mistral | **Voxtral Small 24B** | ✅ ADDED — Audio/speech model (Oct 2025); $0.10/$0.30 |
+| 2026-04-15 | Mistral | **Devstral Small 1.1** | ✅ ADDED — Budget coding agent (Jul 2025); $0.07/$0.28 |
 | 2026-04-13 | Anthropic | **Claude Haiku 3.5** | ✏️ CORRECTED — Restored to Active ($0.80/$4); was incorrectly marked RETIRED. Official pricing page confirms still accessible. |
 | 2026-04-13 | Anthropic | **Claude Sonnet 3.7** | ✏️ CORRECTED — Status updated to DEPRECATED (not RETIRED; API still accessible per official pricing page). |
 | 2026-04-13 | Anthropic | **Claude 3 Opus** | ✏️ CORRECTED — Status updated to DEPRECATED (not RETIRED; still listed on official pricing page). |
-| 2026-04-13 | Anthropic | **Claude Haiku 3** | ⚠️ IMMINENT — Retirement April 19, 2026 is now 6 days away. Migrate to Haiku 4.5 immediately. |
 | 2026-04-13 | OpenAI | **GPT-4.1 mini** | ✅ ADDED — $0.40/$1.60 per MTok; 1M context; bridges gap between GPT-4.1 nano and GPT-4.1. |
 | 2026-04-13 | Mistral | **Le Chat Team plan** | ✏️ CORRECTED — $24.99/user/month (was incorrectly listed as ~$20K/month enterprise). Verified on mistral.ai/pricing. |
 | 2026-04-12 | Google | **Gemini 3.1 Pro Preview** | ✅ Added — $2/$12 (≤200K), $4/$18 (>200K), 1M context — replaced Gemini 3 Pro Preview |
@@ -180,7 +202,6 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | 2026-04-11 | OpenAI | **GPT-5.4 mini** | ✅ Confirmed $0.75/$4.50 (launched Mar 17, 2026) |
 | 2026-04-11 | OpenAI | **GPT-5.4 nano** | ✅ Confirmed $0.20/$1.25 |
 | 2026-04-11 | Mistral | **Mistral Large 3** | ✅ Confirmed $0.50/$1.50 at 262K context |
-| 2026-04-11 | Mistral | **Mistral Small 3.1** | ✅ Confirmed $0.20/$0.60 |
 
 ---
 
@@ -196,3 +217,4 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 - **Tier 2 OpenRouter Picks** use OpenRouter prices which are typically at or near direct provider API rates.
 - ⚠️ Models marked **RETIRED** return API errors. Models marked **DEPRECATED** have a known retirement date or are actively phasing out but may still be API-accessible.
 - ✏️ **Correction policy:** When verified data from official pricing pages contradicts a prior entry, the old entry is corrected and logged in the Price Change Log above.
+- 🔒 **Restricted models** (Mythos Preview, GPT-5.4-Cyber) are real models with no public API or general pricing — noted for awareness only.
