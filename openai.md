@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-04-15  
+> **Last updated:** 2026-04-16  
 > **Source:** https://openai.com/api/pricing/ · https://pecollective.com/tools/openai-api-pricing/ · https://devtk.ai/en/blog/openai-api-pricing-guide-2026/ · https://help.openai.com/en/articles/9624314-model-release-notes  
-> **Scraped / verified:** 2026-04-15  
+> **Scraped / verified:** 2026-04-16 (no pricing changes since Apr 15 — date bump only)  
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -308,4 +308,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 ---
 
-*Sources last verified: April 15, 2026 against openai.com/api/pricing/, help.openai.com/en/articles/9624314-model-release-notes, and pecollective.com/tools/openai-api-pricing/*
+*Sources last verified: April 16, 2026 against openai.com/api/pricing/, help.openai.com/en/articles/9624314-model-release-notes, and pecollective.com/tools/openai-api-pricing/ — no pricing changes since Apr 15 2026*

@@ -1,8 +1,8 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-04-15  
-> **Source:** https://mistral.ai/pricing · https://pricepertoken.com/pricing-page/provider/mistral-ai (updated Apr 12, 2026) · https://devtk.ai/en/blog/mistral-api-pricing-guide-2026/ · https://docs.mistral.ai/deployment/ai-studio/pricing  
-> **Scraped / verified:** 2026-04-15  
+> **Last updated:** 2026-04-16  
+> **Source:** https://mistral.ai/pricing · https://pricepertoken.com/pricing-page/provider/mistral-ai (updated Apr 12, 2026) · https://devtk.ai/en/blog/mistral-api-pricing-guide-2026/ · https://docs.mistral.ai/deployment/ai-studio/pricing · https://releasebot.io/updates/mistral  
+> **Scraped / verified:** 2026-04-16 (pricing unchanged since Apr 15; Voxtral TTS noted below)  
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Le Chat) subscriptions are billed **separately**.
 
@@ -129,13 +129,31 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Provider** | Mistral AI |
 | **Model ID** | `voxtral-small-latest` |
 | **Released** | October 2025 (version 2507) |
-| **Status** | ✅ Active — Specialized (Audio) |
+| **Status** | ✅ Active — Specialized (Audio Transcription) |
 | **Input price** | $0.10 / MTok |
 | **Output price** | $0.30 / MTok |
 | **Context window** | 128,000 tokens |
 | **Availability** | API (Mistral AI Studio) |
 | **Capabilities** | Audio processing, voice understanding, speech-to-text, audio analysis |
-| **Notable** | Mistral's dedicated audio model; purpose-built for voice and speech workloads |
+| **Notable** | Mistral's core audio transcription model; purpose-built for voice and speech workloads. Updated in April 2026 with Voxtral Transcribe 2 (Mini Transcribe V2 + Realtime). See below. |
+
+---
+
+### Voxtral TTS *(Text-to-Speech — New April 2026)*
+
+> **🆕 NEW (Apr 16, 2026):** Voxtral TTS is Mistral's first text-to-speech model, released in April 2026. Pricing per API call is not yet confirmed in standard per-MTok terms — verify on the official Mistral console. Listed here for awareness.
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `voxtral-tts` *(verify exact ID on console)* |
+| **Released** | April 2026 |
+| **Status** | ✅ Active — Specialized (Text-to-Speech) |
+| **Pricing** | ⚠️ TBD — Not yet published in standard per-MTok format. Check console.mistral.ai |
+| **Availability** | API (Mistral AI Studio); testable in Mistral Studio playground |
+| **Capabilities** | Multilingual TTS (9 languages), emotionally expressive voices, low-latency streaming, custom voices, enterprise-grade voice agents |
+| **Model size** | 4B parameters |
+| **Notable** | First Mistral TTS model; low latency for time-to-first-audio; 9 languages with diverse dialects; enterprise voice agent workflows |
 
 ---
 
@@ -295,4 +313,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: April 15, 2026 against mistral.ai/pricing, pricepertoken.com/pricing-page/provider/mistral-ai (updated Apr 12, 2026), and devtk.ai/en/blog/mistral-api-pricing-guide-2026/*
+*Sources last verified: April 16, 2026 against mistral.ai/pricing, pricepertoken.com/pricing-page/provider/mistral-ai (updated Apr 12, 2026), devtk.ai/en/blog/mistral-api-pricing-guide-2026/, and releasebot.io/updates/mistral — no API pricing changes since Apr 15; Voxtral TTS added as awareness item (pricing TBD)*
