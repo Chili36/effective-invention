@@ -1,12 +1,12 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-04-16  
-> **Source:** https://openai.com/api/pricing/ · https://pecollective.com/tools/openai-api-pricing/ · https://devtk.ai/en/blog/openai-api-pricing-guide-2026/ · https://help.openai.com/en/articles/9624314-model-release-notes  
-> **Scraped / verified:** 2026-04-16 (no pricing changes since Apr 15 — date bump only)  
+> **Last updated:** 2026-04-25  
+> **Source:** https://openai.com/api/pricing/ · https://openai.com/index/introducing-gpt-5-5/ · https://developers.openai.com/api/docs/pricing · https://www.aipricing.guru/openai-pricing/ · https://www.cloudzero.com/blog/openai-pricing/  
+> **Scraped / verified:** 2026-04-25  
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
-> **Context tiers for GPT-5.4:** Standard pricing applies for prompts **under 270K tokens**. Long-context (>270K) tier applies a surcharge. See per-model table below.
+> **Context tiers for GPT-5.4:** Standard pricing applies for prompts **under 272K tokens**. Long-context (>272K) tier applies a surcharge. GPT-5.5 uses **flat pricing** with no context tier surcharge at standard rates.
 
 ---
 
@@ -16,13 +16,55 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 > **Announced:** April 14, 2026  
 > **Status:** 🔒 RESTRICTED — Not generally available via public API  
-> **Access:** Vetted security vendors, organizations, and researchers only via OpenAI's Trusted Access for Cyber program (launched February 2026). Higher verification tiers unlock more permissive capabilities.  
-> **Capability:** Fine-tuned variant of GPT-5.4, optimized for defensive cybersecurity; fewer restrictions on vulnerability research and analysis for authorized users.  
-> **Note:** No public API pricing. Broader rollout expected to "thousands of partners" in coming weeks, but still restricted to vetted participants.  
+> **Access:** Vetted security vendors, organizations, and researchers only via OpenAI's Trusted Access for Cyber program. Higher verification tiers unlock more permissive capabilities.  
+> **Capability:** Fine-tuned variant of GPT-5.4, optimized for defensive cybersecurity.  
+> **Note:** No public API pricing.
 
 ---
 
 ## ✅ Active / Recommended Models
+
+### GPT-5.5 *(🆕 NEW FLAGSHIP — Released April 23-24, 2026)*
+
+> **🆕 UPDATE (Apr 25, 2026):** GPT-5.5 launched April 23, 2026 in ChatGPT and Codex; became available in the API on **April 24, 2026**. It is now OpenAI's most capable and most expensive standard model. First fully retrained base model since GPT-4.5 — natively omnimodal (text, image, audio, video). Tops the Artificial Analysis Intelligence Index at score 60, 3 points ahead of Claude Opus 4.7 and Gemini 3.1 Pro. Note: API price doubled vs GPT-5.4 ($2.50→$5.00 input) — OpenAI argues token efficiency offsets ~20% of the increase.
+
+| Field | Value |
+|---|---|
+| **Provider** | OpenAI |
+| **Model ID** | `gpt-5.5` |
+| **Released** | April 23, 2026 (ChatGPT/Codex) · April 24, 2026 (API) |
+| **Status** | ✅ Active — **Current Flagship** |
+| **Input price** | $5.00 / MTok |
+| **Cached input** | $0.50 / MTok *(~90% discount)* |
+| **Output price** | $30.00 / MTok |
+| **Batch input** | $2.50 / MTok |
+| **Batch output** | $15.00 / MTok |
+| **Context window** | 1,000,000 tokens (API) / 400,000 tokens (Codex) |
+| **Max output** | 128,000 tokens |
+| **Availability** | API (Responses + Chat Completions), ChatGPT Plus/Pro/Business/Enterprise, Codex |
+| **Rate limits** | Regional processing (data residency) endpoints: +10% uplift |
+| **Notable** | First fully retrained base since GPT-4.5; natively omnimodal (text+image+audio+video); Terminal-Bench 2.0: 82.7% (#1); SWE-bench Pro: 58.6%; GDPval: 84.9%; OSWorld-Verified: 78.7%; FrontierMath Tier 4: 35.4%; AI Index score 60 (#1 overall); token-efficient (fewer retries vs GPT-5.4 for agent tasks); Codex Fast mode: 1.5× speed, 2.5× cost |
+
+> ⚠️ **Pricing vs GPT-5.4:** GPT-5.5 standard ($5/$30) is 2× the per-token price of GPT-5.4 standard ($2.50/$15). OpenAI claims ~40% token reduction for Codex workloads, netting ~20% higher effective cost vs GPT-5.4 at equivalent quality. Measure on your own traffic before migrating high-volume workloads.
+
+---
+
+### GPT-5.5 Pro
+
+| Field | Value |
+|---|---|
+| **Provider** | OpenAI |
+| **Model ID** | `gpt-5.5-pro` |
+| **Released** | April 24, 2026 (API) |
+| **Status** | ✅ Active — Ultra-Premium |
+| **Input price** | $30.00 / MTok |
+| **Output price** | $180.00 / MTok |
+| **Context window** | 1,000,000 tokens |
+| **Availability** | API; ChatGPT Pro/Business/Enterprise only |
+| **Rate limits** | Regional processing: +10% uplift |
+| **Notable** | Extra parallel test-time compute on harder questions; BrowseComp 90.1% vs 84.4% standard; designed for legal, financial, scientific, and deep research workloads |
+
+---
 
 ### GPT-5.4 *(released March 5, 2026)*
 
@@ -31,11 +73,11 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Provider** | OpenAI |
 | **Model ID** | `gpt-5.4` |
 | **Released** | March 5, 2026 |
-| **Status** | ✅ Active — Current Flagship |
-| **Input price (short ctx <270K)** | $2.50 / MTok |
+| **Status** | ✅ Active — Previous Flagship *(superseded by GPT-5.5)* |
+| **Input price (short ctx <272K)** | $2.50 / MTok |
 | **Cached input (short ctx)** | $0.25 / MTok |
 | **Output price (short ctx)** | $15.00 / MTok |
-| **Input price (long ctx >270K)** | $5.00 / MTok |
+| **Input price (long ctx >272K)** | $5.00 / MTok |
 | **Cached input (long ctx)** | $0.50 / MTok |
 | **Output price (long ctx)** | $22.50 / MTok |
 | **Batch input** | $1.25 / MTok |
@@ -44,7 +86,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Max output** | 128,000 tokens |
 | **Availability** | API |
 | **Rate limits** | Regional processing endpoints: +10% uplift |
-| **Notable** | Unifies Codex and GPT into one architecture; 57.7% SWE-bench Pro; 75% OSWorld; multimodal (text + image); native computer-use capabilities |
+| **Notable** | Unifies Codex and GPT into one architecture; 57.7% SWE-bench Pro; 75% OSWorld; multimodal (text + image); native computer-use capabilities. Still recommended for cost-sensitive workloads vs GPT-5.5 |
 
 ---
 
@@ -55,13 +97,13 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Provider** | OpenAI |
 | **Model ID** | `gpt-5.4-pro` |
 | **Released** | March 2026 |
-| **Status** | ✅ Active — Ultra-Premium |
+| **Status** | ✅ Active — Previous Ultra-Premium *(superseded by GPT-5.5 Pro at same price)* |
 | **Input price** | $30.00 / MTok |
 | **Output price** | $180.00 / MTok |
 | **Context window** | 1,050,000 tokens |
 | **Availability** | API |
 | **Rate limits** | Regional processing: +10% uplift |
-| **Notable** | Maximum reasoning depth; for highest-complexity professional workloads |
+| **Notable** | Maximum reasoning depth; for highest-complexity professional workloads; GPT-5.5 Pro replaces at identical pricing with better benchmarks |
 
 ---
 
@@ -81,7 +123,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Context window** | 400,000 tokens |
 | **Availability** | API; ChatGPT Free/Go via Thinking feature |
 | **Rate limits** | Regional processing: +10% uplift |
-| **Notable** | 54.38% SWE-bench Pro (≈90% of flagship quality at ~6× lower cost) |
+| **Notable** | 54.38% SWE-bench Pro (≈90% of flagship quality at ~6× lower cost vs GPT-5.4); as of April 2026, most competitive mid-tier model on the market |
 
 ---
 
@@ -101,7 +143,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Context window** | 400,000 tokens |
 | **Availability** | API |
 | **Rate limits** | Regional processing: +10% uplift |
-| **Notable** | Cheapest proprietary model; ideal for classification, extraction, high-volume simple tasks |
+| **Notable** | Cheapest proprietary model in the GPT-5.4 family; ideal for classification, extraction, high-volume simple tasks |
 
 ---
 
@@ -120,7 +162,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Batch output** | $4.00 / MTok |
 | **Context window** | 1,040,000 tokens |
 | **Availability** | API; ChatGPT Plus/Pro/Team (model picker) |
-| **Notable** | Recommended replacement for GPT-4o; better instruction-following, coding, long-context; cheaper than GPT-4o ($2.50/$10); now available in ChatGPT model picker |
+| **Notable** | 1M context window at lower cost than GPT-5.4; better instruction-following and coding vs GPT-4o; now available in ChatGPT model picker |
 
 ---
 
@@ -177,6 +219,21 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 ---
 
+### o3-pro *(Reasoning model — Maximum Depth)*
+
+| Field | Value |
+|---|---|
+| **Provider** | OpenAI |
+| **Model ID** | `o3-pro` |
+| **Status** | ✅ Active — Maximum Reasoning |
+| **Input price** | $20.00 / MTok |
+| **Output price** | $80.00 / MTok |
+| **Context window** | 200,000 tokens |
+| **Availability** | API |
+| **Notable** | 10× more expensive than o3; designed for the hardest reasoning problems where accuracy justifies premium; BrowseComp and FrontierMath-class tasks |
+
+---
+
 ### o4-mini *(Reasoning model)*
 
 | Field | Value |
@@ -197,7 +254,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 ## ⚠️ Legacy / Deprecated / Retired Models
 
-> Not recommended for new projects. Migrate to current GPT-5.4 or GPT-4.1 family.
+> Not recommended for new projects. Migrate to current GPT-5.5, GPT-5.4, or GPT-4.1 family.
 
 ---
 
@@ -211,7 +268,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Input price** | $1.75 / MTok |
 | **Output price** | $14.00 / MTok |
 | **Context window** | 400,000 tokens |
-| **Migration** | Move to **GPT-5.4** for better performance at comparable cost |
+| **Migration** | Move to **GPT-5.5** or **GPT-5.4** for better performance |
 
 ---
 
@@ -225,13 +282,13 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Input price** | $1.75 / MTok |
 | **Output price** | $14.00 / MTok |
 | **Context window** | 400,000 tokens |
-| **Migration** | Move to **GPT-5.4** ($2.50/$15) |
+| **Migration** | Move to **GPT-5.4** ($2.50/$15) or **GPT-5.5** ($5/$30) |
+
+> **Note:** GPT-5.2 Thinking variant retires **June 5, 2026**.
 
 ---
 
 ### ⚠️ LEGACY — GPT-5.1 *(RETIRED March 11, 2026)*
-
-> **🆕 UPDATE (Apr 15, 2026):** GPT-5.1 models were retired from ChatGPT and the API as of March 11, 2026. Existing conversations were automatically migrated to successor models.
 
 | Field | Value |
 |---|---|
@@ -239,7 +296,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Model IDs** | `gpt-5.1`, `gpt-5.1-instant`, `gpt-5.1-thinking`, `gpt-5.1-pro` |
 | **Status** | ⚠️ LEGACY — **RETIRED March 11, 2026** |
 | **Note** | Replaced by GPT-5.3 Instant, GPT-5.4 Thinking, and GPT-5.4 Pro respectively |
-| **Migration** | Use **GPT-5.4** family for equivalent capabilities |
+| **Migration** | Use **GPT-5.5** family for equivalent capabilities |
 
 ---
 
@@ -283,7 +340,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Input price** | $15.00 / MTok |
 | **Output price** | $60.00 / MTok |
 | **Context window** | 200,000 tokens |
-| **Migration** | Use **o3** ($2/$8) — covers most o1 reasoning use cases at 87% lower cost |
+| **Migration** | Use **o3** ($2/$8) or **o3-pro** ($20/$80) — covers most o1 reasoning use cases at lower cost |
 
 ---
 
@@ -302,10 +359,12 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 |---|---|
 | **Batch API** | 50% off all tokens (24 hr turnaround) — all models |
 | **Cached input tokens** | 50–90% off depending on model |
-| **GPT-5.4 short vs long ctx** | Stay under 270K input to avoid 2× surcharge |
-| **Regional processing** | +10% uplift for GPT-5.4 family data residency endpoints |
-| **Model tiering** | GPT-4.1 nano ($0.10/M) → GPT-4.1 mini ($0.40/M) → GPT-4.1 ($2/M) → GPT-5.4 ($2.50/M) — choose by task complexity |
+| **GPT-5.4 short vs long ctx** | Stay under 272K input to avoid 2× surcharge |
+| **GPT-5.5 vs GPT-5.4 routing** | GPT-5.5 at $5/$30 is 2× the per-token cost of GPT-5.4 $2.50/$15 — route only agent-heavy workloads to 5.5 |
+| **Regional processing** | +10% uplift for GPT-5.5 and GPT-5.4 family data residency endpoints |
+| **Model tiering** | GPT-4.1 nano ($0.10/M) → GPT-4.1 mini ($0.40/M) → GPT-4.1 ($2/M) → GPT-5.4 ($2.50/M) → GPT-5.5 ($5/M) — choose by task complexity |
+| **Reasoning models** | o4-mini ($1.10/M) → o3 ($2/M) → o3-pro ($20/M); use o3-pro only for hardest reasoning tasks |
 
 ---
 
-*Sources last verified: April 16, 2026 against openai.com/api/pricing/, help.openai.com/en/articles/9624314-model-release-notes, and pecollective.com/tools/openai-api-pricing/ — no pricing changes since Apr 15 2026*
+*Sources last verified: April 25, 2026 against openai.com/api/pricing/, openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing, aipricing.guru/openai-pricing/*
