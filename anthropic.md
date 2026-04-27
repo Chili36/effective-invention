@@ -1,8 +1,8 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-04-25  
-> **Source:** https://platform.claude.com/docs/en/about-claude/pricing (official — verified Apr 25, 2026) · https://platform.claude.com/docs/en/release-notes/overview · https://releasebot.io/updates/anthropic · https://findskill.ai/blog/claude-opus-4-7-release-tracker/ · https://dev.to/flarecanary/claude-3-haiku-20240307-just-started-returning-errors-57he  
-> **Scraped / verified:** 2026-04-25  
+> **Last updated:** 2026-04-27  
+> **Source:** https://platform.claude.com/docs/en/about-claude/pricing (official — verified Apr 27, 2026) · https://platform.claude.com/docs/en/release-notes/overview · https://releasebot.io/updates/anthropic · https://findskill.ai/blog/claude-opus-4-7-release-tracker/ · https://dev.to/flarecanary/claude-3-haiku-20240307-just-started-returning-errors-57he  
+> **Scraped / verified:** 2026-04-27  
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
@@ -24,7 +24,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### Claude Opus 4.7 *(Current Flagship — Released April 16, 2026)*
 
-> **Updated Apr 25, 2026:** Claude Opus 4.7 remains Anthropic's most capable generally available model. Now broadly available in Bedrock console self-serve across 27 AWS regions.
+> **Updated Apr 27, 2026:** Claude Opus 4.7 remains Anthropic's most capable generally available model. Now broadly available in Bedrock console self-serve across 27 AWS regions.
 
 | Field | Value |
 |---|---|
@@ -142,7 +142,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### Claude Sonnet 4.5
 
-> ⏰ **URGENT (Apr 25, 2026):** The 1M-token context window beta for **Claude Sonnet 4.5 retires in 5 days — April 30, 2026.** Requests using the `context-1m-2025-08-07` beta header will return errors after that date. Migrate to **Claude Sonnet 4.6** which supports 1M context at standard pricing with no beta header.
+> ⏰ **URGENT (Apr 27, 2026):** The 1M-token context window beta for **Claude Sonnet 4.5 retires in 3 days — April 30, 2026.** Requests using the `context-1m-2025-08-07` beta header will return errors after that date. Migrate to **Claude Sonnet 4.6** which supports 1M context at standard pricing with no beta header.
 
 | Field | Value |
 |---|---|
@@ -325,4 +325,4 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-*Sources last verified: April 25, 2026 against the official Anthropic pricing page at platform.claude.com/docs/en/about-claude/pricing, release notes at platform.claude.com/docs/en/release-notes/overview, releasebot.io/updates/anthropic, and dev.to/flarecanary (Haiku 3 retirement confirmation)*
+*Sources last verified: April 27, 2026 against the official Anthropic pricing page at platform.claude.com/docs/en/about-claude/pricing, release notes at platform.claude.com/docs/en/release-notes/overview, releasebot.io/updates/anthropic, and dev.to/flarecanary (Haiku 3 retirement confirmation)*

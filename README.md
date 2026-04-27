@@ -2,7 +2,7 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-04-25 (refresh #8)  
+> **Last updated:** 2026-04-27 (refresh #9)  
 > **Sources:** Official provider pricing pages + third-party verification — scraped/verified on date above.
 
 ---
@@ -18,11 +18,11 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | **Claude Sonnet 4.6** | $3.00 | $15.00 | **1M tokens** | API, AWS Bedrock, Vertex AI, MS Foundry |
 | **Claude Haiku 4.5** | $1.00 | $5.00 | 200K tokens | API, AWS Bedrock (all regions), Vertex AI, MS Foundry |
 | Claude Opus 4.5 | $5.00 | $25.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
-| Claude Sonnet 4.5 ⏰ | $3.00 | $15.00 | 200K tokens *(1M beta retiring Apr 30)* | API, AWS Bedrock, Vertex AI, MS Foundry |
+| Claude Sonnet 4.5 ⏰ | $3.00 | $15.00 | 200K tokens *(1M beta retiring Apr 30 — 3 days!)* | API, AWS Bedrock, Vertex AI, MS Foundry |
 | Claude Haiku 3.5 *(prev-gen, still active)* | $0.80 | $4.00 | 128K tokens | API, AWS Bedrock, Vertex AI |
 
 > 💡 Batch API: 50% off · Prompt caching: up to 90% off · Opus 4.7/4.6 Fast Mode: $30/$150 (6× base)  
-> ⏰ **Claude Sonnet 4.5 1M context beta retires April 30, 2026 (5 days)** — migrate to Sonnet 4.6  
+> ⏰ **Claude Sonnet 4.5 1M context beta retires April 30, 2026 (3 days!)** — migrate to Sonnet 4.6  
 > 🔒 Claude Mythos Preview (Project Glasswing) — restricted access only; no public API  
 
 ---
@@ -70,14 +70,15 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Input ($/MTok) | Output ($/MTok) | Context Window | Availability |
 |---|---|---|---|---|
-| **Mistral Large 3 (2512)** | $0.50 | $1.50 | 262K tokens | API (Mistral AI Studio) |
-| **Magistral Medium** 🆕 | $2.00 | $5.00 | 40K tokens | API (Mistral AI Studio) |
-| **Magistral Small 1.2** 🆕 | $0.50 | $1.50 | — | API (Mistral AI Studio) |
+| **Mistral Large 3 (2512)** | $0.50 | $1.50 | 256K tokens | API (Mistral AI Studio) |
+| **Magistral Medium 1.2** 🆕 | $2.00 | $5.00 | 128K tokens *(best <40K)* | API (Mistral AI Studio) |
+| **Magistral Small 1.2** 🆕 | $0.50 | $1.50 | 128K tokens *(best <40K)* | API (Mistral AI Studio) |
 | Mistral Medium 3.1 | $0.40 | $2.00 | 131K tokens | API (Mistral AI Studio) |
-| **Mistral Small 4** *(Mar 2026)* | $0.15 | $0.60 | **262K tokens** | API (Mistral AI Studio) |
+| **Mistral Small 4** *(Mar 2026)* | $0.15 | $0.60 | **256K tokens** | API (Mistral AI Studio) |
 | Codestral 2508 | $0.30 | $0.90 | 256K tokens | API (Mistral AI Studio) |
-| Devstral 2 | $0.40 | $2.00 | 128K tokens | API (Mistral AI Studio) |
+| **Devstral 2 (2512)** ✏️ | $0.40 | $0.90 *(corrected from $2.00)* | 256K tokens *(corrected from 128K)* | API (Mistral AI Studio) |
 | Devstral Small 1.1 | $0.07 | $0.28 | 128K tokens | API (Mistral AI Studio) |
+| Mistral Small Creative 🆕 | $0.10 | $0.30 | 33K tokens | API (Mistral AI Studio) |
 | Voxtral Small 24B | $0.10 | $0.30 | 128K tokens | API (Mistral AI Studio) |
 | Voxtral TTS 🆕 | TBD | TBD | — | API (Mistral AI Studio) |
 | Mistral Nemo | $0.15 | $0.15 | 128K tokens | API (Mistral AI Studio) |
@@ -86,8 +87,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Ministral 3B | $0.10 | $0.10 | 556K tokens | API (Mistral AI Studio) |
 
 > 💡 EU data residency by default · Free experimentation tier · Open-weight models (Apache 2.0) for self-hosting  
-> 🆕 **Magistral Medium/Small** added — Mistral's reasoning model line (comparable to OpenAI o-series)  
-> ✏️ **Mistral Small 4 context corrected to 262K** (was 128K) — confirmed via OpenRouter
+> 🆕 **Mistral Small Creative** added (Dec 2025) — experimental creative writing model, $0.10/$0.30, 33K context  
+> ✏️ **Devstral 2 corrected:** output $2.00 → **$0.90/MTok**; context 128K → **256K** (per pricepertoken.com Apr 23 + Artificial Analysis)  
+> ✏️ **Magistral Small/Medium context confirmed:** 128K tokens each (optimal performance below 40K)
 
 ---
 
@@ -162,7 +164,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Status | Migration Target |
 |---|---|---|
-| ⚠️ Devstral Medium | LEGACY · Superseded by Devstral 2 | → Devstral 2 |
+| ⚠️ Devstral Medium | LEGACY · Superseded by Devstral 2 (Dec 2025) | → Devstral 2 ($0.40/$0.90 — same input, 55% cheaper output) |
 | ⚠️ Mistral Small 3.2 24B | LEGACY · Superseded Mar 2026 | → Mistral Small 4 |
 | ⚠️ Mistral Small 3.1 | LEGACY · Superseded Jun 2025 | → Mistral Small 4 |
 | ⚠️ Mistral Large 2 (2407) | LEGACY | → Mistral Large 3 |
@@ -176,17 +178,21 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Date | Provider | Model | Change |
 |---|---|---|---|
+| 2026-04-27 | Mistral | **Devstral 2 (2512)** | ✏️ CORRECTION — Output price updated $2.00 → **$0.90/MTok** (source: pricepertoken.com Apr 23, 2026; prior $2.00 was carried over from legacy Devstral Medium). Context window corrected 128K → **256K** (source: Artificial Analysis). |
+| 2026-04-27 | Mistral | **Magistral Medium 1.2 & Small 1.2** | ✏️ Context window confirmed as **128K tokens** (optimal performance below 40K per OpenRouter). Model ID corrected to `magistral-medium-2509` (Sep 2025 release). |
+| 2026-04-27 | Mistral | **Mistral Small Creative** | 🆕 ADDED — Experimental creative writing model; $0.10/$0.30 per MTok; 33K context; released Dec 16, 2025; confirmed on OpenRouter Apr 2026. Not a general-purpose model — use Mistral Small 4 for broad tasks. |
+| 2026-04-27 | Anthropic | **Claude Sonnet 4.5 1M beta** | ⏰ Countdown updated — 1M context beta now retires in **3 days** (April 30, 2026). Migrate to Sonnet 4.6. |
 | 2026-04-25 | OpenAI | **GPT-5.5** | 🆕 LAUNCHED April 23-24, 2026 — $5.00/$30.00 per MTok (2× GPT-5.4 price); 1M context; first fully retrained base since GPT-4.5; natively omnimodal; Terminal-Bench 2.0 82.7% (#1); AI Index score 60 (#1, +3 pts vs Opus 4.7 & Gemini 3.1 Pro); now available in API as of April 24. |
 | 2026-04-25 | OpenAI | **GPT-5.5 Pro** | 🆕 LAUNCHED April 24, 2026 — $30.00/$180.00 per MTok; 1M context; same price as GPT-5.4 Pro with better benchmarks; BrowseComp 90.1%. |
 | 2026-04-25 | OpenAI | **GPT-5.4** | Status updated to Previous Flagship (superseded by GPT-5.5). Still active and recommended for cost-sensitive workloads. |
 | 2026-04-25 | OpenAI | **GPT-5.4 Pro** | ⚠️ Moved to legacy — superseded by GPT-5.5 Pro at identical pricing ($30/$180) with better benchmarks. |
 | 2026-04-25 | OpenAI | **o3-pro** | ✅ ADDED — $20.00/$80.00 per MTok; maximum reasoning depth; 200K context. |
 | 2026-04-25 | Anthropic | **Claude Haiku 3** | ⚠️ RETIRED April 19-20, 2026 — All API calls return errors. No automatic fallback. Migrate to Haiku 4.5. |
-| 2026-04-25 | Anthropic | **Claude Sonnet 4.5** | ⏰ URGENT — 1M context beta (`context-1m-2025-08-07`) retires April 30, 2026 (5 days). Migrate to Sonnet 4.6. |
+| 2026-04-25 | Anthropic | **Claude Sonnet 4.5** | ⏰ URGENT — 1M context beta (`context-1m-2025-08-07`) retires April 30, 2026. Migrate to Sonnet 4.6. |
 | 2026-04-25 | Anthropic | **Managed Agents Memory** | 🆕 PLATFORM — Memory for Claude Managed Agents now in public beta (`managed-agents-2026-04-01`). Billed at standard token rates. |
-| 2026-04-25 | Mistral | **Magistral Medium** | 🆕 ADDED — $2.00/$5.00 per MTok; 40K context; Mistral's reasoning model comparable to o3; chain-of-thought; multilingual. |
+| 2026-04-25 | Mistral | **Magistral Medium** | 🆕 ADDED — $2.00/$5.00 per MTok; 128K context (best <40K); Mistral's reasoning model comparable to o3; chain-of-thought; multilingual. |
 | 2026-04-25 | Mistral | **Magistral Small 1.2** | 🆕 ADDED — $0.50/$1.50 per MTok; budget reasoning model; same pricing as Mistral Large 3. |
-| 2026-04-25 | Mistral | **Mistral Small 4** | ✏️ CORRECTED context window: 128K → **262,144 tokens** (confirmed via OpenRouter listing Apr 2026). Output price confirmed at $0.60 (uncertainty note removed). |
+| 2026-04-25 | Mistral | **Mistral Small 4** | ✏️ CORRECTED context window: 128K → **262,144 tokens / 256K** (confirmed via OpenRouter listing Apr 2026). Output price confirmed at $0.60. |
 | 2026-04-25 | Mistral | **Devstral Medium** | ⚠️ ADDED to legacy — July 2025 model superseded by Devstral 2. |
 | 2026-04-16 | Anthropic | **Claude Opus 4.7** | 🆕 LAUNCHED — $5/$25 per MTok (same as Opus 4.6). New: xhigh effort level, task budgets (beta), /ultrareview (Claude Code, 3 free reviews at launch), 3.75MP vision (2,576px), new tokenizer (up to 35% more tokens/request vs Opus 4.6). SWE-bench Verified 87.6%, GPQA Diamond 94.2%. Available on API, Bedrock (all regions, self-serve), Vertex AI, MS Foundry, GitHub Copilot Pro+. |
 | 2026-04-16 | Anthropic | **Claude Opus 4.6** | Status updated to Previous Flagship (superseded by Opus 4.7). Still active and available. |
@@ -212,7 +218,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | 2026-04-11 | Anthropic | **Claude Opus 4.6** | ✅ Confirmed $5/$25 · 1M context at standard pricing · Fast Mode $30/$150 |
 | 2026-04-11 | Anthropic | **Claude Sonnet 4.6** | ✅ Confirmed $3/$15 · 1M context standard |
 | 2026-04-11 | OpenAI | **GPT-5.4 family** | ✅ Confirmed launch Mar 5, 2026 · $2.50/$15 (short), $5/$22.50 (long ctx >272K) |
-| 2026-04-11 | Mistral | **Mistral Large 3** | ✅ Confirmed $0.50/$1.50 at 262K context |
+| 2026-04-11 | Mistral | **Mistral Large 3** | ✅ Confirmed $0.50/$1.50 at 256K context |
 
 ---
 
@@ -231,4 +237,5 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 - 🔒 **Restricted models** (Mythos Preview, GPT-5.4-Cyber) are real models with no public API or general pricing — noted for awareness only.
 - ⚠️ **Claude Opus 4.7 tokenizer change:** New tokenizer may produce up to 35% more tokens for the same text vs Opus 4.6. Per-token price is unchanged at $5/$25, but monitor per-request costs during migration.
 - ⚠️ **GPT-5.5 price increase:** $5/$30 is 2× GPT-5.4 ($2.50/$15) per token. OpenAI claims ~40% token efficiency improvement for Codex tasks, netting ~20% higher effective cost. Measure on your own workloads before migrating.
-- 🆕 **Mistral Magistral:** Mistral's reasoning model line (Medium $2/$5, Small $0.50/$1.50) is now tracked. These are comparable to OpenAI's o-series.
+- 🆕 **Mistral Magistral:** Mistral's reasoning model line (Medium 1.2 at $2/$5, Small 1.2 at $0.50/$1.50) is now tracked. These are comparable to OpenAI's o-series.
+- ✏️ **Devstral 2 correction (Apr 27):** Output price corrected from $2.00 to $0.90/MTok; context corrected from 128K to 256K. The prior $2.00 figure was from the legacy Devstral Medium (Jul 2025), not Devstral 2 (Dec 2025).
