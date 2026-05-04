@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-04-27  
+> **Last updated:** 2026-05-04  
 > **Source:** https://openai.com/api/pricing/ · https://openai.com/index/introducing-gpt-5-5/ · https://developers.openai.com/api/docs/pricing · https://www.aipricing.guru/openai-pricing/ · https://www.cloudzero.com/blog/openai-pricing/  
-> **Scraped / verified:** 2026-04-27  
+> **Scraped / verified:** 2026-05-04  
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -16,7 +16,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 > **Announced:** April 14, 2026  
 > **Status:** 🔒 RESTRICTED — Not generally available via public API  
-> **Access:** Vetted security vendors, organizations, and researchers only via OpenAI's Trusted Access for Cyber program. Higher verification tiers unlock more permissive capabilities.  
+> **Access:** Vetted security vendors, organizations, and researchers only via OpenAI's Trusted Access for Cyber program. Higher verification tiers unlock more permissive capabilities. Beginning June 1, 2026, individual members of Trusted Access for Cyber accessing most permissive models must enable Advanced Account Security.  
 > **Capability:** Fine-tuned variant of GPT-5.4, optimized for defensive cybersecurity.  
 > **Note:** No public API pricing.
 
@@ -24,9 +24,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 ## ✅ Active / Recommended Models
 
-### GPT-5.5 *(🆕 NEW FLAGSHIP — Released April 23-24, 2026)*
+### GPT-5.5 *(Current Flagship — Released April 23-24, 2026)*
 
-> **🆕 UPDATE (Apr 25, 2026):** GPT-5.5 launched April 23, 2026 in ChatGPT and Codex; became available in the API on **April 24, 2026**. It is now OpenAI's most capable and most expensive standard model. First fully retrained base model since GPT-4.5 — natively omnimodal (text, image, audio, video). Tops the Artificial Analysis Intelligence Index at score 60, 3 points ahead of Claude Opus 4.7 and Gemini 3.1 Pro. Note: API price doubled vs GPT-5.4 ($2.50→$5.00 input) — OpenAI argues token efficiency offsets ~20% of the increase.
+> **🆕 UPDATE (Apr 24, 2026):** GPT-5.5 is now OpenAI's most capable standard model. First fully retrained base model since GPT-4.5 — natively omnimodal (text, image, audio, video). Tops the Artificial Analysis Intelligence Index at score 60. Note: API price doubled vs GPT-5.4 ($2.50→$5.00 input) — OpenAI argues token efficiency offsets ~20% of the increase.
 
 | Field | Value |
 |---|---|
@@ -35,7 +35,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Released** | April 23, 2026 (ChatGPT/Codex) · April 24, 2026 (API) |
 | **Status** | ✅ Active — **Current Flagship** |
 | **Input price** | $5.00 / MTok |
-| **Cached input** | $0.50 / MTok *(~90% discount)* |
+| **Cached input** | $0.50 / MTok *(~90% discount — extended prompt caching only; in-memory caching not supported)* |
 | **Output price** | $30.00 / MTok |
 | **Batch input** | $2.50 / MTok |
 | **Batch output** | $15.00 / MTok |
@@ -43,9 +43,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Max output** | 128,000 tokens |
 | **Availability** | API (Responses + Chat Completions), ChatGPT Plus/Pro/Business/Enterprise, Codex |
 | **Rate limits** | Regional processing (data residency) endpoints: +10% uplift |
-| **Notable** | First fully retrained base since GPT-4.5; natively omnimodal (text+image+audio+video); Terminal-Bench 2.0: 82.7% (#1); SWE-bench Pro: 58.6%; GDPval: 84.9%; OSWorld-Verified: 78.7%; FrontierMath Tier 4: 35.4%; AI Index score 60 (#1 overall); token-efficient (fewer retries vs GPT-5.4 for agent tasks); Codex Fast mode: 1.5× speed, 2.5× cost |
+| **Notable** | First fully retrained base since GPT-4.5; natively omnimodal (text+image+audio+video); Terminal-Bench 2.0: 82.7% (#1); SWE-bench Pro: 58.6%; GDPval: 84.9%; OSWorld-Verified: 78.7%; FrontierMath Tier 4: 35.4%; AI Index score 60 (#1 overall); GPT-5.5 Thinking available on ChatGPT paid plans; supports web search, file search, image generation, code interpreter, hosted shell, apply patch, computer use, MCP, Skills |
 
-> ⚠️ **Pricing vs GPT-5.4:** GPT-5.5 standard ($5/$30) is 2× the per-token price of GPT-5.4 standard ($2.50/$15). OpenAI claims ~40% token reduction for Codex workloads, netting ~20% higher effective cost vs GPT-5.4 at equivalent quality. Measure on your own traffic before migrating high-volume workloads.
+> ⚠️ **Pricing vs GPT-5.4:** GPT-5.5 standard ($5/$30) is 2× the per-token price of GPT-5.4 standard ($2.50/$15). Measure on your own traffic before migrating high-volume workloads.
 
 ---
 
@@ -103,7 +103,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Context window** | 1,050,000 tokens |
 | **Availability** | API |
 | **Rate limits** | Regional processing: +10% uplift |
-| **Notable** | Maximum reasoning depth; for highest-complexity professional workloads; GPT-5.5 Pro replaces at identical pricing with better benchmarks |
+| **Notable** | Maximum reasoning depth; GPT-5.5 Pro replaces at identical pricing with better benchmarks |
 
 ---
 
@@ -162,7 +162,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Batch output** | $4.00 / MTok |
 | **Context window** | 1,040,000 tokens |
 | **Availability** | API; ChatGPT Plus/Pro/Team (model picker) |
-| **Notable** | 1M context window at lower cost than GPT-5.4; better instruction-following and coding vs GPT-4o; now available in ChatGPT model picker |
+| **Notable** | 1M context window at lower cost than GPT-5.4; better instruction-following and coding vs GPT-4o |
 
 ---
 
@@ -367,4 +367,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 ---
 
-*Sources last verified: April 27, 2026 against openai.com/api/pricing/, openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing, openai.com/index/introducing-gpt-5-4-mini-and-nano/, aipricing.guru/openai-pricing/, openrouter.ai/openai/gpt-5.4-nano*
+*Sources last verified: May 4, 2026 against openai.com/api/pricing/, openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing, openai.com/index/introducing-gpt-5-4-mini-and-nano/, aipricing.guru/openai-pricing/*
