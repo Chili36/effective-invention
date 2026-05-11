@@ -1,8 +1,8 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-05-04  
-> **Source:** https://platform.claude.com/docs/en/about-claude/pricing (official — verified May 4, 2026) · https://platform.claude.com/docs/en/release-notes/overview · https://releasebot.io/updates/anthropic  
-> **Scraped / verified:** 2026-05-04  
+> **Last updated:** 2026-05-11  
+> **Source:** https://platform.claude.com/docs/en/about-claude/pricing (official — verified May 11, 2026) · https://platform.claude.com/docs/en/release-notes/overview · https://releasebot.io/updates/anthropic  
+> **Scraped / verified:** 2026-05-11  
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
@@ -24,7 +24,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### Claude Opus 4.7 *(Current Flagship — Released April 16, 2026)*
 
-> **Updated May 4, 2026:** Claude Opus 4.7 remains Anthropic's most capable generally available model. Available in Bedrock console self-serve across 27 AWS regions.
+> **Updated May 11, 2026:** Claude Opus 4.7 remains Anthropic's most capable generally available model. Available in Bedrock console self-serve across 27 AWS regions.
 
 | Field | Value |
 |---|---|
@@ -34,8 +34,6 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Status** | ✅ Active — **Current Flagship** |
 | **Input price** | $5.00 / MTok |
 | **Output price** | $25.00 / MTok |
-| **Fast Mode (input)** | $30.00 / MTok *(beta)* |
-| **Fast Mode (output)** | $150.00 / MTok *(beta)* |
 | **Cache write (5 min)** | $6.25 / MTok |
 | **Cache write (1 hr)** | $10.00 / MTok |
 | **Cache read** | $0.50 / MTok |
@@ -48,6 +46,8 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Notable** | `xhigh` effort level (coding/agentic tasks); **task budgets beta** (caps token spend in agentic loops); `/ultrareview` (multi-agent code review in Claude Code); **3.75MP vision** (2,576px long edge); **new tokenizer** (up to 35% more tokens/request vs Opus 4.6 — same price/token but monitor per-request costs); automated cybersecurity safeguard detection/blocking; SWE-bench Verified 87.6%; GPQA Diamond 94.2%; CursorBench 70%; US-only data residency: 1.1× multiplier |
 
 > ⚠️ **Tokenizer change:** Opus 4.7 uses a new tokenizer that may produce up to 35% more tokens for the same text compared to Opus 4.6. The per-token price is unchanged at $5/$25, but your effective cost per request may increase depending on content type. Monitor actual usage after migration.
+
+> ✏️ **Fast Mode correction (May 11, 2026):** A previous version of this card listed Fast Mode ($30/$150) for Opus 4.7. This was incorrect. Per the **official Anthropic pricing page** (platform.claude.com/docs/en/about-claude/pricing, verified May 11, 2026), Fast Mode (beta) is available **only on Claude Opus 4.6**, not Opus 4.7. See the Opus 4.6 card below for Fast Mode details.
 
 ---
 
@@ -72,7 +72,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Max output** | 32,000 tokens (sync) / 300,000 tokens (Batch API with beta header) |
 | **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
 | **Rate limits** | Tiered by usage tier; contact Anthropic for enterprise limits |
-| **Notable** | Full 1M context at standard rate; Fast Mode 6× pricing for low-latency; extended thinking billed as output tokens; US-only data residency: 1.1× multiplier |
+| **Notable** | Full 1M context at standard rate; **Fast Mode 6× pricing** for low-latency (only Opus model with Fast Mode); extended thinking billed as output tokens; US-only data residency: 1.1× multiplier |
 
 ---
 
@@ -144,6 +144,8 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 > ✅ **CONFIRMED (May 4, 2026):** The 1M-token context window beta (`context-1m-2025-08-07`) for **Claude Sonnet 4.5 and Claude Sonnet 4 was officially retired on April 30, 2026.** The beta header now has no effect on these models. Requests exceeding the standard 200K-token context window return an error. Migrate to **Claude Sonnet 4.6** or **Claude Opus 4.6**, which support 1M context at standard pricing with no beta header required.
 
+> ⏰ **RETIREMENT IMMINENT:** Claude Sonnet 4.5 retires **June 15, 2026** (~35 days from May 11, 2026). Begin migration now.
+
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
@@ -206,7 +208,8 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 ### ⚠️ LEGACY — Claude Sonnet 4 *(DEPRECATED — Retiring June 15, 2026)*
 
 > **Update (Apr 15, 2026):** Anthropic has officially announced deprecation of Claude Sonnet 4, with retirement on the Claude API scheduled for **June 15, 2026**. Migrate to Claude Sonnet 4.6 immediately.  
-> **Update (May 4, 2026):** The 1M context beta (`context-1m-2025-08-07`) was also retired April 30 for Sonnet 4 — the model now only supports 200K context until its retirement.
+> **Update (May 4, 2026):** The 1M context beta (`context-1m-2025-08-07`) was also retired April 30 for Sonnet 4 — the model now only supports 200K context until its retirement.  
+> ⏰ **~35 days remaining as of May 11, 2026.** Migrate now.
 
 | Field | Value |
 |---|---|
@@ -242,7 +245,8 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### ⚠️ LEGACY — Claude Opus 4 *(DEPRECATED — Retiring June 15, 2026)*
 
-> **Update (Apr 15, 2026):** Anthropic has officially announced deprecation of Claude Opus 4, with retirement on the Claude API scheduled for **June 15, 2026**.
+> **Update (Apr 15, 2026):** Anthropic has officially announced deprecation of Claude Opus 4, with retirement on the Claude API scheduled for **June 15, 2026**.  
+> ⏰ **~35 days remaining as of May 11, 2026.** Migrate now.
 
 | Field | Value |
 |---|---|
@@ -261,14 +265,14 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### ⚠️ LEGACY — Claude Haiku 3 *(RETIRED — April 19-20, 2026)*
 
-> **✅ RETIRED (Apr 19-20, 2026):** Claude Haiku 3 has been officially retired. All API requests to `claude-3-haiku-20240307` now return errors. There is no automatic fallback — update your code to use Haiku 4.5 immediately.
+> **✅ RETIRED (Apr 19-20, 2026):** Claude Haiku 3 has been officially retired. All API requests to `claude-3-haiku-20240307` now return errors. There is no automatic fallback — update your code to use Haiku 4.5 immediately. Note: Anthropic's pricing page continues to display pricing for reference purposes, but the model is not operational.
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-3-haiku-20240307` |
 | **Status** | ⚠️ LEGACY — **RETIRED April 19-20, 2026 ❌ API CALLS WILL FAIL** |
-| **Input price** | $0.25 / MTok *(last known price)* |
+| **Input price** | $0.25 / MTok *(last known price — shown on pricing page for reference only)* |
 | **Output price** | $1.25 / MTok *(last known price)* |
 | **Context window** | 200,000 tokens |
 | **Availability** | ❌ NONE — All requests return errors |
@@ -328,7 +332,8 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **US-only inference (data residency)** | 1.1× pricing on models released after Feb 1, 2026 |
 | **Opus 4.7 tokenizer** | New tokenizer may add up to 35% more tokens/request vs Opus 4.6 — downsample images and monitor per-request spend |
 | **Haiku 4.5 migration** | 4× price increase vs Haiku 3 ($1/$5 vs $0.25/$1.25) — use Batch API to offset |
+| **Fast Mode** | Only available on **Opus 4.6** ($30/$150 input/output, 6× standard) — NOT available on Opus 4.7 |
 
 ---
 
-*Sources last verified: May 4, 2026 against the official Anthropic pricing page at platform.claude.com/docs/en/about-claude/pricing and release notes at platform.claude.com/docs/en/release-notes/overview*
+*Sources last verified: May 11, 2026 against the official Anthropic pricing page at platform.claude.com/docs/en/about-claude/pricing and release notes at platform.claude.com/docs/en/release-notes/overview*

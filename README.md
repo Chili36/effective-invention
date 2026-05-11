@@ -2,7 +2,7 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-05-04 (refresh #10)  
+> **Last updated:** 2026-05-11 (refresh #11)  
 > **Sources:** Official provider pricing pages + third-party verification — scraped/verified on date above.
 
 ---
@@ -21,8 +21,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Claude Sonnet 4.5 ⚠️ | $3.00 | $15.00 | 200K tokens *(1M beta **RETIRED Apr 30** — use Sonnet 4.6)* | API, AWS Bedrock, Vertex AI, MS Foundry |
 | Claude Haiku 3.5 *(prev-gen, still active)* | $0.80 | $4.00 | 128K tokens | API, AWS Bedrock, Vertex AI |
 
-> 💡 Batch API: 50% off · Prompt caching: up to 90% off · Opus 4.7/4.6 Fast Mode: $30/$150 (6× base)  
+> 💡 Batch API: 50% off · Prompt caching: up to 90% off · **Opus 4.6 Fast Mode only**: $30/$150 (6× base) *(not available on Opus 4.7)*  
 > ❌ **Claude Sonnet 4.5 1M context beta CONFIRMED RETIRED April 30, 2026** — migrate to Sonnet 4.6  
+> ⏰ **Claude Sonnet 4 / Opus 4 / Sonnet 4.5 retire June 15, 2026 (~35 days)** — migrate now  
 > 🔒 Claude Mythos Preview (Project Glasswing) — restricted access only; no public API  
 
 ---
@@ -46,6 +47,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 > 💡 Batch API: 50% off all models · Cached inputs: 50–90% off · Regional processing: +10% on GPT-5.5 and GPT-5.4 family  
 > *GPT-5.4 tiered pricing: short ctx (<272K) / long ctx (>272K) — standard rates below 272K  
+> ⏰ **GPT-5.2 and GPT-5.3 retiring June 2026** — migrate to GPT-5.4 or GPT-5.5  
 > 🔒 GPT-5.4-Cyber — limited vetted access only; no public API pricing
 
 ---
@@ -111,7 +113,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Provider | Tier | File | Description |
 |---|---|---|---|
-| Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards incl. caching, batch, fast mode, deprecation dates |
+| Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards incl. caching, batch, fast mode (Opus 4.6 only), deprecation dates |
 | OpenAI | 1 | [openai.md](./openai.md) | Full model cards incl. context tiers, reasoning models, batch pricing |
 | Google Gemini | 1 | [gemini.md](./gemini.md) | Full model cards incl. context tiers, thinking tokens, free tier |
 | Mistral AI | 1 | [mistral.md](./mistral.md) | Full model cards incl. Medium 3.5, Magistral reasoning, open-weight models, EU compliance |
@@ -128,6 +130,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Model | Status | Input ($/MTok) | Output ($/MTok) | Migration Target |
 |---|---|---|---|---|
 | ⚠️ Claude Sonnet 4 | **DEPRECATED · Retiring Jun 15, 2026** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
+| ⚠️ Claude Sonnet 4.5 | **DEPRECATED · Retiring Jun 15, 2026** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
 | ⚠️ Claude Opus 4.1 | LEGACY | $15.00 | $75.00 | → Claude Opus 4.7 (67% cheaper) |
 | ⚠️ Claude Opus 4 | **DEPRECATED · Retiring Jun 15, 2026** | $15.00 | $75.00 | → Claude Opus 4.7 |
 | ⚠️ Claude Haiku 3 | **RETIRED April 19-20, 2026 ❌ API ERRORS** | $0.25 | $1.25 | → Claude Haiku 4.5 |
@@ -176,7 +179,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 ## 🏷️ Price Change Log
 
 | Date | Provider | Model | Change |
-|---|---|---|---|
+|---|---|---|
+| 2026-05-11 | Anthropic | **Claude Opus 4.7** | ✏️ CORRECTION — Fast Mode ($30/$150) removed from Opus 4.7 model card. Per the official Anthropic pricing page (verified May 11, 2026), Fast Mode (beta) is available **only on Claude Opus 4.6**, not Opus 4.7. Previous card version incorrectly listed it for 4.7. |
+| 2026-05-11 | All (Anthropic, OpenAI, Mistral) | **May 2026 pricing verification** | 🔍 Full re-verification against official sources. All active model prices confirmed accurate. Retirement deadline for Claude Sonnet 4 / Opus 4 / Sonnet 4.5 on June 15, 2026 (~35 days). GPT-5.2 and GPT-5.3 retiring June 2026. |
 | 2026-05-04 | Mistral | **Mistral Medium 3.5** | 🆕 ADDED — Released April 29, 2026. $1.50/$7.50 per MTok (confirmed official Mistral blog). 128B dense model; 256K context; vision + configurable reasoning + coding in one model; replaces Devstral 2 in Vibe CLI; open weights under modified MIT. SWE-Bench Verified 77.6%; τ³-Telecom 91.4%. |
 | 2026-05-04 | Anthropic | **Claude Sonnet 4.5 1M context beta** | ❌ CONFIRMED RETIRED — The `context-1m-2025-08-07` beta header retired April 30, 2026 as scheduled. Requests exceeding 200K on Sonnet 4.5 and Sonnet 4 now return errors. Migrate to Claude Sonnet 4.6 or Opus 4.6 (1M context at standard pricing, no header needed). |
 | 2026-05-04 | Anthropic | **Claude Security** | 🆕 PLATFORM — Claude Security public beta announced for Enterprise customers (May 2026). Security operations and vulnerability analysis workflows. Billed at standard token rates. |
@@ -213,6 +218,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 - ⚠️ Models marked **RETIRED** return API errors. Models marked **DEPRECATED** have a known retirement date or are actively phasing out but may still be API-accessible.
 - 🔒 **Restricted models** (Mythos Preview, GPT-5.4-Cyber) are real models with no public API or general pricing — noted for awareness only.
 - ⚠️ **Claude Opus 4.7 tokenizer change:** New tokenizer may produce up to 35% more tokens for the same text vs Opus 4.6. Per-token price is unchanged at $5/$25, but monitor per-request costs during migration.
+- ⚠️ **Claude Opus 4.7 Fast Mode:** Fast Mode ($30/$150, 6×) is available on **Opus 4.6 only**, NOT Opus 4.7. Verified against official Anthropic pricing page May 11, 2026.
 - ⚠️ **GPT-5.5 price increase:** $5/$30 is 2× GPT-5.4 ($2.50/$15) per token. Measure on your own workloads before migrating.
 - 🆕 **Mistral Medium 3.5 (Apr 29):** $1.50/$7.50 MTok; 128B dense merged model; vision + configurable reasoning + coding; replaces Devstral 2 in Vibe CLI; open weights (modified MIT).
 - ❌ **Claude Sonnet 4.5/4 1M context beta retired April 30, 2026** — migrate to Sonnet 4.6 (1M context GA at standard pricing, no beta header).

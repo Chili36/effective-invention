@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-05-04  
+> **Last updated:** 2026-05-11  
 > **Source:** https://openai.com/api/pricing/ · https://openai.com/index/introducing-gpt-5-5/ · https://developers.openai.com/api/docs/pricing · https://www.aipricing.guru/openai-pricing/ · https://www.cloudzero.com/blog/openai-pricing/  
-> **Scraped / verified:** 2026-05-04  
+> **Scraped / verified:** 2026-05-11  
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -367,4 +367,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 ---
 
-*Sources last verified: May 4, 2026 against openai.com/api/pricing/, openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing, openai.com/index/introducing-gpt-5-4-mini-and-nano/, aipricing.guru/openai-pricing/*
+*Sources last verified: May 11, 2026 against openai.com/api/pricing/, openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing, openai.com/index/introducing-gpt-5-4-mini-and-nano/, aipricing.guru/openai-pricing/*

@@ -1,8 +1,8 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-05-04  
+> **Last updated:** 2026-05-11  
 > **Source:** https://mistral.ai/pricing · https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 · https://pricepertoken.com/pricing-page/provider/mistral-ai · https://artificialanalysis.ai/providers/mistral · https://openrouter.ai/mistralai  
-> **Scraped / verified:** 2026-05-04  
+> **Scraped / verified:** 2026-05-11  
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Le Chat) subscriptions are billed **separately**.
 
@@ -407,4 +407,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: May 4, 2026 against mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 (official Mistral announcement, confirmed $1.50/$7.50 pricing), mistral.ai/pricing, pricepertoken.com/pricing-page/provider/mistral-ai, artificialanalysis.ai/models/mistral-medium-3-5/providers, openrouter.ai/mistralai*
+*Sources last verified: May 11, 2026 against mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 (official Mistral announcement, confirmed $1.50/$7.50 pricing), mistral.ai/pricing, pricepertoken.com/pricing-page/provider/mistral-ai, artificialanalysis.ai/models/mistral-medium-3-5/providers, openrouter.ai/mistralai*
