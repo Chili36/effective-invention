@@ -1,8 +1,8 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-05-11  
-> **Source:** https://platform.claude.com/docs/en/about-claude/pricing (official — verified May 11, 2026) · https://platform.claude.com/docs/en/release-notes/overview · https://releasebot.io/updates/anthropic  
-> **Scraped / verified:** 2026-05-11  
+> **Last updated:** 2026-05-18  
+> **Source:** https://platform.claude.com/docs/en/about-claude/pricing (official — verified May 18, 2026) · https://docs.anthropic.com/en/docs/about-claude/model-deprecations · https://platform.claude.com/docs/en/release-notes/overview · https://releasebot.io/updates/anthropic  
+> **Scraped / verified:** 2026-05-18  
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
@@ -94,7 +94,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Context window** | 1,000,000 tokens (at standard pricing — no surcharge) |
 | **Max output** | 16,000 tokens (sync) / 300,000 tokens (Batch API with beta header) |
 | **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
-| **Notable** | Improved agentic search; 1M context no premium; extended thinking supported; recommended migration target from Sonnet 4 and Sonnet 4.5 |
+| **Notable** | Improved agentic search; 1M context no premium; extended thinking supported; recommended migration target from Sonnet 4 (retired Apr 20, 2026) and Sonnet 4.5 |
 
 ---
 
@@ -116,7 +116,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Context window** | 200,000 tokens |
 | **Max output** | 8,000 tokens |
 | **Availability** | API, AWS Bedrock (all regions, self-serve), Google Vertex AI, Microsoft Foundry |
-| **Notable** | Fastest model; extended thinking supported; recommended migration target from retired Claude Haiku 3 (retired April 19-20, 2026) and Haiku 3.5 |
+| **Notable** | Fastest model; extended thinking supported; recommended migration target from retired Claude Haiku 3 (retired Feb 19, 2026) and Haiku 3.5 (retired Feb 19, 2026) |
 
 ---
 
@@ -142,16 +142,16 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### Claude Sonnet 4.5
 
-> ✅ **CONFIRMED (May 4, 2026):** The 1M-token context window beta (`context-1m-2025-08-07`) for **Claude Sonnet 4.5 and Claude Sonnet 4 was officially retired on April 30, 2026.** The beta header now has no effect on these models. Requests exceeding the standard 200K-token context window return an error. Migrate to **Claude Sonnet 4.6** or **Claude Opus 4.6**, which support 1M context at standard pricing with no beta header required.
+> ✅ **CONFIRMED (May 4, 2026):** The 1M-token context window beta (`context-1m-2025-08-07`) for **Claude Sonnet 4.5 was officially retired on April 30, 2026.** The beta header now has no effect. Requests exceeding the standard 200K-token context window return an error. Migrate to **Claude Sonnet 4.6**, which supports 1M context at standard pricing with no beta header required.
 
-> ⏰ **RETIREMENT IMMINENT:** Claude Sonnet 4.5 retires **June 15, 2026** (~35 days from May 11, 2026). Begin migration now.
+> ⚠️ **DEPRECATION ADVISORY:** Claude Sonnet 4.5 retirement date has not been formally announced as of May 18, 2026. However, given Claude Sonnet 4 and Opus 4 retired April 20, 2026, plan migration to **Claude Sonnet 4.6** promptly.
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-sonnet-4-5` |
 | **Released** | 2025 |
-| **Status** | ✅ Active (200K context) — *retiring June 15, 2026* |
+| **Status** | ✅ Active (200K context) — *formal retirement date pending announcement* |
 | **Input price** | $3.00 / MTok |
 | **Output price** | $15.00 / MTok |
 | **1M context beta** | ❌ **RETIRED April 30, 2026** — `context-1m-2025-08-07` header now has no effect; requests >200K return error |
@@ -160,30 +160,8 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Batch input** | $1.50 / MTok |
 | **Batch output** | $7.50 / MTok |
 | **Context window** | 200,000 tokens (standard — 1M beta retired) |
-| **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry (until June 15, 2026) |
-| **Notable** | Migrate to Sonnet 4.6 for 1M context at standard pricing. Model itself retires June 15, 2026. |
-
----
-
-### Claude Haiku 3.5 *(Previous Generation — Still Available)*
-
-> **✏️ CORRECTION (Apr 13, 2026):** This model was incorrectly marked RETIRED in a prior update. The official Anthropic pricing page confirms Haiku 3.5 is still active and accessible. Haiku 4.5 is recommended for new projects.
-
-| Field | Value |
-|---|---|
-| **Provider** | Anthropic |
-| **Model ID** | `claude-3-5-haiku-20241022` |
-| **Status** | ✅ Active — Previous generation (migration advisory) |
-| **Input price** | $0.80 / MTok |
-| **Output price** | $4.00 / MTok |
-| **Cache write (5 min)** | $1.00 / MTok |
-| **Cache write (1 hr)** | $1.60 / MTok |
-| **Cache read** | $0.08 / MTok |
-| **Batch input** | $0.40 / MTok |
-| **Batch output** | $2.00 / MTok |
-| **Context window** | 128,000 tokens |
-| **Availability** | API, AWS Bedrock, Google Vertex AI |
-| **Notable** | Still listed on official pricing page; for new projects use **Haiku 4.5** ($1/$5, 200K context, extended thinking) |
+| **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
+| **Notable** | Migrate to Sonnet 4.6 for 1M context at standard pricing. |
 
 ---
 
@@ -201,27 +179,25 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ## ⚠️ Legacy / Deprecated / Retired Models
 
-> These models are no longer recommended for new projects. **DEPRECATED** models are still API-accessible but phasing out. **RETIRED** models return API errors.
+> These models are no longer recommended for new projects. **DEPRECATED** models may still be API-accessible but are phasing out. **RETIRED** models return API errors.
 
 ---
 
-### ⚠️ LEGACY — Claude Sonnet 4 *(DEPRECATED — Retiring June 15, 2026)*
+### ⚠️ LEGACY — Claude Sonnet 4 *(RETIRED April 20, 2026)*
 
-> **Update (Apr 15, 2026):** Anthropic has officially announced deprecation of Claude Sonnet 4, with retirement on the Claude API scheduled for **June 15, 2026**. Migrate to Claude Sonnet 4.6 immediately.  
-> **Update (May 4, 2026):** The 1M context beta (`context-1m-2025-08-07`) was also retired April 30 for Sonnet 4 — the model now only supports 200K context until its retirement.  
-> ⏰ **~35 days remaining as of May 11, 2026.** Migrate now.
+> **Update (Apr 14, 2026):** Anthropic notified developers of the upcoming retirement of Claude Sonnet 4. Per the **official Anthropic model deprecations page** (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 18, 2026), **Claude Sonnet 4 was retired on April 20, 2026**. All API requests to `claude-sonnet-4-20250514` now return errors. Migrate to Claude Sonnet 4.6 immediately.
+
+> ✏️ **CORRECTION (May 18, 2026):** A previous version of this card listed the retirement date as June 15, 2026. The official Anthropic deprecation documentation confirms the actual retirement date was **April 20, 2026** — not June 15.
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-sonnet-4-20250514` |
-| **Status** | ⚠️ LEGACY — **DEPRECATED · Retiring June 15, 2026** |
-| **Input price** | $3.00 / MTok |
-| **Output price** | $15.00 / MTok |
-| **Batch input** | $1.50 / MTok |
-| **Batch output** | $7.50 / MTok |
-| **Context window** | 200,000 tokens (1M beta retired April 30, 2026) |
-| **Availability** | API, AWS Bedrock, Google Vertex AI (until June 15, 2026) |
+| **Status** | ⚠️ LEGACY — **RETIRED April 20, 2026 ❌ API CALLS WILL FAIL** |
+| **Input price** | $3.00 / MTok *(last known price — shown for reference only)* |
+| **Output price** | $15.00 / MTok *(last known price)* |
+| **Context window** | 200,000 tokens (1M beta also retired April 30, 2026) |
+| **Availability** | ❌ NONE — All requests return errors |
 | **Migration** | Upgrade to **Claude Sonnet 4.6** — same price, 1M context, better performance |
 
 ---
@@ -243,35 +219,60 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-### ⚠️ LEGACY — Claude Opus 4 *(DEPRECATED — Retiring June 15, 2026)*
+### ⚠️ LEGACY — Claude Opus 4 *(RETIRED April 20, 2026)*
 
-> **Update (Apr 15, 2026):** Anthropic has officially announced deprecation of Claude Opus 4, with retirement on the Claude API scheduled for **June 15, 2026**.  
-> ⏰ **~35 days remaining as of May 11, 2026.** Migrate now.
+> **Update (Apr 14, 2026):** Anthropic notified developers of the upcoming retirement of Claude Opus 4. Per the **official Anthropic model deprecations page** (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 18, 2026), **Claude Opus 4 was retired on April 20, 2026**. All API requests to `claude-opus-4-20250514` now return errors. Migrate to Claude Opus 4.7 immediately.
+
+> ✏️ **CORRECTION (May 18, 2026):** A previous version of this card listed the retirement date as June 15, 2026. The official Anthropic deprecation documentation confirms the actual retirement date was **April 20, 2026** — not June 15.
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-opus-4-20250514` |
-| **Status** | ⚠️ LEGACY — **DEPRECATED · Retiring June 15, 2026** |
-| **Input price** | $15.00 / MTok |
-| **Output price** | $75.00 / MTok |
-| **Batch input** | $7.50 / MTok |
-| **Batch output** | $37.50 / MTok |
+| **Status** | ⚠️ LEGACY — **RETIRED April 20, 2026 ❌ API CALLS WILL FAIL** |
+| **Input price** | $15.00 / MTok *(last known price — shown for reference only)* |
+| **Output price** | $75.00 / MTok *(last known price)* |
 | **Context window** | 200,000 tokens |
-| **Availability** | API, AWS Bedrock, Google Vertex AI (until June 15, 2026) |
+| **Availability** | ❌ NONE — All requests return errors |
 | **Migration** | Upgrade to **Claude Opus 4.7** ($5/$25) — 67% cheaper, far better performance |
 
 ---
 
-### ⚠️ LEGACY — Claude Haiku 3 *(RETIRED — April 19-20, 2026)*
+### ⚠️ LEGACY — Claude Haiku 3.5 *(RETIRED February 19, 2026)*
 
-> **✅ RETIRED (Apr 19-20, 2026):** Claude Haiku 3 has been officially retired. All API requests to `claude-3-haiku-20240307` now return errors. There is no automatic fallback — update your code to use Haiku 4.5 immediately. Note: Anthropic's pricing page continues to display pricing for reference purposes, but the model is not operational.
+> **✏️ CORRECTION (May 18, 2026):** This model was previously listed as Active. Per the **official Anthropic model deprecations page** (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 18, 2026), Claude Haiku 3.5 was **retired on the Claude API on February 19, 2026**. API calls will fail. Migrate to **Claude Haiku 4.5** ($1/$5, 200K context, extended thinking).
+
+> **Note:** Claude Haiku 3.5 may still be accessible on AWS Bedrock and Google Vertex AI, which set their own independent retirement schedules.
+
+| Field | Value |
+|---|---|
+| **Provider** | Anthropic |
+| **Model ID** | `claude-3-5-haiku-20241022` |
+| **Status** | ⚠️ LEGACY — **RETIRED February 19, 2026 ❌ API CALLS WILL FAIL (Claude API)** |
+| **Input price** | $0.80 / MTok *(last known price — shown for reference only)* |
+| **Output price** | $4.00 / MTok *(last known price)* |
+| **Cache write (5 min)** | $1.00 / MTok *(last known)* |
+| **Cache write (1 hr)** | $1.60 / MTok *(last known)* |
+| **Cache read** | $0.08 / MTok *(last known)* |
+| **Batch input** | $0.40 / MTok *(last known)* |
+| **Batch output** | $2.00 / MTok *(last known)* |
+| **Context window** | 128,000 tokens |
+| **Availability** | ❌ Claude API — RETIRED. Bedrock/Vertex AI may retain access on their own schedules. |
+| **Migration** | **Migrate to Claude Haiku 4.5** ($1/$5) — 25% more expensive but dramatically more capable: 200K context, extended thinking, higher quality across all tasks |
+
+---
+
+### ⚠️ LEGACY — Claude Haiku 3 *(RETIRED February 19, 2026)*
+
+> **✅ RETIRED (Feb 19, 2026):** Claude Haiku 3 has been officially retired per the official Anthropic model deprecations page. All API requests to `claude-3-haiku-20240307` now return errors. There is no automatic fallback — update your code to use Haiku 4.5 immediately. Note: Anthropic's pricing page continues to display pricing for reference purposes, but the model is not operational.
+
+> ✏️ **CORRECTION (May 18, 2026):** A previous version of this card listed the retirement date as April 19-20, 2026. The official Anthropic deprecation documentation confirms the retirement date was **February 19, 2026**.
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-3-haiku-20240307` |
-| **Status** | ⚠️ LEGACY — **RETIRED April 19-20, 2026 ❌ API CALLS WILL FAIL** |
+| **Status** | ⚠️ LEGACY — **RETIRED February 19, 2026 ❌ API CALLS WILL FAIL** |
 | **Input price** | $0.25 / MTok *(last known price — shown on pricing page for reference only)* |
 | **Output price** | $1.25 / MTok *(last known price)* |
 | **Context window** | 200,000 tokens |
@@ -280,19 +281,19 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-### ⚠️ LEGACY — Claude Sonnet 3.7 *(DEPRECATED)*
+### ⚠️ LEGACY — Claude Sonnet 3.7 *(RETIRED October 28, 2025)*
 
-> **✏️ CORRECTION (Apr 13, 2026):** Previously marked as RETIRED (API errors). The official Anthropic pricing page lists Sonnet 3.7 as *deprecated* — still accessible but not recommended for new projects.
+> **✏️ UPDATE (May 18, 2026):** Per the official Anthropic model deprecations page (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 18, 2026), Claude Sonnet 3.7 was **retired on October 28, 2025**. A previous version of this card listed the model as deprecated but API-accessible. The model is no longer operational.
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-3-7-sonnet-20250219` |
-| **Status** | ⚠️ LEGACY — **DEPRECATED** (API still accessible; being phased out) |
-| **Input price** | $3.00 / MTok |
-| **Output price** | $15.00 / MTok |
-| **Batch input** | $1.50 / MTok |
-| **Batch output** | $7.50 / MTok |
+| **Status** | ⚠️ LEGACY — **RETIRED October 28, 2025 ❌ API CALLS WILL FAIL** |
+| **Input price** | $3.00 / MTok *(last known price)* |
+| **Output price** | $15.00 / MTok *(last known price)* |
+| **Batch input** | $1.50 / MTok *(last known)* |
+| **Batch output** | $7.50 / MTok *(last known)* |
 | **Migration** | Use **Claude Sonnet 4.6** ($3/$15) |
 
 ---
@@ -301,12 +302,12 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 | Model | Status | Migration |
 |---|---|---|
-| Claude 3 Opus | ⚠️ DEPRECATED (API accessible, phasing out) | → Claude Opus 4.7 |
-| Claude 3.5 Sonnet (v1 & v2) | ⚠️ RETIRED | → Claude Sonnet 4.6 |
+| Claude 3 Opus | ⚠️ DEPRECATED Jan 2026 — available by request for paying customers | → Claude Opus 4.7 |
+| Claude 3.5 Sonnet (v1 & v2) | ⚠️ **RETIRED January 5, 2026** | → Claude Sonnet 4.6 |
 | Claude 3 Sonnet | ⚠️ RETIRED | → Claude Sonnet 4.6 |
-| Claude 3 Haiku | ⚠️ **RETIRED April 19-20, 2026 ❌** | → Claude Haiku 4.5 |
+| Claude 3 Haiku | ⚠️ **RETIRED February 19, 2026 ❌** | → Claude Haiku 4.5 |
 
-> **Note:** Claude 3 Opus is listed as *deprecated* on the official pricing page at $15/$75; API may still be accessible. Claude 3.5 Sonnet variants and Claude 3 Sonnet are fully retired. Claude 3 Haiku is now fully retired — API calls fail.
+> **Note:** Claude 3 Opus was deprecated in January 2026 but Anthropic has made it available again by request for paying customers (Anthropic has committed to preserve weights). Claude 3.5 Sonnet variants are fully retired (January 5, 2026). Claude 3 Haiku is fully retired (February 19, 2026) — API calls fail.
 
 ---
 
@@ -331,9 +332,9 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Batch + caching stacked** | Up to 95% total cost reduction |
 | **US-only inference (data residency)** | 1.1× pricing on models released after Feb 1, 2026 |
 | **Opus 4.7 tokenizer** | New tokenizer may add up to 35% more tokens/request vs Opus 4.6 — downsample images and monitor per-request spend |
-| **Haiku 4.5 migration** | 4× price increase vs Haiku 3 ($1/$5 vs $0.25/$1.25) — use Batch API to offset |
+| **Haiku 4.5 migration** | Replaces retired Haiku 3 (Feb 19, 2026) and Haiku 3.5 (Feb 19, 2026); $1/$5 vs $0.25/$1.25 (Haiku 3) — use Batch API to offset |
 | **Fast Mode** | Only available on **Opus 4.6** ($30/$150 input/output, 6× standard) — NOT available on Opus 4.7 |
 
 ---
 
-*Sources last verified: May 11, 2026 against the official Anthropic pricing page at platform.claude.com/docs/en/about-claude/pricing and release notes at platform.claude.com/docs/en/release-notes/overview*
+*Sources last verified: May 18, 2026 against the official Anthropic pricing page at platform.claude.com/docs/en/about-claude/pricing, model deprecations at docs.anthropic.com/en/docs/about-claude/model-deprecations (retirement dates confirmed), and release notes at platform.claude.com/docs/en/release-notes/overview*

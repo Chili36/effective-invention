@@ -2,7 +2,7 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-05-11 (refresh #11)  
+> **Last updated:** 2026-05-18 (refresh #12)  
 > **Sources:** Official provider pricing pages + third-party verification — scraped/verified on date above.
 
 ---
@@ -18,12 +18,11 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | **Claude Sonnet 4.6** | $3.00 | $15.00 | **1M tokens** | API, AWS Bedrock, Vertex AI, MS Foundry |
 | **Claude Haiku 4.5** | $1.00 | $5.00 | 200K tokens | API, AWS Bedrock (all regions), Vertex AI, MS Foundry |
 | Claude Opus 4.5 | $5.00 | $25.00 | 200K tokens | API, AWS Bedrock, Vertex AI, MS Foundry |
-| Claude Sonnet 4.5 ⚠️ | $3.00 | $15.00 | 200K tokens *(1M beta **RETIRED Apr 30** — use Sonnet 4.6)* | API, AWS Bedrock, Vertex AI, MS Foundry |
-| Claude Haiku 3.5 *(prev-gen, still active)* | $0.80 | $4.00 | 128K tokens | API, AWS Bedrock, Vertex AI |
+| Claude Sonnet 4.5 ⚠️ | $3.00 | $15.00 | 200K tokens *(1M beta **RETIRED Apr 30** — use Sonnet 4.6; retirement date TBD)* | API, AWS Bedrock, Vertex AI, MS Foundry |
 
 > 💡 Batch API: 50% off · Prompt caching: up to 90% off · **Opus 4.6 Fast Mode only**: $30/$150 (6× base) *(not available on Opus 4.7)*  
 > ❌ **Claude Sonnet 4.5 1M context beta CONFIRMED RETIRED April 30, 2026** — migrate to Sonnet 4.6  
-> ⏰ **Claude Sonnet 4 / Opus 4 / Sonnet 4.5 retire June 15, 2026 (~35 days)** — migrate now  
+> ⚠️ **Claude Sonnet 4.5 formal retirement date pending** — proactively migrate to Sonnet 4.6 now  
 > 🔒 Claude Mythos Preview (Project Glasswing) — restricted access only; no public API  
 
 ---
@@ -86,11 +85,12 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Mistral Nemo | $0.15 | $0.15 | 128K tokens | API (Mistral AI Studio) |
 | Ministral 14B | $0.20 | $0.20 | 256K tokens | API (Mistral AI Studio) |
 | Ministral 8B | $0.10 | $0.10 | 256K tokens | API (Mistral AI Studio) |
-| Ministral 3B | $0.10 | $0.10 | 556K tokens | API (Mistral AI Studio) |
+| Ministral 3B | $0.04 | $0.04 | 556K tokens | API (Mistral AI Studio) |
 
 > 💡 EU data residency by default · Free experimentation tier · Open-weight models (Apache 2.0/modified MIT) for self-hosting  
 > 🆕 **Mistral Medium 3.5** (Apr 29, 2026) — 128B dense flagship; $1.50/$7.50; 256K ctx; replaces Devstral 2 in Vibe; vision + configurable reasoning + coding in one model  
-> ⚠️ **`mistral-medium-latest` alias may now route to Medium 3.5** — verify your version via API response `model` field
+> ⚠️ **`mistral-medium-latest` alias may now route to Medium 3.5** — verify your version via API response `model` field  
+> ✏️ **Ministral 3B price corrected (May 18, 2026):** $0.04/$0.04 per MTok (was $0.10/$0.10) — verified from mistral.ai/pricing via aipricing.guru May 16, 2026
 
 ---
 
@@ -129,14 +129,15 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Status | Input ($/MTok) | Output ($/MTok) | Migration Target |
 |---|---|---|---|---|
-| ⚠️ Claude Sonnet 4 | **DEPRECATED · Retiring Jun 15, 2026** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
-| ⚠️ Claude Sonnet 4.5 | **DEPRECATED · Retiring Jun 15, 2026** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
+| ⚠️ Claude Sonnet 4.5 | DEPRECATED · Retirement date TBD — migrate proactively | $3.00 | $15.00 | → Claude Sonnet 4.6 |
+| ⚠️ Claude Sonnet 4 | **RETIRED April 20, 2026 ❌ API ERRORS** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
 | ⚠️ Claude Opus 4.1 | LEGACY | $15.00 | $75.00 | → Claude Opus 4.7 (67% cheaper) |
-| ⚠️ Claude Opus 4 | **DEPRECATED · Retiring Jun 15, 2026** | $15.00 | $75.00 | → Claude Opus 4.7 |
-| ⚠️ Claude Haiku 3 | **RETIRED April 19-20, 2026 ❌ API ERRORS** | $0.25 | $1.25 | → Claude Haiku 4.5 |
-| ⚠️ Claude Sonnet 3.7 | **DEPRECATED** (API accessible; no new projects) | $3.00 | $15.00 | → Claude Sonnet 4.6 |
-| ⚠️ Claude 3 Opus | **DEPRECATED** (API accessible; phasing out) | $15.00 | $75.00 | → Claude Opus 4.7 |
-| ⚠️ Claude 3.5 Sonnet | **RETIRED** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
+| ⚠️ Claude Opus 4 | **RETIRED April 20, 2026 ❌ API ERRORS** | $15.00 | $75.00 | → Claude Opus 4.7 |
+| ⚠️ Claude Haiku 3.5 | **RETIRED February 19, 2026 ❌ API ERRORS** | $0.80 | $4.00 | → Claude Haiku 4.5 |
+| ⚠️ Claude Haiku 3 | **RETIRED February 19, 2026 ❌ API ERRORS** | $0.25 | $1.25 | → Claude Haiku 4.5 |
+| ⚠️ Claude Sonnet 3.7 | **RETIRED October 28, 2025 ❌ API ERRORS** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
+| ⚠️ Claude 3 Opus | **DEPRECATED** Jan 2026 — available by request for paying customers | $15.00 | $75.00 | → Claude Opus 4.7 |
+| ⚠️ Claude 3.5 Sonnet | **RETIRED January 5, 2026** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
 | ⚠️ Claude 2.x | **RETIRED** | ~$8.00 | ~$24.00 | → Claude Sonnet 4.6 |
 
 ### 🟢 OpenAI — Legacy
@@ -179,24 +180,25 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 ## 🏷️ Price Change Log
 
 | Date | Provider | Model | Change |
-|---|---|---|
+|---|---|---|---|
+| 2026-05-18 | Anthropic | **Claude Sonnet 4 & Opus 4** | ✏️ CORRECTION — Previous cards listed retirement as June 15, 2026. Official Anthropic model deprecations page (docs.anthropic.com) confirms **both retired April 20, 2026**. All API calls return errors. |
+| 2026-05-18 | Anthropic | **Claude Haiku 3.5** | ✏️ CORRECTION — Previously listed as Active. Official Anthropic deprecation docs confirm **retired February 19, 2026** on the Claude API. Moved to Legacy section. Migrate to Haiku 4.5. |
+| 2026-05-18 | Anthropic | **Claude Haiku 3** | ✏️ DATE CORRECTION — Retirement date corrected from April 19-20, 2026 to **February 19, 2026** per official Anthropic deprecation docs. |
+| 2026-05-18 | Anthropic | **Claude Sonnet 3.7** | ✏️ CORRECTION — Previously listed as DEPRECATED/API-accessible. Official Anthropic deprecation docs confirm **retired October 28, 2025**. All API calls return errors. |
+| 2026-05-18 | Mistral | **Ministral 3B** | ✏️ PRICE CORRECTION — Input and output price corrected from $0.10/$0.10 to **$0.04/$0.04** per MTok, per aipricing.guru sourced directly from mistral.ai/pricing on 2026-05-16. README active table and model card updated. |
 | 2026-05-11 | Anthropic | **Claude Opus 4.7** | ✏️ CORRECTION — Fast Mode ($30/$150) removed from Opus 4.7 model card. Per the official Anthropic pricing page (verified May 11, 2026), Fast Mode (beta) is available **only on Claude Opus 4.6**, not Opus 4.7. Previous card version incorrectly listed it for 4.7. |
-| 2026-05-11 | All (Anthropic, OpenAI, Mistral) | **May 2026 pricing verification** | 🔍 Full re-verification against official sources. All active model prices confirmed accurate. Retirement deadline for Claude Sonnet 4 / Opus 4 / Sonnet 4.5 on June 15, 2026 (~35 days). GPT-5.2 and GPT-5.3 retiring June 2026. |
+| 2026-05-11 | All (Anthropic, OpenAI, Mistral) | **May 2026 pricing verification** | 🔍 Full re-verification against official sources. All active model prices confirmed accurate. |
 | 2026-05-04 | Mistral | **Mistral Medium 3.5** | 🆕 ADDED — Released April 29, 2026. $1.50/$7.50 per MTok (confirmed official Mistral blog). 128B dense model; 256K context; vision + configurable reasoning + coding in one model; replaces Devstral 2 in Vibe CLI; open weights under modified MIT. SWE-Bench Verified 77.6%; τ³-Telecom 91.4%. |
-| 2026-05-04 | Anthropic | **Claude Sonnet 4.5 1M context beta** | ❌ CONFIRMED RETIRED — The `context-1m-2025-08-07` beta header retired April 30, 2026 as scheduled. Requests exceeding 200K on Sonnet 4.5 and Sonnet 4 now return errors. Migrate to Claude Sonnet 4.6 or Opus 4.6 (1M context at standard pricing, no header needed). |
+| 2026-05-04 | Anthropic | **Claude Sonnet 4.5 1M context beta** | ❌ CONFIRMED RETIRED — The `context-1m-2025-08-07` beta header retired April 30, 2026 as scheduled. Requests exceeding 200K on Sonnet 4.5 now return errors. Migrate to Claude Sonnet 4.6 or Opus 4.6 (1M context at standard pricing, no header needed). |
 | 2026-05-04 | Anthropic | **Claude Security** | 🆕 PLATFORM — Claude Security public beta announced for Enterprise customers (May 2026). Security operations and vulnerability analysis workflows. Billed at standard token rates. |
 | 2026-05-04 | Mistral | **Mistral Medium 3.1** | ⚠️ NOTE — `mistral-medium-latest` alias may now route to Medium 3.5. Use explicit model ID `mistral-medium-3-1` if you need the $0.40/$2.00 tier. Medium 3.1 remains available for budget text workloads. |
 | 2026-04-27 | Mistral | **Devstral 2 (2512)** | ✏️ CORRECTION — Output price updated $2.00 → **$0.90/MTok** (source: pricepertoken.com Apr 23, 2026). Context window corrected 128K → **256K** (source: Artificial Analysis). |
 | 2026-04-27 | Mistral | **Magistral Medium 1.2 & Small 1.2** | ✏️ Context window confirmed as **128K tokens** (optimal performance below 40K per OpenRouter). Model ID corrected to `magistral-medium-2509` (Sep 2025 release). |
 | 2026-04-27 | Mistral | **Mistral Small Creative** | 🆕 ADDED — Experimental creative writing model; $0.10/$0.30 per MTok; 33K context; released Dec 16, 2025. Not a general-purpose model. |
-| 2026-04-27 | Anthropic | **Claude Sonnet 4.5 1M beta** | ⏰ Countdown confirmed — 1M context beta set to retire April 30, 2026. |
 | 2026-04-25 | OpenAI | **GPT-5.5** | 🆕 LAUNCHED April 23-24, 2026 — $5.00/$30.00 per MTok (2× GPT-5.4 price); 1M context; first fully retrained base since GPT-4.5; natively omnimodal; AI Index score 60 (#1). |
 | 2026-04-25 | OpenAI | **GPT-5.5 Pro** | 🆕 LAUNCHED April 24, 2026 — $30.00/$180.00 per MTok; 1M context. |
 | 2026-04-25 | OpenAI | **o3-pro** | ✅ ADDED — $20.00/$80.00 per MTok; maximum reasoning depth; 200K context. |
-| 2026-04-25 | Anthropic | **Claude Haiku 3** | ⚠️ RETIRED April 19-20, 2026 — All API calls return errors. |
 | 2026-04-16 | Anthropic | **Claude Opus 4.7** | 🆕 LAUNCHED — $5/$25 per MTok. New: xhigh effort level, task budgets (beta), /ultrareview, 3.75MP vision, new tokenizer. SWE-bench Verified 87.6%. |
-| 2026-04-15 | Anthropic | **Claude Sonnet 4 / Opus 4** | ⚠️ DEPRECATED — Retirement June 15, 2026. |
-| 2026-04-13 | Anthropic | **Claude Haiku 3.5** | ✏️ CORRECTED — Restored to Active ($0.80/$4); was incorrectly marked RETIRED. |
 | 2026-04-12 | Google | **Gemini 3.1 Pro Preview** | ✅ Added — $2/$12 (≤200K), $4/$18 (>200K), 1M context |
 | 2026-04-12 | OpenRouter | **gpt-oss-120b / DeepSeek V3.2 / Qwen3.6 Plus / Nemotron 3 / MiniMax M2.7 / Grok 4.1 Fast** | ✅ All Tier 2 picks added or updated |
 | 2026-04-11 | Anthropic | **Claude Opus 4.6 / Sonnet 4.6** | ✅ Confirmed pricing and 1M context at standard pricing |
@@ -221,4 +223,6 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 - ⚠️ **Claude Opus 4.7 Fast Mode:** Fast Mode ($30/$150, 6×) is available on **Opus 4.6 only**, NOT Opus 4.7. Verified against official Anthropic pricing page May 11, 2026.
 - ⚠️ **GPT-5.5 price increase:** $5/$30 is 2× GPT-5.4 ($2.50/$15) per token. Measure on your own workloads before migrating.
 - 🆕 **Mistral Medium 3.5 (Apr 29):** $1.50/$7.50 MTok; 128B dense merged model; vision + configurable reasoning + coding; replaces Devstral 2 in Vibe CLI; open weights (modified MIT).
-- ❌ **Claude Sonnet 4.5/4 1M context beta retired April 30, 2026** — migrate to Sonnet 4.6 (1M context GA at standard pricing, no beta header).
+- ❌ **Claude Sonnet 4.5 1M context beta retired April 30, 2026** — migrate to Sonnet 4.6 (1M context GA at standard pricing, no beta header).
+- ✏️ **Anthropic retirement date corrections (May 18, 2026):** Sonnet 4 & Opus 4 retired April 20 (not June 15); Haiku 3 & Haiku 3.5 retired February 19 (not April); Sonnet 3.7 retired October 28, 2025. Source: docs.anthropic.com/en/docs/about-claude/model-deprecations.
+- ✏️ **Ministral 3B price correction (May 18, 2026):** $0.04/$0.04 per MTok (was $0.10/$0.10). Source: mistral.ai/pricing via aipricing.guru, May 16, 2026.

@@ -1,8 +1,8 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-05-11  
-> **Source:** https://mistral.ai/pricing · https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 · https://pricepertoken.com/pricing-page/provider/mistral-ai · https://artificialanalysis.ai/providers/mistral · https://openrouter.ai/mistralai  
-> **Scraped / verified:** 2026-05-11  
+> **Last updated:** 2026-05-18  
+> **Source:** https://mistral.ai/pricing · https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 · https://pricepertoken.com/pricing-page/provider/mistral-ai · https://artificialanalysis.ai/providers/mistral · https://openrouter.ai/mistralai · https://www.aipricing.guru/mistral-pricing/ (sourced from mistral.ai/pricing on 2026-05-16)  
+> **Scraped / verified:** 2026-05-18  
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Le Chat) subscriptions are billed **separately**.
 
@@ -281,11 +281,11 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Provider** | Mistral AI |
 | **Model ID** | `ministral-3b-latest` |
 | **Status** | ✅ Active |
-| **Input price** | $0.10 / MTok |
-| **Output price** | $0.10 / MTok |
+| **Input price** | $0.04 / MTok |
+| **Output price** | $0.04 / MTok |
 | **Context window** | 556,032 tokens |
 | **Availability** | API (Mistral AI Studio) |
-| **Notable** | Largest context window in the Ministral family; fastest model on Mistral at 266 tokens/sec (Artificial Analysis) |
+| **Notable** | Largest context window in the Ministral family; fastest model on Mistral at 266 tokens/sec (Artificial Analysis). ✏️ **Price corrected May 18, 2026:** Updated from $0.10/$0.10 to $0.04/$0.04 per aipricing.guru (sourced directly from mistral.ai/pricing on 2026-05-16). |
 
 ---
 
@@ -407,4 +407,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: May 11, 2026 against mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 (official Mistral announcement, confirmed $1.50/$7.50 pricing), mistral.ai/pricing, pricepertoken.com/pricing-page/provider/mistral-ai, artificialanalysis.ai/models/mistral-medium-3-5/providers, openrouter.ai/mistralai*
+*Sources last verified: May 18, 2026 against mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 (official Mistral announcement, confirmed $1.50/$7.50 pricing), mistral.ai/pricing, pricepertoken.com/pricing-page/provider/mistral-ai, artificialanalysis.ai/models/mistral-medium-3-5/providers, openrouter.ai/mistralai, aipricing.guru/mistral-pricing/ (sourced from mistral.ai/pricing on 2026-05-16 for Ministral 3B price correction)*
