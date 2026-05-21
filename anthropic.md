@@ -1,10 +1,12 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-05-18  
-> **Source:** https://platform.claude.com/docs/en/about-claude/pricing (official — verified May 18, 2026) · https://docs.anthropic.com/en/docs/about-claude/model-deprecations · https://platform.claude.com/docs/en/release-notes/overview · https://releasebot.io/updates/anthropic  
-> **Scraped / verified:** 2026-05-18  
+> **Last updated:** 2026-05-21  
+> **Source:** https://platform.claude.com/docs/en/about-claude/pricing (official — verified May 21, 2026) · https://docs.anthropic.com/en/docs/about-claude/model-deprecations · https://platform.claude.com/docs/en/release-notes/overview · https://releasebot.io/updates/anthropic  
+> **Scraped / verified:** 2026-05-21  
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
+
+> ✅ **May 21, 2026 re-verification:** All active model prices confirmed unchanged since May 18, 2026. No new retirements or price changes detected.
 
 ---
 
@@ -47,7 +49,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 > ⚠️ **Tokenizer change:** Opus 4.7 uses a new tokenizer that may produce up to 35% more tokens for the same text compared to Opus 4.6. The per-token price is unchanged at $5/$25, but your effective cost per request may increase depending on content type. Monitor actual usage after migration.
 
-> ✏️ **Fast Mode correction (May 11, 2026):** A previous version of this card listed Fast Mode ($30/$150) for Opus 4.7. This was incorrect. Per the **official Anthropic pricing page** (platform.claude.com/docs/en/about-claude/pricing, verified May 11, 2026), Fast Mode (beta) is available **only on Claude Opus 4.6**, not Opus 4.7. See the Opus 4.6 card below for Fast Mode details.
+> ✏️ **Fast Mode correction (May 11, 2026):** A previous version of this card listed Fast Mode ($30/$150) for Opus 4.7. This was incorrect. Per the **official Anthropic pricing page** (platform.claude.com/docs/en/about-claude/pricing, verified May 21, 2026), Fast Mode (beta) is available **only on Claude Opus 4.6**, not Opus 4.7. See the Opus 4.6 card below for Fast Mode details.
 
 ---
 
@@ -144,7 +146,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 > ✅ **CONFIRMED (May 4, 2026):** The 1M-token context window beta (`context-1m-2025-08-07`) for **Claude Sonnet 4.5 was officially retired on April 30, 2026.** The beta header now has no effect. Requests exceeding the standard 200K-token context window return an error. Migrate to **Claude Sonnet 4.6**, which supports 1M context at standard pricing with no beta header required.
 
-> ⚠️ **DEPRECATION ADVISORY:** Claude Sonnet 4.5 retirement date has not been formally announced as of May 18, 2026. However, given Claude Sonnet 4 and Opus 4 retired April 20, 2026, plan migration to **Claude Sonnet 4.6** promptly.
+> ⚠️ **DEPRECATION ADVISORY:** Claude Sonnet 4.5 retirement date has not been formally announced as of May 21, 2026. However, given Claude Sonnet 4 and Opus 4 retired April 20, 2026, plan migration to **Claude Sonnet 4.6** promptly.
 
 | Field | Value |
 |---|---|
@@ -185,7 +187,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### ⚠️ LEGACY — Claude Sonnet 4 *(RETIRED April 20, 2026)*
 
-> **Update (Apr 14, 2026):** Anthropic notified developers of the upcoming retirement of Claude Sonnet 4. Per the **official Anthropic model deprecations page** (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 18, 2026), **Claude Sonnet 4 was retired on April 20, 2026**. All API requests to `claude-sonnet-4-20250514` now return errors. Migrate to Claude Sonnet 4.6 immediately.
+> **Update (Apr 14, 2026):** Anthropic notified developers of the upcoming retirement of Claude Sonnet 4. Per the **official Anthropic model deprecations page** (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 21, 2026), **Claude Sonnet 4 was retired on April 20, 2026**. All API requests to `claude-sonnet-4-20250514` now return errors. Migrate to Claude Sonnet 4.6 immediately.
 
 > ✏️ **CORRECTION (May 18, 2026):** A previous version of this card listed the retirement date as June 15, 2026. The official Anthropic deprecation documentation confirms the actual retirement date was **April 20, 2026** — not June 15.
 
@@ -221,7 +223,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### ⚠️ LEGACY — Claude Opus 4 *(RETIRED April 20, 2026)*
 
-> **Update (Apr 14, 2026):** Anthropic notified developers of the upcoming retirement of Claude Opus 4. Per the **official Anthropic model deprecations page** (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 18, 2026), **Claude Opus 4 was retired on April 20, 2026**. All API requests to `claude-opus-4-20250514` now return errors. Migrate to Claude Opus 4.7 immediately.
+> **Update (Apr 14, 2026):** Anthropic notified developers of the upcoming retirement of Claude Opus 4. Per the **official Anthropic model deprecations page** (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 21, 2026), **Claude Opus 4 was retired on April 20, 2026**. All API requests to `claude-opus-4-20250514` now return errors. Migrate to Claude Opus 4.7 immediately.
 
 > ✏️ **CORRECTION (May 18, 2026):** A previous version of this card listed the retirement date as June 15, 2026. The official Anthropic deprecation documentation confirms the actual retirement date was **April 20, 2026** — not June 15.
 
@@ -240,7 +242,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### ⚠️ LEGACY — Claude Haiku 3.5 *(RETIRED February 19, 2026)*
 
-> **✏️ CORRECTION (May 18, 2026):** This model was previously listed as Active. Per the **official Anthropic model deprecations page** (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 18, 2026), Claude Haiku 3.5 was **retired on the Claude API on February 19, 2026**. API calls will fail. Migrate to **Claude Haiku 4.5** ($1/$5, 200K context, extended thinking).
+> **✏️ CORRECTION (May 18, 2026):** This model was previously listed as Active. Per the **official Anthropic model deprecations page** (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 21, 2026), Claude Haiku 3.5 was **retired on the Claude API on February 19, 2026**. API calls will fail. Migrate to **Claude Haiku 4.5** ($1/$5, 200K context, extended thinking).
 
 > **Note:** Claude Haiku 3.5 may still be accessible on AWS Bedrock and Google Vertex AI, which set their own independent retirement schedules.
 
@@ -283,7 +285,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### ⚠️ LEGACY — Claude Sonnet 3.7 *(RETIRED October 28, 2025)*
 
-> **✏️ UPDATE (May 18, 2026):** Per the official Anthropic model deprecations page (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 18, 2026), Claude Sonnet 3.7 was **retired on October 28, 2025**. A previous version of this card listed the model as deprecated but API-accessible. The model is no longer operational.
+> **✏️ UPDATE (May 18, 2026):** Per the official Anthropic model deprecations page (docs.anthropic.com/en/docs/about-claude/model-deprecations, verified May 21, 2026), Claude Sonnet 3.7 was **retired on October 28, 2025**. A previous version of this card listed the model as deprecated but API-accessible. The model is no longer operational.
 
 | Field | Value |
 |---|---|
@@ -337,4 +339,4 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-*Sources last verified: May 18, 2026 against the official Anthropic pricing page at platform.claude.com/docs/en/about-claude/pricing, model deprecations at docs.anthropic.com/en/docs/about-claude/model-deprecations (retirement dates confirmed), and release notes at platform.claude.com/docs/en/release-notes/overview*
+*Sources last verified: May 21, 2026 against the official Anthropic pricing page at platform.claude.com/docs/en/about-claude/pricing, model deprecations at docs.anthropic.com/en/docs/about-claude/model-deprecations (retirement dates confirmed), and release notes at platform.claude.com/docs/en/release-notes/overview. No price changes detected since May 18, 2026.*
