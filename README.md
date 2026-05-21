@@ -2,7 +2,7 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-05-21 (refresh #13)  
+> **Last updated:** 2026-05-21 (refresh #14)  
 > **Sources:** Official provider pricing pages + third-party verification — scraped/verified on date above.
 
 ---
@@ -57,14 +57,19 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Input ($/MTok) | Output ($/MTok) | Context Window | Notes |
 |---|---|---|---|---|
+| **Gemini 3.5 Flash** 🆕 *(New Flagship — May 19, 2026)* | $1.50 | $9.00 | **1M tokens** | GA Stable; thinking supported; fastest frontier model |
 | **Gemini 3.1 Pro Preview** | $2.00 / $4.00* | $12.00 / $18.00* | **1M tokens** | *Tiered at >200K; Preview |
+| **Gemini 3.1 Flash-Lite** 🆕 *(Stable GA)* | $0.25 | $1.50 | **1M tokens** | GA Stable (May 2026); thinking supported |
 | **Gemini 3.1 Flash-Lite Preview** | $0.25 | $1.50 | **1M tokens** | Preview |
 | **Gemini 2.5 Pro** | $1.25 / $2.50* | $10.00 / $15.00* | **1M tokens** | *Tiered at >200K; GA |
 | **Gemini 2.5 Flash** | $0.30 | $2.50 | **1M tokens** | GA; optional thinking mode |
 | **Gemini 2.5 Flash-Lite** | $0.10 | $0.40 | **1M tokens** | GA; cheapest Gemini |
-| Gemini 2.0 Flash | $0.10 | $0.40 | 1M tokens | Active; prev-gen |
+| ~~Gemini 2.0 Flash~~ ⚠️ | $0.10 | $0.40 | 1M tokens | ⚠️ **DEPRECATED — Shutdown June 1, 2026** |
 
-> 💡 Batch API: 50% off · Context caching: 90% off repeated prefixes · Free tier via AI Studio · Pro models: double input cost for prompts >200K
+> 💡 Batch API: 50% off · Context caching: 90% off repeated prefixes · Free tier via AI Studio · Pro models: double input cost for prompts >200K  
+> 🆕 **Gemini 3.5 Flash** (May 19, 2026): New stable GA flagship; outperforms Gemini 3.1 Pro on agentic/coding benchmarks at a lower price ($1.50 vs $2.00 input); 4× faster  
+> ⚠️ **Gemini 2.0 Flash DEPRECATED** — official shutdown **June 1, 2026**. Migrate to 2.5 Flash or 3.5 Flash immediately  
+> 📅 **Gemini 3.5 Pro** coming June 2026 — already in internal use at Google  
 
 ---
 
@@ -120,7 +125,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 |---|---|---|---|
 | Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards incl. caching, batch, fast mode (Opus 4.6 only), deprecation dates |
 | OpenAI | 1 | [openai.md](./openai.md) | Full model cards incl. context tiers (GPT-5.5 + GPT-5.4), reasoning models, batch pricing |
-| Google Gemini | 1 | [gemini.md](./gemini.md) | Full model cards incl. context tiers, thinking tokens, free tier |
+| Google Gemini | 1 | [gemini.md](./gemini.md) | Full model cards incl. Gemini 3.5 Flash (new flagship), 3.1 Flash-Lite stable GA, 2.0 Flash deprecation |
 | Mistral AI | 1 | [mistral.md](./mistral.md) | Full model cards incl. Medium 3.5, Pixtral Large, Devstral Small 2, Magistral reasoning, open-weight |
 | OpenRouter Picks | 2 | [openrouter-picks.md](./openrouter-picks.md) | One best-performing model per Tier 2 provider, all via OpenRouter |
 
@@ -163,8 +168,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Status | Migration Target |
 |---|---|---|
-| ⚠️ Gemini 3 Pro Preview | **RETIRED** March 9, 2026 | → Gemini 3.1 Pro Preview |
-| ⚠️ Gemini 2.0 Flash-Lite | **DEPRECATED · Shutdown June 1, 2026** | → Gemini 2.5 Flash-Lite |
+| ⚠️ Gemini 2.0 Flash | **DEPRECATED · Shutdown June 1, 2026** | → Gemini 2.5 Flash ($0.30/$2.50) or Gemini 3.5 Flash ($1.50/$9.00) |
+| ⚠️ Gemini 2.0 Flash-Lite | **DEPRECATED · Shutdown June 1, 2026** | → Gemini 2.5 Flash-Lite ($0.10/$0.40) |
+| ⚠️ Gemini 3 Pro Preview | **RETIRED** March 9, 2026 | → Gemini 3.5 Flash or Gemini 3.1 Pro Preview |
 | ⚠️ Gemini 1.5 Pro | LEGACY | → Gemini 2.5 Pro |
 | ⚠️ Gemini 1.5 Flash | LEGACY | → Gemini 2.5 Flash |
 
@@ -187,6 +193,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Date | Provider | Model | Change |
 |---|---|---|---|
+| 2026-05-21 | Google | **Gemini 3.5 Flash** | 🆕 ADDED — Released May 19, 2026 (Google I/O). New stable GA flagship. Standard: $1.50 input / $9.00 output per MTok; 1,048,576 token context; 65,536 max output; Thinking supported; Batch: $0.75/$4.50; Priority: $2.70/$16.20. Outperforms Gemini 3.1 Pro Preview on agentic and coding benchmarks (Terminal-Bench 2.1 76.2%, GDPval-AA 1656 Elo) at 25% lower input price. 4× faster than other frontier models. Default model in Gemini app, AI Mode in Search, and Google Antigravity. Source: ai.google.dev/gemini-api/docs/models/gemini-3.5-flash + blog.google, verified May 21, 2026. |
+| 2026-05-21 | Google | **Gemini 3.1 Flash-Lite** (stable) | 🆕 ADDED — Stable GA version now available (`gemini-3.1-flash-lite`). Same pricing as preview: $0.25/$1.50 per MTok (standard); 1,048,576 context; 65,536 max output; Thinking supported; Knowledge cutoff January 2025. Source: ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite, verified May 21, 2026. |
+| 2026-05-21 | Google | **Gemini 2.0 Flash** | ⚠️ STATUS CHANGE — DEPRECATED. Official Gemini API pricing page confirms **shutdown June 1, 2026**. Previously listed as Active. Migrate to Gemini 2.5 Flash ($0.30/$2.50) or Gemini 3.5 Flash ($1.50/$9.00). Source: ai.google.dev/gemini-api/docs/pricing, verified May 21, 2026. |
 | 2026-05-21 | OpenAI | **GPT-5.5** | ✏️ CORRECTION — Context window corrected **1,000,000 → 1,050,000 tokens**. Long-context pricing **added** (previously omitted): >272K input tokens triggers 2× input / 1.5× output for the full session ($10.00/$45.00 per MTok). GPT-5.5 is **not** flat-rate. Source: developers.openai.com/api/docs/models/gpt-5.5, verified May 21, 2026. |
 | 2026-05-21 | Mistral | **Devstral Small 2** | 🆕 ADDED — Current active small coding agent model ($0.10/$0.30, 256K context, 24B params, ~58% SWE-bench, Apache 2.0). Replaces Devstral Small 1.1 ($0.07/$0.28, 128K context). Source: aipricing.guru/mistral-pricing/ (May 20, 2026), cloudprice.net. |
 | 2026-05-21 | Mistral | **Devstral Small 1.1** | ⚠️ MOVED TO LEGACY — Superseded by Devstral Small 2. `devstral-small-latest` now routes to v2. |
@@ -234,6 +243,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 - ⚠️ **Claude Opus 4.7 tokenizer change:** New tokenizer may produce up to 35% more tokens for the same text vs Opus 4.6. Per-token price is unchanged at $5/$25, but monitor per-request costs during migration.
 - ⚠️ **Claude Opus 4.7 Fast Mode:** Fast Mode ($30/$150, 6×) is available on **Opus 4.6 only**, NOT Opus 4.7. Verified against official Anthropic pricing page May 11, 2026.
 - ⚠️ **GPT-5.5 price increase:** $5/$30 is 2× GPT-5.4 ($2.50/$15) per token. Measure on your own workloads before migrating.
+- 🆕 **Gemini 3.5 Flash (May 19, 2026):** New stable GA flagship; $1.50/$9.00 MTok standard; 1M context; outperforms 3.1 Pro Preview at lower cost; 4× faster than other frontier models. Gemini 3.5 Pro coming June 2026.
+- ⚠️ **Gemini 2.0 Flash DEPRECATED:** Official shutdown **June 1, 2026**. Migrate to Gemini 2.5 Flash or 3.5 Flash immediately.
+- 🆕 **Gemini 3.1 Flash-Lite (stable, May 2026):** Stable GA version now available; same $0.25/$1.50 pricing as preview; thinking supported.
 - 🆕 **Mistral Medium 3.5 (Apr 29):** $1.50/$7.50 MTok; 128B dense merged model; vision + configurable reasoning + coding; replaces Devstral 2 in Vibe CLI; open weights (modified MIT).
 - 🆕 **Pixtral Large:** $2.00/$6.00 MTok; Mistral's multimodal flagship; 128K context; vision + text. Dedicated card added May 21, 2026.
 - 🆕 **Devstral Small 2 (Dec 2025):** $0.10/$0.30 MTok; 256K context; ~58% SWE-bench; replaces Devstral Small 1.1. Added to active table May 21, 2026.
