@@ -1,36 +1,36 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-05-21  
-> **Source:** https://mistral.ai/pricing · https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 · https://pricepertoken.com/pricing-page/provider/mistral-ai · https://artificialanalysis.ai/providers/mistral · https://openrouter.ai/mistralai · https://www.aipricing.guru/mistral-pricing/ (sourced from mistral.ai/pricing on 2026-05-20) · https://cloudprice.net/models/mistral-devstral-2-small  
-> **Scraped / verified:** 2026-05-21  
+> **Last updated:** 2026-05-25
+> **Source:** https://mistral.ai/pricing · https://docs.mistral.ai/models/overview · https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 · https://pricepertoken.com/pricing-page/provider/mistral-ai · https://artificialanalysis.ai/providers/mistral · https://openrouter.ai/mistralai · https://www.aipricing.guru/mistral-pricing/ · https://cloudprice.net/models/mistral-devstral-2-small
+> **Scraped / verified:** 2026-05-25
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Le Chat) subscriptions are billed **separately**.
 
-> **Mistral's key differentiators:** Native EU data residency (GDPR by default), cheapest output pricing in mid-tier, Apache 2.0 open-weight models for self-hosting, dedicated reasoning models (Magistral series), and now a flagship merged model (Medium 3.5).
+> **Mistral's key differentiators:** Native EU data residency (GDPR by default), cheapest output pricing in mid-tier, Apache 2.0 open-weight models for self-hosting, dedicated reasoning models (Magistral series), and flagship merged model (Medium 3.5).
+
+> ✅ **May 25, 2026 update:** **Magistral Small 1.2 moved to Legacy** — `docs.mistral.ai/models/overview` (verified May 25, 2026) confirms `magistral-small-2509` in the deprecated/legacy model table. **Mistral Small Creative confirmed deprecated** — listed as `labs-mistral-small-creative` in legacy table (labs experimental model, no longer maintained). All other active model prices confirmed unchanged.
 
 ---
 
 ## ✅ Active / Recommended Models
 
-### 🆕 Mistral Medium 3.5 *(New Flagship — Released April 29, 2026)*
+### 🆕 Mistral Medium 3.5 *(Flagship — Released April 29, 2026)*
 
-> **🆕 ADDED May 4, 2026:** Mistral released Medium 3.5 on April 29, 2026 alongside Vibe Remote Agents. It is Mistral's **first flagship merged model** — a single 128B dense model that handles instruction-following, reasoning, coding, and vision. It replaces Devstral 2 as the default model in Mistral Vibe CLI and also powers the new Work Mode in Le Chat. Pricing confirmed at $1.50/$7.50 per million tokens (from official Mistral AI blog post).
+> **Released April 29, 2026:** Mistral's **first flagship merged model** — a single 128B dense model handling instruction-following, reasoning, coding, and vision. It is the default model in Mistral Vibe CLI and powers the new Work Mode in Le Chat. Pricing confirmed at $1.50/$7.50 per million tokens (from official Mistral AI blog post).
 
 | Field | Value |
 |---|---|
 | **Provider** | Mistral AI |
 | **Model ID** | `mistral-medium-3.5` *(check console.mistral.ai for alias routing)* |
 | **Released** | April 29, 2026 |
-| **Status** | ✅ Active — **New Flagship (Public Preview)** |
+| **Status** | ✅ Active — **Flagship** |
 | **Input price** | $1.50 / MTok |
 | **Output price** | $7.50 / MTok |
 | **Context window** | 256,000 tokens |
-| **Max output** | Not yet published |
+| **Max output** | Not yet published (verify on console.mistral.ai) |
 | **Availability** | API (Mistral AI Studio / La Plateforme); NVIDIA NIM; open weights on HuggingFace (modified MIT license) |
 | **Capabilities** | Text, Vision (variable image sizes/aspect ratios), Function Calling, JSON mode, Configurable reasoning effort (`reasoning_effort`: none / low / medium / high), Agentic coding, 24-language support |
 | **Notable** | First Mistral flagship **merged** model — replaces Medium 3.1 + Magistral + Devstral 2 roles in a single model; 128B dense (non-MoE — all params active per pass); SWE-Bench Verified 77.6%; τ³-Telecom 91.4%; self-hostable on as few as 4× A100/H100 80GB GPUs; defaults model for Mistral Vibe CLI and Le Chat Work Mode; open weights under modified MIT license (large-revenue enterprises must negotiate commercial arrangement); 40% faster than Devstral 2 on coding tasks |
-
-> ⚠️ **Preview pricing note:** Medium 3.5 is in public preview. Pricing ($1.50/$7.50) is confirmed from the official Mistral AI announcement. Verify on console.mistral.ai before large-scale deployment as rates may update when it reaches GA.
 
 > ⚠️ **Model alias note:** The `mistral-medium-latest` alias may now route to Medium 3.5 instead of Medium 3.1. Check which version your calls land on via the `model` field in API responses. Medium 3.5 at $1.50/$7.50 is significantly more expensive than Medium 3.1 at $0.40/$2.00.
 
@@ -73,7 +73,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### Magistral Medium 1.2 *(Reasoning Model)*
 
-> **Note (May 2026):** With the release of Mistral Medium 3.5, which includes configurable reasoning effort, Magistral Medium is now redundant for most use cases. Prefer Medium 3.5 for combined reasoning + coding + vision workloads. Magistral Medium remains available as a dedicated reasoning API model.
+> **Note (May 2026):** With the release of Mistral Medium 3.5, which includes configurable reasoning effort, Magistral Medium is now redundant for most use cases. Prefer Medium 3.5 for combined reasoning + coding + vision workloads. Magistral Medium remains available as a dedicated reasoning API model. Note: Magistral Small 1.2 has been deprecated — see Legacy section.
 
 | Field | Value |
 |---|---|
@@ -88,22 +88,6 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Availability** | API (Mistral AI Studio) — open-weight (Apache 2.0) |
 | **Capabilities** | Chain-of-thought reasoning, multilingual reasoning (20+ languages), complex problem-solving, multi-step logic, vision |
 | **Notable** | Mistral's standalone reasoning model; transparent reasoning traces; multilingual chain-of-thought; open-weight deployment possible. For most tasks, **Mistral Medium 3.5** with `reasoning_effort=high` covers this use case at lower cost. |
-
----
-
-### Magistral Small 1.2 *(Reasoning Model — Budget)*
-
-| Field | Value |
-|---|---|
-| **Provider** | Mistral AI |
-| **Model ID** | `magistral-small-latest` |
-| **Status** | ✅ Active — Reasoning (Budget) |
-| **Input price** | $0.50 / MTok |
-| **Output price** | $1.50 / MTok |
-| **Context window** | 128,000 tokens *(performance degrades past ~40K — keep inputs under 40K for best results)* |
-| **Availability** | API (Mistral AI Studio); open-weight (Apache 2.0) — can run locally on RTX 4090 or 32GB RAM Mac (quantized) |
-| **Capabilities** | Chain-of-thought reasoning, same multilingual support as Magistral Medium |
-| **Notable** | Same price as Mistral Large 3 ($0.50/$1.50) but with added chain-of-thought reasoning capability; 24B parameters; budget entry into Mistral's reasoning tier |
 
 ---
 
@@ -180,14 +164,14 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-### 🆕 Devstral Small 2 *(Released December 10, 2025)*
+### Devstral Small 2 *(Released December 10, 2025)*
 
-> **🆕 ADDED May 21, 2026:** Devstral Small 2 is confirmed as the current active small coding agent model on la Plateforme, replacing Devstral Small 1.1 ($0.07/$0.28, 128K context). It ships alongside Devstral 2 as the consumer-grade companion — 256K context, ~58% SWE-bench Verified. Pricing confirmed via aipricing.guru (May 20, 2026) and cloudprice.net.
+> **Added May 21, 2026.** The production `devstral-small-latest` alias remains active. Note: `labs-devstral-small-2512` (the experimental Labs variant) has been deprecated per `docs.mistral.ai`. Verify your model ID is not prefixed with `labs-` when calling the API.
 
 | Field | Value |
 |---|---|
 | **Provider** | Mistral AI |
-| **Model ID** | `devstral-small-latest` *(alias — verify routing to devstral-small-2)* |
+| **Model ID** | `devstral-small-latest` *(alias — verify routing; ensure not `labs-devstral-small-2512`)* |
 | **Released** | December 10, 2025 (companion release with Devstral 2) |
 | **Status** | ✅ Active — Agentic Coding (Budget / Local) |
 | **Input price** | $0.10 / MTok |
@@ -196,25 +180,6 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Availability** | API (Mistral AI Studio); open-weight (Apache 2.0) — deployable on single RTX 4090, RTX 3090, or 32GB+ Mac |
 | **Capabilities** | Agentic coding, multi-file editing, autonomous bug fixing, CI/CD automation, codebase navigation |
 | **Notable** | 24B parameters; ~58% SWE-bench Verified (strong for a 24B local model — GPT-4o scored ~38% at launch); 256K context (2× more than Devstral Small 1.1's 128K); requires ~14GB VRAM at Q4 for local deployment; ~$0.10/M input makes it one of the cheapest coding agent APIs; Apache 2.0 license for self-hosting |
-
-> ⚠️ **vs Devstral Small 1.1:** Devstral Small 2 is priced slightly higher ($0.10/$0.30 vs $0.07/$0.28) but offers 2× more context (256K vs 128K), better SWE-bench scores (~58% vs 53.6%), and replaces the older model on `devstral-small-latest`. Move Devstral Small 1.1 deployments to this model.
-
----
-
-### Mistral Small Creative *(Experimental)*
-
-| Field | Value |
-|---|---|
-| **Provider** | Mistral AI |
-| **Model ID** | `mistral-small-creative` *(confirm exact API ID on console)* |
-| **Released** | December 16, 2025 |
-| **Status** | ✅ Active — Specialized (Creative Writing) |
-| **Input price** | $0.10 / MTok |
-| **Output price** | $0.30 / MTok |
-| **Context window** | 33,000 tokens |
-| **Availability** | API (Mistral AI Studio); confirmed on OpenRouter |
-| **Capabilities** | Creative writing, narrative generation, roleplay, character-driven dialogue, general instruction following, conversational agents |
-| **Notable** | Experimental creative-focused model; smaller context than general-purpose models; not recommended as primary production model — use Mistral Small 4 for broad tasks |
 
 ---
 
@@ -266,7 +231,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-### Ministral 14B
+### Ministral 3 14B
 
 | Field | Value |
 |---|---|
@@ -277,10 +242,11 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Output price** | $0.20 / MTok |
 | **Context window** | 256,000 tokens |
 | **Availability** | API (Mistral AI Studio) |
+| **Notable** | Updated December 2025 as Ministral 3 family (v25.12); vision capabilities; best-in-class text and vision for edge |
 
 ---
 
-### Ministral 8B
+### Ministral 3 8B
 
 | Field | Value |
 |---|---|
@@ -291,10 +257,11 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Output price** | $0.10 / MTok |
 | **Context window** | 256,000 tokens |
 | **Availability** | API (Mistral AI Studio) |
+| **Notable** | Updated December 2025 as Ministral 3 family (v25.12); vision capabilities |
 
 ---
 
-### Ministral 3B
+### Ministral 3 3B
 
 | Field | Value |
 |---|---|
@@ -305,7 +272,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Output price** | $0.04 / MTok |
 | **Context window** | 556,032 tokens |
 | **Availability** | API (Mistral AI Studio) |
-| **Notable** | Largest context window in the Ministral family; fastest model on Mistral at 266 tokens/sec (Artificial Analysis). ✏️ **Price corrected May 18, 2026:** Updated from $0.10/$0.10 to $0.04/$0.04 per aipricing.guru (sourced directly from mistral.ai/pricing on 2026-05-16). |
+| **Notable** | Largest context window in the Ministral family; fastest model on Mistral at 266 tokens/sec (Artificial Analysis). Updated December 2025 as Ministral 3 family (v25.12); vision capabilities. ✏️ **Price corrected May 18, 2026:** Updated from $0.10/$0.10 to $0.04/$0.04 per aipricing.guru (sourced directly from mistral.ai/pricing on 2026-05-16). |
 
 ---
 
@@ -319,22 +286,51 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Mistral Small 4** | 119B (MoE, 6B active) | Apache 2.0 | Self-hosted multimodal reasoning + coding |
 | **Mistral Large 3 (2512)** | 675B (MoE) | Apache 2.0 | Self-hosted flagship general reasoning |
 | **Devstral 2 (2512)** | 123B | Modified MIT | Self-hosted coding agents (large-revenue commercial use requires arrangement) |
-| **Devstral Small 2** 🆕 | 24B | Apache 2.0 | Self-hosted budget coding agent (fits on RTX 4090 / 32GB Mac) |
+| **Devstral Small 2** | 24B | Apache 2.0 | Self-hosted budget coding agent (fits on RTX 4090 / 32GB Mac) |
 | **Magistral Medium 1.2** | — | Apache 2.0 | Self-hosted reasoning workloads |
-| **Magistral Small 1.2** | 24B | Apache 2.0 | Self-hosted budget reasoning (fits on RTX 4090 quantized) |
 | **Mixtral 8×22B** | 141B (MoE) | Apache 2.0 | Self-hosted complex reasoning, high-throughput |
 | **Mixtral 8×7B** | 46.7B (MoE) | Apache 2.0 | General-purpose self-hosted tasks |
 | **Mistral 7B** | 7B | Apache 2.0 | Edge deployment, on-device, low-resource |
 
-> **Note:** Mistral Medium 3.5 requires as few as 4× A100/H100 80GB GPUs (FP8). Q4-quantized versions require ~70GB VRAM. Devstral Small 2 requires ~14GB VRAM at Q4 (RTX 4090 / 32GB Mac). EAGLE speculative decoding models are available for vLLM/SGLang for Medium 3.5.
+> **Note:** Mistral Medium 3.5 requires as few as 4× A100/H100 80GB GPUs (FP8). Q4-quantized versions require ~70GB VRAM. Devstral Small 2 requires ~14GB VRAM at Q4 (RTX 4090 / 32GB Mac).
 
 ---
 
 ## ⚠️ Legacy Models
 
+### ⚠️ LEGACY — Magistral Small 1.2 *(Deprecated per docs.mistral.ai — May 2026)*
+
+> **🆕 MOVED TO LEGACY (May 25, 2026):** `docs.mistral.ai/models/overview` (verified May 25, 2026) lists **Magistral Small 1.2** (`magistral-small-2509`) in the **deprecated/legacy model table**. The model was previously listed as active in this card. The `magistral-small-latest` alias may no longer route to this model. For budget reasoning, use **Mistral Small 4** with `reasoning_effort=high` ($0.15/$0.60) or **Magistral Medium 1.2** ($2/$5).
+
+| Field | Value |
+|---|---|
+| **Model ID** | `magistral-small-2509` |
+| **Released** | September 2025 (version 25.09) |
+| **Status** | ⚠️ LEGACY — Deprecated per docs.mistral.ai (May 25, 2026) |
+| **Last price** | $0.50 input / $1.50 output per MTok |
+| **Context window** | 128,000 tokens *(performance degrades past ~40K)* |
+| **Migration** | Use **Mistral Small 4** with `reasoning_effort=high` ($0.15/$0.60, 256K context) for budget reasoning, or **Magistral Medium 1.2** ($2/$5) for dedicated reasoning |
+
+---
+
+### ⚠️ LEGACY — Mistral Small Creative *(Labs model — Deprecated)*
+
+> **🆕 MOVED TO LEGACY (May 25, 2026):** `docs.mistral.ai/models/overview` (verified May 25, 2026) lists **Mistral Small Creative** under the legacy/deprecated table with API ID `labs-mistral-small-creative`. The `labs-` prefix indicates this was an **experimental Labs model**, not a production model. Labs models are no longer maintained once moved to the deprecated table.
+
+| Field | Value |
+|---|---|
+| **Model ID** | `labs-mistral-small-creative` |
+| **Released** | December 16, 2025 |
+| **Status** | ⚠️ LEGACY — Labs experimental model; deprecated per docs.mistral.ai (May 25, 2026) |
+| **Last price** | $0.10 input / $0.30 output per MTok |
+| **Context window** | 33,000 tokens |
+| **Migration** | Use **Mistral Small 4** ($0.15/$0.60, 256K context) for general tasks; or any frontier model for creative writing |
+
+---
+
 ### ⚠️ LEGACY — Devstral Small 1.1 *(Superseded by Devstral Small 2)*
 
-> **🆕 MOVED TO LEGACY (May 21, 2026):** Devstral Small 1.1 has been superseded by **Devstral Small 2** (December 2025, $0.10/$0.30, 256K context). The `devstral-small-latest` alias now routes to Devstral Small 2. Devstral Small 1.1 may still be API-accessible via its explicit versioned ID but is no longer the recommended small coding agent.
+> **🆕 MOVED TO LEGACY (May 21, 2026):** Devstral Small 1.1 has been superseded by **Devstral Small 2** (December 2025, $0.10/$0.30, 256K context). The `devstral-small-latest` alias now routes to Devstral Small 2. Note: the `labs-devstral-small-2512` variant is also deprecated per docs.mistral.ai.
 
 | Field | Value |
 |---|---|
@@ -428,6 +424,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Magistral vs Medium 3.5** | For most reasoning tasks, Medium 3.5 with `reasoning_effort=high` ($1.50/$7.50) replaces Magistral Medium ($2/$5) at similar or lower cost |
 | **Devstral 2 vs Medium 3.5 for coding** | Devstral 2 ($0.40/$0.90) is 3.75× cheaper on input; prefer it for high-volume pure coding tasks. Medium 3.5 adds vision + reasoning + general tasks. |
 | **Devstral Small 2 vs Devstral 2** | Devstral Small 2 ($0.10/$0.30) is 4× cheaper on input and 3× cheaper on output; suits high-volume or local-first coding agent workloads. Devstral 2 for enterprise-scale agentic pipelines. |
+| **Budget reasoning** | Magistral Small 1.2 is now deprecated. Use Mistral Small 4 with `reasoning_effort=high` ($0.15/$0.60) as the budget reasoning option. |
 
 ---
 
@@ -444,4 +441,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: May 21, 2026 against mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 (official Mistral announcement, confirmed $1.50/$7.50 pricing), mistral.ai/pricing, pricepertoken.com/pricing-page/provider/mistral-ai, artificialanalysis.ai/models/mistral-medium-3-5/providers, openrouter.ai/mistralai, aipricing.guru/mistral-pricing/ (sourced from mistral.ai/pricing on 2026-05-20 — Devstral Small 2 confirmed current), cloudprice.net/models/mistral-devstral-2-small (Devstral Small 2: $0.10/$0.30, 256K context confirmed)*
+*Sources last verified: May 25, 2026 against docs.mistral.ai/models/overview (Magistral Small 1.2 + Mistral Small Creative deprecated confirmed, verified May 25, 2026), mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 (official Mistral announcement, confirmed $1.50/$7.50 pricing), mistral.ai/pricing, pricepertoken.com/pricing-page/provider/mistral-ai, artificialanalysis.ai/models/mistral-medium-3-5/providers, openrouter.ai/mistralai, aipricing.guru/mistral-pricing/ (sourced from mistral.ai/pricing on 2026-05-20 — Devstral Small 2 confirmed current), cloudprice.net/models/mistral-devstral-2-small (Devstral Small 2: $0.10/$0.30, 256K context confirmed). No price changes detected since May 21, 2026.*
