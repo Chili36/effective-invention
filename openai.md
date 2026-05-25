@@ -1,12 +1,12 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-05-21  
-> **Source:** https://openai.com/api/pricing/ · https://developers.openai.com/api/docs/models/gpt-5.5 · https://openai.com/index/introducing-gpt-5-5/ · https://developers.openai.com/api/docs/pricing · https://www.aipricing.guru/openai-pricing/ · https://openrouter.ai/openai/gpt-5.5  
-> **Scraped / verified:** 2026-05-21  
+> **Last updated:** 2026-05-25
+> **Source:** https://openai.com/api/pricing/ · https://developers.openai.com/api/docs/models/gpt-5.5 · https://openai.com/index/introducing-gpt-5-5/ · https://developers.openai.com/api/docs/pricing
+> **Scraped / verified:** 2026-05-25 — all active model prices re-confirmed, no changes detected since May 21, 2026.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
-> **Context tiers for GPT-5.4 and GPT-5.5:** Standard pricing applies for prompts **under 272K tokens**. Long-context (>272K) tier applies a surcharge on **both** GPT-5.4 and GPT-5.5. For GPT-5.5, long-context pricing is **2× input / 1.5× output** ($10.00/$45.00 per MTok) for the **full session**. ✏️ **Correction (May 21, 2026):** A previous version of this file incorrectly stated "GPT-5.5 uses flat pricing with no context tier surcharge." Per the official OpenAI developer docs (developers.openai.com/api/docs/models/gpt-5.5, verified May 21, 2026), GPT-5.5 does have a long-context surcharge above 272K input tokens — the same 272K threshold as GPT-5.4.
+> **Context tiers for GPT-5.4 and GPT-5.5:** Standard pricing applies for prompts **under 272K tokens**. Long-context (>272K) tier applies a surcharge on **both** GPT-5.4 and GPT-5.5. For GPT-5.5, long-context pricing is **2× input / 1.5× output** ($10.00/$45.00 per MTok) for the **full session**.
 
 ---
 
@@ -14,10 +14,10 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 ### GPT-5.4-Cyber *(Restricted — Limited Access)*
 
-> **Announced:** April 14, 2026  
-> **Status:** 🔒 RESTRICTED — Not generally available via public API  
-> **Access:** Vetted security vendors, organizations, and researchers only via OpenAI's Trusted Access for Cyber program. Higher verification tiers unlock more permissive capabilities. Beginning June 1, 2026, individual members of Trusted Access for Cyber accessing most permissive models must enable Advanced Account Security.  
-> **Capability:** Fine-tuned variant of GPT-5.4, optimized for defensive cybersecurity.  
+> **Announced:** April 14, 2026
+> **Status:** 🔒 RESTRICTED — Not generally available via public API
+> **Access:** Vetted security vendors, organizations, and researchers only via OpenAI's Trusted Access for Cyber program. Beginning June 1, 2026, individual members accessing most permissive models must enable Advanced Account Security.
+> **Capability:** Fine-tuned variant of GPT-5.4, optimized for defensive cybersecurity.
 > **Note:** No public API pricing.
 
 ---
@@ -38,7 +38,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Input price (long ctx >272K)** | $10.00 / MTok *(2× standard — full session)* |
 | **Output price (std ctx <272K)** | $30.00 / MTok |
 | **Output price (long ctx >272K)** | $45.00 / MTok *(1.5× standard — full session)* |
-| **Cached input** | $0.50 / MTok *(~90% discount — extended prompt caching only; in-memory caching not supported)* |
+| **Cached input** | $0.50 / MTok *(~90% discount — extended prompt caching)* |
 | **Batch input** | $2.50 / MTok |
 | **Batch output** | $15.00 / MTok |
 | **Context window** | 1,050,000 tokens (API) / 400,000 tokens (Codex) |
@@ -48,8 +48,6 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Notable** | First fully retrained base since GPT-4.5; natively omnimodal (text+image+audio+video); Terminal-Bench 2.0: 82.7% (#1); SWE-bench Pro: 58.6%; GDPval: 84.9%; OSWorld-Verified: 78.7%; FrontierMath Tier 4: 35.4%; AI Index score 60 (#1 overall); GPT-5.5 Thinking available on ChatGPT paid plans; supports web search, file search, image generation, code interpreter, hosted shell, apply patch, computer use, MCP, Skills |
 
 > ⚠️ **Long-context pricing (>272K tokens):** Prompts exceeding 272K input tokens trigger long-context rates for the **entire session**: $10.00 input / $45.00 output per MTok (2× input / 1.5× output). Plan your context budget accordingly. Source: developers.openai.com/api/docs/models/gpt-5.5
-
-> ✏️ **Corrections (May 21, 2026):** (1) Context window corrected from 1,000,000 to **1,050,000 tokens** per OpenRouter, aipricing.guru, and devtk.ai. (2) Long-context pricing added — a previous version of this card omitted the >272K surcharge and incorrectly implied flat-rate pricing. Source: developers.openai.com/api/docs/models/gpt-5.5, verified May 21, 2026.
 
 > ⚠️ **Pricing vs GPT-5.4:** GPT-5.5 standard ($5/$30) is 2× the per-token price of GPT-5.4 standard ($2.50/$15). Measure on your own traffic before migrating high-volume workloads.
 
@@ -374,4 +372,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 ---
 
-*Sources last verified: May 21, 2026 against openai.com/api/pricing/, developers.openai.com/api/docs/models/gpt-5.5 (long-context pricing and context window confirmed), openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing, openrouter.ai/openai/gpt-5.5 (1,050,000 token context window confirmed), aipricing.guru/openai-pricing/ (sourced from openai.com/api/pricing on 2026-05-21)*
+*Sources last verified: May 25, 2026 against openai.com/api/pricing/, developers.openai.com/api/docs/models/gpt-5.5 (long-context pricing and context window confirmed), openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing. No price changes detected since May 21, 2026.*
