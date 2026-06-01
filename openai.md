@@ -1,12 +1,16 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-05-28
+> **Last updated:** 2026-06-01
 > **Source:** https://openai.com/api/pricing/ · https://developers.openai.com/api/docs/models/gpt-5.5 · https://openai.com/index/introducing-gpt-5-5/ · https://developers.openai.com/api/docs/pricing
-> **Scraped / verified:** 2026-05-28 — all active model prices re-confirmed, no changes detected since May 25, 2026.
+> **Scraped / verified:** 2026-06-01 — all active model prices re-confirmed unchanged.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
 > **Context tiers for GPT-5.4 and GPT-5.5:** Standard pricing applies for prompts **under 272K tokens**. Long-context (>272K) tier applies a surcharge on **both** GPT-5.4 and GPT-5.5. For GPT-5.5, long-context pricing is **2× input / 1.5× output** ($10.00/$45.00 per MTok) for the **full session**.
+
+> **Service tiers for GPT-5.5 and GPT-5.4:** Three processing tiers are available — **Priority** (highest availability + predictable latency, ~2.5× standard price), **Standard** (default), and **Batch/Flex** (async 24hr, 50% off). For GPT-5.5 standard short-context: Priority = **$12.50/$75.00** · Standard = **$5.00/$30.00** · Batch = **$2.50/$15.00** per MTok.
+
+> 🚨 **June 1, 2026 update:** All active model prices confirmed unchanged. **GPT-5.2 Thinking variant retires June 5, 2026** — migrate to GPT-5.4 or GPT-5.5 immediately.
 
 ---
 
@@ -38,9 +42,10 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Input price (long ctx >272K)** | $10.00 / MTok *(2× standard — full session)* |
 | **Output price (std ctx <272K)** | $30.00 / MTok |
 | **Output price (long ctx >272K)** | $45.00 / MTok *(1.5× standard — full session)* |
+| **Priority tier (input/output)** | $12.50 / $75.00 per MTok *(2.5× standard — highest availability + predictable latency)* |
 | **Cached input** | $0.50 / MTok *(~90% discount — extended prompt caching)* |
-| **Batch input** | $2.50 / MTok |
-| **Batch output** | $15.00 / MTok |
+| **Batch/Flex input** | $2.50 / MTok |
+| **Batch/Flex output** | $15.00 / MTok |
 | **Context window** | 1,050,000 tokens (API) / 400,000 tokens (Codex) |
 | **Max output** | 128,000 tokens |
 | **Availability** | API (Responses + Chat Completions), ChatGPT Plus/Pro/Business/Enterprise, Codex |
@@ -288,7 +293,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Context window** | 400,000 tokens |
 | **Migration** | Move to **GPT-5.4** ($2.50/$15) or **GPT-5.5** ($5/$30) |
 
-> **Note:** GPT-5.2 Thinking variant retires **June 5, 2026**.
+> 🚨 **GPT-5.2 Thinking variant retires June 5, 2026 — IMMINENT (4 days from June 1).** Migrate any workflows using `gpt-5.2-thinking` immediately.
 
 ---
 
@@ -361,7 +366,8 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 | Feature | Savings |
 |---|---|
-| **Batch API** | 50% off all tokens (24 hr turnaround) — all models |
+| **Batch/Flex API** | 50% off all tokens (24 hr turnaround) — all models |
+| **Priority tier (GPT-5.5 / GPT-5.4)** | 2.5× standard price — use only when latency SLAs are critical |
 | **Cached input tokens** | 50–90% off depending on model |
 | **GPT-5.5 long-context** | Stay under 272K input tokens to avoid 2× input / 1.5× output surcharge ($10/$45 instead of $5/$30) |
 | **GPT-5.4 short vs long ctx** | Stay under 272K input to avoid 2× input surcharge |
@@ -369,7 +375,8 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 | **Regional processing** | +10% uplift for GPT-5.5 and GPT-5.4 family data residency endpoints |
 | **Model tiering** | GPT-4.1 nano ($0.10/M) → GPT-4.1 mini ($0.40/M) → GPT-4.1 ($2/M) → GPT-5.4 ($2.50/M) → GPT-5.5 ($5/M) — choose by task complexity |
 | **Reasoning models** | o4-mini ($1.10/M) → o3 ($2/M) → o3-pro ($20/M); use o3-pro only for hardest reasoning tasks |
+| **Fine-tuning platform** | OpenAI is winding down the fine-tuning platform — no longer accessible to new users |
 
 ---
 
-*Sources last verified: May 28, 2026 against openai.com/api/pricing/, developers.openai.com/api/docs/models/gpt-5.5 (long-context pricing and context window confirmed), openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing. No price changes detected since May 25, 2026.*
+*Sources last verified: June 1, 2026 against openai.com/api/pricing/, developers.openai.com/api/docs/models/gpt-5.5 (long-context and Priority tier pricing confirmed), openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing. No price changes detected since May 28, 2026. GPT-5.5 Priority tier ($12.50/$75 per MTok) confirmed from API docs. GPT-5.2 Thinking variant retirement date June 5, 2026 confirmed.*
