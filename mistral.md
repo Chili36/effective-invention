@@ -1,8 +1,8 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-06-01
+> **Last updated:** 2026-06-08
 > **Source:** https://mistral.ai/pricing · https://docs.mistral.ai/models/overview · https://mistral.ai/news/devstral-2-vibe-cli · https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5 · https://mistral.ai/news/voxtral/ · https://openrouter.ai/mistralai
-> **Scraped / verified:** 2026-06-01
+> **Scraped / verified:** 2026-06-08
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Vibe) subscriptions are billed **separately**.
 
@@ -21,6 +21,15 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 > - **NEW: Voxtral Mini** (audio understanding, 3B) — $0.001/min audio or $0.04/MTok text input; $0.04/MTok output (`voxtral-mini-latest`)
 > - **NEW: Voxtral Mini Transcribe** — $0.002/min transcription endpoint (`voxtral-mini-latest` transcription mode); released May 15, 2026
 > - **Mixtral 8x7B and 8x22B** confirmed available via API at $0.70/$0.70 and $2.00/$6.00 per MTok respectively
+
+> 🆕 **June 8, 2026 update:** New models confirmed on official `mistral.ai/pricing` page. All previously listed prices confirmed unchanged.
+> - **NEW: Leanstral** (Labs) — Free during feedback-collection period. First open-source code agent for Lean 4 formal proof engineering. API ID: `labs-leanstral-2603`
+> - **NEW: Mistral Small Creative** (Labs) — $0.10/$0.30 per MTok. Fine-tuned small model for creative writing, roleplay, and chat. API ID: `labs-mistral-small-creative`
+> - **NEW: OCR 3** (Premier) — $2.00 / 1K pages (OCR) + $3.00 / 1K pages (Annotations). Best-in-class document extraction. API ID: `mistral-ocr-latest`
+> - **NEW: Codestral Embed** (Premier) — $0.15/MTok input only. State-of-the-art code + NL embeddings. API ID: `codestral-embed`
+> - **NEW: Mistral Embed** — $0.10/MTok input only. General-purpose semantic embeddings. API ID: `mistral-embed`
+> - **NEW: Mistral Moderation** — $0.10/MTok input only. Content moderation classifier. API ID: `mistral-moderation-2603`
+> - **⚠️ Mistral Medium 3.1** — no longer listed on `mistral.ai/pricing` page as of June 8 verification. Still listed in `docs.mistral.ai/models/overview` as "Premier" active model. May have been removed from public API catalog; use explicit model ID `mistral-medium-3-1` and verify in API responses.
 
 ---
 
@@ -107,27 +116,27 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### Mistral Medium 3.1 *(Updated August 2025)*
 
-> **Note (May 2026):** Mistral Medium 3.5 supersedes Medium 3.1 for most use cases. The `mistral-medium-latest` alias may now route to Medium 3.5. Verify your API calls land on the expected version. Medium 3.1 remains available at its lower price point for budget workloads that don't require Medium 3.5's vision, reasoning, or agentic capabilities.
+> **⚠️ Note (June 8, 2026):** Mistral Medium 3.5 supersedes Medium 3.1 for most use cases. The `mistral-medium-latest` alias may now route to Medium 3.5. **As of June 8, 2026, `mistral-medium-3-1` is no longer listed on the `mistral.ai/pricing` page** — it still appears in `docs.mistral.ai/models/overview` as a "Premier" active model, but removal from the pricing page may indicate it is being quietly phased out. Use the explicit model ID and verify via API response `model` field. Medium 3.1 remains the budget text option if still accessible.
 
 | Field | Value |
 |---|---|
 | **Provider** | Mistral AI |
-| **Model ID** | `mistral-medium-3-1` *(use explicit model ID — `mistral-medium-latest` may route to Medium 3.5)* |
+| **Model ID** | `mistral-medium-3-1` *(use explicit model ID — `mistral-medium-latest` may route to Medium 3.5; **not listed on mistral.ai/pricing as of June 8, 2026**)* |
 | **Released** | August 2025 (supersedes Medium 3, May 2025) |
-| **Status** | ✅ Active — Balanced *(may be superseded in routing by Medium 3.5)* |
-| **Input price** | $0.40 / MTok |
-| **Output price** | $2.00 / MTok |
+| **Status** | ✅ Active per docs.mistral.ai — ⚠️ **Removed from mistral.ai/pricing page (June 8, 2026)** |
+| **Input price** | $0.40 / MTok *(last confirmed price — verify current availability)* |
+| **Output price** | $2.00 / MTok *(last confirmed price)* |
 | **Context window** | 131,072 tokens |
 | **Max output** | 8,192 tokens |
-| **Availability** | API (Mistral AI Studio) |
+| **Availability** | API (Mistral AI Studio) — verify current accessibility |
 | **Capabilities** | Text, Function Calling, JSON mode |
-| **Notable** | Budget option vs Medium 3.5 (3.75× cheaper input, 3.75× cheaper output); use for high-volume text workloads not requiring vision or reasoning |
+| **Notable** | Budget option vs Medium 3.5 (3.75× cheaper input, 3.75× cheaper output); use for high-volume text workloads not requiring vision or reasoning. Check availability before building new workloads on this model. |
 
 ---
 
 ### Mistral Small 4 *(Released March 16, 2026)*
 
-> **Price update (May 28, 2026):** Official `mistral.ai/pricing` now shows $0.10/$0.30 per MTok, down from the $0.15/$0.60 at launch. Confirmed against official pricing page (June 1, 2026).
+> **Price update (May 28, 2026):** Official `mistral.ai/pricing` now shows $0.10/$0.30 per MTok, down from the $0.15/$0.60 at launch. Confirmed against official pricing page (June 8, 2026).
 
 | Field | Value |
 |---|---|
@@ -203,8 +212,6 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### Voxtral Small 24B *(Audio / Speech)*
 
-> **Pricing update (May 28, 2026):** Audio input pricing structure updated to match official page: $0.004/min audio or $0.10/MTok text input; output $0.40/MTok (was $0.30/MTok).
-
 | Field | Value |
 |---|---|
 | **Provider** | Mistral AI |
@@ -221,9 +228,9 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-### 🆕 Voxtral Mini *(Audio / Speech — 3B)*
+### Voxtral Mini *(Audio / Speech — 3B)*
 
-> **🆕 NEW (June 1, 2026):** Voxtral Mini is Mistral's lightweight speech intelligence model, released alongside Voxtral Small. It is now listed on the official `mistral.ai/pricing` page. Lower-cost alternative to Voxtral Small for edge, embedded, and cost-sensitive audio workloads. Available as open weights (Apache 2.0) on HuggingFace.
+> **🆕 NEW (June 1, 2026):** Voxtral Mini is Mistral's lightweight speech intelligence model. It is listed on the official `mistral.ai/pricing` page. Lower-cost alternative to Voxtral Small for edge, embedded, and cost-sensitive audio workloads. Available as open weights (Apache 2.0) on HuggingFace.
 
 | Field | Value |
 |---|---|
@@ -241,9 +248,9 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-### 🆕 Voxtral Mini Transcribe *(Transcription — Released May 15, 2026)*
+### Voxtral Mini Transcribe *(Transcription — Released May 15, 2026)*
 
-> **🆕 NEW (June 1, 2026):** Voxtral Mini Transcribe is a transcription-optimized endpoint of the Voxtral Mini model, released May 15, 2026. It is listed on the official `mistral.ai/pricing` page as a distinct pricing tier for pure transcription workloads. Uses the same `voxtral-mini-latest` model endpoint but with transcription-optimized decoding.
+> **🆕 NEW (June 1, 2026):** Voxtral Mini Transcribe is a transcription-optimized endpoint of the Voxtral Mini model. Listed on the official `mistral.ai/pricing` page as a distinct pricing tier for pure transcription workloads. Uses the `voxtral-mini-latest` model endpoint with transcription-optimized decoding.
 
 | Field | Value |
 |---|---|
@@ -251,7 +258,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Model ID** | `voxtral-mini-latest` *(transcription endpoint)* |
 | **Released** | May 15, 2026 |
 | **Status** | ✅ Active — Specialized (Transcription) |
-| **Pricing** | $0.002 / min *(official mistral.ai/pricing page, verified June 1, 2026)* |
+| **Pricing** | $0.002 / min *(official mistral.ai/pricing page, verified June 8, 2026)* |
 | **Availability** | API (Mistral AI Studio audio transcription endpoint) |
 | **Capabilities** | Batch speech-to-text transcription, speaker diarization, 13-language support (English, Chinese, Hindi, Spanish, Arabic, French, Portuguese, Russian, German, Japanese, Korean, Italian, Dutch) |
 | **Notable** | Transcription-specific variant of Voxtral Mini; optimized for batch ASR workloads; supports diarization; outperforms OpenAI Whisper large-v3 at less than half the price; ~4% WER on FLEURS benchmark; processes audio ~3× faster than ElevenLabs Scribe v2 while matching quality. OpenRouter lists this at $0.003/min — use official Mistral API pricing ($0.002/min) as canonical |
@@ -271,6 +278,110 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Capabilities** | Multilingual TTS (9 languages: English, French, German, Spanish, Dutch, Portuguese, Italian, Hindi, Arabic), zero-shot voice cloning (3s reference), cross-lingual voice transfer, emotionally expressive voices, low-latency streaming (70ms on H200), enterprise voice agents |
 | **Model size** | 4B parameters (based on Ministral 3B) |
 | **Notable** | First Mistral TTS model; direct competitor to ElevenLabs; self-hostable on 16GB VRAM+ GPU |
+
+---
+
+### 🆕 OCR 3 *(Premier — Document Extraction)*
+
+> **🆕 ADDED (June 8, 2026):** OCR 3 is now formally documented with pricing from the official `mistral.ai/pricing` page. It is Mistral's best-in-class document extraction and understanding model, powering the Document AI stack.
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `mistral-ocr-latest` |
+| **Released** | December 2025 (v25.12) |
+| **Status** | ✅ Active — Specialized (Document OCR) |
+| **OCR price** | $2.00 / 1,000 pages |
+| **Annotations price** | $3.00 / 1,000 pages |
+| **Availability** | API (Mistral AI Studio) — Premier tier |
+| **Capabilities** | Document extraction, table parsing, formula recognition, multilingual OCR, structured output, multimodal document understanding |
+| **Notable** | "The world's best document extraction and understanding model" per Mistral; powers Mistral Document AI stack; Page-level billing (not token-based); supports complex layouts including scientific papers, financial documents, and forms |
+
+---
+
+### 🆕 Codestral Embed *(Premier — Code Embeddings)*
+
+> **🆕 ADDED (June 8, 2026):** Codestral Embed is now formally documented with pricing from the official `mistral.ai/pricing` page.
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `codestral-embed` |
+| **Released** | May 2025 (v25.05) |
+| **Status** | ✅ Active — Specialized (Code Embeddings) |
+| **Input price** | $0.15 / MTok *(input/query only — embeddings have no output tokens)* |
+| **Availability** | API (Mistral AI Studio) — Premier tier |
+| **Capabilities** | Code semantic search, code retrieval, NL-to-code similarity, dual-encoder for code + natural language |
+| **Notable** | State-of-the-art embeddings for code and natural language queries; enables code search pipelines, RAG over codebases, and semantic code review |
+
+---
+
+### 🆕 Mistral Embed *(General Embeddings)*
+
+> **🆕 ADDED (June 8, 2026):** Mistral Embed is now formally documented with pricing from the official `mistral.ai/pricing` page.
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `mistral-embed` |
+| **Released** | December 2023 (v23.12) |
+| **Status** | ✅ Active — Specialized (General Embeddings) |
+| **Input price** | $0.10 / MTok *(input only — embeddings have no output tokens)* |
+| **Availability** | API (Mistral AI Studio) |
+| **Capabilities** | Semantic similarity, text retrieval, RAG pipelines, clustering, classification |
+| **Notable** | General-purpose text embedding model; 1024-dimension output; competitive with OpenAI text-embedding-3-small at similar price; good default for non-code embedding use cases |
+
+---
+
+### 🆕 Mistral Moderation *(Content Classifier)*
+
+> **🆕 ADDED (June 8, 2026):** Mistral Moderation is now formally documented with pricing from the official `mistral.ai/pricing` page. Version 2603 (March 2026) supersedes the legacy 2411 version.
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `mistral-moderation-2603` |
+| **Released** | March 2026 (version 2603) |
+| **Status** | ✅ Active — Specialized (Content Moderation) |
+| **Input price** | $0.10 / MTok |
+| **Availability** | API (Mistral AI Studio) |
+| **Capabilities** | Text content moderation, 128K context window, jailbreaking detection, policy classification |
+| **Notable** | Latest moderation model; 128K context window; jailbreaking detection; use for content safety pipelines, policy enforcement, and input/output filtering |
+
+---
+
+### 🆕 Leanstral *(Labs — Formal Proof Engineering)*
+
+> **🆕 ADDED (June 8, 2026):** Leanstral is now listed on the official `mistral.ai/pricing` page as a [Labs] model. It is **free** during the feedback-collection period. First open-source code agent for Lean 4 formal proof engineering.
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `labs-leanstral-2603` |
+| **Released** | March 2026 (v26.03) |
+| **Status** | ✅ Active — Labs (Free during feedback-collection period) |
+| **Pricing** | **Free** — "Keeping this endpoint highly accessible for a limited period to gather realistic feedback and observability data" |
+| **Availability** | API (Mistral AI Studio) — Labs tier |
+| **Capabilities** | Lean 4 formal proof engineering, theorem proving, verified code generation |
+| **Notable** | First open-source code agent for Lean 4; designed for formal verification workflows; free period enables broad experimentation; pricing will be introduced after the feedback period ends |
+
+---
+
+### 🆕 Mistral Small Creative *(Labs — Creative Writing)*
+
+> **🆕 ADDED (June 8, 2026):** Mistral Small Creative is now listed on the official `mistral.ai/pricing` page as a [Labs] model at $0.10/$0.30 per MTok.
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `labs-mistral-small-creative` |
+| **Released** | December 2025 (v25.12) |
+| **Status** | ✅ Active — Labs |
+| **Input price** | $0.10 / MTok |
+| **Output price** | $0.30 / MTok |
+| **Availability** | API (Mistral AI Studio) — Labs tier |
+| **Capabilities** | Creative writing, roleplay, chat, story generation, dialogue writing |
+| **Notable** | Fine-tuned variant of Mistral Small on curated creative data; designed to produce more expressive, engaging, and personality-rich outputs than the base Small model; same price as Devstral Small 2 and Mistral Small 4 ($0.10/$0.30) |
 
 ---
 
@@ -306,8 +417,6 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### Ministral 3 8B
 
-> **Price update (May 28, 2026):** Price updated to $0.15/$0.15 per MTok per official `mistral.ai/pricing` page (was $0.10/$0.10).
-
 | Field | Value |
 |---|---|
 | **Provider** | Mistral AI |
@@ -322,8 +431,6 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 ---
 
 ### Ministral 3 3B
-
-> **Price update (May 28, 2026):** Price confirmed at $0.10/$0.10 per MTok per official `mistral.ai/pricing` page.
 
 | Field | Value |
 |---|---|
@@ -340,7 +447,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### Mixtral 8x22B *(API — Legacy Open-Weight)*
 
-> **Note (June 1, 2026):** Mixtral 8x22B remains listed on `mistral.ai/pricing` with active API pricing. While this is a legacy open-weight model (predating the Ministral/Medium/Small 4 generation), it is still API-accessible for existing integrations.
+> **Note (June 8, 2026):** Mixtral 8x22B remains listed on `mistral.ai/pricing` with active API pricing. While this is a legacy open-weight model (predating the Ministral/Medium/Small 4 generation), it is still API-accessible for existing integrations.
 
 | Field | Value |
 |---|---|
@@ -358,7 +465,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### Mixtral 8x7B *(API — Legacy Open-Weight)*
 
-> **Note (June 1, 2026):** Mixtral 8x7B remains listed on `mistral.ai/pricing` with active API pricing. Legacy model; prefer Mistral Small 4 or Ministral 3 8B for newer workloads.
+> **Note (June 8, 2026):** Mixtral 8x7B remains listed on `mistral.ai/pricing` with active API pricing. Legacy model; prefer Mistral Small 4 or Ministral 3 8B for newer workloads.
 
 | Field | Value |
 |---|---|
@@ -388,6 +495,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Magistral Medium 1.2** | — | Apache 2.0 | Self-hosted reasoning workloads |
 | **Voxtral Small 24B** | 24B | Apache 2.0 | Self-hosted audio understanding |
 | **Voxtral Mini 3B** | 3B | Apache 2.0 | Self-hosted lightweight transcription / edge ASR |
+| **Voxtral TTS** | 4B | CC BY-NC 4.0 | Self-hosted TTS (non-commercial only) |
 | **Mixtral 8×22B** | 141B (MoE) | Apache 2.0 | Self-hosted complex reasoning, high-throughput |
 | **Mixtral 8×7B** | 46.7B (MoE) | Apache 2.0 | General-purpose self-hosted tasks |
 | **Mistral 7B** | 7B | Apache 2.0 | Edge deployment, on-device, low-resource |
@@ -494,7 +602,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 |---|---|
 | **Status** | ⚠️ LEGACY — Superseded by Medium 3.1 (August 2025) and Medium 3.5 (April 2026) |
 | **Last price** | $0.40 input / $2.00 output per MTok |
-| **Migration** | Upgrade to **Mistral Medium 3.5** for flagship capabilities, or **Mistral Medium 3.1** for budget text tasks |
+| **Migration** | Upgrade to **Mistral Medium 3.5** for flagship capabilities, or **Mistral Medium 3.1** if still accessible |
 
 ---
 
@@ -524,6 +632,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Devstral Small 2 vs Devstral 2** | Devstral Small 2 ($0.10/$0.30) is 4× cheaper on input and ~7× cheaper on output vs Devstral 2 ($0.40/$2.00) |
 | **Budget reasoning** | Use Mistral Small 4 with `reasoning_effort=high` ($0.10/$0.30) as the budget reasoning option |
 | **Voxtral Mini vs Small** | Voxtral Mini ($0.001/min) is 4× cheaper than Voxtral Small ($0.004/min) for audio input; use Mini for cost-sensitive ASR, Small for higher-quality audio understanding |
+| **Leanstral (Labs)** | Free during feedback-collection period — ideal for formal verification / Lean 4 proof engineering workloads while pricing is waived |
 
 ---
 
@@ -541,4 +650,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: June 1, 2026 against mistral.ai/pricing (official pricing page — all active prices confirmed unchanged; Voxtral Mini $0.001/min audio / $0.04/MTok text / $0.04/MTok output confirmed; Voxtral Mini Transcribe $0.002/min confirmed; Mixtral 8x7B $0.70/$0.70 and 8x22B $2.00/$6.00 confirmed as active API models), docs.mistral.ai/models/overview (Pixtral Large 24.11 in legacy table confirmed; magistral-small-2509 in legacy table, magistral-small-latest still active), mistral.ai/news/voxtral/ (Voxtral Mini 3B details confirmed), OpenRouter listings (Voxtral Mini Transcribe released May 15, 2026 confirmed at $0.003/min on OpenRouter vs $0.002/min on official page — use official as canonical). Batch API discount (50%) confirmed per mistral.ai/pricing FAQ.*
+*Sources last verified: June 8, 2026 against mistral.ai/pricing (official pricing page — all active prices confirmed unchanged; Leanstral Free, Mistral Small Creative $0.10/$0.30, OCR 3 $2/$3 per 1K pages, Codestral Embed $0.15/MTok, Mistral Embed $0.10/MTok, Mistral Moderation $0.10/MTok confirmed as new entries; Mistral Medium 3.1 NOT listed on pricing page), docs.mistral.ai/models/overview (Medium 3.1 still listed as Premier; Leanstral v26.03, Mistral Small Creative v25.12 in active section), mistral.ai/news/ (no new model announcements since June 1). Batch API discount (50%) confirmed per mistral.ai/pricing FAQ.*

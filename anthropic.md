@@ -1,14 +1,16 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-06-01
-> **Source:** https://platform.claude.com/docs/en/about-claude/models/overview (official — verified June 1, 2026) · https://platform.claude.com/docs/en/about-claude/pricing · https://docs.anthropic.com/en/docs/about-claude/model-deprecations · https://claude.com/pricing#api · https://platform.claude.com/docs/en/release-notes/overview
-> **Scraped / verified:** 2026-06-01
+> **Last updated:** 2026-06-08
+> **Source:** https://platform.claude.com/docs/en/about-claude/models/overview (official — verified June 8, 2026) · https://platform.claude.com/docs/en/about-claude/pricing · https://docs.anthropic.com/en/docs/about-claude/model-deprecations · https://claude.com/pricing#api · https://platform.claude.com/docs/en/release-notes/overview
+> **Scraped / verified:** 2026-06-08
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
 > 🚨 **May 28, 2026 update:** **Claude Opus 4.8 is now the active flagship** — released and confirmed as the new recommended model at `platform.claude.com/docs/en/about-claude/models/overview` (verified May 28, 2026). The official Anthropic pricing page (`claude.com/pricing#api`) now lists **Opus 4.7, Opus 4.6, Sonnet 4.5, Opus 4.5, Opus 4.1, Sonnet 4, and Opus 4** in the Legacy section. **Fast Mode is now available on Opus 4.8 at 2× standard pricing ($10 input / $50 output per MTok)** for up to 2.5× faster speeds. Sonnet 4.6 and Haiku 4.5 remain active at unchanged prices.
 
 > 🔁 **June 1, 2026 re-verification:** All active model prices confirmed unchanged. **Critical correction:** Previous entries incorrectly stated Claude Sonnet 4 and Claude Opus 4 were "RETIRED April 20, 2026." The official Anthropic deprecation announcement (April 14, 2026) and release notes at `platform.claude.com/docs/en/release-notes/overview` confirm the **retirement date is June 15, 2026** — both models are still API-accessible until then. The May 18 "correction" in this tracker to April 20 was itself an error. Status updated accordingly.
+
+> 🔁 **June 8, 2026 re-verification:** All active model prices confirmed unchanged (Opus 4.8 $5/$25, Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5). **Critical correction:** A previous note in this tracker stated "Fast Mode was NOT available on Opus 4.7." This was **incorrect** — the official Anthropic API pricing page (`platform.claude.com/docs/en/about-claude/pricing`) explicitly lists **Fast Mode pricing for Claude Opus 4.7 at $30/$150 per MTok** (same rate as Opus 4.6). The Opus 4.7 entry has been corrected below. 🚨 **URGENT: Claude Sonnet 4 + Opus 4 retire in 7 days (June 15, 2026)** — migrate to Sonnet 4.6 / Opus 4.8 immediately.
 
 ---
 
@@ -60,7 +62,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 > 📝 **Migration from Opus 4.7:** Per the official Anthropic docs, if you are currently using `claude-opus-4-7`, see the [Migrating to Claude Opus 4.8](https://platform.claude.com/docs/en/about-claude/models/migration-guide#migrating-from-claude-opus-47) guide. Same per-token price ($5/$25), improved capabilities.
 
-> ⚠️ **Fast Mode on Opus 4.8:** Fast Mode costs 2× standard pricing ($10 input / $50 output per MTok) and provides up to 2.5× faster speed. Previously Fast Mode was only available on Opus 4.6 (legacy) at 6× pricing ($30/$150). Opus 4.8's Fast Mode is significantly cheaper (2× vs 6×). Source: `claude.com/pricing#api`, verified June 1, 2026.
+> ⚠️ **Fast Mode on Opus 4.8:** Fast Mode costs 2× standard pricing ($10 input / $50 output per MTok) and provides up to 2.5× faster speed. Source: `platform.claude.com/docs/en/about-claude/pricing`, verified June 8, 2026.
 
 > ⚠️ **Bedrock note:** Claude Opus 4.8 is available on Bedrock through the **Messages-API Bedrock endpoint** only. See [Claude in Amazon Bedrock](https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock) for details.
 
@@ -88,7 +90,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Extended thinking** | ✅ Yes |
 | **Adaptive thinking** | ✅ Yes |
 | **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry |
-| **Notable** | Improved agentic search; 1M context no premium; extended + adaptive thinking supported; recommended migration target from retired Sonnet 4 (retiring June 15, 2026) and legacy Sonnet 4.5 |
+| **Notable** | Improved agentic search; 1M context no premium; extended + adaptive thinking supported; recommended migration target from retiring Sonnet 4 (June 15, 2026) and legacy Sonnet 4.5 |
 
 ---
 
@@ -114,7 +116,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Extended thinking** | ✅ Yes |
 | **Adaptive thinking** | ❌ No |
 | **Availability** | API, AWS Bedrock (all regions, self-serve), Google Vertex AI, Microsoft Foundry |
-| **Notable** | Fastest model; extended thinking supported; recommended migration target from retired Claude Haiku 3 (retired Feb 19, 2026) and Haiku 3.5 (retired Feb 19, 2026) |
+| **Notable** | Fastest model; extended thinking supported; recommended migration target from retired Claude Haiku 3 (retired Feb 19, 2026) and Haiku 3.5 (retired Feb 19, 2026 on Claude API; still accessible on Bedrock and Vertex AI on their own schedules) |
 
 ---
 
@@ -126,7 +128,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Recommended for reasoning + speed balance |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview`, verified June 1, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview`, verified June 8, 2026.
 
 ---
 
@@ -150,7 +152,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ### ⚠️ LEGACY — Claude Opus 4.7 *(Moved to Legacy May 28, 2026)*
 
-> **Update (May 28, 2026):** Claude Opus 4.7 has been moved to the **"Legacy models"** section on Anthropic's official pricing page (`claude.com/pricing#api`, verified June 1, 2026). The model remains API-accessible at the same price. **Migrate to Claude Opus 4.8** — same price ($5/$25), improved performance, and Fast Mode now available at 2× pricing ($10/$50). Note: Opus 4.7 and Opus 4.6 still support the Batch API `output-300k-2026-03-24` beta header for up to 300k output tokens.
+> **Update (May 28, 2026):** Claude Opus 4.7 has been moved to the **"Legacy models"** section on Anthropic's official pricing page (`claude.com/pricing#api`, verified June 8, 2026). The model remains API-accessible at the same price. **Migrate to Claude Opus 4.8** — same price ($5/$25), improved performance, and Fast Mode now available at 2× pricing ($10/$50). Note: Opus 4.7 and Opus 4.6 still support the Batch API `output-300k-2026-03-24` beta header for up to 300k output tokens.
 
 | Field | Value |
 |---|---|
@@ -160,6 +162,8 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Status** | ⚠️ LEGACY — Moved to Legacy section (May 28, 2026); still API-accessible |
 | **Input price** | $5.00 / MTok |
 | **Output price** | $25.00 / MTok |
+| **Fast Mode (input)** | $30.00 / MTok *(6× standard — same rate as Opus 4.6; Opus 4.8 Fast Mode is cheaper at 2× / $10/$50)* |
+| **Fast Mode (output)** | $150.00 / MTok |
 | **Cache write (5 min)** | $6.25 / MTok |
 | **Cache write (1 hr)** | $10.00 / MTok |
 | **Cache read** | $0.50 / MTok |
@@ -170,9 +174,11 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Extended thinking** | ❌ No |
 | **Adaptive thinking** | ✅ Yes |
 | **Availability** | API, AWS Bedrock, Google Vertex AI, Microsoft Foundry, GitHub Copilot Pro+ |
-| **Migration** | Upgrade to **Claude Opus 4.8** — same price ($5/$25), improved performance, Fast Mode now available |
+| **Migration** | Upgrade to **Claude Opus 4.8** — same price ($5/$25), improved performance, cheaper Fast Mode (2× vs 6×) |
 
-> ✏️ **Tokenizer note:** Opus 4.7 uses a new tokenizer that may produce up to 35% more tokens for the same text compared to Opus 4.6. Monitor actual usage when migrating. Fast Mode was NOT available on Opus 4.7 (it is available on Opus 4.8 at 2× pricing and on Opus 4.6 at 6× pricing).
+> ✏️ **Tokenizer note:** Opus 4.7 uses a new tokenizer that may produce up to 35% more tokens for the same text compared to Opus 4.6. Monitor actual usage when migrating.
+
+> 🔁 **CORRECTION (June 8, 2026):** Fast Mode **IS** available on Opus 4.7 at **$30/$150 per MTok** (same rate as Opus 4.6), per the official Anthropic API pricing page (`platform.claude.com/docs/en/about-claude/pricing`, table confirmed June 8, 2026). A previous note in this tracker incorrectly stated "Fast Mode was NOT available on Opus 4.7" — that was an error. Prefer Opus 4.8 Fast Mode at 2× ($10/$50) over Opus 4.7 Fast Mode at 6× ($30/$150) for cost efficiency.
 
 ---
 
@@ -254,15 +260,17 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-### ⚠️ DEPRECATED — Claude Sonnet 4 *(Retiring June 15, 2026)*
+### ⚠️ DEPRECATED — Claude Sonnet 4 *(Retiring June 15, 2026 — 🚨 7 DAYS AWAY)*
 
-> **🔁 CORRECTION (June 1, 2026):** Previous entries in this tracker incorrectly stated "RETIRED April 20, 2026." The official Anthropic deprecation announcement (April 14, 2026) and platform release notes at `platform.claude.com/docs/en/release-notes/overview` confirm the **retirement date is June 15, 2026**. API calls remain valid until that date. Migrate to Claude Sonnet 4.6 before June 15.
+> **🔁 CORRECTION (June 1, 2026):** Previous entries in this tracker incorrectly stated "RETIRED April 20, 2026." The official Anthropic deprecation announcement (April 14, 2026) and platform release notes at `platform.claude.com/docs/en/release-notes/overview` confirm the **retirement date is June 15, 2026**. API calls remain valid until that date.
+
+> 🚨 **June 8, 2026:** Retirement is **7 days away**. Migrate to Claude Sonnet 4.6 **immediately**.
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-sonnet-4-20250514` |
-| **Status** | ⚠️ DEPRECATED — **Retiring June 15, 2026** (still API-accessible until then) |
+| **Status** | ⚠️ DEPRECATED — **Retiring June 15, 2026 🚨 7 DAYS AWAY** (still API-accessible until then) |
 | **Input price** | $3.00 / MTok |
 | **Output price** | $15.00 / MTok |
 | **Availability** | API, AWS Bedrock, Google Cloud's Vertex AI (until June 15, 2026) |
@@ -270,15 +278,17 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-### ⚠️ DEPRECATED — Claude Opus 4 *(Retiring June 15, 2026)*
+### ⚠️ DEPRECATED — Claude Opus 4 *(Retiring June 15, 2026 — 🚨 7 DAYS AWAY)*
 
-> **🔁 CORRECTION (June 1, 2026):** Previous entries in this tracker incorrectly stated "RETIRED April 20, 2026." The official Anthropic deprecation announcement (April 14, 2026) and platform release notes at `platform.claude.com/docs/en/release-notes/overview` confirm the **retirement date is June 15, 2026**. API calls remain valid until that date. Migrate to Claude Opus 4.8 before June 15.
+> **🔁 CORRECTION (June 1, 2026):** Previous entries in this tracker incorrectly stated "RETIRED April 20, 2026." The official Anthropic deprecation announcement (April 14, 2026) and platform release notes at `platform.claude.com/docs/en/release-notes/overview` confirm the **retirement date is June 15, 2026**. API calls remain valid until that date.
+
+> 🚨 **June 8, 2026:** Retirement is **7 days away**. Migrate to Claude Opus 4.8 **immediately**.
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-opus-4-20250514` |
-| **Status** | ⚠️ DEPRECATED — **Retiring June 15, 2026** (still API-accessible until then) |
+| **Status** | ⚠️ DEPRECATED — **Retiring June 15, 2026 🚨 7 DAYS AWAY** (still API-accessible until then) |
 | **Input price** | $15.00 / MTok |
 | **Output price** | $75.00 / MTok |
 | **Availability** | API, AWS Bedrock, Google Cloud's Vertex AI (until June 15, 2026) |
@@ -286,16 +296,16 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-### ⚠️ LEGACY — Claude Haiku 3.5 *(RETIRED February 19, 2026)*
+### ⚠️ LEGACY — Claude Haiku 3.5 *(RETIRED February 19, 2026 on Claude API)*
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-3-5-haiku-20241022` |
-| **Status** | ⚠️ LEGACY — **RETIRED February 19, 2026 ❌ API CALLS WILL FAIL (Claude API)** |
+| **Status** | ⚠️ LEGACY — **RETIRED February 19, 2026 ❌ API CALLS WILL FAIL (Claude API)** — still accessible on Amazon Bedrock and Google Vertex AI on their own schedules |
 | **Input price** | $0.80 / MTok *(last known price)* |
 | **Output price** | $4.00 / MTok *(last known price)* |
-| **Availability** | ❌ Claude API — RETIRED. Bedrock/Vertex AI may retain access on their own schedules. |
+| **Availability** | ❌ Claude API — RETIRED. Amazon Bedrock and Google Vertex AI retain access on their own schedules. |
 | **Migration** | **Migrate to Claude Haiku 4.5** ($1/$5) |
 
 ---
@@ -357,13 +367,13 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Prompt caching — cache write (5-min TTL)** | 1.25× standard input (break-even after 2 reads) |
 | **Prompt caching — cache write (1-hr TTL)** | 2× standard input (break-even after 8 reads) |
 | **Batch + caching stacked** | Up to 95% total cost reduction |
-| **US-only inference (data residency)** | 1.1× pricing on models released after Feb 1, 2026 |
+| **US-only inference (data residency)** | 1.1× pricing on Opus 4.6, Sonnet 4.6, and later models (via `inference_geo: "us"` parameter) |
 | **Opus 4.7 tokenizer** | New tokenizer may add up to 35% more tokens/request vs Opus 4.6 — monitor per-request spend if using Opus 4.7 (now legacy) |
 | **Fast Mode — Opus 4.8** | $10/$50 input/output (2× standard) — up to 2.5× faster speeds |
-| **Fast Mode — Opus 4.6 (Legacy only)** | $30/$150 input/output (6× standard) — significantly more expensive than Opus 4.8 Fast Mode |
+| **Fast Mode — Opus 4.6 / Opus 4.7 (Legacy only)** | $30/$150 input/output (6× standard) — significantly more expensive than Opus 4.8 Fast Mode |
 | **Thinking modes** | Adaptive thinking: Opus 4.8 + Sonnet 4.6. Extended thinking: Sonnet 4.6 + Haiku 4.5 (not on Opus 4.8). |
-| **⚠️ Migrate Sonnet 4 + Opus 4** | Retirement deadline June 15, 2026 — migrate to Sonnet 4.6 and Opus 4.8 before then |
+| **⚠️ Migrate Sonnet 4 + Opus 4** | Retirement deadline **June 15, 2026 (7 days away)** — migrate to Sonnet 4.6 and Opus 4.8 NOW |
 
 ---
 
-*Sources last verified: June 1, 2026 against the official Anthropic models overview page at `platform.claude.com/docs/en/about-claude/models/overview` (Claude Opus 4.8 confirmed as active flagship), official pricing page at `claude.com/pricing#api` (Opus 4.8 active at $5/$25; Sonnet 4 and Opus 4 shown in Legacy section with pricing — confirming they are still API-accessible), model deprecations at `docs.anthropic.com/en/docs/about-claude/model-deprecations`, and release notes at `platform.claude.com/docs/en/release-notes/overview` (retirement date of Claude Sonnet 4 and Opus 4 confirmed as June 15, 2026 — NOT April 20, 2026 as previously recorded in this tracker). No price changes on active models detected. Opus 4.8 carries forward the same $5/$25 rate as Opus 4.7.*
+*Sources last verified: June 8, 2026 against the official Anthropic API pricing page at `platform.claude.com/docs/en/about-claude/pricing` (confirmed active model pricing: Opus 4.8 $5/$25, Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5; confirmed Fast Mode table: Opus 4.6/4.7 at $30/$150 per MTok and Opus 4.8 at $10/$50 per MTok; confirmed Sonnet 4 and Opus 4 deprecation status still API-accessible until June 15, 2026 — migration is now 7 days away). No price changes detected on active models.*

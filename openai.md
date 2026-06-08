@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-06-01
+> **Last updated:** 2026-06-08
 > **Source:** https://openai.com/api/pricing/ · https://developers.openai.com/api/docs/models/gpt-5.5 · https://openai.com/index/introducing-gpt-5-5/ · https://developers.openai.com/api/docs/pricing
-> **Scraped / verified:** 2026-06-01 — all active model prices re-confirmed unchanged.
+> **Scraped / verified:** 2026-06-08 — all active model prices re-confirmed unchanged.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -10,7 +10,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 > **Service tiers for GPT-5.5 and GPT-5.4:** Three processing tiers are available — **Priority** (highest availability + predictable latency, ~2.5× standard price), **Standard** (default), and **Batch/Flex** (async 24hr, 50% off). For GPT-5.5 standard short-context: Priority = **$12.50/$75.00** · Standard = **$5.00/$30.00** · Batch = **$2.50/$15.00** per MTok.
 
-> 🚨 **June 1, 2026 update:** All active model prices confirmed unchanged. **GPT-5.2 Thinking variant retires June 5, 2026** — migrate to GPT-5.4 or GPT-5.5 immediately.
+> ✅ **June 8, 2026 update:** All active model prices confirmed unchanged. **GPT-5.2 Thinking variant RETIRED June 5, 2026** — retirement date has passed; API calls to `gpt-5.2-thinking` now return errors. Migrate any remaining workflows to GPT-5.4 or GPT-5.5 immediately.
 
 ---
 
@@ -287,13 +287,13 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 |---|---|
 | **Provider** | OpenAI |
 | **Model ID** | `gpt-5.2` |
-| **Status** | ⚠️ LEGACY — Retiring June 2026 |
+| **Status** | ⚠️ LEGACY — Phasing out June 2026 |
 | **Input price** | $1.75 / MTok |
 | **Output price** | $14.00 / MTok |
 | **Context window** | 400,000 tokens |
 | **Migration** | Move to **GPT-5.4** ($2.50/$15) or **GPT-5.5** ($5/$30) |
 
-> 🚨 **GPT-5.2 Thinking variant retires June 5, 2026 — IMMINENT (4 days from June 1).** Migrate any workflows using `gpt-5.2-thinking` immediately.
+> 🚨 **GPT-5.2 Thinking variant RETIRED June 5, 2026.** API calls to `gpt-5.2-thinking` now return errors. If you are still using this variant, migrate to **GPT-5.4** or **GPT-5.5** immediately. The base `gpt-5.2` model (non-Thinking) is still listed as Legacy but phasing out in June 2026.
 
 ---
 
@@ -379,4 +379,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch API gives a
 
 ---
 
-*Sources last verified: June 1, 2026 against openai.com/api/pricing/, developers.openai.com/api/docs/models/gpt-5.5 (long-context and Priority tier pricing confirmed), openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing. No price changes detected since May 28, 2026. GPT-5.5 Priority tier ($12.50/$75 per MTok) confirmed from API docs. GPT-5.2 Thinking variant retirement date June 5, 2026 confirmed.*
+*Sources last verified: June 8, 2026 against openai.com/api/pricing/, developers.openai.com/api/docs/models/gpt-5.5 (long-context and Priority tier pricing confirmed), openai.com/index/introducing-gpt-5-5/, developers.openai.com/api/docs/pricing. No price changes detected. GPT-5.2 Thinking variant confirmed RETIRED June 5, 2026 — API calls now return errors.*
