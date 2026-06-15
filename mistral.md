@@ -1,20 +1,21 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-06-09
+> **Last updated:** 2026-06-15
 > **Source:** https://mistral.ai/pricing · https://docs.mistral.ai/models/overview
-> **Scraped / verified:** 2026-06-09 — all active prices confirmed unchanged; new Voxtral Mini Transcribe v2/Realtime and Classifier API models added; legacy table updated.
+> **Scraped / verified:** 2026-06-15 — pricing corrections: Voxtral Mini Transcribe 2 $0.002→$0.003/min; Realtime confirmed $0.006/min; Leanstral v26.03 moved to legacy per docs.mistral.ai; Mistral Medium 3.1 v25.08 formally confirmed in legacy.
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Vibe) subscriptions are billed **separately**.
 
 > **Mistral's key differentiators:** Native EU data residency (GDPR by default), competitive mid-tier pricing, Apache 2.0 open-weight models, dedicated reasoning (Magistral series), flagship merged model (Medium 3.5), and a 50% batch processing discount.
 
-> 🆕 **June 9, 2026 update:** New models confirmed on official `mistral.ai/pricing` and `docs.mistral.ai/models/overview`:
-> - **NEW: Voxtral Mini Transcribe 2** (Premier, v26.02) — dedicated transcription endpoint, improved over the original v25.07 version. API ID: `voxtral-mini-2602` (verify on console)
-> - **NEW: Voxtral Mini Transcribe Realtime** (Open, v26.02) — live transcription endpoint for real-time use. API ID: `voxtral-mini-transcribe-realtime`
-> - **NEW: Classifier API model 3B** — fine-tunable classifier (moderation, sentiment, fraud detection). Training $1/MTok, Storage $2/month/model, Input $0.10, Output $0.10
-> - **NEW: Classifier API model 8B** — fine-tunable classifier (larger). Training $1/MTok, Storage $2/month/model, Input $0.04, Output $0.04
-> - **LEGACY UPDATE:** Original Voxtral Mini Transcribe v25.07 (`voxtral-mini-2507`) now in legacy per docs.mistral.ai. Devstral Small 2 now labeled [Labs] on pricing page. Mistral Small Creative now in legacy per docs.mistral.ai.
+> 📝 **June 15, 2026 update:** Pricing corrections and legacy moves confirmed against official sources:
+> - **PRICE CORRECTION:** Voxtral Mini Transcribe 2 (v26.02, Premier): $0.002/min → **$0.003/min** (corrected against mistral.ai/pricing)
+> - **PRICE CONFIRMED:** Voxtral Mini Transcribe Realtime (v26.02, Open): **$0.006/min** audio input (was TBD, now confirmed)
+> - **MOVED TO LEGACY:** Leanstral (`labs-leanstral-2603`, v26.03) now in legacy/deprecated table at docs.mistral.ai
+> - **FORMALLY DEPRECATED:** Mistral Medium 3.1 (`mistral-medium-2508`, v25.08) confirmed in legacy table at docs.mistral.ai
 > - All other active prices confirmed unchanged.
+
+> 📝 **June 9, 2026 additions** (from previous update): Voxtral Mini Transcribe 2 (v26.02, Premier), Voxtral Mini Transcribe Realtime (v26.02, Open), Classifier API 3B, Classifier API 8B added. Voxtral Mini Transcribe v25.07 moved to legacy. Devstral Small 2 labeled [Labs] on pricing page. Mistral Small Creative moved to legacy.
 
 ---
 
@@ -67,7 +68,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### Magistral Small *(Active via `magistral-small-latest`)*
 
-> **Note (June 9, 2026):** `magistral-small-latest` still active on `mistral.ai/pricing` at $0.50/$1.50. The specific version `magistral-small-2509` is in legacy per docs.mistral.ai. Prefer Mistral Small 4 with `reasoning_effort=high` ($0.10/$0.30) for most reasoning tasks.
+> **Note (June 15, 2026):** `magistral-small-latest` still active on `mistral.ai/pricing` at $0.50/$1.50. The specific version `magistral-small-2509` is in legacy per docs.mistral.ai. Prefer Mistral Small 4 with `reasoning_effort=high` ($0.10/$0.30) for most reasoning tasks.
 
 | Field | Value |
 |---|---|
@@ -79,17 +80,9 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-### Mistral Medium 3.1 *(Active in docs — not on pricing page)*
+### ~~Mistral Medium 3.1~~ *(⚠️ Moved to Legacy — June 2026)*
 
-> **⚠️ Note (June 9, 2026):** `mistral-medium-3-1` is **not listed on `mistral.ai/pricing`** as of this verification, but still appears in `docs.mistral.ai` as a Premier active model. Use the explicit model ID and verify accessibility before building new workloads on it.
-
-| Field | Value |
-|---|---|
-| **Model ID** | `mistral-medium-3-1` |
-| **Status** | ✅ Active per docs.mistral.ai — ⚠️ Removed from mistral.ai/pricing page |
-| **Input price** | $0.40 / MTok *(last confirmed)* |
-| **Output price** | $2.00 / MTok *(last confirmed)* |
-| **Context window** | 131,072 tokens |
+> **⚠️ June 15, 2026:** Mistral Medium 3.1 (`mistral-medium-2508`, v25.08) is now confirmed in the legacy/deprecated table at `docs.mistral.ai/models/overview`. See the Legacy section below for full details.
 
 ---
 
@@ -136,7 +129,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### Devstral Small 2 *(Released December 10, 2025)*
 
-> **Note (June 9, 2026):** Devstral Small 2 is labeled **[Labs]** on the official `mistral.ai/pricing` page as of this verification.
+> **Note (June 15, 2026):** Devstral Small 2 is labeled **[Labs]** on the official `mistral.ai/pricing` page.
 
 | Field | Value |
 |---|---|
@@ -178,7 +171,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### 🆕 Voxtral Mini Transcribe 2 *(Premier — v26.02)*
 
-> **🆕 NEW (June 9, 2026):** Voxtral Mini Transcribe 2 is an improved transcription model (v26.02), superseding the original Voxtral Mini Transcribe (v25.07 — now in legacy). Listed on `mistral.ai/pricing` and `docs.mistral.ai`.
+> **Added June 9, 2026 · Price corrected June 15, 2026:** Voxtral Mini Transcribe 2 is an improved transcription model (v26.02), superseding the original Voxtral Mini Transcribe (v25.07 — now in legacy). **Pricing corrected from $0.002/min to $0.003/min** per official pricing page.
 
 | Field | Value |
 |---|---|
@@ -186,7 +179,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Model ID** | `voxtral-mini-2602` *(verify exact ID on console.mistral.ai)* |
 | **Released** | February 2026 (version 26.02) |
 | **Status** | ✅ Active — Specialized (Transcription) — Premier |
-| **Pricing** | $0.002 / min *(verify on console — same tier as original Voxtral Mini Transcribe)* |
+| **Pricing** | $0.003 / min *(confirmed on mistral.ai/pricing — corrected June 15, 2026)* |
 | **Availability** | API (Mistral AI Studio — Premier tier) |
 | **Capabilities** | Batch speech-to-text transcription, speaker diarization, multilingual (13 languages) |
 | **Notable** | Improved over v25.07; replaces original Voxtral Mini Transcribe as the primary batch transcription endpoint |
@@ -195,14 +188,15 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### 🆕 Voxtral Mini Transcribe Realtime *(Open — v26.02)*
 
-> **🆕 NEW (June 9, 2026):** Voxtral Mini Transcribe Realtime is a new live transcription model for real-time use cases. Listed as Open (Apache 2.0) on `docs.mistral.ai`.
+> **Added June 9, 2026 · Price confirmed June 15, 2026:** Voxtral Mini Transcribe Realtime is a live transcription model for real-time use cases. Listed as Open (Apache 2.0) on `docs.mistral.ai`.
 
 | Field | Value |
 |---|---|
 | **Provider** | Mistral AI |
-| **Model ID** | `voxtral-mini-transcribe-realtime` *(verify exact ID on console.mistral.ai)* |
+| **Model ID** | `voxtral-mini-transcribe-realtime-2602` *(verify exact ID on console.mistral.ai)* |
 | **Released** | February 2026 (version 26.02) |
 | **Status** | ✅ Active — Specialized (Real-time Transcription) — Open (Apache 2.0) |
+| **Pricing** | $0.006 / min audio input *(confirmed on mistral.ai/pricing, June 15, 2026)* |
 | **Availability** | API (Mistral AI Studio) |
 | **Capabilities** | Live/streaming speech-to-text transcription, low-latency, edge-compatible |
 | **Notable** | Open-weight (Apache 2.0); purpose-built for real-time transcription use cases; complements Voxtral Mini Transcribe 2 (batch) |
@@ -265,8 +259,6 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### 🆕 Classifier API model 3B *(Fine-tunable Classifier)*
 
-> **🆕 ADDED (June 9, 2026):** Classifier API model 3B is listed on the official `mistral.ai/pricing` page. Fine-tune Ministral 3B for classification tasks.
-
 | Field | Value |
 |---|---|
 | **Provider** | Mistral AI |
@@ -282,8 +274,6 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ### 🆕 Classifier API model 8B *(Fine-tunable Classifier — Larger)*
 
-> **🆕 ADDED (June 9, 2026):** Classifier API model 8B is listed on the official `mistral.ai/pricing` page. Fine-tune Ministral 8B for classification tasks.
-
 | Field | Value |
 |---|---|
 | **Provider** | Mistral AI |
@@ -297,13 +287,15 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-### Leanstral *(Labs — Formal Proof Engineering)*
+### ~~Leanstral~~ *(⚠️ Moved to Legacy — June 2026)*
+
+> **⚠️ June 15, 2026:** Leanstral (`labs-leanstral-2603`, v26.03) has been moved to the legacy/deprecated table at `docs.mistral.ai/models/overview`. Still listed on `mistral.ai/pricing` — verify accessibility on console.mistral.ai before building new workloads.
 
 | Field | Value |
 |---|---|
 | **Model ID** | `labs-leanstral-2603` |
-| **Status** | ✅ Active — Labs (Free during feedback-collection period) |
-| **Pricing** | **Free** |
+| **Status** | ⚠️ LEGACY — In legacy table at docs.mistral.ai (June 2026); still on pricing page |
+| **Pricing** | **Free** *(while accessible)* |
 | **Notable** | First open-source code agent for Lean 4 formal proof engineering |
 
 ---
@@ -418,22 +410,46 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ## ⚠️ Legacy Models
 
+### ⚠️ LEGACY — Leanstral v26.03 *(Moved to Legacy June 2026)*
+
+> **MOVED TO LEGACY (June 15, 2026):** `docs.mistral.ai/models/overview` now lists Leanstral (v26.03, `labs-leanstral-2603`) in the legacy/deprecated table.
+
+| Field | Value |
+|---|---|
+| **Model ID** | `labs-leanstral-2603` |
+| **Status** | ⚠️ LEGACY — Moved to legacy table at docs.mistral.ai (June 2026) |
+| **Last price** | Free |
+| **Migration** | No direct successor; check Mistral docs for alternatives |
+
+---
+
+### ⚠️ LEGACY — Mistral Medium 3.1 v25.08 *(Formally Deprecated June 2026)*
+
+> **FORMALLY DEPRECATED (June 15, 2026):** `docs.mistral.ai/models/overview` confirms Mistral Medium 3.1 (`mistral-medium-2508`, v25.08) in the legacy/deprecated table. Previously noted as removed from `mistral.ai/pricing`.
+
+| Field | Value |
+|---|---|
+| **Model ID** | `mistral-medium-2508` |
+| **Status** | ⚠️ LEGACY — Confirmed in legacy table at docs.mistral.ai (June 2026) |
+| **Last price** | $0.40 / MTok input · $2.00 / MTok output *(last confirmed)* |
+| **Migration** | → **Mistral Medium 3.5** ($1.50/$7.50) for flagship; **Mistral Large 3** ($0.50/$1.50) for general; **Mistral Small 4** ($0.10/$0.30) for budget |
+
+---
+
 ### ⚠️ LEGACY — Voxtral Mini Transcribe v25.07 *(Superseded by v26.02)*
 
-> **🆕 MOVED TO LEGACY (June 9, 2026):** The original Voxtral Mini Transcribe (v25.07, `voxtral-mini-2507`) is now in the legacy table at `docs.mistral.ai`. Superseded by **Voxtral Mini Transcribe 2** (v26.02, Premier) and **Voxtral Mini Transcribe Realtime** (v26.02, Open).
+> **MOVED TO LEGACY (June 9, 2026):** The original Voxtral Mini Transcribe (v25.07, `voxtral-mini-2507`) is now in the legacy table at `docs.mistral.ai`. Superseded by **Voxtral Mini Transcribe 2** (v26.02, Premier) and **Voxtral Mini Transcribe Realtime** (v26.02, Open).
 
 | Field | Value |
 |---|---|
 | **Model ID** | `voxtral-mini-2507` |
 | **Status** | ⚠️ LEGACY — Superseded by v26.02 versions (June 2026) |
 | **Last price** | $0.002 / min |
-| **Migration** | → **Voxtral Mini Transcribe 2** (v26.02, Premier) for batch transcription; **Voxtral Mini Transcribe Realtime** (v26.02, Open) for live transcription |
+| **Migration** | → **Voxtral Mini Transcribe 2** (v26.02, Premier, $0.003/min) for batch transcription; **Voxtral Mini Transcribe Realtime** (v26.02, Open, $0.006/min) for live transcription |
 
 ---
 
 ### ⚠️ LEGACY — Mistral Small Creative v25.12 *(Now in Legacy per docs.mistral.ai)*
-
-> **MOVED TO LEGACY (June 9, 2026):** `docs.mistral.ai/models/overview` now lists Mistral Small Creative (v25.12, `labs-mistral-small-creative`) in the legacy/deprecated table. The `mistral.ai/pricing` page still shows the model and its pricing.
 
 | Field | Value |
 |---|---|
@@ -515,11 +531,10 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **No prompt caching** | Unlike OpenAI/Anthropic, Mistral does NOT offer prompt caching discounts |
 | **EU data residency** | All API traffic processed in the EU by default |
 | **Free tier** | Available via La Plateforme; rate-limited; no credit card required |
-| **Classifier API fine-tuning** | Build custom classifiers from Ministral 3B ($0.04/$0.04) or 8B ($0.10/$0.10) inference |
+| **Classifier API fine-tuning** | Build custom classifiers from Ministral 3B ($0.10/$0.10) or 8B ($0.04/$0.04) inference |
 | **Budget reasoning** | Use Mistral Small 4 with `reasoning_effort=high` ($0.10/$0.30) as the budget reasoning option |
 | **Voxtral transcription** | Voxtral Mini ($0.001/min audio) is 4× cheaper than Voxtral Small ($0.004/min) for audio |
-| **Voxtral Mini Transcribe 2 vs Realtime** | Use v26.02 Premier for batch; v26.02 Open/Realtime for live/streaming |
-| **Leanstral (Labs)** | Free during feedback-collection period for Lean 4 formal verification |
+| **Voxtral Mini Transcribe 2 vs Realtime** | Use v26.02 Premier ($0.003/min) for batch; v26.02 Open ($0.006/min) for live/streaming |
 
 ---
 
@@ -537,4 +552,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: June 9, 2026 against `mistral.ai/pricing` (all active prices confirmed unchanged; Classifier API model 3B and 8B confirmed; Devstral Small 2 confirmed as [Labs]; Voxtral Mini Transcribe v26.02 Premier and Realtime confirmed) and `docs.mistral.ai/models/overview` (Voxtral Mini Transcribe v25.07 in legacy; Mistral Small Creative v25.12 in legacy; Voxtral Mini Transcribe 2 v26.02 and Realtime v26.02 confirmed active).*
+*Sources last verified: June 15, 2026 against `mistral.ai/pricing` (Voxtral Mini Transcribe 2 corrected to $0.003/min; Voxtral Mini Transcribe Realtime confirmed $0.006/min; all other active prices unchanged) and `docs.mistral.ai/models/overview` (Leanstral v26.03 confirmed in legacy table; Mistral Medium 3.1 v25.08 confirmed in legacy table; all other model statuses unchanged).*

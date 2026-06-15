@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-06-09
+> **Last updated:** 2026-06-15
 > **Source:** https://openai.com/api/pricing/ · https://developers.openai.com/api/docs/pricing
-> **Scraped / verified:** 2026-06-09 — all active model prices re-confirmed; multimodal/specialized pricing section fully updated.
+> **Scraped / verified:** 2026-06-15 — all active model prices re-confirmed unchanged; no new model launches since GPT-5.5 (April 2026); cross-referenced with aipricing.guru June 13, 2026 snapshot.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -10,7 +10,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 > **Service tiers:** Three processing tiers — **Priority** (highest availability + predictable latency), **Standard** (default), and **Batch/Flex** (async 24hr, 50% off). Priority tier is available for GPT-5.5, GPT-5.4, and GPT-5.4 mini.
 
-> ✅ **June 9, 2026:** All active model prices confirmed unchanged. New multimodal model pricing section added below based on `developers.openai.com/api/docs/pricing`.
+> ✅ **June 15, 2026:** All active model prices re-confirmed unchanged (cross-referenced aipricing.guru June 13, 2026). No new model launches or pricing changes detected since GPT-5.5 launch April 23-24, 2026.
 
 ---
 
@@ -467,4 +467,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-*Sources last verified: June 9, 2026 against `openai.com/api/pricing/` and `developers.openai.com/api/docs/pricing` (full pricing table confirmed: GPT-5.5 $5/$30 std, GPT-5.5 Pro $30/$180 std / $60/$270 long-ctx, GPT-5.4 $2.50/$15 std, all multimodal and specialized model pricing confirmed; GPT-5.2 Thinking RETIRED June 5, 2026).*
+*Sources last verified: June 15, 2026 against `openai.com/api/pricing/` (cross-referenced aipricing.guru June 13, 2026 snapshot — GPT-5.5 $5/$30, GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40, all prices confirmed unchanged; GPT-5.2 Thinking remains RETIRED ❌ June 5, 2026).*

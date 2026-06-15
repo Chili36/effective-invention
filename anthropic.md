@@ -1,18 +1,18 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-06-09
-> **Source:** https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing · https://www.anthropic.com/claude/fable · https://claude.com/pricing#api
-> **Scraped / verified:** 2026-06-09
+> **Last updated:** 2026-06-15
+> **Source:** https://platform.claude.com/docs/en/about-claude/pricing · https://claude.com/pricing#api · https://www.anthropic.com/claude/mythos
+> **Scraped / verified:** 2026-06-15 — Claude Sonnet 4 + Opus 4 confirmed RETIRED as of June 15, 2026; all active prices re-verified unchanged.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
-> 🚨 **June 9, 2026 — BREAKING: Claude Fable 5 + Mythos 5 launched today.** Claude Fable 5 (`claude-fable-5`) is Anthropic's most capable widely released model, now the new top of the Claude lineup at **$10/$50 per MTok**. Claude Mythos 5 (`claude-mythos-5`) joins Project Glasswing (limited access). Full launch details: `anthropic.com/news/claude-fable-5-mythos-5`.
+> 🚨 **June 9, 2026 — BREAKING: Claude Fable 5 + Mythos 5 launched.** Claude Fable 5 (`claude-fable-5`) is Anthropic's most capable widely released model, now the new top of the Claude lineup at **$10/$50 per MTok**. Claude Mythos 5 (`claude-mythos-5`) joins Project Glasswing (limited access). Full launch details: `anthropic.com/news/claude-fable-5-mythos-5`.
 >
 > - Claude Opus 4.8 remains the recommended model for complex reasoning and agentic coding for most developers ("daily driver"). Fable 5 is positioned for the most ambitious, long-running, asynchronous work.
 > - Cybersecurity and biology queries to Fable 5 automatically fall back to Opus 4.8 — you are **not** charged Fable 5 prices for rerouted requests.
 > - Fable 5 requires **30-day data retention** for safety monitoring.
 
-> 🚨 **Claude Sonnet 4 + Opus 4 retire in 6 days (June 15, 2026).** Migrate to Sonnet 4.6 / Opus 4.8 immediately.
+> ✅ **Claude Sonnet 4 + Opus 4 RETIRED on June 15, 2026. ❌** API calls to `claude-sonnet-4-20250514` and `claude-opus-4-20250514` now return errors. Migration: Sonnet 4 → Sonnet 4.6 (same price, 1M context); Opus 4 → Opus 4.8 ($5/$25, 67% cheaper).
 
 ---
 
@@ -56,6 +56,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Input price** | $10.00 / MTok |
 | **Output price** | $50.00 / MTok |
 | **Cache write (5 min)** | $12.50 / MTok |
+| **Cache write (1 hr)** | $20.00 / MTok |
 | **Cache read** | $1.00 / MTok |
 | **Batch input** | $5.00 / MTok *(50% off)* |
 | **Batch output** | $25.00 / MTok *(50% off)* |
@@ -130,7 +131,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Extended thinking** | ✅ Yes |
 | **Adaptive thinking** | ✅ Yes |
 | **Availability** | API · AWS Bedrock · Google Vertex AI · Microsoft Foundry |
-| **Notable** | Optimal balance of intelligence, cost, and speed; 1M context no premium; extended + adaptive thinking; recommended migration target from retiring Sonnet 4 (June 15, 2026) |
+| **Notable** | Optimal balance of intelligence, cost, and speed; 1M context no premium; extended + adaptive thinking; recommended migration target from retired Sonnet 4 |
 
 ---
 
@@ -169,7 +170,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Best for reasoning + speed balance |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview`, verified June 9, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview`, verified June 15, 2026.
 
 ---
 
@@ -187,7 +188,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ## ⚠️ Legacy / Deprecated / Retired Models
 
-> These models are no longer recommended for new projects. **LEGACY** = still API-accessible but in the provider's legacy section. **DEPRECATED** = still accessible, published retirement date. **RETIRED** = API calls return errors.
+> These models are no longer recommended for new projects. **LEGACY** = still API-accessible but in the provider's legacy section. **DEPRECATED** = still accessible, published retirement date. **RETIRED** = API calls return errors ❌.
 
 ---
 
@@ -255,34 +256,34 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Field | Value |
 |---|---|
 | **Model ID** | `claude-opus-4-1` |
-| **Status** | ⚠️ LEGACY |
+| **Status** | ⚠️ LEGACY (deprecated) |
 | **Input price** | $15.00 / MTok |
 | **Output price** | $75.00 / MTok |
 | **Migration** | → **Claude Opus 4.8** ($5/$25) — 67% cheaper, far better performance |
 
 ---
 
-### ⚠️ DEPRECATED — Claude Sonnet 4 *(Retiring June 15, 2026 — 🚨 6 DAYS AWAY)*
+### ⚠️ RETIRED — Claude Sonnet 4 *(Retired June 15, 2026 ❌)*
 
 | Field | Value |
 |---|---|
 | **Model ID** | `claude-sonnet-4-20250514` |
-| **Status** | ⚠️ DEPRECATED — **Retiring June 15, 2026 🚨 6 DAYS AWAY** |
+| **Status** | ⚠️ RETIRED — **API calls return errors ❌ — Retired June 15, 2026** |
 | **Input price** | $3.00 / MTok |
 | **Output price** | $15.00 / MTok |
-| **Migration** | → **Claude Sonnet 4.6** — same price, 1M context — **migrate before June 15** |
+| **Migration** | → **Claude Sonnet 4.6** — same price, 1M context |
 
 ---
 
-### ⚠️ DEPRECATED — Claude Opus 4 *(Retiring June 15, 2026 — 🚨 6 DAYS AWAY)*
+### ⚠️ RETIRED — Claude Opus 4 *(Retired June 15, 2026 ❌)*
 
 | Field | Value |
 |---|---|
 | **Model ID** | `claude-opus-4-20250514` |
-| **Status** | ⚠️ DEPRECATED — **Retiring June 15, 2026 🚨 6 DAYS AWAY** |
+| **Status** | ⚠️ RETIRED — **API calls return errors ❌ — Retired June 15, 2026** |
 | **Input price** | $15.00 / MTok |
 | **Output price** | $75.00 / MTok |
-| **Migration** | → **Claude Opus 4.8** ($5/$25) — 67% cheaper — **migrate before June 15** |
+| **Migration** | → **Claude Opus 4.8** ($5/$25) — 67% cheaper |
 
 ---
 
@@ -350,8 +351,8 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Opus 4.8 Fast Mode** | $10/$50 (2× standard) — up to 2.5× faster speeds |
 | **Fable 5 safety fallback** | Cybersecurity/biology queries auto-route to Opus 4.8 and are billed at Opus 4.8 rates |
 | **Thinking modes** | Adaptive: Fable 5 + Opus 4.8 + Sonnet 4.6. Extended: Sonnet 4.6 + Haiku 4.5. |
-| **🚨 Migrate Sonnet 4 + Opus 4** | Retirement deadline **June 15, 2026 (6 days away)** — migrate NOW |
+| **⚠️ Sonnet 4 + Opus 4 RETIRED** | **Retired June 15, 2026 ❌** — API calls return errors — Sonnet 4 → Sonnet 4.6, Opus 4 → Opus 4.8 |
 
 ---
 
-*Sources last verified: June 9, 2026 against `www.anthropic.com/claude/fable` (Fable 5 launch confirmed), `platform.claude.com/docs/en/about-claude/models/overview` (Fable 5 / Mythos 5 model table confirmed, Opus 4.8 repositioned as Opus-tier daily driver), `claude.com/pricing#api` (Fable 5 $10/$50 confirmed, Opus 4.8 $5/$25 confirmed, Sonnet 4.6 $3/$15 confirmed, Haiku 4.5 $1/$5 confirmed). No price changes on existing active models.*
+*Sources last verified: June 15, 2026 against `claude.com/pricing#api` and `platform.claude.com/docs/en/about-claude/pricing` — Claude Sonnet 4 (`claude-sonnet-4-20250514`) RETIRED ❌ June 15, 2026; Claude Opus 4 (`claude-opus-4-20250514`) RETIRED ❌ June 15, 2026; Fable 5 $10/$50 re-confirmed; Mythos 5 $10/$50 limited access re-confirmed; Opus 4.8 $5/$25 re-confirmed; Sonnet 4.6 $3/$15 re-confirmed; Haiku 4.5 $1/$5 re-confirmed; all cache/batch pricing unchanged.*

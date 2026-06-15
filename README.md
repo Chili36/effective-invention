@@ -2,7 +2,7 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-06-09 (refresh #19)
+> **Last updated:** 2026-06-15 (refresh #20)
 > **Sources:** Official provider pricing pages + third-party verification — scraped/verified on date above.
 
 ---
@@ -23,7 +23,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 > ⚡ **Opus 4.8 Fast Mode:** $10/$50 per MTok (2× standard) — up to 2.5× faster
 > 🧠 **Thinking:** Fable 5 = Adaptive (always on) · Opus 4.8 = Adaptive only · Sonnet 4.6 = Adaptive + Extended · Haiku 4.5 = Extended only
 > 🔒 Claude Mythos 5 — Project Glasswing limited availability; $10/$50 per MTok; same price as Fable 5
-> 🚨 **URGENT: Claude Sonnet 4 + Opus 4 retiring June 15, 2026 (6 DAYS AWAY)** — migrate to Sonnet 4.6 / Opus 4.8 immediately
+> ✅ **Claude Sonnet 4 + Opus 4 RETIRED June 15, 2026 ❌** — API calls now return errors; migrate to Sonnet 4.6 / Opus 4.8
 
 ---
 
@@ -89,15 +89,14 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | **Mistral Large 3 (2512)** | $0.50 | $1.50 | 256K tokens | API |
 | **Magistral Medium 1.2** | $2.00 | $5.00 | 128K tokens | API |
 | Magistral Small *(latest)* | $0.50 | $1.50 | 128K tokens | API |
-| Mistral Medium 3.1 *(removed from pricing page)* | $0.40 | $2.00 | 131K tokens | API (verify) |
 | **Mistral Small 4** | $0.10 | $0.30 | **256K tokens** | API |
 | Codestral 2508 | $0.30 | $0.90 | 256K tokens | API |
 | **Devstral 2 (2512)** | $0.40 | $2.00 | 256K tokens | API |
 | **Devstral Small 2** [Labs] | $0.10 | $0.30 | **256K tokens** | API |
 | Voxtral Small 24B | $0.004/min (audio) | $0.40 | 128K tokens | API |
 | Voxtral Mini | $0.001/min (audio) | $0.04 | 32K tokens | API |
-| 🆕 **Voxtral Mini Transcribe 2** (v26.02, Premier) | $0.002/min | — | — | API |
-| 🆕 **Voxtral Mini Transcribe Realtime** (v26.02, Open) | TBD | — | — | API |
+| 🆕 **Voxtral Mini Transcribe 2** (v26.02, Premier) | $0.003/min *(corrected Jun 15)* | — | — | API |
+| 🆕 **Voxtral Mini Transcribe Realtime** (v26.02, Open) | $0.006/min *(confirmed Jun 15)* | — | — | API |
 | Voxtral TTS | $0.016/1K chars | — | — | API |
 | **OCR 3** *(Premier)* | $2.00/1K pages | $3.00/1K pages (annot.) | — | API |
 | 🆕 **Classifier API 3B** | $0.10 + $1/MTok training | $0.10 | — | API |
@@ -105,7 +104,6 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | **Codestral Embed** *(Premier)* | $0.15 (input only) | — | — | API |
 | **Mistral Embed** | $0.10 (input only) | — | — | API |
 | **Mistral Moderation 2** | $0.10 (input only) | — | — | API |
-| **Leanstral** *(Labs, Free)* | Free | Free | — | API |
 | Mistral Nemo | $0.15 | $0.15 | 128K tokens | API |
 | Ministral 3 14B | $0.20 | $0.20 | 256K tokens | API |
 | Ministral 3 8B | $0.15 | $0.15 | 256K tokens | API |
@@ -136,10 +134,10 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Provider | Tier | File | Description |
 |---|---|---|---|
-| Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards incl. **Fable 5 launch (Jun 9, 2026)**, Mythos 5 (Project Glasswing), Opus 4.8 daily driver, June 15 retirement urgency |
+| Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards incl. **Fable 5** ($10/$50), Mythos 5 (Project Glasswing), Opus 4.8 daily driver, **Sonnet 4 + Opus 4 RETIRED June 15** |
 | OpenAI | 1 | [openai.md](./openai.md) | Full model cards incl. GPT-5.5/5.4 Pro long-context pricing, multimodal models (Realtime-2, Image-2, Sora-2), specialized models, tools pricing |
 | Google Gemini | 1 | [gemini.md](./gemini.md) | Full model cards incl. Gemini 3.5 Flash (new flagship), 3.1 Flash-Lite stable GA, 2.0 Flash deprecation |
-| Mistral AI | 1 | [mistral.md](./mistral.md) | Full model cards incl. Classifier API 3B/8B, Voxtral Mini Transcribe v26.02 (Premier + Realtime), legacy updates |
+| Mistral AI | 1 | [mistral.md](./mistral.md) | Full model cards incl. **Voxtral Mini Transcribe 2 price corrected ($0.003/min)**, Realtime confirmed ($0.006/min), Leanstral + Medium 3.1 moved to legacy |
 | OpenRouter Picks | 2 | [openrouter-picks.md](./openrouter-picks.md) | One best-performing model per Tier 2 provider, all via OpenRouter |
 
 ---
@@ -154,9 +152,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | ⚠️ Claude Opus 4.6 | **LEGACY** · Moved to Legacy May 25, 2026; Fast Mode $30/$150 (6×) | $5.00 | $25.00 | → Claude Opus 4.8 |
 | ⚠️ Claude Sonnet 4.5 | **LEGACY** · 1M beta RETIRED Apr 30, 2026 | $3.00 | $15.00 | → Claude Sonnet 4.6 |
 | ⚠️ Claude Opus 4.5 | **LEGACY** | $5.00 | $25.00 | → Claude Opus 4.8 |
-| ⚠️ Claude Opus 4.1 | LEGACY | $15.00 | $75.00 | → Claude Opus 4.8 |
-| ⚠️ Claude Sonnet 4 | **DEPRECATED · 🚨 Retiring June 15, 2026 (6 DAYS AWAY)** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
-| ⚠️ Claude Opus 4 | **DEPRECATED · 🚨 Retiring June 15, 2026 (6 DAYS AWAY)** | $15.00 | $75.00 | → Claude Opus 4.8 |
+| ⚠️ Claude Opus 4.1 | **LEGACY** (deprecated) | $15.00 | $75.00 | → Claude Opus 4.8 |
+| ⚠️ Claude Sonnet 4 | **RETIRED ❌ June 15, 2026** — API calls return errors | $3.00 | $15.00 | → Claude Sonnet 4.6 |
+| ⚠️ Claude Opus 4 | **RETIRED ❌ June 15, 2026** — API calls return errors | $15.00 | $75.00 | → Claude Opus 4.8 |
 | ⚠️ Claude Haiku 3.5 | **RETIRED Feb 19, 2026 ❌ (Claude API)** | $0.80 | $4.00 | → Claude Haiku 4.5 |
 | ⚠️ Claude Haiku 3 | **RETIRED Feb 19, 2026 ❌** | $0.25 | $1.25 | → Claude Haiku 4.5 |
 | ⚠️ Claude Sonnet 3.7 | **RETIRED Oct 28, 2025 ❌** | $3.00 | $15.00 | → Claude Sonnet 4.6 |
@@ -192,7 +190,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Status | Migration Target |
 |---|---|---|
-| ⚠️ Voxtral Mini Transcribe v25.07 | **LEGACY** · Superseded by v26.02 (June 2026) | → Voxtral Mini Transcribe 2 (v26.02) or Realtime (v26.02) |
+| ⚠️ Leanstral v26.03 | **LEGACY** · Moved to legacy table at docs.mistral.ai (June 15, 2026) | No direct successor |
+| ⚠️ Mistral Medium 3.1 v25.08 | **LEGACY** · Confirmed in legacy table at docs.mistral.ai (June 15, 2026) | → Mistral Medium 3.5 or Mistral Large 3 |
+| ⚠️ Voxtral Mini Transcribe v25.07 | **LEGACY** · Superseded by v26.02 (June 2026) | → Voxtral Mini Transcribe 2 (v26.02, $0.003/min) or Realtime ($0.006/min) |
 | ⚠️ Mistral Small Creative v25.12 | **LEGACY** · Now in legacy per docs.mistral.ai | → Verify on console.mistral.ai |
 | ⚠️ Pixtral Large | **LEGACY** · Deprecated May 2026 | → Mistral Medium 3.5 or Mistral Small 4 |
 | ⚠️ Magistral Small 1.2 (v2509) | **LEGACY** · Specific version; `magistral-small-latest` still active | → Mistral Small 4 with `reasoning_effort=high` |
@@ -209,10 +209,15 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Date | Provider | Model | Change |
 |---|---|---|---|
+| 2026-06-15 | Anthropic | **Claude Sonnet 4** | ⚠️ RETIRED ❌ — `claude-sonnet-4-20250514` API calls now return errors. Retire date confirmed June 15, 2026. Migrate to Claude Sonnet 4.6 ($3/$15). |
+| 2026-06-15 | Anthropic | **Claude Opus 4** | ⚠️ RETIRED ❌ — `claude-opus-4-20250514` API calls now return errors. Retire date confirmed June 15, 2026. Migrate to Claude Opus 4.8 ($5/$25). |
+| 2026-06-15 | Mistral | **Voxtral Mini Transcribe 2** | ✏️ PRICE CORRECTED — $0.002/min → $0.003/min per official mistral.ai/pricing page. |
+| 2026-06-15 | Mistral | **Voxtral Mini Transcribe Realtime** | ✅ PRICE CONFIRMED — $0.006/min audio input confirmed on mistral.ai/pricing (was TBD). |
+| 2026-06-15 | Mistral | **Leanstral v26.03** | ⚠️ MOVED TO LEGACY — `labs-leanstral-2603` now in legacy/deprecated table at docs.mistral.ai. |
+| 2026-06-15 | Mistral | **Mistral Medium 3.1 v25.08** | ⚠️ FORMALLY DEPRECATED — `mistral-medium-2508` confirmed in legacy table at docs.mistral.ai. |
 | 2026-06-09 | Anthropic | **Claude Fable 5** | 🚨 LAUNCHED — New top-tier model. `claude-fable-5`. $10/$50 per MTok. 1M context, 128K output. Adaptive thinking always on. Safety fallback on cyber/bio queries. Released GA on Claude API, AWS Bedrock, Vertex AI, MS Foundry June 9, 2026. |
 | 2026-06-09 | Anthropic | **Claude Mythos 5** | 🚨 LAUNCHED (limited) — Joins Project Glasswing as limited-availability model. $10/$50 per MTok. Replaces Claude Mythos Preview within Glasswing. |
 | 2026-06-09 | Anthropic | **Claude Opus 4.8** | 📝 REPOSITIONED — No longer "Current Flagship." Now "Most Capable Opus-Tier / Daily Driver" following Fable 5 launch. Price unchanged: $5/$25. |
-| 2026-06-09 | Anthropic | **Claude Sonnet 4 + Opus 4** | 🚨 URGENCY UPDATE — Retirement is **6 days away (June 15, 2026)**. |
 | 2026-06-09 | OpenAI | **GPT-5.5 Pro / GPT-5.4 Pro long context** | 🆕 DOCUMENTED — Long-context pricing confirmed: **$60 input / $270 output** per MTok for prompts >~270K tokens. |
 | 2026-06-09 | OpenAI | **Multimodal/Specialized models** | 🆕 DOCUMENTED — gpt-realtime-2, gpt-realtime-translate, gpt-realtime-1.5, gpt-realtime-mini, gpt-image-2, gpt-image-1.5, gpt-image-1-mini, sora-2, sora-2-pro, gpt-4o-transcribe, gpt-4o-mini-transcribe, o3-deep-research, o4-mini-deep-research, computer-use-preview pricing all confirmed from developers.openai.com/api/docs/pricing. |
 | 2026-06-09 | Mistral | **Voxtral Mini Transcribe 2** | 🆕 ADDED — v26.02 Premier transcription model, supersedes v25.07. |
@@ -222,10 +227,8 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | 2026-06-09 | Mistral | **Voxtral Mini Transcribe v25.07** | ⚠️ MOVED TO LEGACY — `voxtral-mini-2507` now in legacy table at docs.mistral.ai. Superseded by v26.02 versions. |
 | 2026-06-09 | Mistral | **Mistral Small Creative v25.12** | ⚠️ MOVED TO LEGACY — `labs-mistral-small-creative` now in legacy table per docs.mistral.ai. |
 | 2026-06-09 | Mistral | **Devstral Small 2** | 📝 STATUS UPDATE — Now labeled [Labs] on mistral.ai/pricing page. |
-| 2026-06-09 | Mistral | **All other active models** | ✅ RE-VERIFIED — All prices confirmed unchanged. |
 | 2026-06-08 | Anthropic | **Claude Opus 4.7 Fast Mode** | 🔁 CORRECTION — Fast Mode IS available at $30/$150 per MTok (same as Opus 4.6). |
 | 2026-06-08 | OpenAI | **GPT-5.2 Thinking** | 🚨 RETIRED June 5, 2026 — API calls to `gpt-5.2-thinking` now return errors. |
-| 2026-06-08 | Mistral | **Leanstral, Mistral Small Creative, OCR 3, Codestral Embed, Mistral Embed, Mistral Moderation** | 🆕 DOCUMENTED — All new models added with pricing from official mistral.ai/pricing. |
 | 2026-06-01 | Mistral | **Voxtral Mini + Voxtral Mini Transcribe** | 🆕 ADDED — $0.001/min and $0.002/min respectively. |
 | 2026-05-28 | Anthropic | **Claude Opus 4.8** | 🚨 LAUNCHED — $5/$25 per MTok. Fast Mode 2× ($10/$50). 1M context. |
 | 2026-05-28 | Anthropic | **Claude Opus 4.7** | ⚠️ STATUS → LEGACY |
@@ -247,5 +250,5 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 - **Mistral** processes all API data in the EU by default — GDPR compliance advantage.
 - **Anthropic** offers US-only inference at 1.1× pricing via `inference_geo: "us"` parameter.
 - ⚠️ Models marked **RETIRED** return API errors. **DEPRECATED** = end-of-life published. **LEGACY** = still accessible but in provider's legacy section.
-- 🚨 **URGENT:** **Claude Sonnet 4 + Opus 4 retire June 15, 2026 (6 days) — migrate NOW.**
-- 🆕 **New June 9, 2026:** Claude Fable 5 ($10/$50, new Anthropic top-tier); Mistral Classifier API 3B/8B; Voxtral Mini Transcribe v26.02 (Premier + Realtime).
+- ✅ **Claude Sonnet 4 + Opus 4 RETIRED June 15, 2026 ❌** — API calls now return errors.
+- 🆕 **June 15, 2026:** Voxtral Mini Transcribe 2 price corrected ($0.003/min); Realtime confirmed ($0.006/min); Leanstral + Mistral Medium 3.1 moved to legacy.
