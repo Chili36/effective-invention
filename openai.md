@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-06-15
-> **Source:** https://openai.com/api/pricing/ · https://developers.openai.com/api/docs/pricing
-> **Scraped / verified:** 2026-06-15 — all active model prices re-confirmed unchanged; no new model launches since GPT-5.5 (April 2026); cross-referenced with aipricing.guru June 13, 2026 snapshot.
+> **Last updated:** 2026-06-22
+> **Source:** https://developers.openai.com/api/docs/pricing
+> **Scraped / verified:** 2026-06-22 — 🆕 New model `gpt-realtime-whisper` ($0.017/min) confirmed on live pricing page; `gpt-realtime-1.5` and `gpt-realtime-mini` removed from pricing page (moved to Legacy); `gpt-image-1.5`, `gpt-image-1-mini`, and `chatgpt-image-latest` marked DEPRECATED (June 2, 2026 notification, shutdown Dec 1, 2026); all other active prices re-confirmed unchanged.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -10,7 +10,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 > **Service tiers:** Three processing tiers — **Priority** (highest availability + predictable latency), **Standard** (default), and **Batch/Flex** (async 24hr, 50% off). Priority tier is available for GPT-5.5, GPT-5.4, and GPT-5.4 mini.
 
-> ✅ **June 15, 2026:** All active model prices re-confirmed unchanged (cross-referenced aipricing.guru June 13, 2026). No new model launches or pricing changes detected since GPT-5.5 launch April 23-24, 2026.
+> 📝 **June 22, 2026 update:** New model `gpt-realtime-whisper` ($0.017/min) added to the live pricing page for real-time speech recognition. `gpt-realtime-1.5` and `gpt-realtime-mini` are no longer listed on the live pricing page and are moved to Legacy. `gpt-image-1.5`, `gpt-image-1-mini`, and `chatgpt-image-latest` deprecated June 2, 2026 — shutdown December 1, 2026 (migrate to `gpt-image-2`). All other prices confirmed unchanged.
+
+> ✅ **June 22, 2026:** No new flagship model launches or pricing changes detected since GPT-5.5 (April 2026). `gpt-5.2` models also fully retired from ChatGPT as of June 12, 2026.
 
 ---
 
@@ -247,7 +249,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ### GPT-Realtime-Translate *(Live Translation)*
 
-> **Status:** ✅ Active — New live translation model; translates speech in real time at speaker pace.
+> **Status:** ✅ Active — Live translation model; translates speech in real time at speaker pace.
 
 | Pricing | Value |
 |---|---|
@@ -255,29 +257,19 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### GPT-Realtime-1.5 *(Previous Realtime)*
+### 🆕 GPT-Realtime-Whisper *(Real-time Speech Recognition — New)*
 
-| Modality | Input | Cached Input | Output |
-|---|---|---|---|
-| **Audio** | $32.00 / MTok | $0.40 / MTok | $64.00 / MTok |
-| **Text** | $4.00 / MTok | $0.40 / MTok | $16.00 / MTok |
-| **Image** | $5.00 / MTok | $0.50 / MTok | — |
+> **Status:** ✅ Active — New real-time Whisper-based speech recognition model, added to pricing page as of June 2026.
 
----
-
-### GPT-Realtime-Mini
-
-| Modality | Input | Cached Input | Output |
-|---|---|---|---|
-| **Audio** | $10.00 / MTok | $0.30 / MTok | $20.00 / MTok |
-| **Text** | $0.60 / MTok | $0.06 / MTok | $2.40 / MTok |
-| **Image** | $0.80 / MTok | $0.08 / MTok | — |
+| Pricing | Value |
+|---|---|
+| **Price** | $0.017 / minute |
 
 ---
 
 ### GPT-Image-2 *(Latest Image Generation)*
 
-> **Status:** ✅ Active — State-of-the-art image generation model.
+> **Status:** ✅ Active — State-of-the-art image generation model. **Recommended migration target from deprecated image models.**
 
 | Modality | Input | Cached Input | Output |
 |---|---|---|---|
@@ -288,7 +280,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### GPT-Image-1.5
+### ⚠️ GPT-Image-1.5 *(DEPRECATED — Shutdown Dec 1, 2026)*
+
+> **Status:** ⚠️ DEPRECATED — OpenAI notified developers June 2, 2026 of deprecation and removal December 1, 2026. **Migrate to `gpt-image-2`.**
 
 | Modality | Input | Cached Input | Output |
 |---|---|---|---|
@@ -297,7 +291,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### GPT-Image-1-mini
+### ⚠️ GPT-Image-1-mini *(DEPRECATED — Shutdown Dec 1, 2026)*
+
+> **Status:** ⚠️ DEPRECATED — OpenAI notified developers June 2, 2026 of deprecation and removal December 1, 2026. **Migrate to `gpt-image-2`.**
 
 | Modality | Input | Cached Input | Output |
 |---|---|---|---|
@@ -354,10 +350,10 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ### Codex / Specialized
 
-| Model | Input (std) | Priority Input | Output (std) | Priority Output |
-|---|---|---|---|---|
-| `gpt-5.3-codex` | $1.75 / MTok | $3.50 / MTok | $14.00 / MTok | $28.00 / MTok |
-| `chat-latest` (ChatGPT API) | $5.00 / MTok | — | $30.00 / MTok | — |
+| Model | Input (std) | Cached Input | Priority Input | Output (std) | Priority Output |
+|---|---|---|---|---|---|
+| `gpt-5.3-codex` | $1.75 / MTok | $0.175 / MTok | $3.50 / MTok | $14.00 / MTok | $28.00 / MTok |
+| `chat-latest` (ChatGPT API) | $5.00 / MTok | $0.50 / MTok | — | $30.00 / MTok | — |
 
 ---
 
@@ -365,15 +361,55 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 | Tool | Details | Pricing |
 |---|---|---|
-| **Web search** (reasoning/GPT-5) | All models | $10.00 / 1K calls + search content tokens at model rates |
-| **Web search** (non-reasoning) | Non-reasoning models (non-preview) | $25.00 / 1K calls; search content tokens free |
+| **Web search** (all models) | All models incl. Image Web search | $10.00 / 1K calls + search content tokens at model rates |
+| **Web search preview** (reasoning models) | `gpt-5`, `o-series` | $10.00 / 1K calls + search content tokens at model rates |
+| **Web search preview** (non-reasoning) | Non-reasoning models (non-preview) | $25.00 / 1K calls; search content tokens free |
 | **Containers** | Hosted Shell + Code Interpreter | $0.03 per 1GB / $1.92 per 64GB per 20-min session |
 | **File search storage** | Vector store | $0.10 / GB per day (1 GB free) |
 | **File search tool call** | Responses API | $2.50 / 1K calls |
+| **Agent Kit** | ChatKit file/image storage | $0.10 / GB-day after 1 GB free |
 
 ---
 
 ## ⚠️ Legacy / Deprecated / Retired Models
+
+### ⚠️ LEGACY — GPT-Realtime-1.5 *(Removed from pricing page June 2026)*
+
+> **Status:** ⚠️ LEGACY — No longer listed on the live OpenAI pricing page (removed as of June 2026). Superseded by `gpt-realtime-2`. Last known pricing below.
+
+| Modality | Input | Cached Input | Output |
+|---|---|---|---|
+| **Audio** | $32.00 / MTok *(last known)* | $0.40 / MTok | $64.00 / MTok |
+| **Text** | $4.00 / MTok | $0.40 / MTok | $16.00 / MTok |
+| **Image** | $5.00 / MTok | $0.50 / MTok | — |
+
+> **Migration:** → `gpt-realtime-2`
+
+---
+
+### ⚠️ LEGACY — GPT-Realtime-Mini *(Removed from pricing page June 2026)*
+
+> **Status:** ⚠️ LEGACY — No longer listed on the live OpenAI pricing page (removed as of June 2026). Last known pricing below.
+
+| Modality | Input | Cached Input | Output |
+|---|---|---|---|
+| **Audio** | $10.00 / MTok *(last known)* | $0.30 / MTok | $20.00 / MTok |
+| **Text** | $0.60 / MTok | $0.06 / MTok | $2.40 / MTok |
+| **Image** | $0.80 / MTok | $0.08 / MTok | — |
+
+> **Migration:** → `gpt-realtime-2`
+
+---
+
+### ⚠️ DEPRECATED — chatgpt-image-latest *(Shutdown Dec 1, 2026)*
+
+| Field | Value |
+|---|---|
+| **Model ID** | `chatgpt-image-latest` |
+| **Status** | ⚠️ DEPRECATED — Notified June 2, 2026; shutdown December 1, 2026 |
+| **Migration** | → **`gpt-image-2`** |
+
+---
 
 ### ⚠️ LEGACY — GPT-5.3 / Codex *(being phased out)*
 
@@ -392,7 +428,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | Field | Value |
 |---|---|
 | **Model ID** | `gpt-5.2` |
-| **Status** | ⚠️ LEGACY — Phasing out June 2026 · **GPT-5.2 Thinking variant RETIRED June 5, 2026 ❌** |
+| **Status** | ⚠️ LEGACY — **All GPT-5.2 models retired from ChatGPT June 12, 2026 ❌** · GPT-5.2 Thinking variant RETIRED API June 5, 2026 |
 | **Input price** | $1.75 / MTok |
 | **Output price** | $14.00 / MTok |
 | **Migration** | → **GPT-5.4** ($2.50/$15) or **GPT-5.5** ($5/$30) |
@@ -464,7 +500,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **GPT-5.5 vs GPT-5.4 routing** | GPT-5.5 at $5/$30 is 2× the per-token cost of GPT-5.4 $2.50/$15 |
 | **Regional processing** | +10% uplift for GPT-5.5/5.4 family data residency endpoints |
 | **Fine-tuning platform** | OpenAI is winding down the fine-tuning platform — no longer accessible to new users |
+| **Image models** | Migrate from `gpt-image-1.5` and `gpt-image-1-mini` to `gpt-image-2` before Dec 1, 2026 |
+| **Realtime models** | Use `gpt-realtime-2` ($32/$64 audio); `gpt-realtime-whisper` ($0.017/min) for transcription only |
 
 ---
 
-*Sources last verified: June 15, 2026 against `openai.com/api/pricing/` (cross-referenced aipricing.guru June 13, 2026 snapshot — GPT-5.5 $5/$30, GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40, all prices confirmed unchanged; GPT-5.2 Thinking remains RETIRED ❌ June 5, 2026).*
+*Sources last verified: June 22, 2026 against `developers.openai.com/api/docs/pricing` — gpt-realtime-whisper $0.017/min confirmed; gpt-realtime-1.5 and gpt-realtime-mini not present on live pricing page (moved to legacy); gpt-image-1.5 and gpt-image-1-mini DEPRECATED June 2, 2026 (shutdown Dec 1, 2026); chatgpt-image-latest DEPRECATED June 2, 2026; GPT-5.5 $5/$30, GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40, all confirmed unchanged.*

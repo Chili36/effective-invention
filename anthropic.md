@@ -1,15 +1,20 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-06-15
+> **Last updated:** 2026-06-22
 > **Source:** https://platform.claude.com/docs/en/about-claude/pricing · https://claude.com/pricing#api · https://www.anthropic.com/claude/mythos
-> **Scraped / verified:** 2026-06-15 — Claude Sonnet 4 + Opus 4 confirmed RETIRED as of June 15, 2026; all active prices re-verified unchanged.
+> **Scraped / verified:** 2026-06-22 — 🚫 **CRITICAL (June 12, 2026): US government export control directive suspends all access to Claude Fable 5 and Claude Mythos 5** (missed in June 15 update). Confirmed via [Anthropic's official statement](https://www.anthropic.com/news/fable-mythos-access). All other active model prices re-verified unchanged.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
-> 🚨 **June 9, 2026 — BREAKING: Claude Fable 5 + Mythos 5 launched.** Claude Fable 5 (`claude-fable-5`) is Anthropic's most capable widely released model, now the new top of the Claude lineup at **$10/$50 per MTok**. Claude Mythos 5 (`claude-mythos-5`) joins Project Glasswing (limited access). Full launch details: `anthropic.com/news/claude-fable-5-mythos-5`.
+> 🚫 **June 12, 2026 — CRITICAL: Claude Fable 5 + Mythos 5 SUSPENDED BY US GOVERNMENT.** The US government issued an export control directive requiring Anthropic to suspend **all access** to Claude Fable 5 and Claude Mythos 5. Anthropic is complying with the order and has disabled both Mythos-class models for **all customers globally** — including Project Glasswing partners. All other Claude models (Opus 4.8, Sonnet 4.6, Haiku 4.5) are **NOT affected** and remain fully accessible. See [Anthropic's official statement](https://www.anthropic.com/news/fable-mythos-access).
 >
-> - Claude Opus 4.8 remains the recommended model for complex reasoning and agentic coding for most developers ("daily driver"). Fable 5 is positioned for the most ambitious, long-running, asynchronous work.
-> - Cybersecurity and biology queries to Fable 5 automatically fall back to Opus 4.8 — you are **not** charged Fable 5 prices for rerouted requests.
+> - **Recommended fallback while Fable 5 is suspended:** Claude Opus 4.8 ($5/$25 per MTok).
+> - No timeline for reinstatement has been announced as of June 22, 2026.
+
+> 🚨 **June 9, 2026 — Claude Fable 5 + Mythos 5 launched** (subsequently suspended June 12). Claude Fable 5 (`claude-fable-5`) was Anthropic's most capable widely released model, at **$10/$50 per MTok**. Claude Mythos 5 (`claude-mythos-5`) joined Project Glasswing (limited access). Full launch details: `anthropic.com/news/claude-fable-5-mythos-5`.
+>
+> - Claude Opus 4.8 is now the recommended model for complex reasoning and agentic coding for all developers while Fable 5 is suspended.
+> - Cybersecurity and biology queries to Fable 5 automatically fall back to Opus 4.8 — you are **not** charged Fable 5 prices for rerouted requests (moot while suspended).
 > - Fable 5 requires **30-day data retention** for safety monitoring.
 
 > ✅ **Claude Sonnet 4 + Opus 4 RETIRED on June 15, 2026. ❌** API calls to `claude-sonnet-4-20250514` and `claude-opus-4-20250514` now return errors. Migration: Sonnet 4 → Sonnet 4.6 (same price, 1M context); Opus 4 → Opus 4.8 ($5/$25, 67% cheaper).
@@ -18,32 +23,32 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ## 🔒 Restricted / Preview Models (Limited Access)
 
-### Claude Mythos 5 *(Project Glasswing — Limited Availability)*
+### 🚫 Claude Mythos 5 *(SUSPENDED June 12, 2026 — US Government Export Control)*
 
 > **Launched:** June 9, 2026
-> **Status:** 🔒 LIMITED — Available to approved customers via [Project Glasswing](https://anthropic.com/glasswing) only
-> **Access:** AWS Bedrock (limited availability) · Google Vertex AI (limited availability) · Contact your Anthropic, AWS, or Google Cloud account team
-> **Pricing:** $10 / MTok input · $50 / MTok output (same as Fable 5)
+> **Status:** 🚫 **SUSPENDED** — Access suspended by US government export control directive on June 12, 2026. Project Glasswing access also halted for all partners. See [Anthropic's official statement](https://www.anthropic.com/news/fable-mythos-access).
+> **Access:** Suspended — was available via [Project Glasswing](https://anthropic.com/glasswing) only.
+> **Last-known Pricing:** $10 / MTok input · $50 / MTok output (same as Fable 5)
 > **Context:** 1M tokens · Max output: 128K tokens
 > **Capabilities:** Adaptive thinking (always on); no extended thinking. Successor to Claude Mythos Preview within Project Glasswing.
-> **Note:** Not generally available. To get access to Mythos 5 for cybersecurity and biology research, [sign up for notifications](https://claude.com/form/mythos-access-interest).
+> **Note:** All access suspended June 12, 2026 per US government export control directive. No reinstatement timeline announced.
 
 ### Claude Mythos Preview *(Restricted — Project Glasswing)*
 
-> **Status:** 🔒 RESTRICTED — Superseded by Claude Mythos 5 within Project Glasswing (June 9, 2026)
+> **Status:** 🔒 RESTRICTED — Superseded by Claude Mythos 5 within Project Glasswing (June 9, 2026); all Glasswing access currently suspended per June 12 government directive.
 > **Note:** Claude Mythos Preview has been replaced by Claude Mythos 5 as the Project Glasswing model.
 
 ---
 
-## ✅ Active / Recommended Models
+## 🚫 Suspended Models (US Government Export Control — June 12, 2026)
 
-### Claude Fable 5 *(New Top-Tier — Released June 9, 2026)*
+> **⚠️ The following model(s) were active at launch but have been suspended by US government export control directive on June 12, 2026. API calls are not possible. See [Anthropic's statement](https://www.anthropic.com/news/fable-mythos-access).**
 
-> **🆕 NEW (June 9, 2026):** Claude Fable 5 is Anthropic's most capable widely released model. It is built for ambitious, long-running, asynchronous work — multi-day agentic sessions, complex migrations, enterprise workflows, and hard knowledge work. It represents a new 5th model generation. Model ID: `claude-fable-5`. Available immediately on Claude API, AWS Bedrock, Vertex AI, and Microsoft Foundry.
+### 🚫 Claude Fable 5 *(SUSPENDED June 12, 2026 — US Government Export Control)*
+
+> **Launched June 9, 2026 — Suspended June 12, 2026:** Claude Fable 5 was Anthropic's most capable widely released model, built for ambitious, long-running, asynchronous work. It was suspended by US government export control directive on June 12, 2026 — just 3 days after launch. Model ID: `claude-fable-5`.
 >
-> ⚠️ **Safety fallback:** Cybersecurity and biology queries are automatically rerouted to Claude Opus 4.8 by Fable 5's built-in safeguards — those requests are billed at Opus 4.8 rates, not Fable 5 rates.
->
-> ⚠️ **Data retention:** Using Fable 5 requires 30-day data retention for safety monitoring ([learn more](https://support.claude.com/en/articles/15425996)).
+> **Use Claude Opus 4.8 ($5/$25) as fallback while Fable 5 is suspended.**
 
 | Field | Value |
 |---|---|
@@ -52,9 +57,10 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **AWS Bedrock ID** | `anthropic.claude-fable-5` |
 | **Vertex AI ID** | `claude-fable-5` |
 | **Released** | June 9, 2026 |
-| **Status** | ✅ Active — **Top-Tier / Most Capable** |
-| **Input price** | $10.00 / MTok |
-| **Output price** | $50.00 / MTok |
+| **Suspended** | June 12, 2026 (US government export control directive) |
+| **Status** | 🚫 **SUSPENDED** — Access halted for all customers globally per US government order. See [Anthropic's statement](https://www.anthropic.com/news/fable-mythos-access). |
+| **Last-known Input price** | $10.00 / MTok |
+| **Last-known Output price** | $50.00 / MTok |
 | **Cache write (5 min)** | $12.50 / MTok |
 | **Cache write (1 hr)** | $20.00 / MTok |
 | **Cache read** | $1.00 / MTok |
@@ -65,18 +71,20 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Max output** | 128,000 tokens |
 | **Extended thinking** | ❌ No |
 | **Adaptive thinking** | ✅ Yes (always on) |
-| **Availability** | Claude API · Claude Platform on AWS · Amazon Bedrock · Google Vertex AI · Microsoft Foundry |
+| **Availability** | 🚫 SUSPENDED — was available on Claude API · Amazon Bedrock · Google Vertex AI · Microsoft Foundry |
 | **Safety fallback** | Cybersecurity/biology queries auto-route to Opus 4.8 — billed at Opus 4.8 rates |
 | **Data retention** | 30-day data retention required for safety monitoring |
-| **Notable** | Most capable Anthropic model for general release; long-horizon agentic coding (CursorBench #1); multi-day autonomous sessions; vision for design fidelity; enterprise deep research and analysis; new 5th generation architecture; self-validates work and writes its own tests |
+| **Notable** | Most capable Anthropic model for general release at launch; suspended June 12, 2026 by US government order 3 days after launch |
 
-> 📝 **When to use Fable 5 vs Opus 4.8:** Use Fable 5 for problems you couldn't solve with previous models — multi-day autonomous tasks, complex migrations, long-horizon R&D. Use Opus 4.8 for everyday complex reasoning and agentic coding at half the per-token cost.
+> 📝 **While Fable 5 is suspended:** Use Claude Opus 4.8 ($5/$25 per MTok) for complex reasoning and agentic coding — it's half the price of Fable 5 and remains fully accessible.
 
 ---
 
-### Claude Opus 4.8 *(Daily Driver — Recommended for Most Developers)*
+## ✅ Active / Recommended Models
 
-> **May 28, 2026 — Opus 4.8** is Anthropic's most capable Opus-tier model for complex reasoning, long-horizon agentic coding, and high-autonomy work. Following the June 9 launch of Fable 5, Opus 4.8 is the recommended "daily driver" for most developers. Fast Mode available at 2× pricing for latency-sensitive workloads.
+### Claude Opus 4.8 *(Current Top-Tier / Daily Driver — Recommended while Fable 5 is suspended)*
+
+> **May 28, 2026 — Opus 4.8** is Anthropic's most capable **currently accessible** model. Following the June 12 US government suspension of Fable 5, Opus 4.8 is the recommended top-tier model for all developers until Fable 5 access is restored. Fast Mode available at 2× pricing for latency-sensitive workloads.
 
 | Field | Value |
 |---|---|
@@ -85,7 +93,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **AWS Bedrock ID** | `anthropic.claude-opus-4-83` (Messages-API Bedrock endpoint only) |
 | **Vertex AI ID** | `claude-opus-4-8` |
 | **Released** | May 2026 |
-| **Status** | ✅ Active — **Most Capable Opus-Tier / Daily Driver** |
+| **Status** | ✅ Active — **Current Top-Tier / Daily Driver (Fable 5 suspended)** |
 | **Input price** | $5.00 / MTok |
 | **Output price** | $25.00 / MTok |
 | **Fast Mode (input)** | $10.00 / MTok *(2× standard — up to 2.5× faster speeds)* |
@@ -103,7 +111,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Adaptive thinking** | ✅ Yes |
 | **Effort param default** | `high` on all surfaces (Claude API, Claude Code, etc.) — set `effort` explicitly for other levels |
 | **Availability** | Claude API · Claude Platform on AWS · Amazon Bedrock (Messages API endpoint) · Google Vertex AI · Microsoft Foundry (200k ctx) |
-| **Notable** | Best-value daily driver for complex reasoning and agentic coding; 1M context at standard pricing; Fast Mode at 2× base rate; Batch API up to 300k output tokens with beta header; safety fallback for Fable 5 cybersecurity/biology queries |
+| **Notable** | Top-tier daily driver for complex reasoning and agentic coding; 1M context at standard pricing; Fast Mode at 2× base rate; Batch API up to 300k output tokens with beta header; Fable 5 safety fallback target for cybersecurity/biology queries |
 
 > ⚠️ **Bedrock note:** Claude Opus 4.8 is available on Bedrock through the **Messages-API Bedrock endpoint** only.
 
@@ -165,18 +173,21 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 | Model | Extended Thinking | Adaptive Thinking | Notes |
 |---|---|---|---|
-| Claude Fable 5 | ❌ No | ✅ Yes (always on) | Top-tier; autonomous long-horizon work; safety fallback on cyber/bio queries |
-| Claude Opus 4.8 | ❌ No | ✅ Yes | Recommended daily driver; Fast Mode at 2× pricing |
+| Claude Fable 5 | ❌ No | ✅ Yes (always on) | 🚫 **SUSPENDED** June 12, 2026 — US gov't export control. Use Opus 4.8 as fallback. |
+| Claude Mythos 5 | ❌ No | ✅ Yes (always on) | 🚫 **SUSPENDED** June 12, 2026 — US gov't export control. |
+| Claude Opus 4.8 | ❌ No | ✅ Yes | **Current top-tier** while Fable 5 is suspended; Fast Mode at 2× pricing |
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Best for reasoning + speed balance |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview`, verified June 15, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview`, verified June 22, 2026.
 
 ---
 
-## 🆕 Platform Feature: Fallback API (Fable 5)
+## 🆕 Platform Feature: Fallback API (Fable 5 — currently moot while suspended)
 
 > **June 9, 2026:** API customers using Claude Fable 5 must configure the **Fallback API** (`support.claude.com/en/articles/15363606`) so that cybersecurity/biology queries automatically route to Opus 4.8. Claude.ai and other hosted surfaces handle the fallback automatically.
+>
+> **Note (June 12, 2026):** Fable 5 is currently suspended. This configuration guide is for when access is restored.
 
 ---
 
@@ -188,7 +199,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ## ⚠️ Legacy / Deprecated / Retired Models
 
-> These models are no longer recommended for new projects. **LEGACY** = still API-accessible but in the provider's legacy section. **DEPRECATED** = still accessible, published retirement date. **RETIRED** = API calls return errors ❌.
+> These models are no longer recommended for new projects. **LEGACY** = still API-accessible but in the provider's legacy section. **DEPRECATED** = still accessible, published retirement date. **RETIRED** = API calls return errors ❌. **SUSPENDED** = access halted by external directive.
 
 ---
 
@@ -346,13 +357,13 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Prompt caching — cache read (5-min TTL)** | 90% off repeated input tokens |
 | **Prompt caching — cache write (5-min TTL)** | 1.25× standard input (break-even after 2 reads) |
 | **Prompt caching — cache write (1-hr TTL)** | 2× standard input (break-even after 8 reads) |
-| **Fable 5 vs Opus 4.8** | Fable 5 at $10/$50 is 2× the per-token cost of Opus 4.8 ($5/$25) — route only problems requiring multi-day autonomous work to Fable 5 |
-| **US-only inference (data residency)** | 1.1× pricing on Opus 4.6, Sonnet 4.6, Fable 5 and later models |
+| **🚫 Fable 5 SUSPENDED** | Fable 5 ($10/$50) access is suspended by US gov't order. Route to Opus 4.8 ($5/$25) instead — half the per-token cost. |
+| **Opus 4.8 vs Opus 4.7 Fast Mode** | Opus 4.8 Fast Mode is $10/$50 (2× standard); Opus 4.7 Fast Mode was $30/$150 (6×) — significant savings |
+| **US-only inference (data residency)** | 1.1× pricing on Opus 4.6, Sonnet 4.6, and Fable 5 (when restored) and later models |
 | **Opus 4.8 Fast Mode** | $10/$50 (2× standard) — up to 2.5× faster speeds |
-| **Fable 5 safety fallback** | Cybersecurity/biology queries auto-route to Opus 4.8 and are billed at Opus 4.8 rates |
-| **Thinking modes** | Adaptive: Fable 5 + Opus 4.8 + Sonnet 4.6. Extended: Sonnet 4.6 + Haiku 4.5. |
+| **Thinking modes** | Adaptive: Opus 4.8 + Sonnet 4.6 (Fable 5 suspended). Extended: Sonnet 4.6 + Haiku 4.5. |
 | **⚠️ Sonnet 4 + Opus 4 RETIRED** | **Retired June 15, 2026 ❌** — API calls return errors — Sonnet 4 → Sonnet 4.6, Opus 4 → Opus 4.8 |
 
 ---
 
-*Sources last verified: June 15, 2026 against `claude.com/pricing#api` and `platform.claude.com/docs/en/about-claude/pricing` — Claude Sonnet 4 (`claude-sonnet-4-20250514`) RETIRED ❌ June 15, 2026; Claude Opus 4 (`claude-opus-4-20250514`) RETIRED ❌ June 15, 2026; Fable 5 $10/$50 re-confirmed; Mythos 5 $10/$50 limited access re-confirmed; Opus 4.8 $5/$25 re-confirmed; Sonnet 4.6 $3/$15 re-confirmed; Haiku 4.5 $1/$5 re-confirmed; all cache/batch pricing unchanged.*
+*Sources last verified: June 22, 2026 against `claude.com/pricing#api` and `platform.claude.com/docs/en/about-claude/pricing` · `anthropic.com/news/fable-mythos-access` (Fable 5 + Mythos 5 suspended June 12, 2026 by US government export control directive — confirmed; Opus 4.8 $5/$25 re-confirmed as top accessible model; Sonnet 4.6 $3/$15 re-confirmed; Haiku 4.5 $1/$5 re-confirmed; all cache/batch pricing unchanged).*
