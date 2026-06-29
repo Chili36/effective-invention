@@ -1,15 +1,17 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-06-22
-> **Source:** https://platform.claude.com/docs/en/about-claude/pricing · https://claude.com/pricing#api · https://www.anthropic.com/claude/mythos
-> **Scraped / verified:** 2026-06-22 — 🚫 **CRITICAL (June 12, 2026): US government export control directive suspends all access to Claude Fable 5 and Claude Mythos 5** (missed in June 15 update). Confirmed via [Anthropic's official statement](https://www.anthropic.com/news/fable-mythos-access). All other active model prices re-verified unchanged.
+> **Last updated:** 2026-06-29
+> **Source:** https://www.anthropic.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview
+> **Scraped / verified:** 2026-06-29 — ✅ All active model prices re-confirmed unchanged. No new API models detected. New product **Claude Tag** (`@Claude`) launched June 23, 2026 — this is a team/workspace product integration, not an API model; no new API pricing applies.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
 > 🚫 **June 12, 2026 — CRITICAL: Claude Fable 5 + Mythos 5 SUSPENDED BY US GOVERNMENT.** The US government issued an export control directive requiring Anthropic to suspend **all access** to Claude Fable 5 and Claude Mythos 5. Anthropic is complying with the order and has disabled both Mythos-class models for **all customers globally** — including Project Glasswing partners. All other Claude models (Opus 4.8, Sonnet 4.6, Haiku 4.5) are **NOT affected** and remain fully accessible. See [Anthropic's official statement](https://www.anthropic.com/news/fable-mythos-access).
 >
 > - **Recommended fallback while Fable 5 is suspended:** Claude Opus 4.8 ($5/$25 per MTok).
-> - No timeline for reinstatement has been announced as of June 22, 2026.
+> - No timeline for reinstatement has been announced as of June 29, 2026.
+
+> 🆕 **June 23, 2026 — Claude Tag launched.** @Claude is a new Teams/workspace product integration that allows teams to mention and interact with Claude directly in platforms. This is a **product feature**, not a new API model — billed at standard API token rates using the underlying model. See [announcement](https://www.anthropic.com/news/introducing-claude-tag).
 
 > 🚨 **June 9, 2026 — Claude Fable 5 + Mythos 5 launched** (subsequently suspended June 12). Claude Fable 5 (`claude-fable-5`) was Anthropic's most capable widely released model, at **$10/$50 per MTok**. Claude Mythos 5 (`claude-mythos-5`) joined Project Glasswing (limited access). Full launch details: `anthropic.com/news/claude-fable-5-mythos-5`.
 >
@@ -179,7 +181,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Best for reasoning + speed balance |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview`, verified June 22, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview`, re-verified June 29, 2026.
 
 ---
 
@@ -194,6 +196,12 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 ## 🆕 Platform Feature: Claude Security (Enterprise — Public Beta)
 
 > **May 2026:** Anthropic launched **Claude Security** in public beta for Claude Enterprise customers. Purpose-built for security operations workflows. Billed at standard API token rates using the underlying model.
+
+---
+
+## 🆕 Platform Feature: Claude Tag *(Teams Product — June 23, 2026)*
+
+> **June 23, 2026:** Anthropic launched **Claude Tag** (`@Claude`) — a new way for teams to mention and interact with Claude directly within shared workspaces and collaboration surfaces. This is a **product/teams feature**, not a new API model. Billed at standard API token rates using the underlying Claude model. See [announcement](https://www.anthropic.com/news/introducing-claude-tag).
 
 ---
 
@@ -366,4 +374,4 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-*Sources last verified: June 22, 2026 against `claude.com/pricing#api` and `platform.claude.com/docs/en/about-claude/pricing` · `anthropic.com/news/fable-mythos-access` (Fable 5 + Mythos 5 suspended June 12, 2026 by US government export control directive — confirmed; Opus 4.8 $5/$25 re-confirmed as top accessible model; Sonnet 4.6 $3/$15 re-confirmed; Haiku 4.5 $1/$5 re-confirmed; all cache/batch pricing unchanged).*
+*Sources last verified: June 29, 2026 against `www.anthropic.com/pricing` and `platform.claude.com/docs/en/about-claude/models/overview` · All active prices (Opus 4.8 $5/$25, Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5) re-confirmed unchanged · Fable 5 + Mythos 5 suspension status re-confirmed · Claude Tag product launch noted (not an API model) · No new API models detected.*
