@@ -1,12 +1,16 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-06-29
+> **Last updated:** 2026-07-01
 > **Source:** https://mistral.ai/pricing · https://docs.mistral.ai/models/overview
-> **Scraped / verified:** 2026-06-29 — 🆕 **OCR 4 launched June 23, 2026** ($4/1K pages standard, $2/1K Batch, $5/1K Document AI) — supersedes OCR 3 as flagship OCR model. 📈 **Mistral Small 4 price increased**: $0.10→$0.15 input, $0.30→$0.60 output (verified on mistral.ai/pricing). ⚠️ **Voxtral Mini 3B** (`voxtral-mini-2507`) moved to legacy; `voxtral-mini-latest` alias now points to Voxtral Mini Transcribe 2. Multiple new entries in docs.mistral.ai legacy table.
+> **Scraped / verified:** 2026-07-01 — 🆕 **Leanstral 1.5 launched June 30, 2026** (Labs, free, 256K context) — supersedes the original Leanstral (v26.03). 🆕 **OCR 4 launched June 23, 2026** ($4/1K pages standard, $2/1K Batch, $5/1K Document AI) — supersedes OCR 3 as flagship OCR model. 📈 **Mistral Small 4 price increased**: $0.10→$0.15 input, $0.30→$0.60 output (verified on mistral.ai/pricing). ⚠️ **Voxtral Mini 3B** (`voxtral-mini-2507`) moved to legacy; `voxtral-mini-latest` alias now points to Voxtral Mini Transcribe 2. Multiple new entries in docs.mistral.ai legacy table.
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Vibe) subscriptions are billed **separately**.
 
 > **Mistral's key differentiators:** Native EU data residency (GDPR by default), competitive mid-tier pricing, Apache 2.0 open-weight models, dedicated reasoning (Magistral series), flagship merged model (Medium 3.5), and a 50% batch processing discount.
+
+> 📝 **July 1, 2026 update:**
+> - 🆕 **Leanstral 1.5** (`labs-leanstral-1-5`, Labs) launched June 30, 2026 — an updated Lean 4 formal proof engineering / automated theorem proving agent (119B total params, 6.5B active), superseding the original Leanstral (v26.03, March 2026). Still free while Mistral gathers feedback. Original v26.03 remains listed but is now formally replaced.
+> - ✅ All other active prices re-confirmed unchanged against `mistral.ai/pricing`.
 
 > 📝 **June 29, 2026 update:**
 > - 🆕 **OCR 4** (v4.0, Premier) launched June 23, 2026 — $4/1K pages (standard), $2/1K pages (Batch-API), $5/1K pages (Document AI). `mistral-ocr-latest` alias now points to OCR 4. OCR 3 moved to legacy (still available for existing integrations per docs.mistral.ai).
@@ -146,6 +150,25 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Output price** | $0.30 / MTok |
 | **Context window** | 256,000 tokens |
 | **Notable** | 24B params; ~58% SWE-bench Verified; deployable on single RTX 4090/32GB Mac at Q4 |
+
+---
+
+### 🆕 Leanstral 1.5 *(Labs — Released June 30, 2026)*
+
+> **🆕 June 30, 2026 — Leanstral 1.5 launched.** Updated version of Mistral's open-source Lean 4 formal proof engineering / automated theorem proving agent, superseding the original Leanstral (v26.03, released March 16, 2026 — see Legacy section). Still free while Mistral gathers real-world feedback and observability data. Source: https://docs.mistral.ai/models/model-cards/leanstral-1-5-26-06
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `labs-leanstral-1-5` |
+| **Released** | June 30, 2026 |
+| **Status** | ✅ Active — Labs — **Supersedes Leanstral v26.03** |
+| **Pricing** | **Free** *(API endpoint kept highly accessible for a limited period to gather feedback)* |
+| **Context window** | 256,000 tokens |
+| **Parameters** | 119B total, 6.5B active (MoE — same family as Mistral Small 4) |
+| **Capabilities** | Chat Completions, Function Calling, Agents & Conversations, Built-In Tools, Structured/Predicted Outputs, OCR, FIM, Embeddings, Moderations, Transcriptions, Text-to-Speech, Batching |
+| **Availability** | API (`labs-leanstral-1-5` endpoint); Mistral Vibe (`/leanstall` command) |
+| **Notable** | First-of-kind open-source code agent purpose-built for Lean 4 formal proof engineering and autoformalization; updated version improves on the original Leanstral's pass@k scores on FLTEval while remaining dramatically cheaper than closed frontier models for proof-engineering workloads |
 
 ---
 
@@ -290,19 +313,6 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-### Leanstral *(⚠️ Moved to Legacy — June 2026)*
-
-> **⚠️ June 15, 2026:** Leanstral (`labs-leanstral-2603`, v26.03) has been moved to the legacy/deprecated table at `docs.mistral.ai/models/overview`. Still listed on `mistral.ai/pricing` — verify accessibility on console.mistral.ai before building new workloads.
-
-| Field | Value |
-|---|---|
-| **Model ID** | `labs-leanstral-2603` |
-| **Status** | ⚠️ LEGACY — In legacy table at docs.mistral.ai (June 2026); still on pricing page |
-| **Pricing** | **Free** *(while accessible)* |
-| **Notable** | First open-source code agent for Lean 4 formal proof engineering |
-
----
-
 ### Mistral Nemo
 
 | Field | Value |
@@ -401,6 +411,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Devstral 2** | 123B | Modified MIT | Self-hosted coding agents |
 | **Devstral Small 2** | 24B | Apache 2.0 | Self-hosted budget coding agent (RTX 4090) |
 | **Magistral Medium** | — | Apache 2.0 | Self-hosted reasoning |
+| **Leanstral 1.5** | 119B (MoE, 6.5B active) | Apache 2.0 | Self-hosted Lean 4 formal proof engineering |
 | **Voxtral Small 24B** | 24B | Apache 2.0 | Self-hosted audio understanding |
 | **Voxtral Mini Transcribe Realtime** | — | Apache 2.0 | Self-hosted real-time transcription |
 | **Voxtral TTS** | 4B | CC BY-NC 4.0 | Self-hosted TTS (non-commercial only) |
@@ -439,16 +450,17 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-### ⚠️ LEGACY — Leanstral v26.03 *(Moved to Legacy June 2026)*
+### ⚠️ LEGACY — Leanstral v26.03 *(🔄 Replaced by Leanstral 1.5 — June 30, 2026)*
 
-> **MOVED TO LEGACY (June 15, 2026):** `docs.mistral.ai/models/overview` now lists Leanstral (v26.03, `labs-leanstral-2603`) in the legacy/deprecated table.
+> 🔄 **REPLACED (June 30, 2026):** The original Leanstral (`labs-leanstral-2603`, v26.03, released March 16, 2026) has been superseded by **Leanstral 1.5** (`labs-leanstral-1-5`, released June 30, 2026). It had already been moved to the legacy/deprecated table at `docs.mistral.ai/models/overview` on June 15, 2026. Both versions remain free; new projects should use Leanstral 1.5.
 
 | Field | Value |
 |---|---|
 | **Model ID** | `labs-leanstral-2603` |
-| **Status** | ⚠️ LEGACY — Moved to legacy table at docs.mistral.ai (June 2026) |
-| **Last price** | Free |
-| **Migration** | No direct successor; check Mistral docs for alternatives |
+| **Status** | ⚠️ LEGACY — 🔄 Replaced by Leanstral 1.5 (June 30, 2026); still free while accessible |
+| **Pricing** | **Free** *(while accessible)* |
+| **Notable** | First open-source code agent for Lean 4 formal proof engineering; superseded by Leanstral 1.5 |
+| **Migration** | → **Leanstral 1.5** (`labs-leanstral-1-5`) |
 
 ---
 
@@ -596,6 +608,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Budget reasoning** | Use Mistral Small 4 with `reasoning_effort=high` ($0.15/$0.60) as the budget reasoning option |
 | **Voxtral transcription** | Voxtral Mini Transcribe 2 (`voxtral-mini-latest`, $0.003/min) for batch; Realtime ($0.006/min) for live |
 | **OCR 4 batch savings** | OCR 4 Batch-API: $2/1K pages (50% off standard $4/1K pages) |
+| **🆕 Leanstral 1.5** | Free Labs endpoint for Lean 4 formal proof engineering — use `labs-leanstral-1-5` instead of the legacy v26.03 endpoint |
 
 ---
 
@@ -613,4 +626,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: June 29, 2026 against `mistral.ai/pricing` (OCR 4 $4/$2/$5 per 1K pages confirmed; Mistral Small 4 price $0.15/$0.60 confirmed; all other active prices re-confirmed) and `docs.mistral.ai/models/overview` (OCR 3, Voxtral Mini 3B, Magistral Medium 1.2 v2509, Devstral 2 v25.12, Devstral Small 2 v25.12 confirmed in legacy table).*
+*Sources last verified: July 1, 2026 against `mistral.ai/pricing` (OCR 4 $4/$2/$5 per 1K pages confirmed; Mistral Small 4 price $0.15/$0.60 confirmed; all other active prices re-confirmed) and `docs.mistral.ai/models/overview` (🆕 Leanstral 1.5 added June 30, 2026, replacing v26.03; OCR 3, Voxtral Mini 3B, Magistral Medium 1.2 v2509, Devstral 2 v25.12, Devstral Small 2 v25.12 confirmed in legacy table).*
