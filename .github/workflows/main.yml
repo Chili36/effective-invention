@@ -179,7 +179,12 @@ jobs:
               status, stop_reason = drive_to_terminal(session.id)
               log("Final session status=%s stop_reason=%s" % (status, stop_reason))
 
-              success = status == "idle" and stop_reason != "retries_exhausted"
+              # Success is ONLY a clean end_turn. idle can also carry stop_reason
+              # "requires_action" (session paused waiting for a client-side action such as a
+              # tool confirmation -- which this fire-and-forget job never provides, so the
+              # update did not complete) or "retries_exhausted" (agent hit a wall). Both are
+              # incomplete runs that must go red, not silently archive-and-exit-0.
+              success = status == "idle" and stop_reason == "end_turn"
 
               # Archiving is only permitted for idle sessions; never archive a running one.
               # Best-effort: the REST status can still lag at "running" just after an idle
