@@ -2,7 +2,7 @@
 
 > **Last updated:** 2026-07-01
 > **Source:** https://developers.openai.com/api/docs/pricing · https://openai.com/index/previewing-gpt-5-6-sol/
-> **Scraped / verified:** 2026-07-01 — 🆕 **GPT-5.6 (Sol / Terra / Luna) previewed June 26, 2026** — next-generation model family in **limited preview** (~20 trusted partners, coordinated with the US government). Not yet generally available via public API. GPT-5.5 remains the current widely-available flagship. All other active prices re-confirmed unchanged against live pricing page.
+> **Scraped / verified:** 2026-07-01 — 🆕 **GPT-5.6 (Sol / Terra / Luna) previewed June 26, 2026** — next-generation model family in **limited preview** (~20 trusted partners, coordinated with the US government). Not yet generally available via public API. GPT-5.5 remains the current widely-available flagship. All other active prices re-confirmed unchanged against live pricing page. Independently re-verified against the live `developers.openai.com/api/docs/pricing` page on July 1, 2026 — no pricing changes detected; GPT-5.6 remains restricted-preview only, with OpenAI targeting general availability "in the coming weeks."
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -548,4 +548,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-*Sources last verified: July 1, 2026 against `developers.openai.com/api/docs/pricing` and `openai.com/index/previewing-gpt-5-6-sol/` — GPT-5.5 $5/$30, GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40 all confirmed unchanged. 🆕 GPT-5.6 Sol/Terra/Luna added as restricted preview ($5/$30, $2.50/$15, $1/$6) — limited to ~20 partners pending US government review, targeting broader release by end of July 2026.*
+*Sources last verified: July 1, 2026 against `developers.openai.com/api/docs/pricing` and `openai.com/index/previewing-gpt-5-6-sol/` — GPT-5.5 $5/$30, GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40 all confirmed unchanged. 🆕 GPT-5.6 Sol/Terra/Luna added as restricted preview ($5/$30, $2.50/$15, $1/$6) — limited to ~20 partners pending US government review, targeting broader release by end of July 2026. Independently re-verified July 1, 2026 directly against the live OpenAI pricing page — every price point above matches exactly, no changes detected.*
