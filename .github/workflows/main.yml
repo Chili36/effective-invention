@@ -8,6 +8,7 @@ on:
 jobs:
   update-pricing:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Check out repo
@@ -26,49 +27,191 @@ jobs:
       - name: Write script
         run: |
           cat > run_agent.py <<'PY'
+          import sys
+          import time
           import anthropic
+
+          BETAS = ["managed-agents-2026-04-01"]
+          RETRYABLE_STATUS = {408, 409, 429, 500, 502, 503, 504, 529}
+          POLL_INTERVAL = 15  # seconds between status polls when the stream closes early
+
+          # Names verified against anthropic 0.112.0 (the version pinned by CI):
+          #   BetaManagedAgentsSession.status -> "rescheduling" | "running" | "idle" | "terminated"
+          #   stream event `type` discriminators -> "session.status_idle",
+          #     "session.status_terminated", "session.error", "agent.message", ...
+          #   session.status_idle.stop_reason.type -> "end_turn" | "requires_action" | "retries_exhausted"
+          # Only "idle" (or pending) sessions may be archived.
 
           client = anthropic.Anthropic()
 
-          session = client.beta.sessions.create(
-              agent="agent_011CZwijZihnPvZcL6HjQo9F",
-              environment_id="env_01B6Hn4X4d7soRPUNnjmoT4A",
-              vault_ids=["vlt_011CZwiqKEjCEEq7PfdLYt3Y"],
-              title="Weekly pricing update",
-              betas=["managed-agents-2026-04-01"],
-          )
 
-          client.beta.sessions.events.send(
-              session_id=session.id,
-              events=[
-                  {
-                      "type": "user.message",
-                      "content": [
-                          {
-                              "type": "text",
-                              "text": "Search for the latest 2026 pricing for Anthropic, OpenAI, and Mistral models, mark legacy models, and commit updated model cards to the repo."
-                          }
-                      ]
-                  }
-              ],
-              betas=["managed-agents-2026-04-01"],
-          )
+          def log(msg):
+              print(msg, flush=True)
 
-          with client.beta.sessions.events.stream(
-              session_id=session.id,
-              betas=["managed-agents-2026-04-01"],
-          ) as stream:
-              for event in stream:
-                  if getattr(event, "type", None) == "session.status_idle":
-                      print("Agent finished.")
+
+          def is_transient(exc):
+              if isinstance(exc, (anthropic.APIConnectionError,
+                                  anthropic.RateLimitError,
+                                  anthropic.InternalServerError)):
+                  return True
+              if isinstance(exc, anthropic.APIStatusError):
+                  return exc.status_code in RETRYABLE_STATUS
+              return False
+
+
+          def create_session():
+              session = client.beta.sessions.create(
+                  agent="agent_011CZwijZihnPvZcL6HjQo9F",
+                  environment_id="env_01B6Hn4X4d7soRPUNnjmoT4A",
+                  vault_ids=["vlt_011CZwiqKEjCEEq7PfdLYt3Y"],
+                  title="Weekly pricing update",
+                  betas=BETAS,
+              )
+              log("Created session %s" % session.id)
+              client.beta.sessions.events.send(
+                  session_id=session.id,
+                  events=[
+                      {
+                          "type": "user.message",
+                          "content": [
+                              {
+                                  "type": "text",
+                                  "text": "Search for the latest 2026 pricing for Anthropic, OpenAI, and Mistral models, mark legacy models, and commit updated model cards to the repo."
+                              }
+                          ]
+                      }
+                  ],
+                  betas=BETAS,
+              )
+              log("Sent task message.")
+              return session
+
+
+          def stream_events(session_id):
+              """Stream and log every event. Returns (terminal, stop_reason): terminal is
+              "idle" or "terminated" if an in-band terminal event arrived, else None; the
+              stream simply closing without such an event leaves terminal None."""
+              terminal = None
+              stop_reason = None
+              with client.beta.sessions.events.stream(
+                  session_id=session_id,
+                  betas=BETAS,
+              ) as stream:
+                  for event in stream:
+                      etype = getattr(event, "type", None)
+                      log("event: %s" % etype)
+                      if etype == "agent.message":
+                          for block in getattr(event, "content", None) or []:
+                              text = getattr(block, "text", None)
+                              if text:
+                                  log("  assistant: %s" % text)
+                      elif etype == "session.error":
+                          err = getattr(event, "error", None)
+                          log("  session.error: %s: %s" % (
+                              getattr(err, "type", None),
+                              getattr(err, "message", err),
+                          ))
+                      elif etype == "session.status_idle":
+                          reason = getattr(event, "stop_reason", None)
+                          stop_reason = getattr(reason, "type", None)
+                          log("  session.status_idle (stop_reason=%s)" % stop_reason)
+                          terminal = "idle"
+                          break
+                      elif etype == "session.status_terminated":
+                          log("  session.status_terminated")
+                          terminal = "terminated"
+                          break
+              return terminal, stop_reason
+
+
+          def drive_to_terminal(session_id):
+              """Return (terminal_status, stop_reason).
+
+              The in-band session.status_idle / session.status_terminated event is the
+              authoritative completion signal. The REST `status` field is eventually
+              consistent and can still read "running" for minutes after the agent has gone
+              idle, so it must NOT be used to override an explicit terminal event.
+
+              Only when the stream closes WITHOUT a terminal event -- e.g. a dropped
+              connection on a still-running durable session (the original failure mode) --
+              do we fall back to polling the REST status, reconnecting until it settles.
+              Transient errors retry once; the job-level timeout-minutes is the hard stop
+              for a genuine hang."""
+              stream_retries = 0
+              while True:
+                  try:
+                      terminal, stop_reason = stream_events(session_id)
+                  except Exception as exc:
+                      # A genuine transient error (connection reset, 429/529) -> retry once.
+                      if is_transient(exc) and stream_retries < 1:
+                          stream_retries += 1
+                          log("Transient stream error: %r - reconnecting once." % exc)
+                          time.sleep(5)
+                          continue
+                      raise
+                  stream_retries = 0
+                  if terminal is not None:
+                      # Authoritative in-band terminal event -- trust it.
+                      return terminal, stop_reason
+                  # Stream closed with no terminal event; the durable session may still be
+                  # working. Poll the REST status to decide whether to wait or stop.
+                  session = client.beta.sessions.retrieve(session_id, betas=BETAS)
+                  log("Stream closed with no terminal event; REST status=%s" % session.status)
+                  if session.status in ("idle", "terminated"):
+                      return session.status, None
+                  log("Session still '%s'; reconnecting after %ds." % (session.status, POLL_INTERVAL))
+                  time.sleep(POLL_INTERVAL)
+
+
+          def main():
+              session = None
+              for attempt in range(1, 3):
+                  try:
+                      session = create_session()
                       break
+                  except Exception as exc:
+                      if is_transient(exc) and attempt < 2:
+                          log("Transient error creating session (attempt %d): %r - retrying." % (attempt, exc))
+                          time.sleep(5)
+                          continue
+                      raise
 
-          client.beta.sessions.archive(
-              session.id,
-              betas=["managed-agents-2026-04-01"],
-          )
+              status, stop_reason = drive_to_terminal(session.id)
+              log("Final session status=%s stop_reason=%s" % (status, stop_reason))
 
-          print("Done.")
+              # Success is ONLY a clean end_turn. idle can also carry stop_reason
+              # "requires_action" (session paused waiting for a client-side action such as a
+              # tool confirmation -- which this fire-and-forget job never provides, so the
+              # update did not complete) or "retries_exhausted" (agent hit a wall). Both are
+              # incomplete runs that must go red, not silently archive-and-exit-0.
+              success = status == "idle" and stop_reason == "end_turn"
+
+              # Archiving is only permitted for idle sessions; never archive a running one.
+              # Best-effort: the REST status can still lag at "running" just after an idle
+              # event, so archive may 400 -- wrap it so cleanup never flips a real success
+              # to red or invents a failure.
+              if status == "idle":
+                  try:
+                      client.beta.sessions.archive(session.id, betas=BETAS)
+                      log("Archived session %s." % session.id)
+                  except Exception as exc:
+                      log("WARNING: archive failed (non-fatal): %r" % exc)
+              else:
+                  log("Not archiving: session status is '%s', not 'idle'." % status)
+
+              if success:
+                  log("Done. Agent completed successfully.")
+                  return 0
+              log("FAILURE: session %s ended status=%s stop_reason=%s" % (session.id, status, stop_reason))
+              return 1
+
+
+          if __name__ == "__main__":
+              try:
+                  sys.exit(main())
+              except Exception as exc:
+                  log("FATAL: %s: %s" % (type(exc).__name__, exc))
+                  sys.exit(1)
           PY
 
       - name: Run LLM Pricing Tracker Agent
