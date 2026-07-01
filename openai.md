@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-06-29
-> **Source:** https://developers.openai.com/api/docs/pricing
-> **Scraped / verified:** 2026-06-29 — ✅ All active prices re-confirmed unchanged against live pricing page. No new flagship model launches detected since GPT-5.5 (April 2026). Added explicit batch and priority pricing for Pro models now visible on pricing page. `gpt-5.3-codex` priority pricing added ($3.50/$0.35/$28).
+> **Last updated:** 2026-07-01
+> **Source:** https://developers.openai.com/api/docs/pricing · https://openai.com/index/previewing-gpt-5-6-sol/
+> **Scraped / verified:** 2026-07-01 — 🆕 **GPT-5.6 (Sol / Terra / Luna) previewed June 26, 2026** — next-generation model family in **limited preview** (~20 trusted partners, coordinated with the US government). Not yet generally available via public API. GPT-5.5 remains the current widely-available flagship. All other active prices re-confirmed unchanged against live pricing page.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -10,11 +10,39 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 > **Service tiers:** Three processing tiers — **Priority** (highest availability + predictable latency), **Standard** (default), and **Batch/Flex** (async 24hr, 50% off). Priority tier is available for GPT-5.5, GPT-5.4, and GPT-5.4 mini.
 
-> 📝 **June 29, 2026 update:** All active prices re-confirmed unchanged against live `developers.openai.com/api/docs/pricing`. Added explicit batch and priority pricing for GPT-5.5 Pro, GPT-5.4 Pro (now visible on pricing page), and priority pricing for `gpt-5.3-codex`. No new models or price changes detected.
+> 📝 **July 1, 2026 update:** All active prices re-confirmed unchanged against live `developers.openai.com/api/docs/pricing`. 🆕 Added **GPT-5.6 (Sol/Terra/Luna)** as a Restricted/Preview entry — announced June 26, 2026, limited to ~20 trusted partner organizations pending a US government review process (per Executive Order issued June 2, 2026). No public API pricing tier active yet; published preview pricing documented below. GPT-5.6 introduces a new caching model (cache writes at 1.25× uncached input rate) that will apply once GA.
 
 ---
 
-## 🔒 Restricted / Preview Models (Not General API)
+## 🔒 Restricted / Preview Models (Not Yet Generally Available)
+
+### 🆕 GPT-5.6 — Sol / Terra / Luna *(Preview — Limited Access, announced June 26, 2026)*
+
+> **Status:** 🔒 **RESTRICTED PREVIEW** — Available only to ~20 trusted partner organizations approved through a US government review process, following a June 2, 2026 executive order directing federal agencies to establish a benchmarking/assessment process for new frontier model releases. OpenAI states it expects to expand access to more companies "in the coming weeks" and target a broader public release by end of July 2026. **Not available via standard public API access as of July 1, 2026.**
+>
+> GPT-5.6 introduces a new naming system: the version number identifies the model generation, while **Sol**, **Terra**, and **Luna** identify durable capability tiers (top-tier / balanced / speed-and-cost) that can each advance on their own release cadence going forward — replacing the old flagship/mini/nano naming within a generation.
+
+| Field | Value |
+|---|---|
+| **Provider** | OpenAI |
+| **Model IDs** | `gpt-5.6-sol` · `gpt-5.6-terra` · `gpt-5.6-luna` *(preview)* |
+| **Announced** | June 26, 2026 |
+| **Status** | 🔒 Restricted preview — ~20 trusted partners; broader release expected by end of July 2026 |
+| **Sol — Input / Output** | $5.00 / $30.00 per MTok *(same headline price as GPT-5.5)* |
+| **Terra — Input / Output** | $2.50 / $15.00 per MTok |
+| **Luna — Input / Output** | $1.00 / $6.00 per MTok |
+| **Cache writes (GPT-5.6+)** | 1.25× the model's uncached input rate *(new caching model, replaces prior discount-on-write approach)* |
+| **Cache reads (GPT-5.6+)** | 90% off uncached input rate (unchanged discount) |
+| **Cache minimum life** | 30 minutes (new minimum for explicit cache breakpoints) |
+| **Availability** | API + Codex, limited to approved preview partners only |
+| **Also launching** | GPT-5.6 Sol on Cerebras hardware (up to ~750 tokens/sec) — planned for July 2026, targeting low-latency enterprise workloads |
+| **New capabilities** | Max reasoning effort tier (Sol); new "ultra" mode using subagents for complex, long-running work; strong gains on Terminal-Bench 2.1 (coding) and GeneBench v1 (genomics/biology); OpenAI's most capable model yet for cybersecurity per its own benchmarking |
+| **Safety** | Most extensive red-teaming to date (~700,000 A100e-equivalent GPU hours); layered cyber/bio misuse safeguards; released in coordination with the US government given elevated cyber capability |
+| **Notable** | Sol is the flagship successor to GPT-5.5 at the same $5/$30 headline price; Terra and Luna are new mid/budget tiers replacing the previous "-mini"/"-nano" suffix convention for this generation |
+
+> 📝 **Not yet reflected in the live OpenAI pricing page** (`developers.openai.com/api/docs/pricing`) as of July 1, 2026 — treat the prices above as preview/announcement pricing subject to change at GA. **GPT-5.5 remains the recommended flagship for general API access** until GPT-5.6 exits preview.
+
+---
 
 ### GPT-5.4-Cyber *(Restricted — Limited Access)*
 
@@ -25,14 +53,16 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ## ✅ Active / Recommended Models
 
-### GPT-5.5 *(Current Flagship — Released April 23-24, 2026)*
+### GPT-5.5 *(Current Widely-Available Flagship — Released April 23-24, 2026)*
+
+> **📝 July 1, 2026:** Remains the current generally-available flagship while **GPT-5.6 Sol** (see Restricted/Preview above) is limited to trusted partners. Expect GPT-5.5 to be superseded once GPT-5.6 reaches general availability (targeted by end of July 2026).
 
 | Field | Value |
 |---|---|
 | **Provider** | OpenAI |
 | **Model ID** | `gpt-5.5` |
 | **Released** | April 23, 2026 (ChatGPT/Codex) · April 24, 2026 (API) |
-| **Status** | ✅ Active — **Current Flagship** |
+| **Status** | ✅ Active — **Current Widely-Available Flagship** *(GPT-5.6 Sol in restricted preview)* |
 | **Input price (std ctx <~270K)** | $5.00 / MTok |
 | **Input price (long ctx >~270K)** | $10.00 / MTok *(2× standard — full session)* |
 | **Output price (std ctx)** | $30.00 / MTok |
@@ -50,7 +80,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Max output** | 128,000 tokens |
 | **Availability** | API (Responses + Chat Completions) · ChatGPT Plus/Pro/Business/Enterprise · Codex |
 | **Regional processing** | +10% uplift |
-| **Notable** | First fully retrained base since GPT-4.5; natively omnimodal (text+image+audio+video); top Artificial Analysis Intelligence Index |
+| **Notable** | First fully retrained base since GPT-4.5; natively omnimodal (text+image+audio+video); top Artificial Analysis Intelligence Index; successor **GPT-5.6 Sol** in restricted preview at the same headline price |
 
 ---
 
@@ -514,7 +544,8 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Fine-tuning platform** | OpenAI is winding down the fine-tuning platform — no longer accessible to new users |
 | **Image models** | Migrate from `gpt-image-1.5` and `gpt-image-1-mini` to `gpt-image-2` before Dec 1, 2026 |
 | **Realtime models** | Use `gpt-realtime-2` ($32/$64 audio); `gpt-realtime-whisper` ($0.017/min) for transcription only |
+| **🆕 GPT-5.6 preview** | Restricted to ~20 trusted partners as of July 1, 2026; not yet available for general API access — stay on GPT-5.5 until GA (targeted end of July 2026) |
 
 ---
 
-*Sources last verified: June 29, 2026 against `developers.openai.com/api/docs/pricing` — GPT-5.5 $5/$30, GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40 all confirmed unchanged. Batch/priority pricing for Pro models confirmed and documented. gpt-5.3-codex priority pricing added ($3.50/$28). No new flagship model launches detected.*
+*Sources last verified: July 1, 2026 against `developers.openai.com/api/docs/pricing` and `openai.com/index/previewing-gpt-5-6-sol/` — GPT-5.5 $5/$30, GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40 all confirmed unchanged. 🆕 GPT-5.6 Sol/Terra/Luna added as restricted preview ($5/$30, $2.50/$15, $1/$6) — limited to ~20 partners pending US government review, targeting broader release by end of July 2026.*
