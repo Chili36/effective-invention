@@ -88,8 +88,10 @@ jobs:
 
 
           def stream_events(session_id):
-              """Stream and log every event. Returns the idle stop_reason type if the
-              session reached idle during this stream, else None."""
+              """Stream and log every event. Returns (terminal, stop_reason): terminal is
+              "idle" or "terminated" if an in-band terminal event arrived, else None; the
+              stream simply closing without such an event leaves terminal None."""
+              terminal = None
               stop_reason = None
               with client.beta.sessions.events.stream(
                   session_id=session_id,
@@ -113,25 +115,32 @@ jobs:
                           reason = getattr(event, "stop_reason", None)
                           stop_reason = getattr(reason, "type", None)
                           log("  session.status_idle (stop_reason=%s)" % stop_reason)
+                          terminal = "idle"
                           break
                       elif etype == "session.status_terminated":
                           log("  session.status_terminated")
+                          terminal = "terminated"
                           break
-              return stop_reason
+              return terminal, stop_reason
 
 
           def drive_to_terminal(session_id):
-              """Drive the session to a terminal status. A closed stream does NOT mean the
-              agent is done -- sessions are durable and long-running server-side -- so after
-              each stream we poll the authoritative status and keep going until it is
-              terminal ("idle" or "terminated"). The job-level timeout-minutes is the hard
-              stop for a genuine hang. Returns (session, stop_reason)."""
-              stop_reason = None
-              session = None
+              """Return (terminal_status, stop_reason).
+
+              The in-band session.status_idle / session.status_terminated event is the
+              authoritative completion signal. The REST `status` field is eventually
+              consistent and can still read "running" for minutes after the agent has gone
+              idle, so it must NOT be used to override an explicit terminal event.
+
+              Only when the stream closes WITHOUT a terminal event -- e.g. a dropped
+              connection on a still-running durable session (the original failure mode) --
+              do we fall back to polling the REST status, reconnecting until it settles.
+              Transient errors retry once; the job-level timeout-minutes is the hard stop
+              for a genuine hang."""
               stream_retries = 0
               while True:
                   try:
-                      stop_reason = stream_events(session_id)
+                      terminal, stop_reason = stream_events(session_id)
                   except Exception as exc:
                       # A genuine transient error (connection reset, 429/529) -> retry once.
                       if is_transient(exc) and stream_retries < 1:
@@ -141,13 +150,16 @@ jobs:
                           continue
                       raise
                   stream_retries = 0
-                  # Consult the authoritative status; the stream ending is not completion.
+                  if terminal is not None:
+                      # Authoritative in-band terminal event -- trust it.
+                      return terminal, stop_reason
+                  # Stream closed with no terminal event; the durable session may still be
+                  # working. Poll the REST status to decide whether to wait or stop.
                   session = client.beta.sessions.retrieve(session_id, betas=BETAS)
-                  log("Authoritative status after stream: %s" % session.status)
+                  log("Stream closed with no terminal event; REST status=%s" % session.status)
                   if session.status in ("idle", "terminated"):
-                      return session, stop_reason
-                  # Durable session still working; the stream just closed early. Keep polling.
-                  log("Session still '%s'; stream closed early - polling again." % session.status)
+                      return session.status, None
+                  log("Session still '%s'; reconnecting after %ds." % (session.status, POLL_INTERVAL))
                   time.sleep(POLL_INTERVAL)
 
 
@@ -164,14 +176,15 @@ jobs:
                           continue
                       raise
 
-              final, stop_reason = drive_to_terminal(session.id)
-              status = getattr(final, "status", None)
+              status, stop_reason = drive_to_terminal(session.id)
               log("Final session status=%s stop_reason=%s" % (status, stop_reason))
 
               success = status == "idle" and stop_reason != "retries_exhausted"
 
               # Archiving is only permitted for idle sessions; never archive a running one.
-              # Wrap it so cleanup can never mask a real result or invent a failure.
+              # Best-effort: the REST status can still lag at "running" just after an idle
+              # event, so archive may 400 -- wrap it so cleanup never flips a real success
+              # to red or invents a failure.
               if status == "idle":
                   try:
                       client.beta.sessions.archive(session.id, betas=BETAS)
