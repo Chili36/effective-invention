@@ -1,8 +1,8 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-07-01
+> **Last updated:** 2026-07-06
 > **Source:** https://www.anthropic.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing
-> **Scraped / verified:** 2026-07-01 — 🔓 **BREAKING: Claude Fable 5 + Mythos 5 RESTORED.** The US export control directive that suspended both models on June 12, 2026 was **lifted June 30, 2026**. Fable 5 returns globally today, July 1, 2026, on the Claude Platform, Claude.ai, Claude Code, and Claude Cowork (AWS/Google Cloud/Microsoft Foundry access being re-enabled "as quickly as possible"). Mythos 5 access has been restored for an approved set of US organizations via Project Glasswing following June 26, 2026 government approval. See [Anthropic's "Redeploying Fable 5" post](https://www.anthropic.com/news/redeploying-fable-5).
+> **Scraped / verified:** 2026-07-06 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page.** Every active price point below (Claude Fable 5, Claude Mythos 5, Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5) matches exactly what is currently published. No new model releases, price changes, or deprecation-date changes detected since the July 1, 2026 refresh. 🔓 Claude Fable 5 remains fully restored/GA (export controls lifted June 30, 2026); Claude Mythos 5 remains restricted to approved Project Glasswing organizations.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
@@ -200,7 +200,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Replaced by Sonnet 5 as default; still active |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified July 1, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified July 6, 2026.
 
 ---
 
@@ -395,4 +395,4 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-*Sources last verified: July 1, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/about-claude/models/overview`, `anthropic.com/news/redeploying-fable-5`, and `anthropic.com/news/fable-mythos-access`. 🔓 **Major update:** Fable 5 and Mythos 5 export controls lifted June 30, 2026; Fable 5 restored globally July 1, 2026 with a new >99%-effective safety classifier; Mythos 5 restored for approved orgs June 26, 2026. Opus 4.8 $5/$25, Sonnet 5 $2/$10→$3/$15, Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5 all re-confirmed unchanged against the official pricing table.*
+*Sources last verified: July 6, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/about-claude/models/overview`, `anthropic.com/news/redeploying-fable-5`, and `anthropic.com/news/fable-mythos-access`. ✅ Independently re-fetched the live pricing table on July 6, 2026 — Fable 5 $10/$50, Mythos 5 $10/$50, Opus 4.8 $5/$25, Sonnet 5 $2/$10→$3/$15 (Sept 1), Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5 all re-confirmed unchanged, along with all legacy/deprecated/retired model statuses and dates.*
