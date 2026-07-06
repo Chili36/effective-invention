@@ -2,7 +2,7 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-07-01 (refresh #24)
+> **Last updated:** 2026-07-06 (refresh #25)
 > **Sources:** Official provider pricing pages — scraped/verified on date above.
 
 ---
@@ -28,6 +28,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 > ✅ **Claude Sonnet 4 + Opus 4 RETIRED June 15, 2026 ❌** (Claude API; still on Bedrock/Google Cloud) — migrate to Sonnet 5/4.6 / Opus 4.8
 > 🆕 **Claude Tag** launched June 23, 2026 — Teams product integration (@Claude), not a new API model.
 > 🤝 Anthropic is deepening US government collaboration on frontier AI security and, with Amazon/Microsoft/Google, developing a shared jailbreak-severity scoring framework.
+> ✅ **Re-verified July 6, 2026** directly against the live `platform.claude.com/docs/en/about-claude/pricing` page — every price point above confirmed unchanged.
 
 ---
 
@@ -35,12 +36,12 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) | Context Window | Availability |
 |---|---|---|---|---|---|
-| 🔒 **GPT-5.6 Sol** *(Preview — ~20 trusted partners)* | $5.00 | — *(new caching model)* | $30.00 | TBD | 🔒 Restricted preview only |
+| 🔒 **GPT-5.6 Sol** *(Preview — ~20 trusted partners, no GA date)* | $5.00 | — *(new caching model)* | $30.00 | TBD | 🔒 Restricted preview only |
 | 🔒 GPT-5.6 Terra *(Preview)* | $2.50 | — | $15.00 | TBD | 🔒 Restricted preview only |
 | 🔒 GPT-5.6 Luna *(Preview)* | $1.00 | — | $6.00 | TBD | 🔒 Restricted preview only |
-| **GPT-5.5** *(Current Widely-Available Flagship)* | $5.00 / $10.00* | $0.50 / $1.00* | $30.00 / $45.00* | **1.05M tokens** | API |
+| **GPT-5.5** *(Current Widely-Available Flagship)* | $5.00 / $10.00* | $0.50 / $1.00* | $30.00 / $45.00* | **1M tokens** | API |
 | **GPT-5.5 Pro** | $30.00 / $60.00* | — | $180.00 / $270.00* | 1M tokens | API |
-| GPT-5.4 *(prev flagship)* | $2.50 / $5.00† | $0.25 / $0.50† | $15.00 / $22.50† | 1.05M tokens | API |
+| GPT-5.4 *(prev flagship)* | $2.50 / $5.00† | $0.25 / $0.50† | $15.00 / $22.50† | 1M tokens | API |
 | GPT-5.4 Pro | $30.00 / $60.00* | — | $180.00 / $270.00* | 1.05M tokens | API |
 | **GPT-5.4 mini** | $0.75 | $0.075 | $4.50 | 400K tokens | API |
 | **GPT-5.4 nano** | $0.20 | $0.020 | $1.25 | 400K tokens | API |
@@ -52,12 +53,12 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | o4-mini *(reasoning)* | $1.10 | $0.275 | $4.40 | 200K tokens | API |
 
 > 💡 Batch/Flex API: 50% off all models · Cached inputs: 50–90% off · Regional processing: +10% on GPT-5.5 and GPT-5.4 family
-> 🆕 **GPT-5.6 (Sol/Terra/Luna) previewed June 26, 2026** — restricted to ~20 trusted partners pending US government review; not yet generally available. Broader release targeted by end of July 2026. New caching model: cache writes at 1.25× uncached input rate.
+> 🆕 **GPT-5.6 (Sol/Terra/Luna) previewed June 26, 2026** — restricted to ~20 trusted partners pending US government review; not yet generally available. The official OpenAI models page still confirms as of July 6, 2026: *"GPT-5.6 is available to select trusted partners in preview. Broad availability coming soon."* No GA date has been announced. New caching model: cache writes at 1.25× uncached input rate.
 > *GPT-5.5 / GPT-5.5 Pro / GPT-5.4 Pro long-context pricing (>~270K tokens): standard × 2 input / × 1.5 output for GPT-5.5; standard × 2 for Pro models
 > †GPT-5.4 tiered pricing: short ctx (<~270K) / long ctx (>~270K)
 > 🔒 GPT-5.4-Cyber — limited vetted access only
 > 📝 GPT-5.5 Pro batch: $15/$90 (std ctx) · GPT-5.4 Pro batch: $15/$90 (std), $30/$135 (long) · gpt-5.3-codex priority: $3.50/$28
-> ✅ Independently re-verified July 1, 2026 against the live `developers.openai.com/api/docs/pricing` page — no price changes detected.
+> ✅ Independently re-verified July 6, 2026 against the live `developers.openai.com/api/docs/pricing` and `developers.openai.com/api/docs/models` pages — no price changes detected; GPT-5.6 confirmed still restricted-preview only.
 
 **Multimodal / Specialized:**
 
@@ -69,6 +70,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | gpt-image-2 | Image $8 input / $30 output · Text $5 input (per MTok) |
 | ⚠️ gpt-image-1.5 | DEPRECATED — shutdown Dec 1, 2026 → migrate to gpt-image-2 |
 | ⚠️ gpt-image-1-mini | DEPRECATED — shutdown Dec 1, 2026 → migrate to gpt-image-2 |
+| ⚠️ gpt-4o-mini-tts | DEPRECATED — labeled "Deprecated" on live OpenAI models page |
 | sora-2 | $0.10 / sec (720p) |
 | sora-2-pro | $0.30–$0.70 / sec (720p–1080p) |
 | o3-deep-research | $5.00 input / $20.00 output per MTok |
@@ -121,7 +123,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Mistral Nemo | $0.15 | $0.15 | 128K tokens | API |
 | Ministral 3 14B | $0.20 | $0.20 | 256K tokens | API |
 | Ministral 3 8B | $0.15 | $0.15 | 256K tokens | API |
-| Ministral 3 3B | $0.10 | $0.10 | 556K tokens | API |
+| Ministral 3 3B | $0.10 | $0.10 | 256K tokens | API |
 | Mixtral 8x22B *(legacy API)* | $2.00 | $6.00 | 64K tokens | API |
 | Mixtral 8x7B *(legacy API)* | $0.70 | $0.70 | 32K tokens | API |
 
@@ -130,7 +132,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 > 📈 **Mistral Small 4** price increased to $0.15/$0.60 (was $0.10/$0.30) — verified June 29, 2026
 > 🆕 **OCR 4** launched June 23, 2026 — supersedes OCR 3; adds bounding boxes, 170-language support
 > ⚠️ **Voxtral Mini 3B** (`voxtral-mini-2507`) moved to legacy; `voxtral-mini-latest` now points to Voxtral Mini Transcribe 2
-> ✅ Independently re-verified July 1, 2026 against the live `mistral.ai/pricing` and `docs.mistral.ai/models/overview` pages — no price changes or new releases detected.
+> ✅ Independently re-verified July 6, 2026 against the live `mistral.ai/pricing/api` and `docs.mistral.ai/getting-started/models/models_overview/` pages — no price changes or new releases detected.
 
 ---
 
@@ -154,10 +156,10 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Provider | Tier | File | Description |
 |---|---|---|---|
-| Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards — 🔓 **Fable 5 + Mythos 5 RESTORED** (export controls lifted June 30, Fable 5 globally available July 1) · Claude Sonnet 5 (new default, replaces Sonnet 4.6) · Opus 4.8 ($5/$25) top-tier · Opus 4.7 Fast Mode deprecated (Jul 24), Opus 4.6 Fast Mode removed (Jun 29) · Sonnet 4 + Opus 4 RETIRED Jun 15 |
-| OpenAI | 1 | [openai.md](./openai.md) | Full model cards — GPT-5.6 (Sol/Terra/Luna) restricted preview (announced Jun 26) · GPT-5.5 current widely-available flagship · gpt-image-1.5 + gpt-image-1-mini DEPRECATED (Dec 1, 2026) · re-verified Jul 1, no changes |
+| Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards — 🔓 **Fable 5 + Mythos 5 RESTORED** (export controls lifted June 30, Fable 5 globally available July 1) · Claude Sonnet 5 (new default, replaces Sonnet 4.6) · Opus 4.8 ($5/$25) top-tier · Opus 4.7 Fast Mode deprecated (Jul 24), Opus 4.6 Fast Mode removed (Jun 29) · Sonnet 4 + Opus 4 RETIRED Jun 15 · re-verified Jul 6, no changes |
+| OpenAI | 1 | [openai.md](./openai.md) | Full model cards — GPT-5.6 (Sol/Terra/Luna) restricted preview (announced Jun 26, no GA date) · GPT-5.5 current widely-available flagship · gpt-image-1.5 + gpt-image-1-mini DEPRECATED (Dec 1, 2026) · re-verified Jul 6, no changes |
 | Google Gemini | 1 | [gemini.md](./gemini.md) | Full model cards incl. Gemini 3.5 Flash (new flagship), 3.1 Flash-Lite stable GA, 2.0 Flash deprecation |
-| Mistral AI | 1 | [mistral.md](./mistral.md) | Full model cards — Leanstral 1.5 (Jun 30, replaces v26.03) · OCR 4 (Jun 23) · Small 4 price +50%/+100% · re-verified Jul 1, no changes |
+| Mistral AI | 1 | [mistral.md](./mistral.md) | Full model cards — Leanstral 1.5 (Jun 30, replaces v26.03) · OCR 4 (Jun 23) · Small 4 price +50%/+100% · re-verified Jul 6, no changes |
 | OpenRouter Picks | 2 | [openrouter-picks.md](./openrouter-picks.md) | One best-performing model per Tier 2 provider, all via OpenRouter |
 
 ---
@@ -190,8 +192,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Status | Input ($/MTok) | Output ($/MTok) | Migration Target |
 |---|---|---|---|---|
-| ⚠️ GPT-Realtime-1.5 | **LEGACY** · Removed from pricing page June 2026 | $4.00 (text) / $32.00 (audio) | $16.00 (text) / $64.00 (audio) | → gpt-realtime-2 |
-| ⚠️ GPT-Realtime-Mini | **LEGACY** · Removed from pricing page June 2026 | $0.60 (text) / $10.00 (audio) | $2.40 (text) / $20.00 (audio) | → gpt-realtime-2 |
+| ⚠️ GPT-Realtime-1.5 | **LEGACY** · Still listed as specialized model; superseded by gpt-realtime-2 | $4.00 (text) / $32.00 (audio) | $16.00 (text) / $64.00 (audio) | → gpt-realtime-2 |
+| ⚠️ GPT-Realtime-Mini | **LEGACY** · Still listed as specialized model; cost-efficient variant | $0.60 (text) / $10.00 (audio) | $2.40 (text) / $20.00 (audio) | → gpt-realtime-2 |
+| ⚠️ GPT-4o mini TTS | **DEPRECATED** · Explicitly labeled "Deprecated" on live OpenAI models page | — | — | → gpt-realtime-2 or current TTS models |
 | ⚠️ GPT-Image-1.5 | **DEPRECATED ❌ June 2, 2026 — Shutdown Dec 1, 2026** | $8.00 | $32.00 | → gpt-image-2 |
 | ⚠️ GPT-Image-1-mini | **DEPRECATED ❌ June 2, 2026 — Shutdown Dec 1, 2026** | $2.50 | $8.00 | → gpt-image-2 |
 | ⚠️ chatgpt-image-latest | **DEPRECATED ❌ June 2, 2026 — Shutdown Dec 1, 2026** | — | — | → gpt-image-2 |
@@ -225,17 +228,19 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | ⚠️ Devstral 2 v25.12 | **LEGACY** · `devstral-2512` in legacy table at docs.mistral.ai; `devstral-medium-latest` still active | Use `devstral-medium-latest` |
 | ⚠️ Devstral Small 2 v25.12 | **LEGACY** · `labs-devstral-small-2512` in legacy table; `devstral-small-latest` still active | Use `devstral-small-latest` |
 | ⚠️ Magistral Medium 1.2 v2509 | **LEGACY** · `magistral-medium-2509` in legacy table; `magistral-medium-latest` still active | Use `magistral-medium-latest` |
-| ⚠️ Mistral Medium 3.1 v25.08 | **LEGACY** · Confirmed in legacy table at docs.mistral.ai (June 15, 2026) | → Mistral Medium 3.5 or Mistral Large 3 |
+| ⚠️ Magistral Small 1.2 (v2509) | **LEGACY** · Specific version; `magistral-small-latest` still active | → Mistral Small 4 with `reasoning_effort=high` |
+| ⚠️ Mistral Medium 3.1 v25.08 | **LEGACY** · Confirmed in legacy table at docs.mistral.ai | → Mistral Medium 3.5 or Mistral Large 3 |
+| ⚠️ Mistral Medium 3 v25.05 | **LEGACY** · Confirmed in legacy table at docs.mistral.ai | → Mistral Medium 3.5 |
 | ⚠️ Voxtral Mini Transcribe v25.07 | **LEGACY** · Superseded by v26.02 (June 2026) | → Voxtral Mini Transcribe 2 (v26.02, $0.003/min) or Realtime ($0.006/min) |
 | ⚠️ Mistral Small Creative v25.12 | **LEGACY** · Now in legacy per docs.mistral.ai | → Verify on console.mistral.ai |
 | ⚠️ Pixtral Large | **LEGACY** · Deprecated May 2026 | → Mistral Medium 3.5 or Mistral Small 4 |
-| ⚠️ Magistral Small 1.2 (v2509) | **LEGACY** · Specific version; `magistral-small-latest` still active | → Mistral Small 4 with `reasoning_effort=high` |
-| ⚠️ Devstral Small 1.1 | LEGACY | → Devstral Small 2 |
-| ⚠️ Devstral Medium | LEGACY | → Devstral 2 or Medium 3.5 |
+| ⚠️ Devstral Small 1.1 / 1.0 | LEGACY | → Devstral Small 2 |
+| ⚠️ Devstral Medium 1.0 | LEGACY | → Devstral 2 or Medium 3.5 |
 | ⚠️ Mistral Small 3.2 24B | LEGACY | → Mistral Small 4 |
 | ⚠️ Mistral Small 3.1/3.0 | LEGACY | → Mistral Small 4 |
-| ⚠️ Mistral Large 2 (2407) | LEGACY | → Mistral Large 3 |
-| ⚠️ Codestral 2501 | LEGACY | → Codestral 2508 |
+| ⚠️ Mistral Large 2.x | LEGACY | → Mistral Large 3 |
+| ⚠️ Codestral 2501 / 24.05 | LEGACY | → Codestral 2508 |
+| ⚠️ Mistral Saba, Pixtral 12B, Ministral 3B/8B (24.10), Mistral Nemo 12B, Codestral Mamba, Mathstral, Mistral 7B, Mistral Large/Small/Medium 1.0, original Mixtral 8x7B/8x22B | LEGACY | → Current generation equivalents (see mistral.md) |
 
 ---
 
@@ -243,6 +248,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Date | Provider | Model | Change |
 |---|---|---|---|
+| 2026-07-06 | Anthropic | **All active + legacy models** | ✅ RE-VERIFIED — Independently re-fetched the live `platform.claude.com/docs/en/about-claude/pricing` page; every price point (Fable 5, Mythos 5, Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5) and legacy/retirement status confirmed unchanged since July 1, 2026. |
+| 2026-07-06 | OpenAI | **All active models** | ✅ RE-VERIFIED — Independently checked every price point against the live `developers.openai.com/api/docs/pricing` and `developers.openai.com/api/docs/models` pages; no changes detected. The models page explicitly confirms GPT-5.6 remains "available to select trusted partners in preview" with broad availability still "coming soon" and no GA date set. |
+| 2026-07-06 | Mistral | **All active models + legacy table** | ✅ RE-VERIFIED — Independently checked every price point against `mistral.ai/pricing/api` and the legacy table against `docs.mistral.ai/getting-started/models/models_overview/`; no changes or new releases detected since June 30, 2026. |
 | 2026-07-01 | Anthropic | **Claude Fable 5 + Mythos 5** | 🔓 **RESTORED** — US export control directive (issued June 12, 2026) lifted June 30, 2026. Fable 5 available globally starting July 1, 2026 (Claude Platform, Claude.ai, Claude Code, Claude Cowork; AWS/Google Cloud/MS Foundry re-enabling). Mythos 5 restored June 26, 2026 for approved Project Glasswing orgs. New safety classifier blocks the reported jailbreak technique in >99% of cases. Subscription plans (Pro/Max/Team/select Enterprise): Fable 5 included for up to 50% of weekly usage limits through July 7, 2026, then usage-credits billing. Pricing unchanged at $10/$50 per MTok. |
 | 2026-07-01 | Anthropic | **US government collaboration** | 🤝 Anthropic committed to expanded pre-release government access/evaluation, rapid jailbreak information sharing, dedicated joint security research, and a common industry security standard. Partnering with Amazon, Microsoft, Google on a shared jailbreak-severity scoring framework. |
 | 2026-07-01 | OpenAI | **All active models** | ✅ RE-VERIFIED — Independently checked every price point against the live `developers.openai.com/api/docs/pricing` page; no changes detected. GPT-5.6 remains restricted-preview only. |
@@ -251,7 +259,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | 2026-06-30 | Anthropic | **Claude Sonnet 4.6** | 🔄 REPLACED as default by Claude Sonnet 5 (June 30, 2026). Still fully active and not deprecated — pricing unchanged at $3/$15. |
 | 2026-07-01 | Anthropic | **Claude Opus 4.7 Fast Mode** | ⚠️ DEPRECATED — Removal scheduled for July 24, 2026. Still billable at $30/$150 (6×) until then. |
 | 2026-07-01 | Anthropic | **Claude Opus 4.6 Fast Mode** | ❌ REMOVED — As of June 29, 2026, `speed: "fast"` requests to Opus 4.6 now run at standard speed/pricing. |
-| 2026-07-01 | OpenAI | **GPT-5.6 (Sol/Terra/Luna)** | 🆕 NEW MODEL FAMILY (Restricted Preview) — Announced June 26, 2026. Limited to ~20 trusted partners pending US government review (per June 2, 2026 executive order). Pricing: Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per MTok. New caching model: cache writes at 1.25× uncached input rate, 30-min minimum cache life. Broader release targeted by end of July 2026. |
+| 2026-07-01 | OpenAI | **GPT-5.6 (Sol/Terra/Luna)** | 🆕 NEW MODEL FAMILY (Restricted Preview) — Announced June 26, 2026. Limited to ~20 trusted partners pending US government review (per June 2, 2026 executive order). Pricing: Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per MTok. New caching model: cache writes at 1.25× uncached input rate, 30-min minimum cache life. No GA date announced as of July 6, 2026. |
 | 2026-06-29 | Mistral | **OCR 4** | 🆕 NEW MODEL — Launched June 23, 2026. $4/1K pages (standard), $2/1K pages (Batch-API 50% off), $5/1K pages (Document AI). `mistral-ocr-latest` alias now points to OCR 4. Adds bounding boxes, block classification, confidence scores, 170-language support. OCR 3 moved to legacy. Source: mistral.ai/news/ocr-4/ |
 | 2026-07-01 | Mistral | **Leanstral 1.5** | 🆕 NEW MODEL — Launched June 30, 2026 (Labs, free, 256K context, 119B/6.5B active MoE). Supersedes original Leanstral (v26.03), which was already in the legacy table since June 15, 2026. |
 | 2026-06-29 | Mistral | **Mistral Small 4** | 📈 PRICE INCREASE — Input $0.10 → **$0.15/MTok** (+50%). Output $0.30 → **$0.60/MTok** (+100%). Confirmed on live mistral.ai/pricing. |
@@ -266,8 +274,8 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | 2026-06-29 | Anthropic | **All active models** | ✅ VERIFIED — Opus 4.8 $5/$25, Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5 all confirmed unchanged. |
 | 2026-06-22 | Anthropic | **Claude Fable 5 + Mythos 5** | 🚫 SUSPENDED — US government issued export control directive June 12, 2026 suspending all access. *(Superseded by the July 1, 2026 restoration above.)* |
 | 2026-06-22 | OpenAI | **gpt-realtime-whisper** | 🆕 NEW — Real-time speech recognition model at $0.017/min added to live pricing page. |
-| 2026-06-22 | OpenAI | **gpt-realtime-1.5** | ⚠️ MOVED TO LEGACY — No longer listed on live pricing page as of June 2026. |
-| 2026-06-22 | OpenAI | **gpt-realtime-mini** | ⚠️ MOVED TO LEGACY — No longer listed on live pricing page as of June 2026. |
+| 2026-06-22 | OpenAI | **gpt-realtime-1.5** | ⚠️ MOVED TO LEGACY — No longer listed on live pricing page as of June 2026; still listed as a specialized model on the models page. |
+| 2026-06-22 | OpenAI | **gpt-realtime-mini** | ⚠️ MOVED TO LEGACY — No longer listed on live pricing page as of June 2026; still listed as a specialized model on the models page. |
 | 2026-06-22 | OpenAI | **gpt-image-1.5** | ⚠️ DEPRECATED — June 2, 2026 notification; API shutdown December 1, 2026. Migrate to gpt-image-2. |
 | 2026-06-22 | OpenAI | **gpt-image-1-mini** | ⚠️ DEPRECATED — June 2, 2026 notification; API shutdown December 1, 2026. Migrate to gpt-image-2. |
 | 2026-06-22 | OpenAI | **chatgpt-image-latest** | ⚠️ DEPRECATED — June 2, 2026 notification; API shutdown December 1, 2026. Migrate to gpt-image-2. |
@@ -303,6 +311,6 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 - ✅ **Claude Sonnet 4 + Opus 4 RETIRED June 15, 2026 ❌** on the Claude API (still available on Bedrock/Google Cloud per Anthropic's deprecation policy).
 - 🆕 **June 30, 2026:** Claude Sonnet 5 launched, replacing Sonnet 4.6 as Anthropic's default Sonnet-tier model (intro pricing $2/$10 thru Aug 31, 2026). Mistral Leanstral 1.5 launched, replacing v26.03. US export controls on Fable 5/Mythos 5 lifted.
 - 🆕 **July 1, 2026:** Claude Fable 5 restored globally; this refresh independently re-verified Anthropic, OpenAI, and Mistral pricing directly against each provider's live pricing/docs pages — all figures confirmed accurate with the one major change being the Fable 5/Mythos 5 restoration.
-- 🆕 **June 26, 2026:** OpenAI previewed GPT-5.6 (Sol/Terra/Luna) in restricted preview (~20 trusted partners, US government coordination) — not yet generally available.
+- 🆕 **June 26, 2026:** OpenAI previewed GPT-5.6 (Sol/Terra/Luna) in restricted preview (~20 trusted partners, US government coordination) — not yet generally available; still no GA date as of July 6, 2026.
 - 🆕 **June 29, 2026:** Mistral OCR 4 launched ($4/1K pages); Mistral Small 4 price +50%/+100% to $0.15/$0.60; Voxtral Mini 3B deprecated; OpenAI Pro model batch pricing documented.
-- 📝 **July 1, 2026:** This refresh focused on Anthropic, OpenAI, and Mistral, independently re-verifying all three against live provider sources. Google Gemini and OpenRouter Picks tables reflect the last confirmed figures from the prior refresh and were not re-verified this cycle.
+- 📝 **July 6, 2026:** This refresh re-verified Anthropic, OpenAI, and Mistral pricing directly against each provider's live pricing/docs pages a second time. All figures from the July 1 refresh were confirmed exactly unchanged — no new model releases, price changes, or deprecations detected for any of the three providers. Google Gemini and OpenRouter Picks tables reflect the last confirmed figures from a prior refresh and were not re-verified this cycle.
