@@ -1,14 +1,18 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-07-06
+> **Last updated:** 2026-07-14
 > **Source:** https://www.anthropic.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing
-> **Scraped / verified:** 2026-07-06 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page.** Every active price point below (Claude Fable 5, Claude Mythos 5, Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5) matches exactly what is currently published. No new model releases, price changes, or deprecation-date changes detected since the July 1, 2026 refresh. 🔓 Claude Fable 5 remains fully restored/GA (export controls lifted June 30, 2026); Claude Mythos 5 remains restricted to approved Project Glasswing organizations.
+> **Scraped / verified:** 2026-07-14 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page.** Every active price point below (Claude Fable 5, Claude Mythos 5, Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5) matches exactly what is currently published, including the full model-pricing table, batch-pricing table, prompt-caching multipliers, and fast-mode table. No new model releases or price changes detected since the July 6, 2026 refresh. 🔓 Claude Fable 5 remains fully restored/GA; Claude Mythos 5 remains restricted to approved Project Glasswing organizations.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
-> 🔓 **July 1, 2026 — Fable 5 and Mythos 5 RESTORED after US government lifts export controls.** On June 12, 2026, the US government issued an export control directive suspending all access to Fable 5 and Mythos 5 (citing a reported non-universal jailbreak). On **June 30, 2026**, the Trump administration lifted those export controls after Anthropic worked with the government (including CAISI/NIST) to deploy an improved safety classifier that blocks the reported bypass technique in **over 99%** of cases. **Fable 5 becomes available globally starting July 1, 2026** across the Claude Platform, Claude.ai, Claude Code, and Claude Cowork; AWS Bedrock, Google Cloud, and Microsoft Foundry access is being re-enabled as quickly as possible. **Mythos 5** was restored earlier, on June 26, 2026, for an approved set of US organizations under Project Glasswing, with broader international/domestic expansion ongoing. See [Anthropic's full statement](https://www.anthropic.com/news/redeploying-fable-5).
+> 📝 **July 14, 2026 update — Fable 5 usage-credit cliff extended again (twice now).** The July 1 restoration of Claude Fable 5 originally included it in Pro/Max/Team/select-Enterprise subscription plans for up to 50% of weekly usage limits **through July 7, 2026**, after which it was to move to metered usage-credit billing. That cutoff has since been **extended twice** — first to **July 12**, then to **July 19, 2026** — per third-party trackers monitoring Anthropic's usage dashboard messaging. Anthropic has not published a formal blog post about the extensions; the confirmed API rate for Fable 5 remains unchanged at **$10/$50 per MTok** regardless of which billing mode (subscription-included vs. metered credits) is in effect. Treat the exact subscription cutoff date as fluid and verify against your own Claude usage dashboard.
 >
-> - **Subscription access:** For Pro, Max, Team, and select Enterprise plans, Fable 5 is included for **up to 50% of weekly usage limits through July 7, 2026**, after which it moves to a **usage-credits** model (no longer bundled free).
+> 🌐 **July 13, 2026 — Anthropic begins localizing Claude.ai consumer pricing for India**, its second-largest market after the US (5.8% of global Claude usage). Claude Pro is listed at ₹2,000/mo (~$21, annual billing) vs. $17/mo in the US; Claude Max starts at ₹11,999/mo (~$125) vs. $100/mo in the US; Team starts at ₹2,399/seat/mo (~$25) vs. $20/mo in the US. **This is consumer subscription pricing only — it does not affect Claude API/developer pricing**, which remains USD-denominated globally. UPI payment support is not yet available; users still pay via card or app-store billing.
+
+> 🔓 **July 1, 2026 — Fable 5 and Mythos 5 RESTORED after US government lifts export controls.** On June 12, 2026, the US government issued an export control directive suspending all access to Fable 5 and Mythos 5 (citing a reported non-universal jailbreak). On **June 30, 2026**, the Trump administration lifted those export controls after Anthropic worked with the government (including CAISI/NIST) to deploy an improved safety classifier that blocks the reported bypass technique in **over 99%** of cases. **Fable 5 became available globally starting July 1, 2026** across the Claude Platform, Claude.ai, Claude Code, and Claude Cowork; AWS Bedrock, Google Cloud, and Microsoft Foundry access continues to be re-enabled. **Mythos 5** was restored earlier, on June 26, 2026, for an approved set of US organizations under Project Glasswing, with broader international/domestic expansion ongoing. See [Anthropic's full statement](https://www.anthropic.com/news/redeploying-fable-5).
+>
+> - **Subscription access:** For Pro, Max, Team, and select Enterprise plans, Fable 5 is included for a limited share of weekly usage limits — see the July 14 update above for the latest (twice-extended) cutoff date — after which it moves to a **usage-credits** model (no longer bundled free).
 > - Anthropic, together with Amazon, Microsoft, Google, and other Project Glasswing partners, is developing a **shared industry framework for scoring AI jailbreak severity**, and is deepening pre-release testing collaboration with the US government under the June 2, 2026 executive order on frontier AI security.
 
 > 🆕 **June 30, 2026 — Claude Sonnet 5 launched.** Anthropic's most agentic Sonnet-tier model yet, replacing Claude Sonnet 4.6 as the default model for Free and Pro plans (also available on Max, Team, Enterprise, Claude Code, and the Claude Platform). Narrows the performance gap with Opus 4.8 on agentic coding, tool use, and knowledge work while remaining priced at the Sonnet tier. Ships with **introductory pricing** of $2/$10 per MTok (input/output) through August 31, 2026, moving to standard $3/$15 per MTok on September 1, 2026. Model ID: `claude-sonnet-5`. See [announcement](https://www.anthropic.com/news/claude-sonnet-5).
@@ -48,7 +52,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Availability** | Claude API · Claude.ai · Claude Code · Claude Cowork · Claude Platform on AWS · Amazon Bedrock · Google Vertex AI · Microsoft Foundry *(cloud partner access being re-enabled)* |
 | **Safety** | Includes safety classifiers that can decline cybersecurity/biology/chemistry/distillation requests; flagged queries auto-route to Opus 4.8 and are billed at Opus 4.8 rates, not Fable 5 rates |
 | **Data retention** | 30-day data retention required for safety monitoring (no zero-data-retention option) |
-| **Subscription access** | Pro/Max/Team/select Enterprise: included for up to 50% of weekly usage limits through **July 7, 2026**, then usage-credits billing |
+| **Subscription access** | Pro/Max/Team/select Enterprise: included for a limited share of weekly usage limits — cutoff **twice-extended, now reported as July 19, 2026** (see July 14 note above) — then usage-credits billing |
 | **Notable** | 2× Opus 4.8 pricing; state-of-the-art on Anthropic's coding, knowledge-work, and vision evals; restored after a new safety classifier was deployed that blocks the reported jailbreak technique in >99% of cases |
 
 ---
@@ -148,7 +152,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Provider** | Anthropic |
 | **Model ID** | `claude-sonnet-4-6` |
 | **Released** | February 17, 2026 |
-| **Status** | ✅ Active — 🔄 Replaced by Sonnet 5 as default recommendation (June 30, 2026) |
+| **Status** | ✅ Active — 🔄 Replaced by Sonnet 5 as default (June 30, 2026) |
 | **Input price** | $3.00 / MTok |
 | **Output price** | $15.00 / MTok |
 | **Cache write (5 min)** | $3.75 / MTok |
@@ -193,14 +197,14 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 | Model | Extended Thinking | Adaptive Thinking | Notes |
 |---|---|---|---|
-| Claude Fable 5 | ❌ No | ✅ Yes (always on) | 🔓 **Restored July 1, 2026**. Cyber/bio queries auto-route to Opus 4.8. |
+| Claude Fable 5 | ❌ No | ✅ Yes (always on) | 🔓 Restored July 1, 2026. Cyber/bio queries auto-route to Opus 4.8. |
 | Claude Mythos 5 | ❌ No | ✅ Yes (always on) | 🔒 Restricted to Project Glasswing (restored June 26, 2026). |
 | Claude Opus 4.8 | ❌ No | ✅ Yes | Top-tier daily driver; Fast Mode at 2× pricing |
 | Claude Sonnet 5 | ❌ No | ✅ Yes | New default — narrows gap with Opus 4.8; effort defaults to `high` |
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Replaced by Sonnet 5 as default; still active |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified July 6, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified July 14, 2026.
 
 ---
 
@@ -211,6 +215,10 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 ## 🆕 Platform Feature: Claude Security (Enterprise — Public Beta)
 
 > **May 2026:** Anthropic launched **Claude Security** in public beta for Claude Enterprise customers, purpose-built for security operations workflows. Billed at standard API token rates using the underlying model.
+
+## 🌐 Consumer Pricing Localization (India — July 13, 2026)
+
+> Anthropic began rolling out **rupee-denominated pricing** for Claude.ai consumer plans in India, its second-largest market after the US. Claude Pro: ₹2,000/mo (~$21, annual billing) vs. $17/mo in the US. Claude Max: ₹11,999/mo (~$125) vs. $100/mo in the US. Team: ₹2,399/seat/mo (~$25) vs. $20/mo in the US. **This affects consumer subscriptions only — Claude API/developer pricing is unaffected and remains USD-denominated globally.** UPI payment support is not yet enabled (card/app-store billing only).
 
 ## 🤝 Deeper US Government Collaboration (announced June 30, 2026)
 
@@ -269,7 +277,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Field | Value |
 |---|---|
 | **Model ID** | `claude-sonnet-4-5` |
-| **Status** | ⚠️ LEGACY — 1M context beta RETIRED April 30, 2026; max context now 200K |
+| **Status** | ⚠️ LEGACY — 1M context beta RETIRED April 30, 2026; max context now 200K. Still listed on the live model-pricing table (not yet a deprecated/retired model per Anthropic's docs) |
 | **Input price** | $3.00 / MTok |
 | **Output price** | $15.00 / MTok |
 | **Migration** | → **Claude Sonnet 5** (intro $2/$10 through Aug 31) or **Claude Sonnet 4.6** |
@@ -294,7 +302,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Field | Value |
 |---|---|
 | **Model ID** | `claude-opus-4-1` |
-| **Status** | ⚠️ LEGACY (deprecated) |
+| **Status** | ⚠️ LEGACY (deprecated, per live pricing page) |
 | **Input price** | $15.00 / MTok |
 | **Output price** | $75.00 / MTok |
 | **Migration** | → **Claude Opus 4.8** ($5/$25) — 67% cheaper |
@@ -392,7 +400,9 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Thinking modes** | Adaptive: Fable 5, Mythos 5, Opus 4.8, Sonnet 5, Sonnet 4.6. Extended: Sonnet 4.6, Haiku 4.5 (**not** on Sonnet 5/Fable 5/Mythos 5) |
 | **Tokenizer note** | Fable 5, Mythos 5, Opus 4.7+, and Sonnet 5 use a newer tokenizer producing ~30% more tokens for the same text vs. Sonnet 4.6-and-earlier |
 | **⚠️ Sonnet 4 + Opus 4 RETIRED** | Retired June 15, 2026 ❌ on Claude API — Sonnet 4 → Sonnet 5/4.6, Opus 4 → Opus 4.8 |
+| **⚠️ Fable 5 subscription cliff shifting** | Subscription-included window for Fable 5 has been extended twice (July 7 → July 12 → July 19, 2026) — verify current cutoff on your own Claude usage dashboard before budgeting |
+| **🌐 India consumer pricing** | Now localized in INR (Pro ₹2,000/mo, Max ₹11,999/mo, Team ₹2,399/seat/mo) — API/developer pricing unaffected |
 
 ---
 
-*Sources last verified: July 6, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/about-claude/models/overview`, `anthropic.com/news/redeploying-fable-5`, and `anthropic.com/news/fable-mythos-access`. ✅ Independently re-fetched the live pricing table on July 6, 2026 — Fable 5 $10/$50, Mythos 5 $10/$50, Opus 4.8 $5/$25, Sonnet 5 $2/$10→$3/$15 (Sept 1), Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5 all re-confirmed unchanged, along with all legacy/deprecated/retired model statuses and dates.*
+*Sources last verified: July 14, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/about-claude/models/overview`, `anthropic.com/news/redeploying-fable-5`, and third-party trackers (suprmind.ai, aipricing.guru, digitalapplied.com) monitoring the Fable 5 usage-credit cutoff and India consumer pricing rollout. ✅ Independently re-fetched the live pricing table on July 14, 2026 — Fable 5 $10/$50, Mythos 5 $10/$50, Opus 4.8 $5/$25, Sonnet 5 $2/$10→$3/$15 (Sept 1), Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5 all re-confirmed unchanged, along with all legacy/deprecated/retired model statuses and dates. The Fable 5 subscription-included cutoff has been extended twice since the original July 7 date (now reported as July 19, 2026) — this does not change the underlying $10/$50 API rate.*
