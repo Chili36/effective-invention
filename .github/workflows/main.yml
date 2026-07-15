@@ -214,6 +214,12 @@ jobs:
                   sys.exit(1)
           PY
 
+      # Record the remote main SHA before the agent runs. The agent commits from
+      # inside its own sandbox straight to the remote, so this runner's checkout
+      # never sees the commit -- we detect success by whether remote main moved.
+      - name: Record pre-run remote HEAD
+        run: echo "BEFORE_SHA=$(git ls-remote origin refs/heads/main | cut -f1)" >> "$GITHUB_ENV"
+
       - name: Run LLM Pricing Tracker Agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -222,4 +228,26 @@ jobs:
           # with a trailing newline cause httpx.LocalProtocolError because
           # HTTP headers cannot contain newlines.
           export ANTHROPIC_API_KEY="$(printf '%s' "$ANTHROPIC_API_KEY" | tr -d '[:space:]')"
-          python run_agent.py
+          # pipefail so run_agent.py's own exit code survives the tee.
+          set -o pipefail
+          python run_agent.py 2>&1 | tee agent_output.log
+
+      # The agent reports a clean end_turn even when it researched fine but could
+      # NOT push (expired PAT / blocked egress) -- that false-green hid a broken
+      # pipeline for a week. Fail red when the agent was blocked from committing.
+      - name: Verify the agent actually committed
+        if: always()
+        run: |
+          AFTER_SHA="$(git ls-remote origin refs/heads/main | cut -f1)"
+          echo "Remote main before run: ${BEFORE_SHA:-<unknown>}"
+          echo "Remote main after run:  ${AFTER_SHA}"
+          if [ -n "$BEFORE_SHA" ] && [ "$AFTER_SHA" != "$BEFORE_SHA" ]; then
+            echo "OK: the agent pushed a new commit to main."
+            exit 0
+          fi
+          echo "Remote main did not advance. Checking whether the agent was blocked from pushing..."
+          if [ -f agent_output.log ] && grep -qiE 'host_not_allowed|could not (commit|push)|does not (currently )?have write access|no GitHub credential|/mnt/session/outputs|blocked at the network' agent_output.log; then
+            echo "::error::The agent prepared updated model cards but could NOT push them (credential/egress problem). The weekly update did not land -- rotate the GitHub PAT in the agent vault and re-run."
+            exit 1
+          fi
+          echo "No push-failure markers found; treating this as a legitimate no-change cycle (nothing to commit)."
