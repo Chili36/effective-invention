@@ -1,8 +1,8 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-07-14
+> **Last updated:** 2026-07-20
 > **Source:** https://www.anthropic.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing
-> **Scraped / verified:** 2026-07-14 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page.** Every active price point below (Claude Fable 5, Claude Mythos 5, Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5) matches exactly what is currently published, including the full model-pricing table, batch-pricing table, prompt-caching multipliers, and fast-mode table. No new model releases or price changes detected since the July 6, 2026 refresh. 🔓 Claude Fable 5 remains fully restored/GA; Claude Mythos 5 remains restricted to approved Project Glasswing organizations.
+> **Scraped / verified:** 2026-07-20 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page.** Every active price point below (Claude Fable 5, Claude Mythos 5, Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5) matches exactly what is currently published, including the full model-pricing table, batch-pricing table, prompt-caching multipliers, and fast-mode table. No new model releases or price changes detected since the July 14, 2026 refresh. 🔓 Claude Fable 5 remains fully restored/GA; Claude Mythos 5 remains restricted to approved Project Glasswing organizations. 🆕 **Newly documented this cycle:** full tool-use/agent pricing (Web Search, Code Execution, Claude Managed Agents session-runtime billing, and per-model tool-use system-prompt token overhead) — previously summarized only briefly, now captured in a dedicated section below.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
@@ -204,7 +204,50 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Replaced by Sonnet 5 as default; still active |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified July 14, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified July 20, 2026.
+
+---
+
+## 🔧 Tools & Agents Pricing *(🆕 newly documented section — July 20, 2026)*
+
+> Confirmed directly against the live `platform.claude.com/docs/en/about-claude/pricing` page. These charges are additive to standard per-model token pricing.
+
+### Server-side tools
+
+| Tool | Pricing |
+|---|---|
+| **Web search** | $10 per 1,000 searches, plus standard token costs for search-generated content. Each search counts as one use regardless of result count; failed searches are not billed. |
+| **Web fetch** | No additional charge — standard token costs only for fetched content that enters context. Use `max_content_tokens` to cap consumption (avg 10kB page ≈ 2,500 tokens; 100kB doc ≈ 25,000 tokens; 500kB PDF ≈ 125,000 tokens). |
+| **Code execution** | **Free when used alongside `web_search_20260209`+ or `web_fetch_20260209`+.** Otherwise billed by execution time (5-min minimum): **1,550 free container-hours/month per org**, then **$0.05/hour per container**. Files attached to a request bill execution time even if the tool isn't invoked. |
+| **Bash tool** | Adds 325 input tokens (Opus 4.7/4.8) or 244 tokens (Opus 4.6, Sonnet 4.6 and earlier) on top of the standard tool-use system prompt. |
+| **Text editor tool** | Adds 700 input tokens (Claude 4.x `text_editor_20250429`) on top of standard tool-use overhead. |
+| **Computer use tool** | Adds 466–499 system-prompt tokens plus 735 tokens per tool definition (Claude 4.x); screenshots billed at standard vision-token rates. |
+
+### Tool-use system-prompt overhead (per request, when ≥1 tool is defined)
+
+| Model | `auto`/`none` | `any`/`tool` |
+|---|---|---|
+| Claude Opus 4.8 | 290 tokens | 410 tokens |
+| Claude Opus 4.7 | 675 tokens | 804 tokens |
+| Claude Opus 4.6 | 497 tokens | 589 tokens |
+| Claude Opus 4.5 | 496 tokens | 588 tokens |
+| Claude Sonnet 5 | 354 tokens | 474 tokens |
+| Claude Sonnet 4.6 | 497 tokens | 589 tokens |
+| Claude Sonnet 4.5 | 496 tokens | 588 tokens |
+| Claude Haiku 4.5 | 496 tokens | 588 tokens |
+| Claude Haiku 3.5 (legacy) | 264 tokens | 355 tokens |
+
+> These tokens are billed as ordinary input tokens at the model's standard rate — they are not a separate line item.
+
+### Claude Managed Agents *(billed on tokens + session runtime)*
+
+| SKU | Rate | Notes |
+|---|---|---|
+| **Session runtime** | $0.08 per session-hour | Metered to the millisecond, accrues only while session status is `running` (not `idle`/`rescheduling`/`terminated`) |
+| **Tokens** | Standard per-model rates | Prompt caching multipliers apply identically; web search inside a session still costs $10/1,000 searches |
+| **Not applicable** | Batch API discount, Fast Mode premium, data residency multiplier, cloud-platform (Bedrock/Vertex) pricing | Managed Agents sessions are stateful/interactive — none of these modifiers apply |
+
+**Worked example** (1-hour Opus 4.8 session, 50K input / 15K output tokens, no caching): $0.25 (input) + $0.375 (output) + $0.08 (runtime) = **$0.705**. With 40K of the 50K input tokens served from cache: **$0.525**.
 
 ---
 
@@ -402,7 +445,10 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **⚠️ Sonnet 4 + Opus 4 RETIRED** | Retired June 15, 2026 ❌ on Claude API — Sonnet 4 → Sonnet 5/4.6, Opus 4 → Opus 4.8 |
 | **⚠️ Fable 5 subscription cliff shifting** | Subscription-included window for Fable 5 has been extended twice (July 7 → July 12 → July 19, 2026) — verify current cutoff on your own Claude usage dashboard before budgeting |
 | **🌐 India consumer pricing** | Now localized in INR (Pro ₹2,000/mo, Max ₹11,999/mo, Team ₹2,399/seat/mo) — API/developer pricing unaffected |
+| **🆕 Code execution + web search/fetch combo** | Free code execution when paired with `web_search_20260209`+/`web_fetch_20260209`+ — otherwise $0.05/hr per container after 1,550 free org-hours/month |
+| **🆕 Claude Managed Agents** | $0.08/session-hour runtime (billed only while `running`) + standard token rates — no Batch/Fast Mode/data-residency modifiers apply |
+| **Tool-use overhead varies by model** | Opus 4.8's tool-use system prompt (290–410 tokens) is far cheaper than Opus 4.7's (675–804 tokens) — a meaningful cost delta for tool-heavy agents at scale |
 
 ---
 
-*Sources last verified: July 14, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/about-claude/models/overview`, `anthropic.com/news/redeploying-fable-5`, and third-party trackers (suprmind.ai, aipricing.guru, digitalapplied.com) monitoring the Fable 5 usage-credit cutoff and India consumer pricing rollout. ✅ Independently re-fetched the live pricing table on July 14, 2026 — Fable 5 $10/$50, Mythos 5 $10/$50, Opus 4.8 $5/$25, Sonnet 5 $2/$10→$3/$15 (Sept 1), Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5 all re-confirmed unchanged, along with all legacy/deprecated/retired model statuses and dates. The Fable 5 subscription-included cutoff has been extended twice since the original July 7 date (now reported as July 19, 2026) — this does not change the underlying $10/$50 API rate.*
+*Sources last verified: July 20, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/about-claude/models/overview`, `anthropic.com/news/redeploying-fable-5`, and third-party trackers (suprmind.ai, aipricing.guru, benchlm.ai, tldl.io) monitoring the Fable 5 usage-credit cutoff and India consumer pricing rollout. ✅ Independently re-fetched the live pricing table on July 20, 2026 — Fable 5 $10/$50, Mythos 5 $10/$50, Opus 4.8 $5/$25, Sonnet 5 $2/$10→$3/$15 (Sept 1), Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5 all re-confirmed unchanged (including exact cache-write/cache-read/batch figures for every model), along with all legacy/deprecated/retired model statuses and dates. 🆕 Newly captured this cycle: full Tools & Agents Pricing section (Web Search $10/1K searches, Web Fetch free, Code Execution free-with-search/$0.05-per-hr otherwise, per-model tool-use system-prompt token overhead, and Claude Managed Agents' $0.08/session-hour runtime billing) — sourced directly from the "Feature-specific pricing" and "Claude Managed Agents pricing" sections of the live docs page. The Fable 5 subscription-included cutoff remains reported at July 19, 2026 — this does not change the underlying $10/$50 API rate.*
