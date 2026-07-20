@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-07-14
+> **Last updated:** 2026-07-20
 > **Source:** https://developers.openai.com/api/docs/pricing · https://developers.openai.com/api/docs/models · https://openai.com/index/gpt-5-6/
-> **Scraped / verified:** 2026-07-14 — ✅ **Re-verified against the live `developers.openai.com/api/docs/pricing` page.** 🆕 **Major update: GPT-5.6 (Sol/Terra/Luna) reached General Availability on July 9, 2026** — after a 13-day limited preview (announced June 26, 2026), it is now live across ChatGPT, Codex, and the API, and is documented as OpenAI's "Flagship models" on the official pricing page. GPT-5.5 remains fully active and unchanged in price, but is now superseded by GPT-5.6 Sol as OpenAI's recommended top-tier model. Realtime models were also refreshed: `gpt-realtime-2.1` and `gpt-realtime-2.1-mini` now appear on the live pricing page (superseding `gpt-realtime-2`). All other prices (GPT-5.4 family, GPT-4.1 family, o-series, image/video/transcription models) confirmed unchanged.
+> **Scraped / verified:** 2026-07-20 — ✅ **Re-verified against the live `developers.openai.com/api/docs/pricing` page.** All figures below (GPT-5.6 Sol/Terra/Luna, GPT-5.5, GPT-5.5 Pro, GPT-5.4 family, GPT-4.1 family, o-series, Realtime, Image, Video, Transcription, Deep Research, Computer Use, Codex, and Tools pricing) independently cross-checked line-by-line against the live pricing tables — **zero changes detected** since the July 14, 2026 refresh. GPT-5.6 remains GA (since July 9, 2026) and is documented as OpenAI's "Flagship models"; GPT-5.5 remains fully active at unchanged pricing.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -10,7 +10,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 > **Service tiers:** Four processing tiers are now documented — **Priority** (highest availability + predictable latency), **Standard** (default), **Batch**, and **Flex** (async, 50% off standard). Priority tier is available for GPT-5.6 (all three tiers), GPT-5.5, GPT-5.4, and GPT-5.4 mini.
 
-> 📝 **July 14, 2026 update:** Independently re-verified every active price point on `developers.openai.com/api/docs/pricing`. The page now leads with a "Flagship models" table headed by `gpt-5.6-sol`, `gpt-5.6-terra`, and `gpt-5.6-luna`, confirming GA. A new sidebar guide, ["Using GPT-5.6"](https://developers.openai.com/api/docs/guides/latest-model), has replaced the old "Using GPT-5.5" migration guide. Realtime models table now shows `gpt-realtime-2.1` and `gpt-realtime-2.1-mini` (previously `gpt-realtime-2` and `gpt-realtime-mini`) at identical pricing — treated here as a version refresh/rename, with the older IDs moved to legacy.
+> 📝 **July 20, 2026 update:** Independently re-verified every active price point on `developers.openai.com/api/docs/pricing`, including the full Standard/Batch/Flex/Priority matrices for GPT-5.6 Sol/Terra/Luna, GPT-5.5, GPT-5.5 Pro, and the GPT-5.4 family (short- and long-context rows), plus Realtime, Image, Video, Transcription, Deep Research, Computer Use, and Tools pricing. **No price changes, no new model releases.** `gpt-5.3-codex` priority pricing ($3.50/$0.35/$28.00) and `gpt-5.4-cyber`'s no-public-pricing status both reconfirmed. The live page's "All models" Batch tab still shows `gpt-5.5-pro` capped at short-context only (no separate long-context Batch row published), consistent with prior refreshes.
 
 ---
 
@@ -59,7 +59,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 **Notable:** On the Artificial Analysis Coding Agent Index, **GPT-5.6 Sol with max reasoning sets a new state of the art at 80** — 2.8 points above Claude Fable 5 — while using less than half the output tokens, less than half the time, and about one-third the cost. Sol's headline price **matches GPT-5.5 exactly** ($5/$30) — no flagship price increase, just more capability at the same rate. **Terra is the price/performance story of the release:** OpenAI positions it as competitive with GPT-5.5-class quality at **half the price**, making it the natural default migration target for most production traffic. Luna covers high-volume classification/extraction/tagging work at the bottom of the ladder. There is no mini/nano suffix in this generation — Terra and Luna fill that role as durable tiers.
 
-> 🔗 Source: [openai.com/index/gpt-5-6/](https://openai.com/index/gpt-5-6/) · `developers.openai.com/api/docs/pricing` (re-verified July 14, 2026)
+> 🔗 Source: [openai.com/index/gpt-5-6/](https://openai.com/index/gpt-5-6/) · `developers.openai.com/api/docs/pricing` (re-verified July 20, 2026)
 
 ---
 
@@ -106,13 +106,12 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Input price (long ctx)** | $60.00 / MTok |
 | **Output price (std)** | $180.00 / MTok |
 | **Output price (long ctx)** | $270.00 / MTok |
-| **Priority input/output (std)** | $12.50* — *no distinct Priority tier documented for Pro; treat Batch/Flex figures below as confirmed* |
 | **Batch/Flex input (std)** | $15.00 / MTok |
 | **Batch/Flex output (std)** | $90.00 / MTok |
 | **Context window** | 1,000,000 tokens |
 | **Availability** | API · ChatGPT Pro/Business/Enterprise only |
 | **Regional processing** | +10% uplift |
-| **Notable** | Extra parallel test-time compute; deep research, legal, financial, scientific workloads; no GPT-5.6 Pro variant announced yet |
+| **Notable** | Extra parallel test-time compute; deep research, legal, financial, scientific workloads; no GPT-5.6 Pro variant announced yet — "Pro" is a reasoning mode on Sol in the GPT-5.6 generation, not a separate model ID |
 
 ---
 
@@ -431,10 +430,12 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Web search** (all models) | All models incl. Image Web search | $10.00 / 1K calls + search content tokens at model rates |
 | **Web search preview** (reasoning models) | `gpt-5`, `o-series` | $10.00 / 1K calls + search content tokens at model rates |
 | **Web search preview** (non-reasoning) | Non-reasoning models (non-preview) | $25.00 / 1K calls; search content tokens free |
-| **Containers** | Hosted Shell + Code Interpreter | $0.03 (1GB) / $0.12 (4GB) / $0.48 (16GB) / $1.92 (64GB) per 20-min session |
+| **Containers** | Hosted Shell + Code Interpreter | $0.03 (1GB) / $0.12 (4GB) / $0.48 (16GB) / $1.92 (64GB) per 20-min session (5-min billing minimum) |
 | **File search storage** | Vector store | $0.10 / GB per day (1 GB free) |
 | **File search tool call** | Responses API | $2.50 / 1K calls |
 | **Agent Kit** | ChatKit file/image storage | $0.10 / GB-day after 1 GB free |
+
+> Note: for `gpt-4o-mini` and `gpt-4.1-mini` using the non-preview web search tool, search content tokens are billed as a fixed block of 8,000 input tokens per call rather than metered by actual retrieval size.
 
 ---
 
@@ -596,7 +597,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Image models** | Migrate from `gpt-image-1.5` and `gpt-image-1-mini` to `gpt-image-2` before Dec 1, 2026 |
 | **Realtime models** | Use `gpt-realtime-2.1` ($32/$64 audio) or `gpt-realtime-2.1-mini` ($10/$20 audio) — both supersede the `-2`/`-mini` names at the same price |
 | **🆕 GPT-5.6 GA** | Reached general availability July 9, 2026 — no longer restricted; self-serve API access for all three tiers (Sol/Terra/Luna) |
+| **Web search tool choice matters** | Non-preview web search is $10/1K calls with metered content tokens; the non-reasoning-model "preview" variant is $25/1K calls but content tokens are free — the cheaper option depends on how much search content your prompts actually consume |
+| **Computer Use is a distinct SKU** | `computer-use-preview` ($1.50/$6.00) is priced independently of the underlying model family — budget it separately from GPT-5.x token costs |
 
 ---
 
-*Sources last verified: July 14, 2026 against `developers.openai.com/api/docs/pricing` and `developers.openai.com/api/docs/models` — GPT-5.6 Sol/Terra/Luna confirmed GA (July 9, 2026) with full short/long-context, cache, priority, and batch/flex pricing tables; GPT-5.5 $5/$30 confirmed unchanged (now flagged 🔄 replaced by Sol); GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40 all confirmed unchanged. Realtime models refreshed to `gpt-realtime-2.1` / `gpt-realtime-2.1-mini` (same pricing as prior `-2`/`-mini` names, now legacy).*
+*Sources last verified: July 20, 2026 against `developers.openai.com/api/docs/pricing` and `developers.openai.com/api/docs/models` — GPT-5.6 Sol/Terra/Luna confirmed GA (July 9, 2026) with full short/long-context, cache, priority, and batch/flex pricing tables re-verified line-by-line; GPT-5.5 $5/$30 confirmed unchanged (now flagged 🔄 replaced by Sol); GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40 all confirmed unchanged. Realtime models confirmed on `gpt-realtime-2.1` / `gpt-realtime-2.1-mini` (same pricing as prior `-2`/`-mini` names, now legacy). Tools pricing (Web Search, Containers, File Search, Agent Kit) and Computer Use ($1.50/$6.00) independently re-confirmed against the live pricing page's "Tools" and "Specialized models" sections — no changes.*
