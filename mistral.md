@@ -1,12 +1,19 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-07-14
+> **Last updated:** 2026-07-20
 > **Source:** https://mistral.ai/pricing · https://mistral.ai/pricing/api · https://docs.mistral.ai/models/overview
-> **Scraped / verified:** 2026-07-14 — ✅ **Re-verified against the live `mistral.ai/pricing/api` and `docs.mistral.ai/models/overview` pages.** Every active price point below (Mistral Medium 3.5, Mistral Large 3, Mistral Small 4, Magistral Medium/Small, Codestral, Devstral 2/Small 2, Leanstral 1.5, Voxtral family, OCR 4, Classifier APIs, embeddings, Ministral 3 family, Mixtral) matches exactly. No new model releases or price changes detected since the July 6, 2026 refresh. 🛠️ **Correction:** Leanstral 1.5's confirmed API model ID is `leanstral-1-5` (not `labs-leanstral-1-5` as previously listed) — verified directly against Mistral's July 2, 2026 announcement post and the live docs.mistral.ai model card.
+> **Scraped / verified:** 2026-07-20 — ✅ **Re-verified against the live `mistral.ai/pricing/api` and `docs.mistral.ai/models/overview` pages.** Every active price point below (Mistral Medium 3.5, Mistral Large 3, Mistral Small 4, Magistral Medium/Small, Codestral, Devstral 2/Small 2, Leanstral 1.5, Voxtral family, OCR 4, Classifier APIs, embeddings, Ministral 3 family, Mixtral) matches exactly. No new model releases or price changes detected since the July 14, 2026 refresh. ⚠️ **Note on a marketing-page discrepancy:** the general `mistral.ai/pricing` FAQ still contains an illustrative example reading "Mistral Large costs $2/M tokens in and $6/M tokens out" — this is stale copy left over from the Mistral Large 2 era and does **not** reflect current pricing. The authoritative `mistral.ai/pricing/api` product table (cross-checked directly this cycle) confirms **Mistral Large 3 remains $0.50/$1.50**, unchanged.
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Vibe) subscriptions are billed **separately**.
 
 > **Mistral's key differentiators:** Native EU data residency (GDPR by default), competitive mid-tier pricing, Apache 2.0 / Modified MIT open-weight models, dedicated reasoning (Magistral series), flagship merged model (Medium 3.5), and a 50% batch processing discount.
+
+> 📝 **July 20, 2026 update:**
+> - ✅ Independently re-fetched `mistral.ai/pricing/api` in full — every active model card (Medium 3.5 $1.50/$7.50, Large 3 $0.50/$1.50, Small 4 $0.15/$0.60, Magistral Medium $2/$5, Magistral Small $0.50/$1.50, Codestral $0.30/$0.90, Devstral 2 $0.40/$2.00, Devstral Small 2 $0.10/$0.30, OCR 4 $4/$5 per 1K pages, Voxtral family, Ministral 3 tiers, embeddings, moderation, classifiers, Mixtral/NeMo legacy-API models) matches exactly, including model IDs and license tags (Open/Premier/Labs).
+> - ⚠️ **Flagged and resolved a stale marketing-copy discrepancy:** the `mistral.ai/pricing` (non-API) FAQ page still answers "How is API pricing calculated?" with a "$2/M in, $6/M out" Mistral Large example — this is outdated illustrative copy from an earlier Large generation and contradicts the live product table on `mistral.ai/pricing/api`, which is the authoritative source and confirms Large 3 at $0.50/$1.50. No action needed on this repo's figures; flagging here so future refreshes don't mistake the stale FAQ text for a price change.
+> - 🆕 **Newly captured this cycle — Agent API tool pricing** (previously listed only in the Platform Tool Pricing table below, now cross-verified against the live `mistral.ai/pricing/api` "Agent API" section): Libraries OCR $3/1K pages, Libraries Indexing $1/MTok, Libraries Call $0.01/call, Code execution $30/1K calls, Web search $30/1K calls, Image generation $100/1K images, Premium news $50/1K calls, Data capture $0.04/MTok. All confirmed unchanged.
+> - ✅ Legacy/deprecated table re-cross-checked against `docs.mistral.ai/models/overview` — the full legacy list (OCR 3, Voxtral Mini 3B, Leanstral v26.03, Mistral Medium 3.1/3, Devstral 2 v25.12, Devstral Small 2 v25.12, Magistral Medium 1.1/1.2, Magistral Small 1.1/1.2, Mistral Small Creative, Mistral Small 3.2/3.1/3.0, Pixtral Large/12B, Mistral Saba, Ministral 3B/8B (24.10), Mistral Large 2.1/2.0/1.0, Mistral Nemo 12B, Codestral Mamba, Mathstral, Mistral 7B, Mixtral 8x7B/8x22B, Mistral Small/Medium 1.0, Mistral Next) remains confirmed with no additions or removals since the last refresh.
+> - ℹ️ Mistral's "Featured Models" and "Frontier Models" sections on `docs.mistral.ai/models/overview` continue to list Mistral Medium 3.5, Mistral Small 4, Mistral Large 3, Ministral 3 (14B/8B/3B), OCR 4, Devstral 2, and Voxtral TTS as the current flagship lineup — unchanged from the prior refresh.
 
 > 📝 **July 14, 2026 update:**
 > - 🛠️ **Model ID correction — Leanstral 1.5:** The confirmed API endpoint is `leanstral-1-5` (docs.mistral.ai model card + Mistral's official July 2, 2026 announcement both list it without the `labs-` prefix), even though the model is still tagged **Labs** in the docs.mistral.ai catalog license/category system. Previously documented here as `labs-leanstral-1-5` — corrected.
@@ -65,7 +72,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Input price** | $0.50 / MTok |
 | **Output price** | $1.50 / MTok |
 | **Context window** | 262,144 tokens (256K) |
-| **Notable** | Cheapest output pricing vs peers; GDPR-compliant EU hosting; open-weight, general-purpose multimodal model |
+| **Notable** | Cheapest output pricing vs peers; GDPR-compliant EU hosting; open-weight, general-purpose multimodal model. ⚠️ Re-confirmed July 20, 2026 against the live `mistral.ai/pricing/api` product table — do not confuse with the stale "$2/$6" example on the general `mistral.ai/pricing` FAQ page (see header note above) |
 
 ---
 
@@ -388,7 +395,9 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-## 🔧 Platform Tool Pricing (Mistral AI Studio)
+## 🔧 Platform Tool Pricing (Mistral AI Studio — Agent API)
+
+> ✅ Re-confirmed July 20, 2026 against the live `mistral.ai/pricing/api` "Agent API" section — all figures unchanged.
 
 | Tool | Pricing |
 |---|---|
@@ -546,7 +555,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | Field | Value |
 |---|---|
 | **Model ID** | `magistral-medium-2507` |
-| **Status** | ⚠️ LEGACY — Confirmed in legacy table at docs.mistral.ai (newly cross-checked this refresh); `magistral-medium-latest` alias still active |
+| **Status** | ⚠️ LEGACY — Confirmed in legacy table at docs.mistral.ai; `magistral-medium-latest` alias still active |
 | **Migration** | Use `magistral-medium-latest` for active routing |
 
 ---
@@ -640,6 +649,8 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Voxtral transcription** | Voxtral Mini Transcribe 2 (`voxtral-mini-latest`, $0.003/min) for batch; Realtime ($0.006/min) for live |
 | **OCR 4 batch savings** | OCR 4 Batch-API: $2/1K pages (50% off standard $4/1K pages) |
 | **🆕 Leanstral 1.5** | Free Labs endpoint for Lean 4 formal proof engineering — use `leanstral-1-5` (not `labs-leanstral-1-5`) instead of the legacy v26.03 endpoint (`labs-leanstral-2603`) |
+| **⚠️ Ignore the stale "$2/$6" Large example** | The general `mistral.ai/pricing` FAQ page has an outdated Mistral Large example; always price Large 3 off the `mistral.ai/pricing/api` product table ($0.50/$1.50) |
+| **Agent API tool costs add up** | Web search and code execution are both $30/1K calls on the Agent API — for high-volume agentic workloads, budget these alongside model token costs |
 
 ---
 
@@ -657,4 +668,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: July 14, 2026 against `mistral.ai/pricing/api` (all active prices re-confirmed exactly, including OCR 4 $4/$2/$5 per 1K pages, Mistral Small 4 $0.15/$0.60, Mistral Medium 3.5 $1.50/$7.50, Mistral Large 3 $0.50/$1.50, Leanstral 1.5 free) and `docs.mistral.ai/models/overview` (Leanstral 1.5 confirmed replacing v26.03, with model ID corrected to `leanstral-1-5`; OCR 3, Voxtral Mini 3B, Mistral Medium 3.1, Mistral Medium 3, Devstral 2 v25.12, Devstral Small 2 v25.12, Magistral Medium 1.1/1.2 v25.07/v25.09, Magistral Small 1.2 v25.09, and earlier generations all confirmed in the legacy table). No new model releases or pricing changes detected since the June 30, 2026 update; Leanstral 1.5 benchmark details cross-verified against Mistral's official July 2, 2026 announcement post.*
+*Sources last verified: July 20, 2026 against `mistral.ai/pricing/api` (all active prices re-confirmed exactly, including OCR 4 $4/$2/$5 per 1K pages, Mistral Small 4 $0.15/$0.60, Mistral Medium 3.5 $1.50/$7.50, Mistral Large 3 $0.50/$1.50, Leanstral 1.5 free, and the full Agent API tool-pricing table) and `docs.mistral.ai/models/overview` (Leanstral 1.5 confirmed replacing v26.03, with model ID corrected to `leanstral-1-5`; OCR 3, Voxtral Mini 3B, Mistral Medium 3.1, Mistral Medium 3, Devstral 2 v25.12, Devstral Small 2 v25.12, Magistral Medium 1.1/1.2 v25.07/v25.09, Magistral Small 1.2 v25.09, and earlier generations all confirmed in the legacy table). No new model releases or pricing changes detected since the June 30, 2026 update. Flagged and resolved a stale-copy discrepancy on the general `mistral.ai/pricing` FAQ page (an outdated "$2/$6" Mistral Large example) against the authoritative `mistral.ai/pricing/api` table, which confirms Large 3 unchanged at $0.50/$1.50.*
