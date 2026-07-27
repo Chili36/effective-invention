@@ -1,12 +1,16 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-07-20
-> **Source:** https://www.anthropic.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing
-> **Scraped / verified:** 2026-07-20 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page.** Every active price point below (Claude Fable 5, Claude Mythos 5, Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5) matches exactly what is currently published, including the full model-pricing table, batch-pricing table, prompt-caching multipliers, and fast-mode table. No new model releases or price changes detected since the July 14, 2026 refresh. 🔓 Claude Fable 5 remains fully restored/GA; Claude Mythos 5 remains restricted to approved Project Glasswing organizations. 🆕 **Newly documented this cycle:** full tool-use/agent pricing (Web Search, Code Execution, Claude Managed Agents session-runtime billing, and per-model tool-use system-prompt token overhead) — previously summarized only briefly, now captured in a dedicated section below.
+> **Last updated:** 2026-07-27
+> **Source:** https://www.anthropic.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing · https://www.anthropic.com/news/claude-opus-5
+> **Scraped / verified:** 2026-07-27 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page and independent reporting on the July 24, 2026 Opus 5 launch.** 🆕 **Claude Opus 5 launched July 24, 2026** at the same $5.00/$25.00 per MTok rate as the Opus 4.8 model it replaces, becoming the new default on Claude Max and the strongest model on Claude Pro. ✅ **Fable 5's subscription-tier cliff was permanently resolved on July 20, 2026:** Max and Team Premium plans keep Fable 5 included at 50% of weekly usage limits going forward; Pro and Team Standard plans moved to metered usage credits ($10/$50 per MTok, same as the API rate) with a one-time $100 credit. All other active price points (Fable 5, Mythos 5, Sonnet 5, Sonnet 4.6, Haiku 4.5) re-confirmed unchanged.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
-> 📝 **July 14, 2026 update — Fable 5 usage-credit cliff extended again (twice now).** The July 1 restoration of Claude Fable 5 originally included it in Pro/Max/Team/select-Enterprise subscription plans for up to 50% of weekly usage limits **through July 7, 2026**, after which it was to move to metered usage-credit billing. That cutoff has since been **extended twice** — first to **July 12**, then to **July 19, 2026** — per third-party trackers monitoring Anthropic's usage dashboard messaging. Anthropic has not published a formal blog post about the extensions; the confirmed API rate for Fable 5 remains unchanged at **$10/$50 per MTok** regardless of which billing mode (subscription-included vs. metered credits) is in effect. Treat the exact subscription cutoff date as fluid and verify against your own Claude usage dashboard.
+> 🆕 **July 24, 2026 — Claude Opus 5 launched.** Anthropic's new premium daily-driver model, replacing Claude Opus 4.8 at **identical pricing** ($5.00/$25.00 per MTok). Anthropic positions Opus 5 as approaching Fable 5-level intelligence at half Fable 5's price, and it becomes the default model on Claude Max and the strongest model available on Claude Pro. Model ID: `claude-opus-5`. On Anthropic's internal Frontier-Bench v0.1, Opus 5 scored 43.3% vs. 33.7% for Fable 5, 21.1% for Opus 4.8, and 34.4% for GPT-5.6 Sol. Anthropic says Opus 5's cyber safety classifiers intervene roughly 85% less often than Fable 5's, and the model carries no mandatory data-retention requirement (unlike Fable 5's 30-day retention). Fast Mode runs ~2.5× the standard speed at 2× the base price. See [Anthropic's announcement](https://www.anthropic.com/news/claude-opus-5).
+>
+> ✅ **July 20, 2026 — Fable 5 subscription-tier access permanently resolved.** After being extended three times (July 7 → July 12 → July 19), the promotional "included" window for Fable 5 on subscription plans ended and Anthropic announced a permanent split: **Max and Team Premium** plans keep Fable 5 included at **50% of weekly usage limits** indefinitely (no usage-credit draw). **Pro and Team Standard** plans lost bundled access and now run Fable 5 on **metered usage credits at the standard API rate** ($10/$50 per MTok), softened by a one-time **$100 credit** granted to eligible seats when the change took effect. The underlying API rate for Fable 5 is unchanged at $10/$50 per MTok regardless of billing mechanism.
+
+> 📝 **July 14, 2026 update — Fable 5 usage-credit cliff extended again (twice now).** The July 1 restoration of Claude Fable 5 originally included it in Pro/Max/Team/select-Enterprise subscription plans for up to 50% of weekly usage limits **through July 7, 2026**, after which it was to move to metered usage-credit billing. That cutoff has since been **extended twice** — first to **July 12**, then to **July 19, 2026** — per third-party trackers monitoring Anthropic's usage dashboard messaging. Anthropic has not published a formal blog post about the extensions; the confirmed API rate for Fable 5 remains unchanged at **$10/$50 per MTok** regardless of which billing mode (subscription-included vs. metered credits) is in effect. *(Superseded by the July 20 permanent resolution above.)*
 >
 > 🌐 **July 13, 2026 — Anthropic begins localizing Claude.ai consumer pricing for India**, its second-largest market after the US (5.8% of global Claude usage). Claude Pro is listed at ₹2,000/mo (~$21, annual billing) vs. $17/mo in the US; Claude Max starts at ₹11,999/mo (~$125) vs. $100/mo in the US; Team starts at ₹2,399/seat/mo (~$25) vs. $20/mo in the US. **This is consumer subscription pricing only — it does not affect Claude API/developer pricing**, which remains USD-denominated globally. UPI payment support is not yet available; users still pay via card or app-store billing.
 
@@ -52,7 +56,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Availability** | Claude API · Claude.ai · Claude Code · Claude Cowork · Claude Platform on AWS · Amazon Bedrock · Google Vertex AI · Microsoft Foundry *(cloud partner access being re-enabled)* |
 | **Safety** | Includes safety classifiers that can decline cybersecurity/biology/chemistry/distillation requests; flagged queries auto-route to Opus 4.8 and are billed at Opus 4.8 rates, not Fable 5 rates |
 | **Data retention** | 30-day data retention required for safety monitoring (no zero-data-retention option) |
-| **Subscription access** | Pro/Max/Team/select Enterprise: included for a limited share of weekly usage limits — cutoff **twice-extended, now reported as July 19, 2026** (see July 14 note above) — then usage-credits billing |
+| **Subscription access** | **Resolved July 20, 2026:** Max/Team Premium — included permanently at 50% of weekly usage limits. Pro/Team Standard — usage credits at API rates ($10/$50), softened by a one-time $100 credit |
 | **Notable** | 2× Opus 4.8 pricing; state-of-the-art on Anthropic's coding, knowledge-work, and vision evals; restored after a new safety classifier was deployed that blocks the reported jailbreak technique in >99% of cases |
 
 ---
@@ -74,9 +78,32 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-### Claude Opus 4.8 *(Top-Tier / Daily Driver)*
+### 🆕 Claude Opus 5 *(New Premium Daily Driver — Released July 24, 2026)*
 
-> **May 28, 2026 — Opus 4.8** is Anthropic's most capable general-availability model below the Mythos-class tier. Fast Mode available at 2× pricing for latency-sensitive workloads (research preview).
+> **July 24, 2026 — Claude Opus 5** replaces Claude Opus 4.8 as Anthropic's premium, everyday model — at **identical pricing**. Anthropic frames it as approaching Fable 5-level intelligence for daily professional work at half Fable 5's price, while reserving Fable 5 for the longest, most autonomous multi-day tasks. Opus 5 is now the default model on Claude Max and the strongest model available on Claude Pro. Knowledge cutoff is May 2026 (vs. January 2026 for Fable 5 and Opus 4.8).
+
+| Field | Value |
+|---|---|
+| **Provider** | Anthropic |
+| **Model ID** | `claude-opus-5` |
+| **Released** | July 24, 2026 |
+| **Status** | ✅ Active — **New default on Claude Max; strongest model on Claude Pro** |
+| **Input price** | $5.00 / MTok *(unchanged from Opus 4.8)* |
+| **Output price** | $25.00 / MTok *(unchanged from Opus 4.8)* |
+| **Fast Mode** | ~2.5× standard speed at 2× base price ($10.00/$50.00 per MTok) |
+| **Cache read** | $0.50 / MTok *(90% off standard input, consistent with Opus 4.8)* |
+| **Batch** | 50% off standard rates |
+| **Context window** | 1,000,000 tokens |
+| **Data retention** | No mandatory data-retention requirement for general access (unlike Fable 5's 30-day retention) |
+| **Safety** | Cyber safety classifiers intervene ~85% less often than Fable 5's; flagged requests auto-route to another model by default (on by default in Claude.ai, Claude Code, Claude Cowork; available as an API option) rather than being refused outright |
+| **Availability** | Claude API (`claude-opus-5`) · Claude.ai (Max default, strongest on Pro) · Claude Code · Amazon Bedrock · Claude Platform on AWS · Google Cloud · Microsoft Foundry |
+| **Notable** | Anthropic reports Opus 5 beats Fable 5 on several benchmarks (Frontier-Bench v0.1: 43.3% vs. 33.7%; ARC-AGI 3: 30.2% vs. much lower prior scores; GDPVal-AA v2 highest of any model tested) while trailing Fable 5 on long-horizon coherence and CursorBench 3.2 by a narrow margin, and trailing Mythos 5 on offensive cybersecurity/biology research. Anthropic's internal behavioral audit reports Opus 5 as its most-aligned model to date. Beta features: mid-conversation tool swapping without invalidating the prompt cache, and automatic safety-fallback routing. |
+
+---
+
+### Claude Opus 4.8 *(🔄 Replaced by Opus 5 — still active)*
+
+> 🔄 **REPLACED (July 24, 2026):** Claude Opus 5 has replaced Opus 4.8 as Anthropic's recommended premium/default model, at the identical $5/$25 price point. Opus 4.8 remains fully API-accessible and is not deprecated — it also continues to serve as the automatic safety-fallback target when Fable 5's classifiers flag a request.
 
 | Field | Value |
 |---|---|
@@ -85,7 +112,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **AWS Bedrock ID** | `anthropic.claude-opus-4-83` (Messages-API Bedrock endpoint only) |
 | **Vertex AI ID** | `claude-opus-4-8` |
 | **Released** | May 2026 |
-| **Status** | ✅ Active — Top-tier daily driver; safety fallback target for Fable 5 |
+| **Status** | ✅ Active — 🔄 Replaced by Opus 5 as default (July 24, 2026); still the safety-fallback target for Fable 5 |
 | **Input price** | $5.00 / MTok |
 | **Output price** | $25.00 / MTok |
 | **Fast Mode (input)** | $10.00 / MTok *(2× standard — research preview, up to 2.5× faster)* |
@@ -100,7 +127,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Extended thinking** | ❌ No |
 | **Adaptive thinking** | ✅ Yes |
 | **Availability** | Claude API · Claude Platform on AWS · Amazon Bedrock (Messages API) · Google Vertex AI · Microsoft Foundry (200k ctx) |
-| **Notable** | 1M context at standard pricing; Fast Mode at 2× base rate; Fable 5 safety-fallback target for cybersecurity/biology queries |
+| **Notable** | 1M context at standard pricing; Fast Mode at 2× base rate; still the safety-fallback target for Fable 5 cybersecurity/biology queries; **superseded by Opus 5** for new projects |
 
 ---
 
@@ -199,12 +226,13 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 |---|---|---|---|
 | Claude Fable 5 | ❌ No | ✅ Yes (always on) | 🔓 Restored July 1, 2026. Cyber/bio queries auto-route to Opus 4.8. |
 | Claude Mythos 5 | ❌ No | ✅ Yes (always on) | 🔒 Restricted to Project Glasswing (restored June 26, 2026). |
-| Claude Opus 4.8 | ❌ No | ✅ Yes | Top-tier daily driver; Fast Mode at 2× pricing |
-| Claude Sonnet 5 | ❌ No | ✅ Yes | New default — narrows gap with Opus 4.8; effort defaults to `high` |
+| Claude Opus 5 | ❌ No | ✅ Yes | 🆕 New default on Max/strongest on Pro (July 24, 2026) |
+| Claude Opus 4.8 | ❌ No | ✅ Yes | 🔄 Replaced by Opus 5 as default; still active, Fast Mode at 2× pricing |
+| Claude Sonnet 5 | ❌ No | ✅ Yes | Narrows gap with Opus-tier models; effort defaults to `high` |
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Replaced by Sonnet 5 as default; still active |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified July 20, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified July 27, 2026.
 
 ---
 
@@ -435,20 +463,21 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Prompt caching — cache read (5-min TTL)** | 90% off repeated input tokens |
 | **Prompt caching — cache write (5-min TTL)** | 1.25× standard input (break-even after 2 reads) |
 | **Prompt caching — cache write (1-hr TTL)** | 2× standard input (break-even after 8 reads) |
-| **🔓 Fable 5 restored** | $10/$50 — 2× Opus 4.8. Safety-flagged queries auto-route to Opus 4.8 and bill at Opus 4.8 rates |
+| **🆕 Opus 5 replaces Opus 4.8** | Same $5/$25 price, more capability — near-Fable-5 performance on many benchmarks at half Fable 5's price. Default reason to migrate off Opus 4.8 for new projects |
+| **🔓 Fable 5 restored** | $10/$50 — 2× Opus 5/Opus 4.8. Safety-flagged queries auto-route to Opus 4.8/Opus 5 and bill at that model's rates |
 | **🆕 Sonnet 5 introductory pricing** | $2/$10 per MTok through Aug 31, 2026 — lock in savings before the Sept 1 jump to $3/$15 |
-| **Opus 4.8 vs Opus 4.7 Fast Mode** | Opus 4.8 Fast Mode is $10/$50 (2× standard); Opus 4.7 Fast Mode was $30/$150 (6×) and is deprecated (removal July 24, 2026) |
+| **Opus 5 / Opus 4.8 Fast Mode** | Both run Fast Mode at $10/$50 (2× standard); Opus 4.7 Fast Mode was $30/$150 (6×) and has since been removed |
 | **⚠️ Opus 4.6 Fast Mode removed** | As of June 29, 2026, billed at standard $5/$25 |
 | **US-only inference (data residency)** | 1.1× pricing on Opus 4.6+, Sonnet 4.6+, Sonnet 5, and Fable 5/Mythos 5 |
-| **Thinking modes** | Adaptive: Fable 5, Mythos 5, Opus 4.8, Sonnet 5, Sonnet 4.6. Extended: Sonnet 4.6, Haiku 4.5 (**not** on Sonnet 5/Fable 5/Mythos 5) |
+| **Thinking modes** | Adaptive: Fable 5, Mythos 5, Opus 5, Opus 4.8, Sonnet 5, Sonnet 4.6. Extended: Sonnet 4.6, Haiku 4.5 (**not** on Sonnet 5/Opus 5/Fable 5/Mythos 5) |
 | **Tokenizer note** | Fable 5, Mythos 5, Opus 4.7+, and Sonnet 5 use a newer tokenizer producing ~30% more tokens for the same text vs. Sonnet 4.6-and-earlier |
-| **⚠️ Sonnet 4 + Opus 4 RETIRED** | Retired June 15, 2026 ❌ on Claude API — Sonnet 4 → Sonnet 5/4.6, Opus 4 → Opus 4.8 |
-| **⚠️ Fable 5 subscription cliff shifting** | Subscription-included window for Fable 5 has been extended twice (July 7 → July 12 → July 19, 2026) — verify current cutoff on your own Claude usage dashboard before budgeting |
+| **⚠️ Sonnet 4 + Opus 4 RETIRED** | Retired June 15, 2026 ❌ on Claude API — Sonnet 4 → Sonnet 5/4.6, Opus 4 → Opus 5/4.8 |
+| **✅ Fable 5 subscription cliff resolved** | Permanently split July 20, 2026: Max/Team Premium keep 50%-of-limits included access; Pro/Team Standard moved to metered usage credits at the $10/$50 API rate (one-time $100 credit granted) |
 | **🌐 India consumer pricing** | Now localized in INR (Pro ₹2,000/mo, Max ₹11,999/mo, Team ₹2,399/seat/mo) — API/developer pricing unaffected |
 | **🆕 Code execution + web search/fetch combo** | Free code execution when paired with `web_search_20260209`+/`web_fetch_20260209`+ — otherwise $0.05/hr per container after 1,550 free org-hours/month |
 | **🆕 Claude Managed Agents** | $0.08/session-hour runtime (billed only while `running`) + standard token rates — no Batch/Fast Mode/data-residency modifiers apply |
-| **Tool-use overhead varies by model** | Opus 4.8's tool-use system prompt (290–410 tokens) is far cheaper than Opus 4.7's (675–804 tokens) — a meaningful cost delta for tool-heavy agents at scale |
+| **Tool-use overhead varies by model** | Opus 4.8/5's tool-use system prompt (290–410 tokens) is far cheaper than Opus 4.7's (675–804 tokens) — a meaningful cost delta for tool-heavy agents at scale |
 
 ---
 
-*Sources last verified: July 20, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/about-claude/models/overview`, `anthropic.com/news/redeploying-fable-5`, and third-party trackers (suprmind.ai, aipricing.guru, benchlm.ai, tldl.io) monitoring the Fable 5 usage-credit cutoff and India consumer pricing rollout. ✅ Independently re-fetched the live pricing table on July 20, 2026 — Fable 5 $10/$50, Mythos 5 $10/$50, Opus 4.8 $5/$25, Sonnet 5 $2/$10→$3/$15 (Sept 1), Sonnet 4.6 $3/$15, Haiku 4.5 $1/$5 all re-confirmed unchanged (including exact cache-write/cache-read/batch figures for every model), along with all legacy/deprecated/retired model statuses and dates. 🆕 Newly captured this cycle: full Tools & Agents Pricing section (Web Search $10/1K searches, Web Fetch free, Code Execution free-with-search/$0.05-per-hr otherwise, per-model tool-use system-prompt token overhead, and Claude Managed Agents' $0.08/session-hour runtime billing) — sourced directly from the "Feature-specific pricing" and "Claude Managed Agents pricing" sections of the live docs page. The Fable 5 subscription-included cutoff remains reported at July 19, 2026 — this does not change the underlying $10/$50 API rate.*
+*Sources last verified: July 27, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/about-claude/models/overview`, `anthropic.com/news/claude-opus-5`, `anthropic.com/news/redeploying-fable-5`, and independent reporting (CNBC, VentureBeat, Fortune, MarketScale, aipricing.guru, benchlm.ai) on the July 24, 2026 Opus 5 launch and the July 20, 2026 Fable 5 subscription resolution. ✅ Re-confirmed pricing unchanged for Fable 5 ($10/$50), Mythos 5 ($10/$50), Sonnet 5 ($2/$10→$3/$15 on Sept 1), Sonnet 4.6 ($3/$15), and Haiku 4.5 ($1/$5). 🆕 Newly added this cycle: **Claude Opus 5** ($5/$25, launched July 24, 2026, replaces Opus 4.8 as the default on Max/strongest on Pro) and the **permanent resolution of the Fable 5 subscription-tier cliff** (Max/Team Premium keep 50%-of-limits included access indefinitely; Pro/Team Standard moved to metered usage credits with a one-time $100 credit). Tools & Agents pricing section (Web Search, Code Execution, Claude Managed Agents, tool-use system-prompt overhead) re-confirmed unchanged from the July 20 refresh.*
