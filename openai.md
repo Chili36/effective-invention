@@ -290,7 +290,13 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ## 🎙️ Multimodal, Realtime & Specialized Models
 
-### 🆕 GPT-Realtime-2.1 *(Latest Realtime Model — supersedes GPT-Realtime-2)*
+### 🆕 GPT-Live-1 / GPT-Live-1 mini *(Full-Duplex Voice — ChatGPT only, launched July 8, 2026)*
+
+> **Status:** ✅ Active in ChatGPT — 🔒 **No API pricing published yet.** GPT-Live is OpenAI's new full-duplex voice model family (it can listen and speak simultaneously, supporting natural interruption/barge-in), launched July 8, 2026 and rolled into ChatGPT's Voice experience — it is **not the same product as the Realtime API** (`gpt-realtime-2.1`/`2.1-mini`), which remains the only developer-facing voice API today. GPT-Live is bundled entirely into ChatGPT consumer/business plans with no separate charge and no per-minute or per-token rate: Free gets GPT-Live-1 mini; Go ($8/mo), Plus ($20/mo), and Pro (from $100/mo) get the full GPT-Live-1 with usage allowances that scale by plan (e.g., ChatGPT Pro $200/mo tier gets unlimited access). OpenAI has stated GPT-Live-1 and mini are "coming soon" to the API with no published token/per-minute rates — **treat this as unpriced/API-pending; do not assume Realtime API pricing applies.** Track `developers.openai.com/api/docs/pricing` for when API rates go live.
+
+---
+
+### GPT-Realtime-2.1 *(Latest Realtime Model — supersedes GPT-Realtime-2)*
 
 > **Status:** ✅ Active — Now the latest realtime voice interaction model on the live pricing page (previously listed as `gpt-realtime-2`, same pricing carried forward as a version refresh). Supports audio, text, and image inputs.
 
@@ -596,10 +602,11 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Fine-tuning platform** | OpenAI is winding down the fine-tuning platform — no longer accessible to new users |
 | **Image models** | Migrate from `gpt-image-1.5` and `gpt-image-1-mini` to `gpt-image-2` before Dec 1, 2026 |
 | **Realtime models** | Use `gpt-realtime-2.1` ($32/$64 audio) or `gpt-realtime-2.1-mini` ($10/$20 audio) — both supersede the `-2`/`-mini` names at the same price |
+| **🆕 GPT-Live is not API-priced yet** | GPT-Live-1/mini (ChatGPT full-duplex voice, launched July 8, 2026) is bundled into ChatGPT plans with no separate charge and no published API rate — do not budget it as a token-priced model until OpenAI publishes Realtime-style API pricing |
 | **🆕 GPT-5.6 GA** | Reached general availability July 9, 2026 — no longer restricted; self-serve API access for all three tiers (Sol/Terra/Luna) |
 | **Web search tool choice matters** | Non-preview web search is $10/1K calls with metered content tokens; the non-reasoning-model "preview" variant is $25/1K calls but content tokens are free — the cheaper option depends on how much search content your prompts actually consume |
 | **Computer Use is a distinct SKU** | `computer-use-preview` ($1.50/$6.00) is priced independently of the underlying model family — budget it separately from GPT-5.x token costs |
 
 ---
 
-*Sources last verified: July 20, 2026 against `developers.openai.com/api/docs/pricing` and `developers.openai.com/api/docs/models` — GPT-5.6 Sol/Terra/Luna confirmed GA (July 9, 2026) with full short/long-context, cache, priority, and batch/flex pricing tables re-verified line-by-line; GPT-5.5 $5/$30 confirmed unchanged (now flagged 🔄 replaced by Sol); GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40 all confirmed unchanged. Realtime models confirmed on `gpt-realtime-2.1` / `gpt-realtime-2.1-mini` (same pricing as prior `-2`/`-mini` names, now legacy). Tools pricing (Web Search, Containers, File Search, Agent Kit) and Computer Use ($1.50/$6.00) independently re-confirmed against the live pricing page's "Tools" and "Specialized models" sections — no changes.*
+*Sources last verified: July 27, 2026 against `developers.openai.com/api/docs/pricing` and `developers.openai.com/api/docs/models` — GPT-5.6 Sol/Terra/Luna confirmed GA (July 9, 2026) with full short/long-context, cache, priority, and batch/flex pricing tables re-verified line-by-line, **no changes since July 20**; GPT-5.5 $5/$30 confirmed unchanged (flagged 🔄 replaced by Sol); GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40 all confirmed unchanged. Realtime models confirmed on `gpt-realtime-2.1` / `gpt-realtime-2.1-mini` (same pricing as prior `-2`/`-mini` names, now legacy). 🆕 **Newly tracked this cycle:** GPT-Live-1 and GPT-Live-1 mini, OpenAI's full-duplex voice models launched July 8, 2026 into ChatGPT Voice — confirmed bundled into ChatGPT plan pricing only, with **no API pricing published** ("coming soon" per OpenAI); flagged as unpriced/pending rather than assigned a token rate. Tools pricing (Web Search, Containers, File Search, Agent Kit) and Computer Use ($1.50/$6.00) independently re-confirmed against the live pricing page's "Tools" and "Specialized models" sections — no changes.*
