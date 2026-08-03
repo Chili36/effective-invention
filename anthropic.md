@@ -90,10 +90,15 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Status** | ✅ Active — **New default on Claude Max; strongest model on Claude Pro** |
 | **Input price** | $5.00 / MTok *(unchanged from Opus 4.8)* |
 | **Output price** | $25.00 / MTok *(unchanged from Opus 4.8)* |
-| **Fast Mode** | ~2.5× standard speed at 2× base price ($10.00/$50.00 per MTok) |
+| **Cache write (5 min)** | $6.25 / MTok |
+| **Cache write (1 hr)** | $10.00 / MTok |
 | **Cache read** | $0.50 / MTok *(90% off standard input, consistent with Opus 4.8)* |
+| **Batch input** | $2.50 / MTok |
+| **Batch output** | $12.50 / MTok |
+| **Fast Mode** | ~2.5× standard speed at 2× base price ($10.00/$50.00 per MTok) |
 | **Batch** | 50% off standard rates |
 | **Context window** | 1,000,000 tokens |
+| **Tool-use system prompt (`auto`/`none` — `any`/`tool`)** | 286 tokens — 406 tokens *(cheapest tool-use overhead of any active model)* |
 | **Data retention** | No mandatory data-retention requirement for general access (unlike Fable 5's 30-day retention) |
 | **Safety** | Cyber safety classifiers intervene ~85% less often than Fable 5's; flagged requests auto-route to another model by default (on by default in Claude.ai, Claude Code, Claude Cowork; available as an API option) rather than being refused outright |
 | **Availability** | Claude API (`claude-opus-5`) · Claude.ai (Max default, strongest on Pro) · Claude Code · Amazon Bedrock · Claude Platform on AWS · Google Cloud · Microsoft Foundry |
@@ -161,6 +166,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Max output** | 128,000 tokens (sync) / 300,000 tokens (Batch API with beta header) |
 | **Extended thinking** | ❌ No |
 | **Adaptive thinking** | ✅ Yes (effort defaults to `high` on Claude API and Claude Code) |
+| **Tool-use system prompt (`auto`/`none` — `any`/`tool`)** | 354 tokens — 474 tokens |
 | **Tokenizer** | Newer tokenizer (same generation as Opus 4.7+/Fable 5) — produces ~30% more tokens than Sonnet 4.6 for the same text |
 | **Availability** | Claude API · Claude.ai (Free/Pro/Max/Team/Enterprise) · Claude Code · Claude Platform on AWS · Amazon Bedrock · Google Cloud · Microsoft Foundry |
 | **Notable** | Default model for Free/Pro plans; strict improvement over Sonnet 4.6 on agentic benchmarks (SWE-Bench Pro +5.1%, Terminal-Bench 2.1 +13.4%); lower hallucination and sycophancy rates than Sonnet 4.6 |
@@ -247,7 +253,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Web search** | $10 per 1,000 searches, plus standard token costs for search-generated content. Each search counts as one use regardless of result count; failed searches are not billed. |
 | **Web fetch** | No additional charge — standard token costs only for fetched content that enters context. Use `max_content_tokens` to cap consumption (avg 10kB page ≈ 2,500 tokens; 100kB doc ≈ 25,000 tokens; 500kB PDF ≈ 125,000 tokens). |
 | **Code execution** | **Free when used alongside `web_search_20260209`+ or `web_fetch_20260209`+.** Otherwise billed by execution time (5-min minimum): **1,550 free container-hours/month per org**, then **$0.05/hour per container**. Files attached to a request bill execution time even if the tool isn't invoked. |
-| **Bash tool** | Adds 325 input tokens (Opus 4.7/4.8) or 244 tokens (Opus 4.6, Sonnet 4.6 and earlier) on top of the standard tool-use system prompt. |
+| **Bash tool** | Adds 325 input tokens (Opus 4.7/4.8/5) or 244 tokens (Opus 4.6, Sonnet 4.6 and earlier) on top of the standard tool-use system prompt. |
 | **Text editor tool** | Adds 700 input tokens (Claude 4.x `text_editor_20250429`) on top of standard tool-use overhead. |
 | **Computer use tool** | Adds 466–499 system-prompt tokens plus 735 tokens per tool definition (Claude 4.x); screenshots billed at standard vision-token rates. |
 
@@ -255,6 +261,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 | Model | `auto`/`none` | `any`/`tool` |
 |---|---|---|
+| Claude Opus 5 | 286 tokens | 406 tokens |
 | Claude Opus 4.8 | 290 tokens | 410 tokens |
 | Claude Opus 4.7 | 675 tokens | 804 tokens |
 | Claude Opus 4.6 | 497 tokens | 589 tokens |
@@ -265,6 +272,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Haiku 4.5 | 496 tokens | 588 tokens |
 | Claude Haiku 3.5 (legacy) | 264 tokens | 355 tokens |
 
+> 🆕 **Claude Opus 5 now has the cheapest tool-use overhead of any active model** (286/406 tokens) — even lower than Opus 4.8's 290/410, confirmed on the live pricing page's tool-use pricing table.
 > These tokens are billed as ordinary input tokens at the model's standard rate — they are not a separate line item.
 
 ### Claude Managed Agents *(billed on tokens + session runtime)*
@@ -275,7 +283,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Tokens** | Standard per-model rates | Prompt caching multipliers apply identically; web search inside a session still costs $10/1,000 searches |
 | **Not applicable** | Batch API discount, Fast Mode premium, data residency multiplier, cloud-platform (Bedrock/Vertex) pricing | Managed Agents sessions are stateful/interactive — none of these modifiers apply |
 
-**Worked example** (1-hour Opus 4.8 session, 50K input / 15K output tokens, no caching): $0.25 (input) + $0.375 (output) + $0.08 (runtime) = **$0.705**. With 40K of the 50K input tokens served from cache: **$0.525**.
+**Worked example** (1-hour Opus 5 session, 50K input / 15K output tokens, no caching): $0.25 (input) + $0.375 (output) + $0.08 (runtime) = **$0.705**. With 40K of the 50K input tokens served from cache: **$0.525**.
 
 ---
 
@@ -313,19 +321,19 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-### ⚠️ LEGACY — Claude Opus 4.7 *(Fast Mode deprecated — removal July 24, 2026)*
+### ⚠️ LEGACY — Claude Opus 4.7 *(Fast Mode ❌ REMOVED July 24, 2026)*
 
-> Fast Mode for Claude Opus 4.7 is officially **deprecated** and will be **removed on July 24, 2026**. Until removal, Fast Mode remains billable at $30/$150 per MTok (6×).
+> ✅ **Confirmed removed on schedule.** Fast Mode for Claude Opus 4.7 was deprecated with a published removal date of July 24, 2026 (the same day Claude Opus 5 launched); the live `platform.claude.com/docs/en/about-claude/pricing` page now explicitly states that requests with `speed: "fast"` against Opus 4.7 **return an error**. This is now a confirmed removal, not a scheduled one.
 
 | Field | Value |
 |---|---|
 | **Model ID** | `claude-opus-4-7` |
-| **Status** | ⚠️ LEGACY — Fast Mode deprecated, removal July 24, 2026 |
+| **Status** | ⚠️ LEGACY — Fast Mode ❌ REMOVED July 24, 2026 (confirmed on live pricing page) |
 | **Input price** | $5.00 / MTok |
 | **Output price** | $25.00 / MTok |
-| **Fast Mode (input/output)** | $30.00 / $150.00 per MTok *(⚠️ DEPRECATED, removal July 24, 2026)* |
+| **Fast Mode (input/output)** | ❌ REMOVED — `speed: "fast"` requests now return an error (was $30.00/$150.00 per MTok, 6×, prior to removal) |
 | **Context window** | 1,000,000 tokens |
-| **Migration** | → **Claude Opus 4.8** (same price, cheaper Fast Mode at 2× vs 6×) |
+| **Migration** | → **Claude Opus 5** or **Opus 4.8** (both support Fast Mode at 2× standard pricing, $10/$50) |
 
 ---
 
@@ -339,7 +347,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Output price** | $25.00 / MTok |
 | **Fast Mode** | ❌ REMOVED June 29, 2026 — billed at standard rates |
 | **Context window** | 1,000,000 tokens |
-| **Migration** | → **Claude Opus 4.8** |
+| **Migration** | → **Claude Opus 5** or **Opus 4.8** |
 
 ---
 
@@ -364,7 +372,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Input price** | $5.00 / MTok |
 | **Output price** | $25.00 / MTok |
 | **Context window** | 200,000 tokens |
-| **Migration** | → **Claude Opus 4.8** (1M context, 128k output) |
+| **Migration** | → **Claude Opus 5** or **Opus 4.8** (1M context, 128k output) |
 
 ---
 
@@ -376,7 +384,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Status** | ⚠️ LEGACY (deprecated, per live pricing page) |
 | **Input price** | $15.00 / MTok |
 | **Output price** | $75.00 / MTok |
-| **Migration** | → **Claude Opus 4.8** ($5/$25) — 67% cheaper |
+| **Migration** | → **Claude Opus 5** or **Opus 4.8** ($5/$25) — 67% cheaper |
 
 ---
 
@@ -400,7 +408,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Status** | ⚠️ RETIRED — API calls return errors ❌ on Claude API |
 | **Input price** | $15.00 / MTok |
 | **Output price** | $75.00 / MTok |
-| **Migration** | → **Claude Opus 4.8** ($5/$25) — 67% cheaper |
+| **Migration** | → **Claude Opus 5** or **Opus 4.8** ($5/$25) — 67% cheaper |
 
 ---
 
@@ -440,7 +448,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 | Model | Status | Migration |
 |---|---|---|
-| Claude 3 Opus | ⚠️ DEPRECATED Jan 2026 — available by request | → Claude Opus 4.8 |
+| Claude 3 Opus | ⚠️ DEPRECATED Jan 2026 — available by request | → Claude Opus 5 or 4.8 |
 | Claude 3.5 Sonnet (v1 & v2) | ⚠️ RETIRED January 5, 2026 | → Claude Sonnet 5 or Sonnet 4.6 |
 | Claude 3 Sonnet | ⚠️ RETIRED | → Claude Sonnet 5 or Sonnet 4.6 |
 | Claude 3 Haiku | ⚠️ RETIRED February 19, 2026 ❌ | → Claude Haiku 4.5 |
@@ -464,10 +472,12 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Prompt caching — cache write (5-min TTL)** | 1.25× standard input (break-even after 2 reads) |
 | **Prompt caching — cache write (1-hr TTL)** | 2× standard input (break-even after 8 reads) |
 | **🆕 Opus 5 replaces Opus 4.8** | Same $5/$25 price, more capability — near-Fable-5 performance on many benchmarks at half Fable 5's price. Default reason to migrate off Opus 4.8 for new projects |
+| **🆕 Opus 5 has the cheapest tool-use overhead** | 286/406 tokens (auto/none — any/tool) vs. 290/410 for Opus 4.8 — a small but real savings for tool-heavy agents at scale |
 | **🔓 Fable 5 restored** | $10/$50 — 2× Opus 5/Opus 4.8. Safety-flagged queries auto-route to Opus 4.8/Opus 5 and bill at that model's rates |
 | **🆕 Sonnet 5 introductory pricing** | $2/$10 per MTok through Aug 31, 2026 — lock in savings before the Sept 1 jump to $3/$15 |
-| **Opus 5 / Opus 4.8 Fast Mode** | Both run Fast Mode at $10/$50 (2× standard); Opus 4.7 Fast Mode was $30/$150 (6×) and has since been removed |
+| **Opus 5 / Opus 4.8 Fast Mode** | Both run Fast Mode at $10/$50 (2× standard); Opus 4.7 Fast Mode was $30/$150 (6×) and is now confirmed **removed** as of July 24, 2026 |
 | **⚠️ Opus 4.6 Fast Mode removed** | As of June 29, 2026, billed at standard $5/$25 |
+| **⚠️ Opus 4.7 Fast Mode removed** | As of July 24, 2026 (confirmed on live pricing page — `speed: "fast"` requests now error), billed at standard $5/$25 |
 | **US-only inference (data residency)** | 1.1× pricing on Opus 4.6+, Sonnet 4.6+, Sonnet 5, and Fable 5/Mythos 5 |
 | **Thinking modes** | Adaptive: Fable 5, Mythos 5, Opus 5, Opus 4.8, Sonnet 5, Sonnet 4.6. Extended: Sonnet 4.6, Haiku 4.5 (**not** on Sonnet 5/Opus 5/Fable 5/Mythos 5) |
 | **Tokenizer note** | Fable 5, Mythos 5, Opus 4.7+, and Sonnet 5 use a newer tokenizer producing ~30% more tokens for the same text vs. Sonnet 4.6-and-earlier |
@@ -476,8 +486,8 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **🌐 India consumer pricing** | Now localized in INR (Pro ₹2,000/mo, Max ₹11,999/mo, Team ₹2,399/seat/mo) — API/developer pricing unaffected |
 | **🆕 Code execution + web search/fetch combo** | Free code execution when paired with `web_search_20260209`+/`web_fetch_20260209`+ — otherwise $0.05/hr per container after 1,550 free org-hours/month |
 | **🆕 Claude Managed Agents** | $0.08/session-hour runtime (billed only while `running`) + standard token rates — no Batch/Fast Mode/data-residency modifiers apply |
-| **Tool-use overhead varies by model** | Opus 4.8/5's tool-use system prompt (290–410 tokens) is far cheaper than Opus 4.7's (675–804 tokens) — a meaningful cost delta for tool-heavy agents at scale |
+| **Tool-use overhead varies by model** | Opus 5's tool-use system prompt (286–406 tokens) is now the cheapest of any active model, edging out Opus 4.8 (290–410 tokens) and far cheaper than Opus 4.7's former 675–804 tokens — a meaningful cost delta for tool-heavy agents at scale |
 
 ---
 
-*Sources last verified: July 27, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/about-claude/models/overview`, `anthropic.com/news/claude-opus-5`, `anthropic.com/news/redeploying-fable-5`, and independent reporting (CNBC, VentureBeat, Fortune, MarketScale, aipricing.guru, benchlm.ai) on the July 24, 2026 Opus 5 launch and the July 20, 2026 Fable 5 subscription resolution. ✅ Re-confirmed pricing unchanged for Fable 5 ($10/$50), Mythos 5 ($10/$50), Sonnet 5 ($2/$10→$3/$15 on Sept 1), Sonnet 4.6 ($3/$15), and Haiku 4.5 ($1/$5). 🆕 Newly added this cycle: **Claude Opus 5** ($5/$25, launched July 24, 2026, replaces Opus 4.8 as the default on Max/strongest on Pro) and the **permanent resolution of the Fable 5 subscription-tier cliff** (Max/Team Premium keep 50%-of-limits included access indefinitely; Pro/Team Standard moved to metered usage credits with a one-time $100 credit). Tools & Agents pricing section (Web Search, Code Execution, Claude Managed Agents, tool-use system-prompt overhead) re-confirmed unchanged from the July 20 refresh.*
+*Sources last verified: August 3, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `anthropic.com/news`, and `anthropic.com/news/claude-opus-5`. All active model prices (Fable 5, Mythos 5, Opus 5, Opus 4.8, Opus 4.7 (deprecated), Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Sonnet 4.5, Haiku 4.5, Haiku 3.5 (retired)) re-confirmed unchanged directly against the live model-pricing table. **Key confirmation this cycle:** Claude Opus 4.7's Fast Mode, previously flagged as "deprecated, scheduled removal July 24, 2026," is now **confirmed removed** — the live pricing page states Fast Mode requests against Opus 4.7 return an error. Also newly captured: Claude Opus 5's tool-use system-prompt overhead (286/406 tokens, `auto`/`none` vs. `any`/`tool`), now the cheapest of any active model, from the live pricing page's tool-use pricing table. Checked `anthropic.com/news` through July 30, 2026 (most recent entry found) — no new model releases since Claude Opus 5 (July 24, 2026). Fast mode remains available only on Opus 5 and Opus 4.8, both at $10/$50 per MTok. No other pricing changes detected.*
