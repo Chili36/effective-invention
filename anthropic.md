@@ -1,8 +1,8 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-07-27
+> **Last updated:** 2026-08-03
 > **Source:** https://www.anthropic.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing · https://www.anthropic.com/news/claude-opus-5
-> **Scraped / verified:** 2026-07-27 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page and independent reporting on the July 24, 2026 Opus 5 launch.** 🆕 **Claude Opus 5 launched July 24, 2026** at the same $5.00/$25.00 per MTok rate as the Opus 4.8 model it replaces, becoming the new default on Claude Max and the strongest model on Claude Pro. ✅ **Fable 5's subscription-tier cliff was permanently resolved on July 20, 2026:** Max and Team Premium plans keep Fable 5 included at 50% of weekly usage limits going forward; Pro and Team Standard plans moved to metered usage credits ($10/$50 per MTok, same as the API rate) with a one-time $100 credit. All other active price points (Fable 5, Mythos 5, Sonnet 5, Sonnet 4.6, Haiku 4.5) re-confirmed unchanged.
+> **Scraped / verified:** 2026-08-03 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page and `anthropic.com/news`.** All active model prices (Fable 5, Mythos 5, Opus 5, Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5) confirmed unchanged. ✅ **Claude Opus 4.7's Fast Mode is now confirmed REMOVED** (the live pricing page states `speed: "fast"` requests against Opus 4.7 return an error) — this was previously flagged as scheduled for July 24, 2026, and is now verified as completed. 🆕 Also newly captured: Claude Opus 5's tool-use system-prompt overhead (286/406 tokens), the cheapest of any active model. No new Anthropic model releases found since Claude Opus 5 (July 24, 2026); checked `anthropic.com/news` through July 30, 2026.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context.
 
@@ -238,7 +238,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Replaced by Sonnet 5 as default; still active |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified July 27, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified August 3, 2026.
 
 ---
 
