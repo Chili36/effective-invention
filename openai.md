@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-07-20
+> **Last updated:** 2026-08-03
 > **Source:** https://developers.openai.com/api/docs/pricing · https://developers.openai.com/api/docs/models · https://openai.com/index/gpt-5-6/
-> **Scraped / verified:** 2026-07-20 — ✅ **Re-verified against the live `developers.openai.com/api/docs/pricing` page.** All figures below (GPT-5.6 Sol/Terra/Luna, GPT-5.5, GPT-5.5 Pro, GPT-5.4 family, GPT-4.1 family, o-series, Realtime, Image, Video, Transcription, Deep Research, Computer Use, Codex, and Tools pricing) independently cross-checked line-by-line against the live pricing tables — **zero changes detected** since the July 14, 2026 refresh. GPT-5.6 remains GA (since July 9, 2026) and is documented as OpenAI's "Flagship models"; GPT-5.5 remains fully active at unchanged pricing.
+> **Scraped / verified:** 2026-08-03 — ✅ **Re-verified against the live `developers.openai.com/api/docs/pricing` and `developers.openai.com/api/docs/models` pages.** 📉 **GPT-5.6 Terra and GPT-5.6 Luna both got cheaper** — Terra's short-context input dropped $2.50 → **$2.00**/MTok (output $15.00 → **$12.00**), and Luna's short-context input dropped $1.00 → **$0.20**/MTok (output $6.00 → **$1.20**) — all cached/cache-write/long-context/priority/batch rows scale proportionally from the new base prices (see table below). Sol, GPT-5.5, GPT-5.5 Pro, and the GPT-5.4 family are all confirmed unchanged. 🆕 **New model discovered:** `gpt-transcribe` ($0.0045/min), a high-accuracy speech-to-text model, plus `gpt-live-transcribe` ($0.017/min) now explicitly listed as its own low-latency realtime transcription model on the live models catalog. GPT-5.6 Sol/Terra/Luna now show a documented knowledge cutoff of **February 16, 2026**.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -19,27 +19,30 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 ### 🆕 GPT-5.6 — Sol / Terra / Luna *(Current Flagship Family — General Availability July 9, 2026)*
 
 > **GPT-5.6 reached General Availability on July 9, 2026**, live across ChatGPT, Codex, and the OpenAI API — a 13-day arc from its June 26, 2026 limited preview (~20 trusted partners, gated pending US government review per the June 2, 2026 executive order on frontier model releases). GPT-5.6 introduces a new naming system: the version number (5.6) identifies the model generation, while **Sol**, **Terra**, and **Luna** are durable capability tiers (flagship / balanced / speed-and-cost) that can each advance on their own release cadence — replacing the old flagship/mini/nano suffix convention. The bare `gpt-5.6` alias routes to Sol.
+>
+> 📉 **August 3, 2026 — Terra and Luna price cut, confirmed on the live pricing page and model catalog.** GPT-5.6 Terra's short-context input fell from $2.50 to **$2.00**/MTok (output $15.00 → **$12.00**/MTok); GPT-5.6 Luna's short-context input fell from $1.00 to **$0.20**/MTok (output $6.00 → **$1.20**/MTok) — an ~80% cut on Luna's headline rate. Sol is unchanged at $5.00/$30.00. The table below reflects the new, lower prices; the previous rates are noted inline for reference.
 
 | Field | GPT-5.6 Sol | GPT-5.6 Terra | GPT-5.6 Luna |
 |---|---|---|---|
 | **Model ID** | `gpt-5.6-sol` | `gpt-5.6-terra` | `gpt-5.6-luna` |
-| **Input (short ctx <~270K)** | $5.00 / MTok | $2.50 / MTok | $1.00 / MTok |
-| **Cached input (short)** | $0.50 / MTok | $0.25 / MTok | $0.10 / MTok |
-| **Cache write (short, 1.25×)** | $6.25 / MTok | $3.125 / MTok | $1.25 / MTok |
-| **Output (short ctx)** | $30.00 / MTok | $15.00 / MTok | $6.00 / MTok |
-| **Input (long ctx >~270K)** | $10.00 / MTok | $5.00 / MTok | $2.00 / MTok |
-| **Cached input (long)** | $1.00 / MTok | $0.50 / MTok | $0.20 / MTok |
-| **Cache write (long, 1.25×)** | $12.50 / MTok | $6.25 / MTok | $2.50 / MTok |
-| **Output (long ctx)** | $45.00 / MTok | $22.50 / MTok | $9.00 / MTok |
-| **Priority input / cached / output** | $10.00 / $1.00 / $60.00 | $5.00 / $0.50 / $30.00 | $2.00 / $0.20 / $12.00 |
-| **Batch/Flex input (short)** | $2.50 / MTok | $1.25 / MTok | $0.50 / MTok |
-| **Batch/Flex output (short)** | $15.00 / MTok | $7.50 / MTok | $3.00 / MTok |
-| **Batch/Flex input (long)** | $5.00 / MTok | $2.50 / MTok | $1.00 / MTok |
-| **Batch/Flex output (long)** | $22.50 / MTok | $11.25 / MTok | $4.50 / MTok |
+| **Input (short ctx <~270K)** | $5.00 / MTok | $2.00 / MTok 📉 *(was $2.50)* | $0.20 / MTok 📉 *(was $1.00)* |
+| **Cached input (short)** | $0.50 / MTok | $0.20 / MTok *(was $0.25)* | $0.02 / MTok *(was $0.10)* |
+| **Cache write (short, 1.25×)** | $6.25 / MTok | $2.50 / MTok *(was $3.125)* | $0.25 / MTok *(was $1.25)* |
+| **Output (short ctx)** | $30.00 / MTok | $12.00 / MTok 📉 *(was $15.00)* | $1.20 / MTok 📉 *(was $6.00)* |
+| **Input (long ctx >~270K)** | $10.00 / MTok | $4.00 / MTok *(was $5.00)* | $0.40 / MTok *(was $2.00)* |
+| **Cached input (long)** | $1.00 / MTok | $0.40 / MTok *(was $0.50)* | $0.04 / MTok *(was $0.20)* |
+| **Cache write (long, 1.25×)** | $12.50 / MTok | $5.00 / MTok *(was $6.25)* | $0.50 / MTok *(was $2.50)* |
+| **Output (long ctx)** | $45.00 / MTok | $18.00 / MTok *(was $22.50)* | $1.80 / MTok *(was $9.00)* |
+| **Priority input / cached / output** | $10.00 / $1.00 / $60.00 | $4.00 / $0.40 / $24.00 *(was $5.00/$0.50/$30.00)* | $0.40 / $0.04 / $2.40 *(was $2.00/$0.20/$12.00)* |
+| **Batch/Flex input (short)** | $2.50 / MTok | $1.00 / MTok *(was $1.25)* | $0.10 / MTok *(was $0.50)* |
+| **Batch/Flex output (short)** | $15.00 / MTok | $6.00 / MTok *(was $7.50)* | $0.60 / MTok *(was $3.00)* |
+| **Batch/Flex input (long)** | $5.00 / MTok | $2.00 / MTok *(was $2.50)* | $0.20 / MTok *(was $1.00)* |
+| **Batch/Flex output (long)** | $22.50 / MTok | $9.00 / MTok *(was $11.25)* | $0.90 / MTok *(was $4.50)* |
 | **Context window** | ~1.05M tokens (all three tiers) | | |
 | **Max output** | 128,000 tokens (all three tiers) | | |
+| **Knowledge cutoff** | February 16, 2026 (all three tiers) | | |
 | **Released (preview → GA)** | June 26, 2026 → **GA July 9, 2026** | | |
-| **Status** | ✅ Active — **Current Flagship Family** | ✅ Active — Best price/performance | ✅ Active — Fastest/cheapest tier |
+| **Status** | ✅ Active — **Current Flagship Family** | ✅ Active — Best price/performance, now cheaper | ✅ Active — Fastest/cheapest tier, now ~80% cheaper |
 
 **Shared capabilities (all three tiers):**
 - **Reasoning effort levels:** `none`, `low`, `medium`, `high`, `xhigh`, `max` — effort is a cost dial as well as a quality dial (higher settings burn more output tokens, the expensive direction).
@@ -395,10 +398,15 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ### Transcription Models
 
-| Model | Input | Output | Est. Cost |
-|---|---|---|---|
-| `gpt-4o-transcribe` | $2.50 / MTok | $10.00 / MTok | ~$0.006 / min |
-| `gpt-4o-mini-transcribe` | $1.25 / MTok | $5.00 / MTok | ~$0.003 / min |
+> 🆕 **`gpt-transcribe` and `gpt-live-transcribe` newly confirmed** on the live pricing/model catalog pages (August 3, 2026 refresh). `gpt-transcribe` is a new high-accuracy speech-to-text model for file and Realtime input transcription; `gpt-live-transcribe` is a low-latency model for realtime transcription, now listed as its own catalog entry alongside `gpt-realtime-whisper` (both priced at $0.017/min). Neither should be confused with **GPT-Live-1** (the ChatGPT-only conversational voice product below), which remains unpriced on the API.
+
+| Model | Pricing | Notes |
+|---|---|---|
+| 🆕 `gpt-transcribe` | $0.0045 / minute | High-accuracy speech-to-text for file and Realtime input transcription |
+| 🆕 `gpt-live-transcribe` | $0.017 / minute | Low-latency speech-to-text for realtime transcription |
+| `gpt-realtime-whisper` | $0.017 / minute | Streaming speech-to-text for realtime transcription |
+| `gpt-4o-transcribe` | $2.50 / MTok input · $10.00 / MTok output (~$0.006 / min) | Speech-to-text powered by GPT-4o |
+| `gpt-4o-mini-transcribe` | $1.25 / MTok input · $5.00 / MTok output (~$0.003 / min) | Speech-to-text powered by GPT-4o mini |
 
 ---
 
@@ -596,7 +604,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Cached input tokens** | 50–90% off depending on model |
 | **🆕 GPT-5.6 caching model** | Cache writes cost 1.25× the uncached input rate (new); cache reads keep the 90% discount; 30-min minimum cache life |
 | **GPT-5.6 / GPT-5.5 long-context** | Stay under ~270K input tokens to avoid 2× input / 1.5× output surcharge |
-| **🆕 Terra as GPT-5.5 replacement** | GPT-5.6 Terra ($2.50/$15) matches GPT-5.5-class quality per OpenAI at **half** GPT-5.5's price ($5/$30) — the single biggest lever for teams currently on GPT-5.5 |
+| **📉 Terra and Luna price cuts (Aug 3, 2026)** | Terra now $2.00/$12.00 (was $2.50/$15.00); Luna now $0.20/$1.20 (was $1.00/$6.00, an ~80% cut). Terra remains the natural GPT-5.5 replacement at well under half GPT-5.5's price; Luna is now dramatically cheaper than GPT-5.4 mini/nano for high-volume classification and extraction workloads |
+| **🆕 Terra as GPT-5.5 replacement** | GPT-5.6 Terra now $2.00/$12.00 — under half GPT-5.5's price ($5/$30) — the single biggest lever for teams currently on GPT-5.5 |
+| **🆕 Cheap transcription option** | `gpt-transcribe` at $0.0045/min is now the cheapest high-accuracy transcription model in the lineup — cheaper than `gpt-4o-mini-transcribe`'s ~$0.003/min-equivalent MTok pricing for typical audio |
 | **Sol vs GPT-5.5** | Same headline price ($5/$30) — pure capability upgrade, no cost penalty to move |
 | **Regional processing** | +10% uplift for GPT-5.6/5.5/5.4 family data residency endpoints |
 | **Fine-tuning platform** | OpenAI is winding down the fine-tuning platform — no longer accessible to new users |
@@ -609,4 +619,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-*Sources last verified: July 27, 2026 against `developers.openai.com/api/docs/pricing` and `developers.openai.com/api/docs/models` — GPT-5.6 Sol/Terra/Luna confirmed GA (July 9, 2026) with full short/long-context, cache, priority, and batch/flex pricing tables re-verified line-by-line, **no changes since July 20**; GPT-5.5 $5/$30 confirmed unchanged (flagged 🔄 replaced by Sol); GPT-5.4 $2.50/$15, o3 $2/$8, o4-mini $1.10/$4.40, GPT-4.1 $2/$8, GPT-4.1 mini $0.40/$1.60, GPT-4.1 nano $0.10/$0.40 all confirmed unchanged. Realtime models confirmed on `gpt-realtime-2.1` / `gpt-realtime-2.1-mini` (same pricing as prior `-2`/`-mini` names, now legacy). 🆕 **Newly tracked this cycle:** GPT-Live-1 and GPT-Live-1 mini, OpenAI's full-duplex voice models launched July 8, 2026 into ChatGPT Voice — confirmed bundled into ChatGPT plan pricing only, with **no API pricing published** ("coming soon" per OpenAI); flagged as unpriced/pending rather than assigned a token rate. Tools pricing (Web Search, Containers, File Search, Agent Kit) and Computer Use ($1.50/$6.00) independently re-confirmed against the live pricing page's "Tools" and "Specialized models" sections — no changes.*
+*Sources last verified: August 3, 2026 against `developers.openai.com/api/docs/pricing` and `developers.openai.com/api/docs/models`. **Key changes this cycle:** GPT-5.6 Terra's short-context price dropped from $2.50/$15.00 to **$2.00/$12.00** per MTok, and GPT-5.6 Luna's dropped from $1.00/$6.00 to **$0.20/$1.20** per MTok (~80% cheaper) — all cached, cache-write, long-context, priority, and batch/flex rows recalculated proportionally from the new base prices. GPT-5.6 Sol, GPT-5.5, GPT-5.5 Pro, and the entire GPT-5.4 family are confirmed unchanged. GPT-5.6's knowledge cutoff is now documented as February 16, 2026. 🆕 **Newly tracked this cycle:** `gpt-transcribe` ($0.0045/min, high-accuracy transcription) and `gpt-live-transcribe` ($0.017/min, low-latency realtime transcription), both newly visible as distinct entries on the live models catalog and pricing page. GPT-4.1 family, o3/o3-pro/o4-mini, Realtime, Image, Video, Deep Research, Computer Use, and Tools pricing carried forward unchanged from the July 27, 2026 refresh (not all sections re-rendered in this pass's live fetch; no deprecation or price-change announcements found for any of them). GPT-Live-1/GPT-Live-1 mini remain bundled into ChatGPT plans only, with no API pricing published.*
