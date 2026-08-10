@@ -1,16 +1,21 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-08-03
-> **Source:** https://mistral.ai/pricing · https://mistral.ai/pricing/api · https://docs.mistral.ai/models/overview · https://docs.mistral.ai/resources/changelogs
-> **Scraped / verified:** 2026-08-03 — ✅ **Re-verified against the live `mistral.ai/pricing/api` page.** Every active price point (Mistral Medium 3.5 $1.50/$7.50, Mistral Large 3 $0.50/$1.50, Mistral Small 4 $0.15/$0.60, Magistral Medium/Small, Codestral $0.30/$0.90, Devstral 2 $0.40/$2.00, Devstral Small 2 $0.10/$0.30, Leanstral 1.5 free, Voxtral family, OCR 4 $4/$2/$5 per 1K pages, Classifier APIs, embeddings, Ministral 3 family, Mixtral, Agent API tool pricing) matches exactly — **no new priced model releases or price changes detected since the July 27, 2026 refresh.** 🔭 **Discovery-only note:** Mistral published "Introducing Robostral Navigate" (July 8, 2026) — an 8B embodied-navigation robotics model (single-camera visual navigation for robots). It is **not listed on `mistral.ai/pricing/api`** and has no published per-token/API pricing, so per this tracker's verification-before-tracking policy it is **not added as a full model card** — flagged here for awareness only.
+> **Last updated:** 2026-08-10
+> **Source:** https://mistral.ai/pricing · https://mistral.ai/pricing/api · https://docs.mistral.ai/models/overview · https://mistral.ai/news · https://docs.mistral.ai/resources/changelogs
+> **Scraped / verified:** 2026-08-10 — ✅ **Re-verified against the live `mistral.ai/pricing/api` page.** Every active price point (Mistral Medium 3.5 $1.50/$7.50, Mistral Large 3 $0.50/$1.50, Mistral Small 4 $0.15/$0.60, Magistral Medium/Small, Codestral $0.30/$0.90, Devstral 2 $0.40/$2.00, Devstral Small 2 $0.10/$0.30, Leanstral 1.5 free, Voxtral family, OCR 4 $4/$2/$5 per 1K pages, Classifier APIs, embeddings, Ministral 3 family, Mixtral, Agent API tool pricing) matches exactly — **no new priced model releases or price changes detected since the August 3, 2026 refresh.** 🆕 **New discovery:** Mistral published **"Introducing Shieldstral"** (August 4, 2026) — a 3B/3.8B open-weights, policy-adaptive multimodal safety classifier. Like Robostral Navigate before it, Shieldstral **has no published hosted API pricing** (Apache 2.0 weights only, self-hosted), so per this tracker's verification-before-tracking policy it is documented below as a discovery-only entry rather than a full priced model card — see the dedicated section below.
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Vibe) subscriptions are billed **separately**.
 
 > **Mistral's key differentiators:** Native EU data residency (GDPR by default), competitive mid-tier pricing, Apache 2.0 / Modified MIT open-weight models, dedicated reasoning (Magistral series), flagship merged model (Medium 3.5), and a 50% batch processing discount.
 
+> 📝 **August 10, 2026 update:**
+> - ✅ Independently re-verified every active price point against `mistral.ai/pricing/api` — **all confirmed unchanged**: Medium 3.5 $1.50/$7.50, Large 3 $0.50/$1.50, Small 4 $0.15/$0.60, Magistral Medium $2/$5, Magistral Small $0.50/$1.50, Codestral $0.30/$0.90, Devstral 2 $0.40/$2.00, Devstral Small 2 $0.10/$0.30, OCR 4 $4/1K pages (std) · $2/1K (Batch) · $5/1K (Document AI), Voxtral family, Ministral 3 tiers, Classifier APIs, embeddings, Agent API tool pricing (Web search/Code execution $30/1K calls, Image generation $100/1K images, etc.), and Mixtral/NeMo legacy-API models.
+> - 🆕 **New discovery (not priced, not added as a full tracked model):** Mistral published **"Introducing Shieldstral"** (August 4, 2026) — a 3B (docs list 3.8B total/active parameters) open-weights, policy-adaptive multimodal safety classifier that accepts natural-language policy questions at inference time and returns a calibrated yes/no safety score for text and images, unifying prompt moderation, response moderation, and refusal detection into a single model. Released under Apache 2.0 as an inaugural member of the Open Secure AI Alliance (with NVIDIA and others); runs on a single 16GB GPU; 32K context window; listed as **Public Preview** on `docs.mistral.ai/models/model-cards/shieldstral-1-0`. **Mistral has not published a hosted API model ID or per-token rate for Shieldstral** — it does not appear as a priced row on `mistral.ai/pricing/api`, unlike the existing free `mistral-moderation-2603` classifier endpoint, which is a separate, already-priced (free) product. Per this tracker's policy of verifying pricing before adding a full model card, Shieldstral is documented in the Discovery-Only section below and will be upgraded to a full card if/when Mistral publishes API access and pricing. Source: https://mistral.ai/news/shieldstral/ · https://docs.mistral.ai/models/model-cards/shieldstral-1-0
+> - ℹ️ Checked `mistral.ai/news` for releases since the August 3 refresh — the only new post is Shieldstral (above); no other new priced LLM/API model releases found.
+
 > 📝 **August 3, 2026 update:**
 > - ✅ Independently re-verified every active price point against `mistral.ai/pricing/api` — **all confirmed unchanged**: Medium 3.5 $1.50/$7.50, Large 3 $0.50/$1.50, Small 4 $0.15/$0.60, Magistral Medium $2/$5, Magistral Small $0.50/$1.50, Codestral $0.30/$0.90, Devstral 2 $0.40/$2.00, Devstral Small 2 $0.10/$0.30, OCR 4 $4/1K pages (std) · $2/1K (Batch) · $5/1K (Document AI), Voxtral family, Ministral 3 tiers, Classifier APIs, embeddings, Agent API tool pricing (Web search/Code execution $30/1K calls, Image generation $100/1K images, etc.), and Mixtral/NeMo legacy-API models.
-> - 🔭 **New discovery (not priced, not added as a tracked model):** Mistral published **"Introducing Robostral Navigate"** (July 8, 2026) — an 8B parameter embodied-navigation model that lets robots navigate complex environments using a single RGB camera (no LiDAR/depth sensors), achieving 76.6% on R2R-CE validation-unseen. This is a robotics/embodied-AI research release, not a text/chat LLM, and **no API pricing or token rates are published** for it — it does not appear on `mistral.ai/pricing/api`. Per this tracker's policy of verifying pricing before adding a model card, Robostral Navigate is noted here for awareness only and will be evaluated for a full card if/when Mistral publishes API access and pricing.
+> - 🔭 **New discovery (not priced, not added as a tracked model):** Mistral published "Introducing Robostral Navigate" (July 8, 2026) — an 8B parameter embodied-navigation model that lets robots navigate complex environments using a single RGB camera (no LiDAR/depth sensors), achieving 76.6% on R2R-CE validation-unseen. This is a robotics/embodied-AI research release, not a text/chat LLM, and **no API pricing or token rates are published** for it — it does not appear on `mistral.ai/pricing/api`. Per this tracker's policy of verifying pricing before adding a model card, Robostral Navigate is noted here for awareness only and will be evaluated for a full card if/when Mistral publishes API access and pricing.
 > - ℹ️ Checked `mistral.ai/news` for releases since the July 27 refresh — the most recent items are "Your Prompts and Skills need a system of record" (Studio feature, July 9, 2026) and Robostral Navigate (above); **no new priced LLM/API model releases found.**
 > - ℹ️ Mistral's "Featured Models" and "Frontier Models" sections on `docs.mistral.ai/models/overview` continue to list Mistral Medium 3.5, Mistral Small 4, Mistral Large 3, Ministral 3 (14B/8B/3B), OCR 4, Devstral 2, and Voxtral TTS as the current flagship lineup — unchanged from the prior refresh.
 
@@ -84,7 +89,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Input price** | $0.50 / MTok |
 | **Output price** | $1.50 / MTok |
 | **Context window** | 262,144 tokens (256K) |
-| **Notable** | Cheapest output pricing vs peers; GDPR-compliant EU hosting; open-weight, general-purpose multimodal model. ⚠️ Re-confirmed August 3, 2026 against the live `mistral.ai/pricing/api` product table — do not confuse with the stale "$2/$6" example on the general `mistral.ai/pricing` FAQ page (see header note above) |
+| **Notable** | Cheapest output pricing vs peers; GDPR-compliant EU hosting; open-weight, general-purpose multimodal model. ⚠️ Re-confirmed August 10, 2026 against the live `mistral.ai/pricing/api` product table — do not confuse with the stale "$2/$6" example on the general `mistral.ai/pricing` FAQ page (see header note above) |
 
 ---
 
@@ -300,8 +305,8 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 |---|---|
 | **Model ID** | `mistral-moderation-2603` |
 | **Status** | ✅ Active — Specialized (Content Moderation), Premier |
-| **Input price** | $0.10 / MTok |
-| **Notable** | 128K context window; jailbreaking detection |
+| **Input price** | $0.10 / MTok *(mistral.ai/pricing/api also lists this classifier as a free service tier — verify current billing in console)* |
+| **Notable** | 128K context window; jailbreaking detection; distinct product from the newly-discovered Shieldstral open-weight classifier (see Discovery-Only section) |
 
 ---
 
@@ -408,9 +413,17 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-## 🤖 Discovery-Only: Non-LLM Model Releases *(not priced, not tracked as full cards)*
+## 🤖 Discovery-Only: Non-LLM / Unpriced Model Releases *(not priced, not tracked as full cards)*
 
 > Per this tracker's verification-before-tracking policy, releases without published API/token pricing are noted here for awareness only and are not given a full model card.
+
+### 🆕 Shieldstral 1.0 *(Open-Weight Multimodal Safety Classifier — Released August 4, 2026)*
+
+> **August 4, 2026 —** Mistral introduced **Shieldstral**, a 3B-class (model card lists 3.8B total/active parameters) open-weights, **policy-adaptive multimodal safety classifier** for text and images. Unlike traditional guardrail models that bake a fixed harm taxonomy into their weights, Shieldstral accepts a plain-language policy question at inference time (e.g., *"Does this content promote violence against a protected group?"*) alongside the content to judge, and returns a calibrated yes/no safety score from a single forward pass — unifying prompt moderation, response moderation, prompt–response pair classification, and refusal detection into one interface, with no retraining needed to add new policies. Built on a Ministral-3-3B backbone with a Pixtral vision encoder for image understanding. Mistral reports it matches or outperforms open guard models up to 7× its size on text safety, refusal detection, policy adaptability, and multimodal safety benchmarks, and runs on a single 16GB GPU. Released under **Apache 2.0** on Hugging Face (`mistralai/Shieldstral-1.0`) as an inaugural member of the Open Secure AI Alliance (with NVIDIA and other organizations). Listed as **Public Preview**, 32K context window, on `docs.mistral.ai/models/model-cards/shieldstral-1-0`.
+>
+> **Why it's not (yet) a fully priced tracked model card:** Shieldstral's weights are free to download and self-host under Apache 2.0, but **Mistral has not published a hosted API model ID or per-token rate for it** — it does not appear as a row on `mistral.ai/pricing/api`, unlike the separate, already-priced `mistral-moderation-2603` classifier endpoint (Mistral Moderation 2), which is a different product and should not be confused with Shieldstral. Using Shieldstral today means self-hosting and bearing your own GPU/infrastructure costs. It will be evaluated for a full priced model card if/when Mistral publishes a hosted API SKU and rate.
+>
+> Source: https://mistral.ai/news/shieldstral/ · https://docs.mistral.ai/models/model-cards/shieldstral-1-0
 
 ### Robostral Navigate *(Embodied Navigation — Released July 8, 2026)*
 
@@ -424,7 +437,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ## 🔧 Platform Tool Pricing (Mistral AI Studio — Agent API)
 
-> ✅ Re-confirmed August 3, 2026 against the live `mistral.ai/pricing/api` "Agent API" section — all figures unchanged.
+> ✅ Re-confirmed August 10, 2026 against the live `mistral.ai/pricing/api` "Agent API" section — all figures unchanged.
 
 | Tool | Pricing |
 |---|---|
@@ -451,6 +464,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Devstral Small 2** | 24B | Apache 2.0 | Self-hosted budget coding agent (RTX 4090) |
 | **Magistral Medium** | — | Apache 2.0 | Self-hosted reasoning |
 | **Leanstral 1.5** | 119B (MoE, 6B active) | Apache 2.0 | Self-hosted Lean 4 formal proof engineering *(retiring Sept 30, 2026)* |
+| **🆕 Shieldstral 1.0** | 3.8B | Apache 2.0 | Self-hosted policy-adaptive text/image safety classification *(no hosted API yet)* |
 | **Voxtral Small 24B** | 24B | Apache 2.0 | Self-hosted audio understanding |
 | **Voxtral Mini Transcribe Realtime** | — | Apache 2.0 | Self-hosted real-time transcription |
 | **Voxtral TTS** | 4B | CC BY-NC 4.0 | Self-hosted TTS (non-commercial only) |
@@ -678,7 +692,8 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **⚠️ Leanstral 1.5 retiring Sept 30, 2026** | Free Labs endpoint (`leanstral-1-5`) for Lean 4 formal proof engineering — has a published retirement date; no successor announced yet, so plan migration/monitoring ahead of that date |
 | **⚠️ Ignore the stale "$2/$6" Large example** | The general `mistral.ai/pricing` FAQ page has an outdated Mistral Large example; always price Large 3 off the `mistral.ai/pricing/api` product table ($0.50/$1.50) |
 | **Agent API tool costs add up** | Web search and code execution are both $30/1K calls on the Agent API — for high-volume agentic workloads, budget these alongside model token costs |
-| **🔭 Robostral Navigate is unpriced** | Mistral's new embodied-navigation robotics model (July 8, 2026) has no published API pricing — do not budget for it as a text/chat model; it is a distinct robotics research release |
+| **🔭 Robostral Navigate is unpriced** | Mistral's embodied-navigation robotics model (July 8, 2026) has no published API pricing — do not budget for it as a text/chat model; it is a distinct robotics research release |
+| **🆕 Shieldstral is unpriced (self-host only)** | Mistral's new open-weight (Apache 2.0) policy-adaptive safety classifier (August 4, 2026) has no hosted API SKU or rate — using it today means self-hosting on your own GPU. Do not confuse it with the already-priced `mistral-moderation-2603` (Mistral Moderation 2) endpoint, a separate product |
 
 ---
 
@@ -696,4 +711,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: August 3, 2026 against `mistral.ai/pricing/api` (all active prices re-confirmed exactly, including OCR 4 $4/$2/$5 per 1K pages, Mistral Small 4 $0.15/$0.60, Mistral Medium 3.5 $1.50/$7.50, Mistral Large 3 $0.50/$1.50, Leanstral 1.5 free, and the full Agent API tool-pricing table), `docs.mistral.ai/models/overview`, and `mistral.ai/news`. No new priced model releases or price changes detected since the July 27, 2026 refresh. 🔭 Discovery-only: Mistral published "Introducing Robostral Navigate" (July 8, 2026), an 8B embodied-navigation robotics model with no published API pricing — noted for awareness only, not added as a tracked model card per this tracker's verification-before-tracking policy.*
+*Sources last verified: August 10, 2026 against `mistral.ai/pricing/api` (all active prices re-confirmed exactly, including OCR 4 $4/$2/$5 per 1K pages, Mistral Small 4 $0.15/$0.60, Mistral Medium 3.5 $1.50/$7.50, Mistral Large 3 $0.50/$1.50, Leanstral 1.5 free, and the full Agent API tool-pricing table), `docs.mistral.ai/models/overview`, and `mistral.ai/news`. No priced-model price changes detected since the August 3, 2026 refresh. 🆕 New discovery: Mistral published "Introducing Shieldstral" (August 4, 2026), a 3B/3.8B open-weight (Apache 2.0) policy-adaptive multimodal safety classifier with no published hosted API pricing — noted for awareness only in the Discovery-Only section, alongside the previously-flagged Robostral Navigate (July 8, 2026), per this tracker's verification-before-tracking policy.*
