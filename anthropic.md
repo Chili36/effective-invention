@@ -238,7 +238,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Replaced by Sonnet 5 as default; still active |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified August 3, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified August 10, 2026.
 
 ---
 
@@ -302,6 +302,18 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 ## 🤝 Deeper US Government Collaboration (announced June 30, 2026)
 
 > As part of the resolution that restored Fable 5 and Mythos 5, Anthropic committed to: (1) expanded pre-release government access and evaluation for models that materially advance the capability frontier; (2) rapid information sharing on safeguards and jailbreaks; (3) dedicated resources for joint AI-security research with the government; and (4) work toward a common, voluntary industry security/evaluation standard. Anthropic is also partnering with Amazon, Microsoft, Google, and other Glasswing partners on a **shared jailbreak-severity scoring framework** (capability gain, breadth, ease of weaponization, discoverability).
+
+---
+
+## 📰 August 10, 2026 Refresh — Governance & Safety Notes (No Pricing Changes)
+
+> ✅ Independently re-fetched the live `platform.claude.com/docs/en/about-claude/pricing` page in full (model pricing table, batch pricing, fast mode, tool-use overhead table, Claude Managed Agents pricing). **Every price point for every active and retired model listed matches exactly** — no changes since the August 3, 2026 refresh. Checked `anthropic.com/news` through August 7, 2026:
+> - **Aug 7, 2026** — "Improving Fable 5's biology safeguards" (safety classifier update; not a pricing or model-availability change).
+> - **Aug 4, 2026** — Mariano-Florentino (Tino) Cuéllar announced as incoming Chief Global Affairs Officer (corporate governance news; no product/pricing impact).
+> - **Jul 30, 2026** — "Investigating three real-world incidents in our cybersecurity evaluations" (safety research post; no pricing impact).
+> - **Jul 27, 2026** — "Our position on open-weights models" and a Cognizant enterprise-distribution partnership announcement (no pricing impact).
+>
+> **No new Claude model releases, retirements, or price changes found this cycle.** All figures in this file remain current as of August 10, 2026.
 
 ---
 
@@ -490,4 +502,4 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-*Sources last verified: August 3, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `anthropic.com/news`, and `anthropic.com/news/claude-opus-5`. All active model prices (Fable 5, Mythos 5, Opus 5, Opus 4.8, Opus 4.7 (deprecated), Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Sonnet 4.5, Haiku 4.5, Haiku 3.5 (retired)) re-confirmed unchanged directly against the live model-pricing table. **Key confirmation this cycle:** Claude Opus 4.7's Fast Mode, previously flagged as "deprecated, scheduled removal July 24, 2026," is now **confirmed removed** — the live pricing page states Fast Mode requests against Opus 4.7 return an error. Also newly captured: Claude Opus 5's tool-use system-prompt overhead (286/406 tokens, `auto`/`none` vs. `any`/`tool`), now the cheapest of any active model, from the live pricing page's tool-use pricing table. Checked `anthropic.com/news` through July 30, 2026 (most recent entry found) — no new model releases since Claude Opus 5 (July 24, 2026). Fast mode remains available only on Opus 5 and Opus 4.8, both at $10/$50 per MTok. No other pricing changes detected.*
+*Sources last verified: August 10, 2026 against `platform.claude.com/docs/en/about-claude/pricing` and `anthropic.com/news` (through August 7, 2026). All active model prices (Fable 5, Mythos 5, Opus 5, Opus 4.8, Opus 4.7 (deprecated), Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Sonnet 4.5, Haiku 4.5, Haiku 3.5 (retired)) re-confirmed unchanged directly against the live model-pricing table, batch table, fast-mode table, and tool-use overhead table. **No new model releases, retirements, or price changes found this cycle** — only governance/safety news items (Fable 5 biology-safeguard improvements, a new Chief Global Affairs Officer, cybersecurity-evaluation research, and an open-weights policy statement), none of which affect pricing.*
