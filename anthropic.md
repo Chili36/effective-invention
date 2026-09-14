@@ -1,8 +1,8 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-09-07
-> **Source:** https://www.anthropic.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing · https://www.anthropic.com/claude-fable-and-mythos-5-1
-> **Scraped / verified:** 2026-09-07 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` page and `anthropic.com/news`.** 🆕 **Claude Fable 5.1 and Claude Mythos 5.1 launched September 1, 2026**, replacing Fable 5 / Mythos 5 as Anthropic's most advanced models (same $10/$50 base price; cache-read price cut 75% to $0.25/MTok). ✅ **Claude Sonnet 5's $2/$10 introductory pricing confirmed PERMANENT** — the scheduled Sept 1 increase to $3/$15 will not occur. 🆕 New **Browser use tool** and updated Computer use toolset documented. All other active model prices (Opus 5, Opus 4.8, Sonnet 4.6, Haiku 4.5) confirmed unchanged. Checked `anthropic.com/news` through September 1, 2026.
+> **Last updated:** 2026-09-14
+> **Source:** https://www.anthropic.com/pricing · https://claude.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing · https://www.anthropic.com/claude-fable-and-mythos-5-1 · https://www.anthropic.com/news
+> **Scraped / verified:** 2026-09-14 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` and `claude.com/pricing` pages.** Every active model price (Fable 5.1 $10/$50 w/ $0.25 cache-read, Mythos 5.1, Fable 5, Mythos 5, Opus 5 $5/$25, Opus 4.8, Sonnet 5 $2/$10 permanent, Sonnet 4.6, Haiku 4.5) and the full legacy table (down to Opus 4.1, Opus 4, Sonnet 4, Haiku 3.5) are **byte-for-byte unchanged** since the September 7 refresh. Checked `anthropic.com/news` through September 10, 2026 — the only new post is a **Threat Intelligence report** (Sept 10, 2026, safety/policy publication, no pricing or model-lineup impact). No new model releases, retirements, or price changes found this cycle.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context (up to **97.5% off** on Fable 5.1 / Mythos 5.1 cache reads — see below).
 
@@ -272,7 +272,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Replaced by Sonnet 5 as default; still active; only Sonnet-tier model with Extended Thinking |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified September 7, 2026.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified September 14, 2026 — unchanged.
 
 ---
 
@@ -286,11 +286,11 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 |---|---|
 | **Web search** | $10 per 1,000 searches, plus standard token costs for search-generated content. Each search counts as one use regardless of result count; failed searches are not billed. |
 | **Web fetch** | No additional charge — standard token costs only for fetched content that enters context. Use `max_content_tokens` to cap consumption (avg 10kB page ≈ 2,500 tokens; 100kB doc ≈ 25,000 tokens; 500kB PDF ≈ 125,000 tokens). |
-| **Code execution** | **Free when used alongside `web_search_20260209`+ or `web_fetch_20260209`+.** Otherwise billed by execution time (5-min minimum): **1,550 free container-hours/month per org**, then **$0.05/hour per container**. Files attached to a request bill execution time even if the tool isn't invoked. |
+| **Code execution** | **Free when used alongside `web_search_20260209`+ or `web_fetch_20260209`+.** Otherwise billed by execution time (5-min minimum): **1,550 free container-hours/month per org** (equivalently ~50 free hours/day per `claude.com/pricing`), then **$0.05/hour per container**. Files attached to a request bill execution time even if the tool isn't invoked. |
 | **Bash tool** | Adds 325 input tokens (Opus 4.7/4.8/5) or 244 tokens (Opus 4.6, Sonnet 4.6 and earlier) on top of the standard tool-use system prompt. |
 | **Text editor tool** | Adds 700 input tokens (Claude 4.x `text_editor_20250429`) on top of standard tool-use overhead. |
 | **Computer use tool** | New `computer_toolset_20260801`: ~4,500 input tokens overhead (~4,520 on Fable 5/5.1, Mythos 5/5.1, Opus 5, Opus 4.8; ~4,590 on Sonnet 5), covering member tool definitions + tool-use system prompt. Disabling `zoom` removes ~410 tokens. Earlier tool versions (`computer_20251124`/`computer_20250124`): 466–499 system-prompt tokens + ~735 tokens per tool definition. Screenshots billed at standard vision-token rates. |
-| **🆕 Browser use tool** | New `browser_toolset_20260801`: ~6,600 input tokens overhead (~6,610 on Fable 5/5.1, Mythos 5/5.1, Opus 5, Opus 4.8; ~6,670 on Sonnet 5). Enabling all four optional members adds ~880 tokens. Text tool results (accessibility trees, page text, console/network entries) billed as ordinary input tokens. |
+| **Browser use tool** | `browser_toolset_20260801`: ~6,600 input tokens overhead (~6,610 on Fable 5/5.1, Mythos 5/5.1, Opus 5, Opus 4.8; ~6,670 on Sonnet 5). Enabling all four optional members adds ~880 tokens. Text tool results (accessibility trees, page text, console/network entries) billed as ordinary input tokens. |
 
 ### Tool-use system-prompt overhead (per request, when ≥1 tool is defined)
 
@@ -343,6 +343,20 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 ## 🤝 Deeper US Government Collaboration (announced June 30, 2026)
 
 > As part of the resolution that restored Fable 5 and Mythos 5, Anthropic committed to: (1) expanded pre-release government access and evaluation for models that materially advance the capability frontier; (2) rapid information sharing on safeguards and jailbreaks; (3) dedicated resources for joint AI-security research with the government; and (4) work toward a common, voluntary industry security/evaluation standard. The Life Sciences Verification Program for Mythos 5.1 was also developed in partnership with the US government, with enrollment for outside scientists expected to open soon.
+
+## 🆕 Threat Intelligence Report *(September 10, 2026 — non-pricing)*
+
+> Anthropic published "Detecting and countering misuse of AI: September 2026," sharing case studies from Threat Intelligence team operations disrupting attempted malicious use of Claude over the prior eight months, and describing how misuse patterns have evolved since 2025's reports. This is a **safety/policy publication with no pricing or model-lineup impact** — no new models, retirements, or price changes were announced alongside it.
+
+---
+
+## 📰 September 14, 2026 Refresh — No Pricing Changes; Confirmed Unchanged
+
+> ✅ Independently re-fetched the live `platform.claude.com/docs/en/about-claude/pricing` and `claude.com/pricing` pages in full. **Every active model price** (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5, Opus 5, Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5) and the **entire legacy/retired table** (down to Opus 4.1, Opus 4, Sonnet 4, Haiku 3.5) matched byte-for-byte against the September 7 refresh — no price changes, no new model releases, no retirements this cycle. Checked `anthropic.com/news` through September 10, 2026:
+> - **Sep 10, 2026** — "Detecting and countering misuse of AI: September 2026" (Threat Intelligence report; no pricing impact — see dedicated section above).
+> - **Sep 1, 2026** — Fable 5.1/Mythos 5.1 launch; "Developing Enterprise Frontier Safeguards with our customers" (already documented in the September 7 refresh).
+>
+> **No new Claude model releases, retirements, or price changes found this cycle.**
 
 ---
 
@@ -556,10 +570,10 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Tokenizer note** | Fable 5/5.1, Mythos 5/5.1, Opus 4.7+, and Sonnet 5 use a newer tokenizer producing ~30% more tokens for the same text vs. Sonnet 4.6-and-earlier |
 | **⚠️ Sonnet 4 + Opus 4 RETIRED** | Retired June 15, 2026 ❌ on Claude API — Sonnet 4 → Sonnet 5/4.6, Opus 4 → Opus 5/4.8 |
 | **🆕 Enterprise Frontier Safeguards (EFS)** | Rolling out in phases starting fall 2026 — zero-data-retention-equivalent privacy on customer-controlled cloud infrastructure. Eligible customers can use Fable 5.1/Fable 5 with ZDR now, ahead of full EFS availability |
-| **🆕 Code execution + web search/fetch combo** | Free code execution when paired with `web_search_20260209`+/`web_fetch_20260209`+ — otherwise $0.05/hr per container after 1,550 free org-hours/month |
-| **🆕 Browser use tool** | New `browser_toolset_20260801` — ~6,600 tokens overhead — priced as ordinary tool-use tokens, no separate line item |
+| **Code execution + web search/fetch combo** | Free code execution when paired with `web_search_20260209`+/`web_fetch_20260209`+ — otherwise $0.05/hr per container after 1,550 free org-hours/month (~50/day) |
+| **Browser use tool** | `browser_toolset_20260801` — ~6,600 tokens overhead — priced as ordinary tool-use tokens, no separate line item |
 | **Claude Managed Agents** | $0.08/session-hour runtime (billed only while `running`) + standard token rates — no Batch discount or partner-cloud pricing applies |
 
 ---
 
-*Sources last verified: September 7, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `www.anthropic.com/claude-fable-and-mythos-5-1`, and `anthropic.com/news` (through September 1, 2026). **Major update this cycle:** Claude Fable 5.1 and Claude Mythos 5.1 launched September 1, 2026 (same $10/$50 base price as Fable 5/Mythos 5, but cache-read pricing cut 75% to $0.25/MTok); Claude Sonnet 5's $2/$10 introductory pricing was confirmed **permanent** (the scheduled Sept 1 increase to $3/$15 will not occur); a new **Browser use tool** and updated Computer use toolset (`computer_toolset_20260801`) were documented. All other active model prices (Opus 5, Opus 4.8, Sonnet 4.6, Haiku 4.5, and legacy models) re-confirmed unchanged directly against the live pricing tables.*
+*Sources last verified: September 14, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `claude.com/pricing`, and `anthropic.com/news` (through September 10, 2026). **This cycle:** independently re-verified every active and legacy model price — all confirmed byte-for-byte unchanged since the September 7 refresh (Fable 5.1/Mythos 5.1 launch, Sonnet 5's $2/$10 pricing made permanent). The only new item found was a September 10, 2026 Threat Intelligence report, which has no pricing or model-lineup impact. No new model releases, retirements, or price changes this cycle.*
