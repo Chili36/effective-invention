@@ -1,12 +1,18 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-09-07
+> **Last updated:** 2026-09-14
 > **Source:** https://mistral.ai/pricing · https://mistral.ai/pricing/api · https://docs.mistral.ai/models/overview · https://mistral.ai/news · https://docs.mistral.ai/resources/changelogs
-> **Scraped / verified:** 2026-09-07 — ✅ **Re-verified against the live `mistral.ai/pricing/api` page.** 🆕 **Z.ai GLM-5.2 added as Mistral's first third-party hosted model** (announced August 11, 2026) — a 1M-context open model for long-context agentic workflows and coding, priced at $1.40/$4.40 per MTok ($0.14/MTok cached input). 🆕 **OCR 4.1 supersedes OCR 4.0** as the flagship OCR model (same $4/$5/$2-per-1K-pages pricing; adds block-level confidence scores). 🆕 **Mistral Regional Endpoints reached General Availability** (EU/US inference choice, +10% surcharge) and **Mistral Priority Tier entered public preview** (SLA-backed committed service levels). All other active prices (Mistral Medium 3.5, Large 3, Small 4, Magistral, Codestral, Devstral, Leanstral 1.5, Voxtral family, Ministral 3, Classifier APIs, embeddings, Agent API tool pricing) confirmed unchanged.
+> **Scraped / verified:** 2026-09-14 — ✅ **Re-verified against the live `mistral.ai/pricing/api` and `docs.mistral.ai/models/overview` pages.** Every active model price (Medium 3.5 $1.50/$7.50, Large 3 $0.50/$1.50, Small 4 $0.15/$0.60, Z.ai GLM 5.2 $1.40/$4.40, OCR 4.1 $4/1K pages, Magistral, Codestral, Devstral, Voxtral family, Ministral 3 tiers, Classifier APIs, embeddings, Agent API tool pricing) is **unchanged** since the September 7 refresh. 🆕 **Mistral raised €3B in a Series D round** (announced September 8, 2026, post-money valuation >€21B) — a **funding/company milestone with no pricing impact**. Checked `mistral.ai/news` through September 10, 2026 — two additional posts (a Cloudera partnership and a legacy-code-modernization case study) are both non-pricing.
 
 All prices are **USD per million tokens (MTok)**. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Vibe) subscriptions are billed **separately**.
 
 > **Mistral's key differentiators:** Native EU data residency (GDPR by default) now paired with **GA'd regional endpoint choice** (EU or US), competitive mid-tier pricing, Apache 2.0 / Modified MIT open-weight models, dedicated reasoning (Magistral series), a flagship merged model (Medium 3.5), a growing **third-party open-model marketplace** (GLM-5.2, more to come), and a 50% batch processing discount.
+
+> 📝 **September 14, 2026 update:**
+> - ✅ Independently re-verified every active price point against `mistral.ai/pricing/api` — **all confirmed unchanged**: Medium 3.5 $1.50/$7.50, Large 3 $0.50/$1.50, Small 4 $0.15/$0.60, Magistral Medium $2/$5, Magistral Small $0.50/$1.50, Codestral $0.30/$0.90, Devstral 2 $0.40/$2.00, Devstral Small 2 $0.10/$0.30, OCR 4.1 $4/1K pages (std) · $2/1K (Batch) · $5/1K (Document AI), Z.ai GLM 5.2 $1.40/$0.14 cached/$4.40, Voxtral family, Ministral 3 tiers, Classifier APIs, embeddings, and Agent API tool pricing.
+> - 🆕 **September 8, 2026 — Mistral raised €3 billion in a Series D funding round** at a post-money valuation of more than €21 billion, aimed at "making sovereign, open-weight AI the technology frontier." This is a **company/funding milestone — no product pricing changed** as a result.
+> - ℹ️ Checked `mistral.ai/news` since the September 7 refresh: Sept 8 "Mistral raises €3B..." (funding, above), Sept 9 "Modernizing complex legacy code with AI agents" (solutions case study, not a priced model), Sept 10 "Cloudera and Mistral Partner to Bring Specialized, Sovereign Intelligence to Enterprise Data" (partnership announcement, not a priced model). **No new priced LLM/API model releases found this cycle.**
+> - ✅ Independently re-verified the full models overview page (`docs.mistral.ai/models/overview`) — the featured/active lineup (Medium 3.5, OCR 4.1, Z.ai GLM 5.2, Small 4, Voxtral Mini Transcribe 2, Voxtral Mini Transcribe Realtime) and the deprecated-models table are unchanged from the prior refresh.
 
 > 📝 **September 7, 2026 update:**
 > - 🆕 **Z.ai GLM-5.2 now hosted on Mistral's platform** (announced August 11, 2026 in ["In-region inference, open models, and new European infrastructure for sovereign AI"](https://mistral.ai/news/regional-inference-open-models-new-compute/)) — the **first third-party open model** available through Mistral AI Studio, running on the same infrastructure, regional controls, and service commitments as native Mistral models. A 1M-token-context open-weight model specializing in long-context agentic workflows and coding. Pricing: **$1.40/MTok input · $0.14/MTok cached input · $4.40/MTok output**. Model ID: `zai-glm-5-2`. Factory (Matan Grinberg, CEO) is a named launch customer citing regional-control benefits.
@@ -78,7 +84,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Input price** | $0.50 / MTok |
 | **Output price** | $1.50 / MTok |
 | **Context window** | 262,144 tokens (256K) |
-| **Notable** | Cheapest output pricing vs peers; GDPR-compliant EU hosting; open-weight, general-purpose multimodal model. ⚠️ Re-confirmed September 7, 2026 against the live `mistral.ai/pricing/api` product table — do not confuse with the stale "$2/$6" example on the general `mistral.ai/pricing` FAQ page |
+| **Notable** | Cheapest output pricing vs peers; GDPR-compliant EU hosting; open-weight, general-purpose multimodal model. ⚠️ Re-confirmed September 14, 2026 against the live `mistral.ai/pricing/api` product table — do not confuse with the stale "$2/$6" example on the general `mistral.ai/pricing` FAQ page |
 
 ---
 
@@ -174,7 +180,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Model ID** | `leanstral-1-5` |
 | **Released** | June 30, 2026 |
 | **Scheduled retirement** | September 30, 2026 (per docs.mistral.ai changelog) |
-| **Status** | ✅ Active — Labs — retirement date published, still ~3 weeks out from this refresh |
+| **Status** | ✅ Active — Labs — retirement date published, now ~2 weeks out from this refresh |
 | **Pricing** | **Free** *(API endpoint kept highly accessible for a limited period to gather feedback)* |
 | **Context window** | 256,000 tokens |
 | **Parameters** | 119B total, 6B active (MoE — same family as Mistral Small 4) |
@@ -231,20 +237,20 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-### 🆕 OCR 4.1 *(Released ~August 2026 — Flagship OCR, supersedes OCR 4.0)*
+### OCR 4.1 *(Flagship OCR, supersedes OCR 4.0)*
 
-> **OCR 4.1 supersedes OCR 4.0** as Mistral's flagship OCR model, confirmed on the live `mistral.ai/pricing/api` product table (tagged "New"). Adds **block-level confidence scores** on top of OCR 4.0's paragraph-level bounding boxes and structural block labels. `mistral-ocr-latest` alias now points to 4.1; pricing is unchanged from OCR 4.0.
+> **OCR 4.1 supersedes OCR 4.0** as Mistral's flagship OCR model, confirmed on the live `mistral.ai/pricing/api` product table. Adds **block-level confidence scores** on top of OCR 4.0's paragraph-level bounding boxes and structural block labels. `mistral-ocr-latest` alias points to 4.1; pricing is unchanged from OCR 4.0.
 
 | Field | Value |
 |---|---|
 | **Provider** | Mistral AI |
-| **Model ID** | `mistral-ocr-latest` *(alias — now points to OCR 4.1)* / docs card `ocr-4-1` |
+| **Model ID** | `mistral-ocr-latest` *(alias — points to OCR 4.1)* / docs card `ocr-4-1` |
 | **Status** | ✅ Active — **Flagship OCR** — Premier |
 | **OCR price (standard)** | $4.00 / 1,000 pages |
 | **OCR price (Batch-API)** | $2.00 / 1,000 pages *(50% off)* |
 | **Document AI price** | $5.00 / 1,000 pages |
 | **Availability** | API (Mistral Studio), Amazon SageMaker, Microsoft Foundry, self-hosted (enterprise) |
-| **Capabilities** | Text extraction, paragraph-level bounding boxes, block classification (titles, tables, equations, signatures, headers/footers), **block-level confidence scores (new in 4.1)**, markdown output, 170-language support |
+| **Capabilities** | Text extraction, paragraph-level bounding boxes, block classification (titles, tables, equations, signatures, headers/footers), block-level confidence scores, markdown output, 170-language support |
 | **Notable** | "The world's best document extraction and understanding model" per Mistral; OCR 4.0 remains available for existing integrations |
 | **Source** | https://mistral.ai/news/ocr-4/ · `mistral.ai/pricing/api` |
 
@@ -392,15 +398,21 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-## 🌐 Regional Endpoints & Priority Tier *(🆕 GA / Public Preview — September 7, 2026)*
+## 🌐 Regional Endpoints & Priority Tier *(GA / Public Preview — confirmed unchanged Sept 14, 2026)*
 
 > Confirmed on `mistral.ai/news/regional-inference-open-models-new-compute/` (August 11, 2026) and `mistral.ai/pricing/api`.
 
 | Feature | Status | Details |
 |---|---|---|
-| **Mistral Regional Endpoints** | ✅ **General Availability** (was preview) | Choose EU or US inference region for supported models (including third-party models like GLM-5.2). **+10% surcharge.** Addresses data-residency, regulatory, and latency requirements. Subject to limited, safeguarded sub-processor transfers as described in Mistral's Trust Center. |
+| **Mistral Regional Endpoints** | ✅ **General Availability** | Choose EU or US inference region for supported models (including third-party models like GLM-5.2). **+10% surcharge.** Addresses data-residency, regulatory, and latency requirements. Subject to limited, safeguarded sub-processor transfers as described in Mistral's Trust Center. |
 | **Mistral Priority Tier** | 🆕 **Public Preview** | Committed service levels for mission-critical workloads: custom rate limits, uptime SLA. Mistral states it is the only European AI lab offering both regional processing choice and an SLA-backed priority tier. |
-| **Cached input tokens** | Configurable add-on | -90% on input tokens for repeated prompts (available as a pricing configuration option on `mistral.ai/pricing/api`, first applied as a first-class rate for GLM-5.2) |
+| **Cached input tokens** | Configurable add-on | -90% on input tokens for repeated prompts (first applied as a first-class rate for GLM-5.2) |
+
+---
+
+## 🏦 Company Milestone: €3B Series D *(September 8, 2026 — non-pricing)*
+
+> Mistral announced it raised **€3 billion in a Series D funding round** at a post-money valuation of more than **€21 billion**, framed around "making sovereign, open-weight AI the technology frontier." This is a **corporate funding milestone with no direct impact on API or subscription pricing** — no product prices changed alongside this announcement. Source: https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/
 
 ---
 
@@ -450,7 +462,7 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | **Voxtral Mini Transcribe Realtime** | — | Apache 2.0 | Self-hosted real-time transcription |
 | **Voxtral TTS** | 4B | CC BY-NC 4.0 | Self-hosted TTS (non-commercial only) |
 | **OCR 4.1** | — | Premier (API) | Self-hosted document OCR (enterprise, single container) |
-| **🆕 Z.ai GLM-5.2** | — | Open | Hosted on Mistral's platform (not self-hosted, but open-weight) — long-context agentic/coding |
+| **Z.ai GLM-5.2** | — | Open | Hosted on Mistral's platform (not self-hosted, but open-weight) — long-context agentic/coding |
 | **Mixtral 8×22B** | 141B (MoE) | Apache 2.0 | Self-hosted complex reasoning |
 | **Mixtral 8×7B** | 46.7B (MoE) | Apache 2.0 | General-purpose self-hosted |
 | **Mistral 7B** | 7B | Apache 2.0 | Edge / on-device |
@@ -600,20 +612,21 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 | Feature | Notes |
 |---|---|
 | **Batch API discount** | 50% off — confirmed per mistral.ai/pricing |
-| **No prompt caching (native Mistral models)** | Mistral's own models do NOT offer prompt caching discounts — but 🆕 **GLM-5.2 (third-party) does**, at $0.14/MTok cached input (90% off) |
-| **EU / US data residency** | 🆕 Regional Endpoints now GA — choose EU or US inference region (+10% surcharge); previously EU-only by default |
-| **🆕 Priority Tier (public preview)** | SLA-backed committed service levels with custom rate limits for mission-critical workloads |
+| **No prompt caching (native Mistral models)** | Mistral's own models do NOT offer prompt caching discounts — but **GLM-5.2 (third-party) does**, at $0.14/MTok cached input (90% off) |
+| **EU / US data residency** | Regional Endpoints GA — choose EU or US inference region (+10% surcharge) |
+| **Priority Tier (public preview)** | SLA-backed committed service levels with custom rate limits for mission-critical workloads |
 | **Free tier** | Available via La Plateforme; rate-limited; no credit card required |
-| **🆕 GLM-5.2 for long-context agentic work** | $1.40/$4.40 per MTok, 1M context — a cheaper alternative to Mistral Medium 3.5 ($1.50/$7.50) for long-context, coding-heavy workloads, with a 90%-off cached-input option Mistral's own models lack |
+| **GLM-5.2 for long-context agentic work** | $1.40/$4.40 per MTok, 1M context — a cheaper alternative to Mistral Medium 3.5 ($1.50/$7.50) for long-context, coding-heavy workloads, with a 90%-off cached-input option Mistral's own models lack |
 | **Classifier API fine-tuning** | Build custom classifiers from Ministral 3B ($0.10/$0.10) or 8B ($0.04/$0.04) inference |
 | **Budget reasoning** | Use Mistral Small 4 with `reasoning_effort=high` ($0.15/$0.60) as the budget reasoning option |
 | **Voxtral transcription** | Voxtral Mini Transcribe 2 (`voxtral-mini-latest`, $0.003/min) for batch; Realtime ($0.006/min) for live |
-| **OCR 4.1 batch savings** | Batch-API: $2/1K pages (50% off standard $4/1K pages); same pricing carried over from OCR 4.0 |
-| **⚠️ Leanstral 1.5 retiring Sept 30, 2026** | Free Labs endpoint (`leanstral-1-5`) — has a published retirement date; no successor announced yet |
+| **OCR 4.1 batch savings** | Batch-API: $2/1K pages (50% off standard $4/1K pages) |
+| **⚠️ Leanstral 1.5 retiring Sept 30, 2026** | Free Labs endpoint (`leanstral-1-5`) — now ~2 weeks out from this refresh; no successor announced yet |
 | **⚠️ Ignore the stale "$2/$6" Large example** | The general `mistral.ai/pricing` FAQ page has an outdated Mistral Large example; always price Large 3 off the `mistral.ai/pricing/api` product table ($0.50/$1.50) |
 | **Agent API tool costs add up** | Web search and code execution are both $30/1K calls on the Agent API |
-| **🔭 Robostral Navigate is unpriced** | No published API pricing — do not budget for it as a text/chat model |
-| **🆕 Shieldstral is unpriced (self-host only)** | No hosted API SKU or rate — using it today means self-hosting on your own GPU |
+| **Robostral Navigate is unpriced** | No published API pricing — do not budget for it as a text/chat model |
+| **Shieldstral is unpriced (self-host only)** | No hosted API SKU or rate — using it today means self-hosting on your own GPU |
+| **🆕 €3B Series D funding round** | September 8, 2026 — company milestone, no pricing impact |
 
 ---
 
@@ -631,4 +644,4 @@ All prices are **USD per million tokens (MTok)**. Mistral offers a **free experi
 
 ---
 
-*Sources last verified: September 7, 2026 against `mistral.ai/pricing/api` (all active prices re-confirmed, including the new Z.ai GLM-5.2 row, OCR 4.1's unchanged $4/$2/$5-per-1K-pages pricing, Mistral Small 4 $0.15/$0.60, Mistral Medium 3.5 $1.50/$7.50, Mistral Large 3 $0.50/$1.50, Leanstral 1.5 free, and the full Agent API tool-pricing table), `docs.mistral.ai/models/overview`, and `mistral.ai/news` (through August 24, 2026). **Major update this cycle:** Z.ai GLM-5.2 added as Mistral's first third-party hosted open model ($1.40/$0.14/$4.40 per MTok, 1M context, Aug 11 2026); OCR 4.1 supersedes OCR 4.0 as flagship OCR (same pricing, adds confidence scores); Mistral Regional Endpoints reached GA (+10% surcharge) and Mistral Priority Tier entered public preview. No other new priced-model releases detected since the August 10, 2026 refresh; Shieldstral 1.0 and Robostral Navigate remain discovery-only (unpriced).*
+*Sources last verified: September 14, 2026 against `mistral.ai/pricing/api` (all active prices re-confirmed, including Z.ai GLM-5.2, OCR 4.1's unchanged $4/$2/$5-per-1K-pages pricing, Mistral Small 4 $0.15/$0.60, Mistral Medium 3.5 $1.50/$7.50, Mistral Large 3 $0.50/$1.50, Leanstral 1.5 free, and the full Agent API tool-pricing table), `docs.mistral.ai/models/overview`, and `mistral.ai/news` (through September 10, 2026). **This cycle:** no new priced-model releases or price changes were found — every active and legacy price point matched the September 7 refresh exactly. The only notable news was Mistral's €3B Series D funding round (Sept 8, 2026), a corporate milestone with no pricing impact, plus a partnership announcement (Cloudera) and a solutions case study, both non-pricing. Shieldstral 1.0 and Robostral Navigate remain discovery-only (unpriced).*
