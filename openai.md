@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-09-14
+> **Last updated:** 2026-09-21
 > **Source:** https://developers.openai.com/api/docs/pricing · https://developers.openai.com/api/docs/models · https://developers.openai.com/api/docs/deprecations · https://openai.com/index/gpt-6-astra/ · https://openai.com/news
-> **Scraped / verified:** 2026-09-14 — ✅ Re-verified all GPT-6 Astra / GPT-5.6 (Sol/Terra/Luna) pricing directly against the live `developers.openai.com/api/docs/pricing` page — **unchanged** since the Sept 7 refresh. 🆕 **GPT-Live-1 launched in the API (Sept 10, 2026)** at **$0.05/minute** for the voice layer (backend model/tools billed separately) — previously unpriced/ChatGPT-only. 🆕 **Agents API launched in public beta (Sept 10, 2026)** — no additional fees; billed at standard per-model token/tool rates. 🆕 **GPT-Image-2.5 Sunburst and Flare** discovered as the new flagship image-generation models (now carrying the pricing GPT-Image-2 used to have); **GPT-Image-2 was repriced 50% cheaper** and now sits as the value-tier active image model. 🆕 **`gpt-rosalind-research`** (Life Sciences, trusted-access) now has published pricing — billing begins **October 5, 2026**. ⚠️ **Confirmed via the official Deprecations page: `o4-mini` and `gpt-4.1-nano` are now deprecated, shutting down October 23, 2026** (→ migrate to `gpt-5.6-terra` and `gpt-5.6-luna` respectively) — moved to the Legacy section below. `o1` and `o3-mini` are also on the same Oct 23, 2026 shutdown list. Also newly deprecated: `gpt-5.4-cyber` (shuts down Oct 1, 2026 → `gpt-5.6-cyber`).
+> **Scraped / verified:** 2026-09-21 — ✅ Re-verified all GPT-6 Astra / GPT-5.6 (Sol/Terra/Luna) pricing directly against the live `developers.openai.com/api/docs/pricing` page — **unchanged** since the Sept 14 refresh. 🆕 **Confirmed via the official Deprecations page: the original GPT-5 snapshot family (`gpt-5-2025-08-07`, `gpt-5-mini-2025-08-07`, `gpt-5-nano-2025-08-07`, `gpt-5-pro-2025-10-06`) plus `o3-2025-04-16` and `o3-pro-2025-06-10` are deprecated and will be removed from the API on a later, separate date — December 11, 2026** — notice issued June 11, 2026, replacement targets `gpt-5.6-sol` (o3, gpt-5, gpt-5-mini→terra, gpt-5-nano→luna) and `gpt-5.6-sol` with `reasoning.mode: pro` (o3-pro, gpt-5-pro). 🆕 **GPT-5.5 will retire from ChatGPT, ChatGPT Work, and Codex on October 14, 2026** (announced via @ChatGPT Sept 15, 2026) — **the OpenAI API is explicitly unaffected**; this is a consumer/product-surface retirement only. 🆕 **"Astra for Law" launched (~Sept 17, 2026)** — a legal-vertical foundation built on GPT-6 Astra with legal search, writing guidance, and 26 ecosystem plugins for law firms/legal-tech (API customers include Harvey and Legora); this is a **packaged solution, not a separately priced model** — billed at standard GPT-6 Astra API rates unless a custom enterprise contract applies.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -10,7 +10,13 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 > **Service tiers:** Four processing tiers are documented — **Priority/Fast mode** (highest availability + predictable latency, 2× standard price), **Standard** (default), **Batch**, and **Flex** (async, 50% off standard).
 
-> 🆕 **September 14, 2026 refresh — no change to GPT-6 Astra / GPT-5.6 pricing.** Independently re-fetched the live `developers.openai.com/api/docs/pricing` page. All flagship-tier prices (`gpt-6-astra`, `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna` — Standard/Batch/Flex/Fast-mode, short- and long-context) are byte-for-byte unchanged from the September 7 refresh. GPT-5.6 Sol's promotional pricing is confirmed still in effect, "available at least through November 21, 2026." Four other developments were found and are documented below.
+> 🆕 **September 21, 2026 refresh — no change to GPT-6 Astra / GPT-5.6 pricing; three new non-pricing/lifecycle items found.** Independently re-fetched the live `developers.openai.com/api/docs/pricing` page. All flagship-tier prices (`gpt-6-astra`, `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna` — Standard/Batch/Flex/Fast-mode, short- and long-context) are byte-for-byte unchanged from the September 14 refresh. GPT-5.6 Sol's promotional pricing is confirmed still in effect, "available at least through November 21, 2026."
+>
+> ⚠️ **September 21, 2026 — NEW deprecation confirmed via the official Deprecations page: `o3`, `o3-pro`, and the original GPT-5 snapshot family shut down December 11, 2026.** On June 11, 2026, OpenAI notified developers that six dated model snapshots will be removed from the first-party API on **December 11, 2026**: `gpt-5-2025-08-07` → `gpt-5.6-sol`, `gpt-5-mini-2025-08-07` → `gpt-5.6-terra`, `gpt-5-nano-2025-08-07` → `gpt-5.6-luna`, `gpt-5-pro-2025-10-06` → `gpt-5.6-sol` (`reasoning.mode: pro`), `o3-2025-04-16` → `gpt-5.6-sol`, and `o3-pro-2025-06-10` → `gpt-5.6-sol` (`reasoning.mode: pro`). This is a **separate, later wave** from the October 23, 2026 cull (`o1`, `o3-mini`, `o4-mini`, `gpt-4.1-nano`, etc.) — see the Legacy section below for both. Note this repo's tracked `o3` and `o3-pro` model cards (bare aliases, not the dated snapshots) should be reviewed for continued validity as this date approaches.
+>
+> 🆕 **September 15, 2026 — GPT-5.5 to retire from ChatGPT, ChatGPT Work, and Codex on October 14, 2026 (API unaffected).** Announced via the official @ChatGPT account. This is a **product-surface retirement, not an API deprecation** — GPT-5.5 does not appear on the official Deprecations page and remains fully callable via the OpenAI API with an API key (including Codex sessions authenticated with an API key). Only ChatGPT-authenticated sessions (web/app UI and Codex-via-ChatGPT-login) lose access on the retirement date. Recommended replacement for Codex users: `gpt-5.6-sol` (or GPT-6 Astra for maximum capability).
+>
+> 🆕 **~September 17, 2026 — "Astra for Law" launched.** A new legal-AI foundation for law firms and legal-tech companies, combining **GPT-6 Astra** with legal search, writing guidance, privacy/governance controls, and 26 ecosystem plugins. API customers Harvey and Legora can build on it. This is a **packaged vertical solution/harness, not a new priced model** — it uses GPT-6 Astra's standard API pricing unless a bespoke enterprise contract is negotiated (contact sales). OpenAI also made ChatGPT for Word generally available for legal drafting alongside this launch.
 
 > 🆕 **September 10, 2026 — GPT‑Live‑1 launched in the API.** Previously a ChatGPT-only, unpriced voice model, GPT-Live-1 is now available to developers at **$0.05 per minute** for the front-end full-duplex voice layer (billed per second, not rounded up). This does **not** include the backend reasoning model or tool costs — developers pair GPT-Live-1 with a text model (e.g., GPT-6 Astra, GPT-5.6 Terra/Luna) and pay that model's standard token rates on top. Key capabilities: single-model listen-while-speaking (no chained STT→LLM→TTS), reasoning/tool-call delegation to a backend model, tone/pace/style steering via system prompt, native turn detection despite being full-duplex, and telephony support. Full Duplex Bench improves 30 points over `gpt-realtime-2.1`; paired with GPT-6 Astra at medium reasoning effort, it ranks #1 on Tau³ (frontier voice-agent intelligence benchmark). Custom voice access requires contacting sales. See [OpenAI's announcement](https://openai.com/index/introducing-gpt-live-1-in-the-api/).
 
@@ -22,10 +28,12 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 > - **`o4-mini`** (`o4-mini-2025-04-16`) — shuts down **October 23, 2026** → migrate to **`gpt-5.6-terra`**.
 > - **`gpt-4.1-nano`** (`gpt-4.1-nano-2025-04-14`) — shuts down **October 23, 2026** → migrate to **`gpt-5.6-luna`**.
 > - **`o1`** (`o1-2024-12-17`) — shuts down **October 23, 2026** → migrate to **`gpt-5.6-sol`** (previously documented migration target of "o3" is superseded by OpenAI's own recommendation).
-> - **`o3-mini`** (`o3-mini-2025-01-31`) — shuts down **October 23, 2026** → migrate to **`gpt-5.6-sol`**. (Not previously tracked as a full card; noted for completeness.)
+> - **`o3-mini`** (`o3-mini-2025-01-31`) — shuts down **October 23, 2026** → migrate to **`gpt-5.6-sol`**.
 > - **`gpt-image-1`** — shuts down **October 23, 2026** → migrate to **`gpt-image-2`**.
 > - **`gpt-5.4-cyber`** — deprecated Sept 11, 2026, shuts down **October 1, 2026** → migrate to **`gpt-5.6-cyber`**.
 > - `gpt-3.5-turbo-0125`/`gpt-4-0613`/`gpt-4-1106-preview`/`gpt-4-turbo`/`gpt-4o-2024-05-13` also shut down Oct 23, 2026 (already tracked as RETIRED below).
+> - 🆕 **`o1-pro`** (`o1-pro-2025-03-19`) — also shuts down **October 23, 2026** → migrate to **`gpt-5.6-sol`** (`reasoning.mode: pro`).
+> - 🆕 **`gpt-5-2025-08-07`, `gpt-5-mini-2025-08-07`, `gpt-5-nano-2025-08-07`, `gpt-5-pro-2025-10-06`, `o3-2025-04-16`, `o3-pro-2025-06-10`** — a **separate, later** deprecation wave (notice issued June 11, 2026) shuts down **December 11, 2026** → see mapping above.
 > - `o4-mini` and `gpt-4.1-nano` have been **moved from Active to the Legacy/Deprecated section** below; their original card fields are preserved with a deprecation notice.
 >
 > 🆕 **September 10, 2026 — `gpt-rosalind-research` (Life Sciences, trusted access) pricing published.** $5.00 input / $0.50 cached input / $25.00 output per MTok. Billing begins **October 5, 2026**; cache-write pricing does not apply. Access limited to approved internal research through OpenAI's trusted-access program for life-sciences researchers. See card below.
@@ -50,7 +58,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ### 🆕 GPT-6 Astra *(New Flagship — Released September 3, 2026)*
 
-> **September 3, 2026 — GPT-6 Astra** is OpenAI's new flagship model, "built for the hardest end-to-end work." It is state-of-the-art on computer use, browsing, software engineering, cybersecurity, science, and professional work, and is OpenAI's first model to reach the **Critical** cybersecurity capability threshold under its Preparedness Framework. Replaces GPT-5.6 Sol as OpenAI's recommended default model.
+> **September 3, 2026 — GPT-6 Astra** is OpenAI's new flagship model, "built for the hardest end-to-end work." It is state-of-the-art on computer use, browsing, software engineering, cybersecurity, science, and professional work, and is OpenAI's first model to reach the **Critical** cybersecurity capability threshold under its Preparedness Framework. Replaces GPT-5.6 Sol as OpenAI's recommended default model. Now also the foundation for the **Astra for Law** vertical solution (~Sept 17, 2026).
 
 | Field | Value |
 |---|---|
@@ -78,15 +86,15 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Tools** | Web search, file search, image generation, code interpreter, hosted shell, apply patch, skills, computer use, MCP, tool search — full Responses API toolset; also usable as the backend model behind GPT-Live-1 and via the new Agents API |
 | **Rate limits (RPM / TPM)** | Free: not supported · Tier 1: 500 / 500K · Tier 2: 5,000 / 1M · Tier 3: 5,000 / 2M · Tier 4: 10,000 / 4M · Tier 5: 15,000 / 40M |
 | **Availability** | ChatGPT Plus/Pro/Business/Enterprise · GPT-6 Astra Pro (Pro/Business/Enterprise) · OpenAI API · Microsoft Azure/Foundry · AWS Bedrock |
-| **Notable** | New async tool calling, mid-turn steering, and mid-conversation `configuration_update` reasoning-effort changes (cache-prefix preserving); first model with default-on misalignment monitoring; uses a "recurrent depth"/"looped transformers" reasoning technique that OpenAI's own system card flags as reducing chain-of-thought monitorability under adversarial conditions; pairs with GPT-Live-1 as the reasoning backend for full-duplex voice agents |
+| **Notable** | New async tool calling, mid-turn steering, and mid-conversation `configuration_update` reasoning-effort changes (cache-prefix preserving); first model with default-on misalignment monitoring; uses a "recurrent depth"/"looped transformers" reasoning technique that OpenAI's own system card flags as reducing chain-of-thought monitorability under adversarial conditions; pairs with GPT-Live-1 as the reasoning backend for full-duplex voice agents; now also the foundation model behind **Astra for Law** (see below) |
 
-> 🔗 Source: [openai.com/index/gpt-6-astra](https://openai.com/index/gpt-6-astra/) · [deploymentsafety.openai.com/gpt-6-astra](https://deploymentsafety.openai.com/gpt-6-astra) (system card) · `developers.openai.com/api/docs/pricing` (re-verified September 14, 2026 — unchanged)
+> 🔗 Source: [openai.com/index/gpt-6-astra](https://openai.com/index/gpt-6-astra/) · [deploymentsafety.openai.com/gpt-6-astra](https://deploymentsafety.openai.com/gpt-6-astra) (system card) · `developers.openai.com/api/docs/pricing` (re-verified September 21, 2026 — unchanged)
 
 ---
 
 ### GPT-5.6 — Sol / Terra / Luna *(🔄 Sol replaced by GPT-6 Astra as flagship — family still fully active; Sol now promotionally priced)*
 
-> **GPT-5.6 reached General Availability on July 9, 2026** and remains fully active. As of **September 3, 2026**, GPT-6 Astra has replaced **GPT-5.6 Sol** as OpenAI's recommended flagship, and Sol's price was cut to promotional levels (at least through November 21, 2026). Terra and Luna are unaffected and remain the recommended balanced/budget tiers. ✅ Re-verified September 14, 2026 — all Sol/Terra/Luna prices below are unchanged.
+> **GPT-5.6 reached General Availability on July 9, 2026** and remains fully active. As of **September 3, 2026**, GPT-6 Astra has replaced **GPT-5.6 Sol** as OpenAI's recommended flagship, and Sol's price was cut to promotional levels (at least through November 21, 2026). Terra and Luna are unaffected and remain the recommended balanced/budget tiers. ✅ Re-verified September 21, 2026 — all Sol/Terra/Luna prices below are unchanged.
 
 | Field | GPT-5.6 Sol | GPT-5.6 Terra | GPT-5.6 Luna |
 |---|---|---|---|
@@ -127,7 +135,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 **Notable:** GPT-5.6 Sol still holds strong benchmark standing (e.g., DeepSWE v1.1 72.7%, OSWorld 2.0 65.7%) and, at its new **$4.00/$20.00** promotional price, is now meaningfully cheaper than before while GPT-6 Astra takes over as the premium/flagship option at $10.00/$50.00. **Terra remains the price/performance story of the release** at less than a fifth of Astra's price. Luna covers high-volume classification/extraction/tagging work at the bottom of the ladder and is also the default model powering ChatGPT's free tier.
 
-> 🔗 Source: [openai.com/index/gpt-5-6/](https://openai.com/index/gpt-5-6/) · `developers.openai.com/api/docs/pricing` (re-verified September 14, 2026 — unchanged)
+> 🔗 Source: [openai.com/index/gpt-5-6/](https://openai.com/index/gpt-5-6/) · `developers.openai.com/api/docs/pricing` (re-verified September 21, 2026 — unchanged)
 
 ---
 
@@ -169,14 +177,14 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### GPT-5.5 *(still fully active, same price)*
+### GPT-5.5 *(still fully active in the API — retiring from ChatGPT/Codex Oct 14, 2026)*
 
 | Field | Value |
 |---|---|
 | **Provider** | OpenAI |
 | **Model ID** | `gpt-5.5` |
 | **Released** | April 23, 2026 (ChatGPT/Codex) · April 24, 2026 (API) |
-| **Status** | ✅ Active — no longer the current flagship (superseded first by GPT-5.6 Sol, now by GPT-6 Astra), but fully supported and unchanged in price. Confirmed still listed with its own model page on `developers.openai.com/api/docs/models/gpt-5.5` as of Sept 14, 2026 refresh |
+| **Status** | ✅ Active on the **API** (no announced API deprecation) — ⚠️ **retiring from ChatGPT, ChatGPT Work, and Codex on October 14, 2026** (announced Sept 15, 2026 via @ChatGPT; API-key-authenticated access, including Codex with an API key, is unaffected) |
 | **Input price (std ctx <~270K)** | $5.00 / MTok |
 | **Input price (long ctx >~270K)** | $10.00 / MTok *(2× standard — full session)* |
 | **Output price (std ctx)** | $30.00 / MTok |
@@ -192,9 +200,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Context window** | 1,000,000 tokens (1,050,000 tokens on the pricing page rounding) |
 | **Max output** | 128,000 tokens |
 | **Knowledge cutoff** | December 1, 2025 |
-| **Availability** | API (Responses + Chat Completions) · ChatGPT Plus/Pro/Business/Enterprise · Codex |
+| **Availability** | API (Responses + Chat Completions, unaffected by the Oct 14 retirement) · ChatGPT Plus/Pro/Business/Enterprise (retiring Oct 14, 2026) · Codex (retiring Oct 14, 2026 for ChatGPT-authenticated sessions; API-key sessions unaffected) |
 | **Regional processing** | +10% uplift |
-| **Notable** | Now priced *higher* than GPT-5.6 Sol's new promotional rate ($5/$30 vs. Sol's $4/$20) — teams still on GPT-5.5 should evaluate migrating to Sol or Terra for cost savings |
+| **Notable** | Now priced *higher* than GPT-5.6 Sol's new promotional rate ($5/$30 vs. Sol's $4/$20) — teams still on GPT-5.5 should evaluate migrating to Sol or Terra for cost savings, and Codex/ChatGPT users specifically must migrate off it by October 14, 2026 regardless of price |
 
 ---
 
@@ -336,31 +344,32 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### o3 *(Reasoning model)*
+### o3 *(Reasoning model — ⚠️ note the dated snapshot `o3-2025-04-16` shuts down Dec 11, 2026)*
 
 | Field | Value |
 |---|---|
 | **Provider** | OpenAI |
 | **Model ID** | `o3` |
-| **Status** | ✅ Active — Reasoning Flagship |
+| **Status** | ✅ Active — Reasoning Flagship — ⚠️ the underlying dated snapshot **`o3-2025-04-16` is deprecated and shuts down December 11, 2026** → migrate to `gpt-5.6-sol` |
 | **Input price** | $2.00 / MTok |
 | **Cached input** | $0.50 / MTok |
 | **Output price** | $8.00 / MTok |
 | **Context window** | 200,000 tokens |
-| **Notable** | Chain-of-thought reasoning; best for math, logic, multi-step coding. Not on the current deprecation list |
+| **Notable** | Chain-of-thought reasoning; best for math, logic, multi-step coding. Already retired from ChatGPT (Aug 26, 2026); API access via `o3`/`o3-2025-04-16` continues until Dec 11, 2026 |
 
 ---
 
-### o3-pro *(Reasoning model — Maximum Depth)*
+### o3-pro *(Reasoning model — Maximum Depth — ⚠️ dated snapshot shuts down Dec 11, 2026)*
 
 | Field | Value |
 |---|---|
 | **Provider** | OpenAI |
 | **Model ID** | `o3-pro` |
-| **Status** | ✅ Active — Maximum Reasoning |
+| **Status** | ✅ Active — Maximum Reasoning — ⚠️ the underlying dated snapshot **`o3-pro-2025-06-10` is deprecated and shuts down December 11, 2026** → migrate to `gpt-5.6-sol` (`reasoning.mode: pro`) |
 | **Input price** | $20.00 / MTok |
 | **Output price** | $80.00 / MTok |
 | **Context window** | 200,000 tokens |
+| **Notable** | Remains available in ChatGPT for Pro/Team/Enterprise/Edu subscribers even after o3's Aug 26, 2026 ChatGPT retirement; the API snapshot shuts down Dec 11, 2026 |
 
 ---
 
@@ -526,6 +535,19 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
+## ⚖️ Astra for Law *(🆕 Vertical Solution — ~September 17, 2026)*
+
+> A legal-AI foundation for law firms and legal-technology companies, built on **GPT-6 Astra** with legal search, writing guidance, privacy/governance controls tailored for confidential client work, and 26 ecosystem plugins. API customers **Harvey** and **Legora** are building on it. OpenAI also made **ChatGPT for Word** generally available for legal drafting support alongside this launch.
+
+| Field | Value |
+|---|---|
+| **Status** | 🆕 Launched ~September 17, 2026 |
+| **Pricing** | **No separate list price published** — billed at standard GPT-6 Astra API rates ($10.00/$50.00 short context) for API customers; packaged/managed offerings for law firms available via sales contact |
+| **Foundation model** | GPT-6 Astra |
+| **Notable** | A **packaged solution/vertical harness, not a new priced model or SKU** — similar in structure to Astra-based verticals like the (unpriced) ChatGPT for Financial Services bundle announced Sept 10, 2026 |
+
+---
+
 ## 🤖 Agents API *(🆕 Public Beta — September 10, 2026)*
 
 > Brings the Codex harness (context compaction, tool search, programmatic/async tool calling, multi-agent subagent orchestration) to any developer via a single managed API call. **No separate fees** — billed entirely at standard per-model token and tool rates from the pricing tables above.
@@ -574,9 +596,24 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ## ⚠️ Legacy / Deprecated / Retired Models
 
-### ⚠️ DEPRECATED — o4-mini *(🆕 Confirmed shutdown October 23, 2026)*
+### 🆕 ⚠️ DEPRECATED — GPT-5 snapshot family, o3, and o3-pro *(shuts down December 11, 2026)*
 
-> **Moved from Active to Legacy this refresh.** Confirmed via the official `developers.openai.com/api/docs/deprecations` page: `o4-mini` (`o4-mini-2025-04-16`) is deprecated and will shut down **October 23, 2026**.
+> **New this refresh (September 21, 2026):** Confirmed via the official `developers.openai.com/api/docs/deprecations` page that OpenAI notified developers on **June 11, 2026** of a **second, later wave** of deprecations — distinct from the October 23, 2026 cull — covering the original GPT-5 launch snapshots plus both o3 variants. All six shut down **December 11, 2026**.
+
+| Model ID | Status | Migration |
+|---|---|---|
+| `gpt-5-2025-08-07` | ⚠️ DEPRECATED — shuts down Dec 11, 2026 | → `gpt-5.6-sol` |
+| `gpt-5-mini-2025-08-07` | ⚠️ DEPRECATED — shuts down Dec 11, 2026 | → `gpt-5.6-terra` |
+| `gpt-5-nano-2025-08-07` | ⚠️ DEPRECATED — shuts down Dec 11, 2026 | → `gpt-5.6-luna` |
+| `gpt-5-pro-2025-10-06` | ⚠️ DEPRECATED — shuts down Dec 11, 2026 | → `gpt-5.6-sol` (`reasoning.mode: pro`) |
+| `o3-2025-04-16` | ⚠️ DEPRECATED — shuts down Dec 11, 2026 | → `gpt-5.6-sol` |
+| `o3-pro-2025-06-10` | ⚠️ DEPRECATED — shuts down Dec 11, 2026 | → `gpt-5.6-sol` (`reasoning.mode: pro`) |
+
+> Note: this repo's tracked `o3` and `o3-pro` model cards (bare, undated aliases in the Active section above) point to these dated snapshots today — verify against your account before December 11, 2026, as no successor "o3.x" generation has been announced. `o3` and `o3-pro` were already retired from **ChatGPT** on August 26, 2026; this December date is specifically the **API** shutdown.
+
+---
+
+### ⚠️ DEPRECATED — o4-mini *(Confirmed shutdown October 23, 2026)*
 
 | Field | Value |
 |---|---|
@@ -591,9 +628,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### ⚠️ DEPRECATED — GPT-4.1 nano *(🆕 Confirmed shutdown October 23, 2026)*
-
-> **Moved from Active to Legacy this refresh.** Confirmed via the official `developers.openai.com/api/docs/deprecations` page: `gpt-4.1-nano` (`gpt-4.1-nano-2025-04-14`) is deprecated and will shut down **October 23, 2026**. Note: this is distinct from `gpt-5.4-nano`, which is not affected.
+### ⚠️ DEPRECATED — GPT-4.1 nano *(Confirmed shutdown October 23, 2026)*
 
 | Field | Value |
 |---|---|
@@ -643,13 +678,13 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### ⚠️ DEPRECATED — GPT-Realtime (legacy family) and GPT-Audio family *(🆕 shuts down Jan 20, 2027)*
+### ⚠️ DEPRECATED — GPT-Realtime (legacy family) and GPT-Audio family *(shuts down Jan 20, 2027)*
 
 > Confirmed via the Deprecations page (notice issued July 20, 2026): `gpt-realtime`, `gpt-audio`, `gpt-4o-audio`, `gpt-4o-realtime`, `gpt-realtime-mini`, `gpt-audio-mini`, `gpt-4o-mini-realtime`, `gpt-4o-mini-audio` all shut down **January 20, 2027** → migrate to `gpt-realtime-2.1`, `gpt-realtime-2.1-mini`, or `gpt-audio-1.5` as applicable.
 
 ---
 
-### ⚠️ DEPRECATED — o1 *(🆕 Confirmed shutdown October 23, 2026 — migration target corrected)*
+### ⚠️ DEPRECATED — o1 *(Confirmed shutdown October 23, 2026 — migration target corrected)*
 
 | Field | Value |
 |---|---|
@@ -661,18 +696,28 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### ⚠️ DEPRECATED — o3-mini *(🆕 Confirmed shutdown October 23, 2026 — newly tracked)*
+### ⚠️ DEPRECATED — o3-mini *(Confirmed shutdown October 23, 2026)*
 
 | Field | Value |
 |---|---|
 | **Model ID** | `o3-mini` (`o3-mini-2025-01-31`) |
 | **Status** | ⚠️ DEPRECATED — **Shuts down October 23, 2026** |
 | **Migration** | → **`gpt-5.6-sol`** |
-| **Notable** | Not previously tracked as a full card in this repo; added for completeness given the confirmed shutdown date |
+| **Notable** | Distinct shutdown wave from `o3`/`o3-pro`, which shut down later on December 11, 2026 (see dedicated card above) |
 
 ---
 
-### ⚠️ DEPRECATED — gpt-image-1 *(🆕 Confirmed shutdown October 23, 2026)*
+### ⚠️ DEPRECATED — o1-pro *(Confirmed shutdown October 23, 2026)*
+
+| Field | Value |
+|---|---|
+| **Model ID** | `o1-pro` (`o1-pro-2025-03-19`) |
+| **Status** | ⚠️ DEPRECATED — Shuts down **October 23, 2026** |
+| **Migration** | → **`gpt-5.6-sol`** (`reasoning.mode: pro`) |
+
+---
+
+### ⚠️ DEPRECATED — gpt-image-1 *(Confirmed shutdown October 23, 2026)*
 
 | Field | Value |
 |---|---|
@@ -715,13 +760,24 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### ⚠️ DEPRECATED — gpt-5.4-cyber *(🆕 shuts down October 1, 2026)*
+### ⚠️ DEPRECATED — gpt-5.4-cyber *(shuts down October 1, 2026)*
 
 | Field | Value |
 |---|---|
 | **Model ID** | `gpt-5.4-cyber` |
 | **Status** | ⚠️ DEPRECATED — Notice issued Sept 11, 2026; shuts down **October 1, 2026** |
 | **Migration** | → **`gpt-5.6-cyber`** |
+
+---
+
+### 🆕 ⚠️ PRODUCT-SURFACE RETIREMENT — GPT-5.5 leaves ChatGPT/Codex October 14, 2026 *(API unaffected)*
+
+| Field | Value |
+|---|---|
+| **Model ID** | `gpt-5.5` |
+| **Status** | ⚠️ Retires from **ChatGPT, ChatGPT Work, and Codex** October 14, 2026, across all plans (announced Sept 15, 2026) — **the OpenAI API is not affected**; does not appear on the official Deprecations page |
+| **Migration (ChatGPT/Codex only)** | → `gpt-5.6-sol` (or GPT-6 Astra for maximum capability) |
+| **Note** | If you call `gpt-5.5` via the API with your own key (including Codex sessions authenticated with an API key), nothing changes — see the Active section card above for full API pricing, which remains unchanged |
 
 ---
 
@@ -776,7 +832,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | Field | Value |
 |---|---|
 | **Model ID** | `gpt-4o` |
-| **Status** | ⚠️ LEGACY — Superseded by GPT-4.1. Dated snapshot `gpt-4o-2024-05-13` confirmed shutting down October 23, 2026 |
+| **Status** | ⚠️ LEGACY — Superseded by GPT-4.1. Dated snapshot `gpt-4o-2024-05-13` confirmed shutting down October 23, 2026. Removed from ChatGPT Feb 13, 2026 |
 | **Input price** | $2.50 / MTok |
 | **Output price** | $10.00 / MTok |
 | **Migration** | → **GPT-4.1** ($2/$8, 1M context) or **GPT-5.6 Sol** |
@@ -792,16 +848,6 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Input price** | $0.15 / MTok |
 | **Output price** | $0.60 / MTok |
 | **Migration** | → **GPT-5.6 Luna** ($0.20/$1.20) or **GPT-4.1 nano** *(also now deprecated — see above)* |
-
----
-
-### ⚠️ LEGACY — o1-pro *(Deep Reasoning, dated snapshot deprecated Oct 23, 2026)*
-
-| Field | Value |
-|---|---|
-| **Model ID** | `o1-pro` (`o1-pro-2025-03-19`) |
-| **Status** | ⚠️ DEPRECATED — Shuts down **October 23, 2026** |
-| **Migration** | → **`gpt-5.6-sol`** (`reasoning.mode: pro`) |
 
 ---
 
@@ -828,8 +874,10 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **GPT-5.6 / GPT-5.5 / GPT-6 Astra long-context** | Stay under ~270–272K input tokens to avoid the 2× input / 1.5× output surcharge |
 | **🆕 gpt-5.6-cyber now priced** | $12.50/$75.00 (short ctx only) — previously unpriced; part of the Daybreak vetted-access cybersecurity program. Its predecessor `gpt-5.4-cyber` shuts down Oct 1, 2026 |
 | **🆕 Terra remains the best GPT-5.5 replacement** | GPT-5.6 Terra at $2.00/$12.00 — under half GPT-5.5's price ($5/$30) and a fifth of GPT-6 Astra's; now also the official migration target for the deprecated `o4-mini` |
-| **⚠️ o4-mini and GPT-4.1 nano are now deprecated** | Both shut down **October 23, 2026** — migrate to `gpt-5.6-terra` and `gpt-5.6-luna` respectively well ahead of the deadline |
+| **⚠️ o4-mini and GPT-4.1 nano are deprecated** | Both shut down **October 23, 2026** — migrate to `gpt-5.6-terra` and `gpt-5.6-luna` respectively well ahead of the deadline |
 | **⚠️ o1, o3-mini, o1-pro, gpt-image-1 also shut down Oct 23, 2026** | Migrate to `gpt-5.6-sol` (o-series) or `gpt-image-2` (image) |
+| **🆕 o3, o3-pro, and the original GPT-5 snapshots shut down Dec 11, 2026** | A distinct, later wave (notice issued June 11, 2026) — see dedicated Legacy card. Migrate `o3`/`o3-pro` traffic to `gpt-5.6-sol` well before December |
+| **🆕 GPT-5.5 leaves ChatGPT/Codex Oct 14, 2026 — API is fine** | Only ChatGPT-authenticated sessions (web/app UI, Codex-via-ChatGPT-login) are affected; API-key-based GPT-5.5 calls are unaffected and not on the Deprecations page |
 | **ChatGPT Free/Go defaults to Luna** | Free/Go consumer users get unlimited text chats on GPT-5.6 Luna plus a "Think" button — a ChatGPT product change, not an API pricing change |
 | **Cheap transcription option** | `gpt-transcribe` at $0.0045/min is the cheapest high-accuracy transcription model in the lineup; note `gpt-4o-transcribe`/`gpt-4o-mini-transcribe`/`whisper-1` are now deprecated (shut down Feb 26, 2027) |
 | **Regional processing** | +10% uplift for GPT-6 Astra/5.6/5.5/5.4 family data residency endpoints |
@@ -839,9 +887,10 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Realtime models** | Use `gpt-realtime-2.1` ($32/$64 audio) or `gpt-realtime-2.1-mini` ($10/$20 audio); the whole prior-generation Realtime/Audio family (`gpt-realtime`, `gpt-audio`, `gpt-4o-realtime`, etc.) shuts down Jan 20, 2027 |
 | **🆕 GPT-Live-1 is now API-priced** | $0.05/minute for the voice layer (Sept 10, 2026) — pair with a text model for reasoning/tools, billed separately at that model's rates |
 | **🆕 Agents API is free to adopt** | Public beta (Sept 10, 2026) — no separate fee, just standard token/tool costs, for a managed Codex-harness agent runtime |
+| **🆕 Astra for Law is a packaged solution, not a new SKU** | Billed at standard GPT-6 Astra rates for API customers (Harvey, Legora); managed law-firm offerings via sales |
 | **Web search tool choice matters** | Non-preview web search is $10/1K calls with metered content tokens; the non-reasoning-model "preview" variant is $25/1K calls but content tokens are free |
 | **Computer Use is a distinct SKU** | `computer-use-preview` ($1.50/$6.00) is priced independently of the underlying model family |
 
 ---
 
-*Sources last verified: September 14, 2026 against `developers.openai.com/api/docs/pricing`, `developers.openai.com/api/docs/models`, `developers.openai.com/api/docs/deprecations`, `developers.openai.com/api/docs/models/gpt-5.5`, `openai.com/news`, and the GPT-Live-1 / Agents API launch posts. **Major updates this cycle:** (1) GPT-Live-1 launched in the API at $0.05/minute (Sept 10); (2) the new Agents API launched in public beta with no added fees (Sept 10); (3) GPT-Image-2.5 Sunburst/Flare identified as the new flagship image models, with GPT-Image-2 repriced 50% cheaper as the value tier; (4) `gpt-rosalind-research` (Life Sciences) gained published pricing, billing from Oct 5, 2026; (5) confirmed via the official Deprecations page that `o4-mini` and `gpt-4.1-nano` are deprecated and shut down October 23, 2026 (moved to Legacy, with `o1`, `o3-mini`, `o1-pro`, and `gpt-image-1` on the same shutdown date), and that `gpt-5.4-cyber` shuts down October 1, 2026. GPT-6 Astra and the full GPT-5.6 (Sol/Terra/Luna) pricing tables were independently re-verified and are unchanged since Sept 7. GPT-5.5, GPT-5.5 Pro, GPT-5.4 family, GPT-4.1/mini, o3/o3-pro were individually spot-checked (via `gpt-5.5`'s dedicated model page) and confirmed still active and unchanged — they simply do not appear in the redesigned pricing page's default "Flagship models" view.*
+*Sources last verified: September 21, 2026 against `developers.openai.com/api/docs/pricing`, `developers.openai.com/api/docs/models`, `developers.openai.com/api/docs/deprecations`, `developers.openai.com/api/docs/models/gpt-5.5`, `openai.com/news`, and the GPT-Live-1 / Agents API / Astra for Law launch posts. **Major updates this cycle:** (1) confirmed via the official Deprecations page that `o3`, `o3-pro`, and the original GPT-5 launch snapshot family (`gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-5-pro`, all dated `2025`) are deprecated and shut down **December 11, 2026** — a distinct, later wave from the October 23 cull, notice issued June 11, 2026; (2) GPT-5.5 will retire from ChatGPT, ChatGPT Work, and Codex on **October 14, 2026**, but the OpenAI API is explicitly unaffected; (3) "Astra for Law" launched (~Sept 17, 2026) as a GPT-6-Astra-based legal vertical solution — not a separately priced model. GPT-6 Astra and the full GPT-5.6 (Sol/Terra/Luna) pricing tables were independently re-verified and are unchanged since Sept 14. All other active and legacy model prices were re-confirmed unchanged this cycle.*
