@@ -1,8 +1,8 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-09-14
+> **Last updated:** 2026-09-21
 > **Source:** https://www.anthropic.com/pricing · https://claude.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing · https://www.anthropic.com/claude-fable-and-mythos-5-1 · https://www.anthropic.com/news
-> **Scraped / verified:** 2026-09-14 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` and `claude.com/pricing` pages.** Every active model price (Fable 5.1 $10/$50 w/ $0.25 cache-read, Mythos 5.1, Fable 5, Mythos 5, Opus 5 $5/$25, Opus 4.8, Sonnet 5 $2/$10 permanent, Sonnet 4.6, Haiku 4.5) and the full legacy table (down to Opus 4.1, Opus 4, Sonnet 4, Haiku 3.5) are **byte-for-byte unchanged** since the September 7 refresh. Checked `anthropic.com/news` through September 10, 2026 — the only new post is a **Threat Intelligence report** (Sept 10, 2026, safety/policy publication, no pricing or model-lineup impact). No new model releases, retirements, or price changes found this cycle.
+> **Scraped / verified:** 2026-09-21 — ✅ **Re-verified against the live `platform.claude.com/docs/en/about-claude/pricing` and `claude.com/pricing` pages.** Every active model price (Fable 5.1 $10/$50 w/ $0.25 cache-read, Mythos 5.1, Fable 5, Mythos 5, Opus 5 $5/$25, Opus 4.8, Sonnet 5 $2/$10 permanent, Sonnet 4.6, Haiku 4.5) and the full legacy table (down to Opus 4.1, Opus 4, Sonnet 4, Haiku 3.5) are **byte-for-byte unchanged** since the September 14 refresh. Checked `anthropic.com/news` through September 21, 2026 — three new **non-pricing** items found: the Life Sciences Verification Program (LSVP) opened in beta (Sept 17), an embedded-evaluation partnership with Accenture worth $1B+ over five years (Sept 18), and a Claude R&D Automation Index research disclosure (Sept 17), plus a Cowork/chat product merge (Sept 16). No new model releases, retirements, or price changes found this cycle.
 
 All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context (up to **97.5% off** on Fable 5.1 / Mythos 5.1 cache reads — see below).
 
@@ -24,9 +24,9 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 > - Anthropic, together with Amazon, Microsoft, Google, and other Project Glasswing partners, is developing a **shared industry framework for scoring AI jailbreak severity**, and is deepening pre-release testing collaboration with the US government under the June 2, 2026 executive order on frontier AI security.
 
 > 🆕 **June 30, 2026 — Claude Sonnet 5 launched.** Anthropic's most agentic Sonnet-tier model yet, replacing Claude Sonnet 4.6 as the default model for Free and Pro plans (also available on Max, Team, Enterprise, Claude Code, and the Claude Platform). Narrows the performance gap with Opus 4.8 on agentic coding, tool use, and knowledge work while remaining priced at the Sonnet tier. Model ID: `claude-sonnet-5`. See [announcement](https://www.anthropic.com/news/claude-sonnet-5). *(Introductory $2/$10 pricing made permanent September 1, 2026 — see above.)*
-
+>
 > 🆕 **June 23, 2026 — Claude Tag launched.** @Claude is a new Teams/workspace product integration that allows teams to mention and interact with Claude directly in platforms. This is a **product feature**, not a new API model — billed at standard API token rates using the underlying model. See [announcement](https://www.anthropic.com/news/introducing-claude-tag).
-
+>
 > ✅ **Claude Sonnet 4 + Opus 4 RETIRED on June 15, 2026. ❌** API calls to `claude-sonnet-4-20250514` and `claude-opus-4-20250514` now return errors (except via Amazon Bedrock and Google Cloud, where they remain available per Anthropic's model deprecation policy). Migration: Sonnet 4 → Sonnet 5 or Sonnet 4.6 (same price, 1M context); Opus 4 → Opus 4.8 ($5/$25, 67% cheaper).
 
 ---
@@ -76,7 +76,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Status** | 🔒 Trusted access only — replaces Mythos 5 |
 | **Pricing** | $10.00 / MTok input · $50.00 / MTok output (identical to Fable 5.1, including the $0.25/MTok cache-read rate) |
 | **Context window** | 1,000,000 tokens · Max output: 128,000 tokens |
-| **Access** | **Cyber Verification Program (CVP)** — [apply here](https://portal.anthropic.com/programs/cvp) — for defensive cybersecurity work; **Life Sciences Verification Program (LSVP)** — developed with the US government — for professional biology/life-sciences R&D. Currently limited to a set of US organizations, expanding internationally |
+| **Access** | **Cyber Verification Program (CVP)** — [apply here](https://portal.anthropic.com/programs/cvp) — for defensive cybersecurity work; **Life Sciences Verification Program (LSVP)** — developed with the US government — for professional biology/life-sciences R&D. Now in beta and open to broader applications (see Sept 17, 2026 update below); expanding internationally |
 | **Notable** | Strongest cyber capabilities of any Anthropic model released to date (with cyber safeguards off for evaluation), but still falls in the lower risk category of Anthropic's Frontier Compliance Framework; no critical-severity jailbreak found after external red-teaming (Gray Swan + two other firms). Now also powers **Claude Security** (codebase vulnerability scanning product) |
 
 ---
@@ -201,7 +201,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Tool-use system prompt (`auto`/`none` — `any`/`tool`)** | 354 tokens — 474 tokens |
 | **Tokenizer** | Newer tokenizer (same generation as Opus 4.7+/Fable 5.1) — produces ~30% more tokens than Sonnet 4.6 for the same text |
 | **Availability** | Claude API · Claude.ai (Free/Pro/Max/Team/Enterprise) · Claude Code · Claude Platform on AWS · Amazon Bedrock · Google Cloud · Microsoft Foundry |
-| **Notable** | Default model for Free/Pro plans; strict improvement over Sonnet 4.6 on agentic benchmarks; the cheapest Anthropic model with 1M context at standard pricing |
+| **Notable** | Default model for Free/Pro plans; strict improvement over Sonnet 4.6 on agentic benchmarks; the cheapest Anthropic model with 1M context at standard pricing; **first Sonnet-tier model with real-time cybersecurity safeguards** — prohibited/high-risk cyber requests are refused with `stop_reason: "refusal"` (returned as HTTP 200, not an error) |
 
 > ✅ **September 1, 2026 — pricing confirmed permanent at $2/$10 per MTok.** The scheduled Sept 1 increase to $3/$15 was cancelled.
 > 🔄 **Replaces Claude Sonnet 4.6** as Anthropic's recommended default mid-tier model.
@@ -272,7 +272,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Replaced by Sonnet 5 as default; still active; only Sonnet-tier model with Extended Thinking |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning |
 
-> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified September 14, 2026 — unchanged.
+> Source: `platform.claude.com/docs/en/about-claude/models/overview` and `platform.claude.com/docs/en/about-claude/pricing`, re-verified September 21, 2026 — unchanged.
 
 ---
 
@@ -328,6 +328,14 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 > A new privacy model for enterprise customers: data is stored on **customer-controlled cloud infrastructure** (AWS, Google Cloud, or Microsoft Azure) rather than Anthropic's systems, with any human review defaulting to the customer rather than Anthropic — delivering zero-data-retention-equivalent privacy while retaining state-of-the-art misuse detection. Developed with 100+ enterprise customers across financial services, healthcare, manufacturing, telecom, law, retail, and the public sector. Rolling out in phases starting **fall 2026** across Claude Code, Claude Enterprise, the Claude Platform, Amazon Bedrock, Claude Platform on AWS, Google's Agent Platform, and Microsoft Foundry. This is a **data-governance feature, not a separate priced model** — eligible customers can use Fable 5.1 (and Fable 5) with zero data retention today, ahead of full EFS availability.
 
+## 🆕 Life Sciences Verification Program (LSVP) — beta opened September 17, 2026
+
+> **September 17, 2026:** Anthropic opened the **Life Sciences Verification Program (LSVP)** in beta, giving verified life science professionals and organizations access to **Mythos, Opus, and Sonnet models with a refined, more permissive set of safeguards for biology-related work**. Dozens of organizations were already onboarded via an early-access program; applications are now open to the broader life-science community. This is an **access/safeguard program, not a separate priced model or a pricing change** — approved users are billed at the standard rate for whichever underlying Claude model they use. See [Anthropic's announcement](https://www.anthropic.com/news/life-sciences-verification-program).
+
+## 🆕 Embedded Evaluation Partnership with Accenture — announced September 18, 2026
+
+> **September 18, 2026:** Anthropic and Accenture (via its Faculty AI division) announced a partnership pioneering **"embedded evaluation"** — independent evaluators operating inside Anthropic with employee-level access to observe training decisions and deployment governance in real time. Each party expects to invest **at least $1 billion over five years**. This is a **safety-governance and enterprise-credibility initiative, not a pricing change** — no new models or price changes accompanied this announcement.
+
 ## 🆕 Platform Feature: Claude Tag *(Teams Product — June 23, 2026)*
 
 > **June 23, 2026:** Anthropic launched **Claude Tag** (`@Claude`) — a new way for teams to mention and interact with Claude directly within shared workspaces. This is a **product/teams feature**, not a new API model. Billed at standard API token rates using the underlying Claude model.
@@ -342,11 +350,31 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ## 🤝 Deeper US Government Collaboration (announced June 30, 2026)
 
-> As part of the resolution that restored Fable 5 and Mythos 5, Anthropic committed to: (1) expanded pre-release government access and evaluation for models that materially advance the capability frontier; (2) rapid information sharing on safeguards and jailbreaks; (3) dedicated resources for joint AI-security research with the government; and (4) work toward a common, voluntary industry security/evaluation standard. The Life Sciences Verification Program for Mythos 5.1 was also developed in partnership with the US government, with enrollment for outside scientists expected to open soon.
+> As part of the resolution that restored Fable 5 and Mythos 5, Anthropic committed to: (1) expanded pre-release government access and evaluation for models that materially advance the capability frontier; (2) rapid information sharing on safeguards and jailbreaks; (3) dedicated resources for joint AI-security research with the government; and (4) work toward a common, voluntary industry security/evaluation standard. The Life Sciences Verification Program for Mythos 5.1 was also developed in partnership with the US government (see LSVP beta launch above).
 
 ## 🆕 Threat Intelligence Report *(September 10, 2026 — non-pricing)*
 
 > Anthropic published "Detecting and countering misuse of AI: September 2026," sharing case studies from Threat Intelligence team operations disrupting attempted malicious use of Claude over the prior eight months, and describing how misuse patterns have evolved since 2025's reports. This is a **safety/policy publication with no pricing or model-lineup impact** — no new models, retirements, or price changes were announced alongside it.
+
+## 🆕 Claude/Chat and Cowork Merge *(Product change — announced September 16, 2026)*
+
+> **September 16, 2026:** Anthropic announced that Cowork and regular Claude chat are merging into a single unified Claude experience, rolling out to Pro and Max plans first, with Team and Free to follow. This is a **product/UX consolidation, not a pricing change** — billed at the standard rate of whichever underlying model is selected.
+
+## 🆕 R&D Automation Index *(Research disclosure — September 17, 2026, non-pricing)*
+
+> Anthropic published a prototype "R&D Automation Index," reporting that Claude now **leads 26% of Anthropic's own AI research and development work** as of August 2026 (up from under 1% in February 2026), with more than 90% of R&D work happening at the "collaborates" level or above and none fully autonomous. This is a **research/transparency disclosure with no pricing or model-lineup impact**.
+
+---
+
+## 📰 September 21, 2026 Refresh — No Pricing Changes; New Non-Pricing Announcements
+
+> ✅ Independently re-checked the live `platform.claude.com/docs/en/about-claude/pricing` and `claude.com/pricing` pages. **Every active and legacy model price remains byte-for-byte unchanged** since the September 14 refresh — Fable 5.1, Mythos 5.1, Fable 5, Mythos 5, Opus 5, Opus 4.8, Sonnet 5 ($2/$10 permanent), Sonnet 4.6, Haiku 4.5, and the full legacy/retired table all confirmed identical. Checked `anthropic.com/news` through September 21, 2026 and found three new non-pricing items (all documented above):
+> - **Sep 18, 2026** — Embedded evaluation partnership with Accenture ($1B+ commitment; governance, not pricing).
+> - **Sep 17, 2026** — Life Sciences Verification Program (LSVP) opened in beta (access/safeguard program for Mythos/Opus/Sonnet, not a new priced model).
+> - **Sep 17, 2026** — R&D Automation Index research disclosure (26% of Anthropic's own R&D now "led" by Claude; no pricing impact).
+> - **Sep 16, 2026** — Cowork and chat merging into one unified Claude experience (product/UX change, no pricing impact).
+>
+> **No new Claude model releases, retirements, or price changes found this cycle.**
 
 ---
 
@@ -405,7 +433,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 | Field | Value |
 |---|---|
-| **Status** | ⚠️ LEGACY — Superseded by Claude Mythos 5 (June 9, 2026), itself now replaced by Mythos 5.1 |
+| **Status** | ⚠️ LEGACY — Superseded by Claude Mythos 5 (June 9, 2026), itself now replaced by Mythos 5.1; still marked deprecated with no published retirement date |
 | **Last-known Pricing** | $25.00 / MTok input · $125.00 / MTok output |
 | **Migration** | → **Claude Mythos 5.1** |
 
@@ -464,12 +492,12 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-### ⚠️ LEGACY — Claude Opus 4.1 *(retired, except Bedrock/Google Cloud)*
+### ⚠️ LEGACY — Claude Opus 4.1 *(retired, except Bedrock/Google Cloud — RETIRED Aug 5, 2026)*
 
 | Field | Value |
 |---|---|
 | **Model ID** | `claude-opus-4-1` |
-| **Status** | ⚠️ LEGACY — retired on the Claude API except via Bedrock and Google Cloud, per live pricing page |
+| **Status** | ⚠️ LEGACY — retired on the Claude API (August 5, 2026) except via Bedrock and Google Cloud, per live pricing page |
 | **Input price** | $15.00 / MTok |
 | **Output price** | $75.00 / MTok |
 | **Migration** | → **Claude Opus 5** or **Opus 4.8** ($5/$25) — 67% cheaper |
@@ -536,10 +564,10 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 | Model | Status | Migration |
 |---|---|---|
-| Claude 3 Opus | ⚠️ DEPRECATED Jan 2026 — available by request | → Claude Opus 5 or 4.8 |
-| Claude 3.5 Sonnet (v1 & v2) | ⚠️ RETIRED January 5, 2026 | → Claude Sonnet 5 or Sonnet 4.6 |
+| Claude 3 Opus | ⚠️ RETIRED January 2026 | → Claude Opus 5 or 4.8 |
+| Claude 3.5 Sonnet (v1 & v2) | ⚠️ RETIRED February 2026 | → Claude Sonnet 5 or Sonnet 4.6 |
 | Claude 3 Sonnet | ⚠️ RETIRED | → Claude Sonnet 5 or Sonnet 4.6 |
-| Claude 3 Haiku | ⚠️ RETIRED February 19, 2026 ❌ | → Claude Haiku 4.5 |
+| Claude 3 Haiku | ⚠️ RETIRED April 2026 | → Claude Haiku 4.5 |
 
 ---
 
@@ -569,11 +597,13 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Thinking modes** | Adaptive: Fable 5.1, Mythos 5.1, Opus 5, Opus 4.8, Sonnet 5, Sonnet 4.6. Extended: Sonnet 4.6, Haiku 4.5 (**not** on Sonnet 5/Opus 5/Fable 5.1/Mythos 5.1) |
 | **Tokenizer note** | Fable 5/5.1, Mythos 5/5.1, Opus 4.7+, and Sonnet 5 use a newer tokenizer producing ~30% more tokens for the same text vs. Sonnet 4.6-and-earlier |
 | **⚠️ Sonnet 4 + Opus 4 RETIRED** | Retired June 15, 2026 ❌ on Claude API — Sonnet 4 → Sonnet 5/4.6, Opus 4 → Opus 5/4.8 |
+| **⚠️ Opus 4.1 RETIRED** | Retired August 5, 2026 on the Claude API (still on Bedrock/Google Cloud) — migrate to Opus 5 or 4.8 |
 | **🆕 Enterprise Frontier Safeguards (EFS)** | Rolling out in phases starting fall 2026 — zero-data-retention-equivalent privacy on customer-controlled cloud infrastructure. Eligible customers can use Fable 5.1/Fable 5 with ZDR now, ahead of full EFS availability |
+| **🆕 Life Sciences Verification Program (LSVP)** | Opened in beta Sept 17, 2026 — gives verified life-science teams more permissive safeguards on Mythos/Opus/Sonnet; billed at standard rates, not a separate SKU |
 | **Code execution + web search/fetch combo** | Free code execution when paired with `web_search_20260209`+/`web_fetch_20260209`+ — otherwise $0.05/hr per container after 1,550 free org-hours/month (~50/day) |
 | **Browser use tool** | `browser_toolset_20260801` — ~6,600 tokens overhead — priced as ordinary tool-use tokens, no separate line item |
 | **Claude Managed Agents** | $0.08/session-hour runtime (billed only while `running`) + standard token rates — no Batch discount or partner-cloud pricing applies |
 
 ---
 
-*Sources last verified: September 14, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `claude.com/pricing`, and `anthropic.com/news` (through September 10, 2026). **This cycle:** independently re-verified every active and legacy model price — all confirmed byte-for-byte unchanged since the September 7 refresh (Fable 5.1/Mythos 5.1 launch, Sonnet 5's $2/$10 pricing made permanent). The only new item found was a September 10, 2026 Threat Intelligence report, which has no pricing or model-lineup impact. No new model releases, retirements, or price changes this cycle.*
+*Sources last verified: September 21, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `claude.com/pricing`, and `anthropic.com/news` (through September 21, 2026). **This cycle:** independently re-verified every active and legacy model price — all confirmed byte-for-byte unchanged since the September 14 refresh. Three new non-pricing items were found: the Life Sciences Verification Program (LSVP) opened in beta (Sept 17), an embedded-evaluation partnership with Accenture worth $1B+ over five years (Sept 18), a Claude R&D Automation Index research disclosure (Sept 17), and the Cowork/chat product merge (Sept 16). No new model releases, retirements, or price changes this cycle.*
