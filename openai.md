@@ -1,14 +1,27 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-09-21
-> **Source:** https://developers.openai.com/api/docs/pricing · https://developers.openai.com/api/docs/models · https://developers.openai.com/api/docs/deprecations · https://openai.com/index/gpt-6-astra/ · https://openai.com/news
-> **Scraped / verified:** 2026-09-21 — ✅ Re-verified all GPT-6 Astra / GPT-5.6 (Sol/Terra/Luna) pricing directly against the live `developers.openai.com/api/docs/pricing` page — **unchanged** since the Sept 14 refresh. 🆕 **Confirmed via the official Deprecations page: the original GPT-5 snapshot family (`gpt-5-2025-08-07`, `gpt-5-mini-2025-08-07`, `gpt-5-nano-2025-08-07`, `gpt-5-pro-2025-10-06`) plus `o3-2025-04-16` and `o3-pro-2025-06-10` are deprecated and will be removed from the API on a later, separate date — December 11, 2026** — notice issued June 11, 2026, replacement targets `gpt-5.6-sol` (o3, gpt-5, gpt-5-mini→terra, gpt-5-nano→luna) and `gpt-5.6-sol` with `reasoning.mode: pro` (o3-pro, gpt-5-pro). 🆕 **GPT-5.5 will retire from ChatGPT, ChatGPT Work, and Codex on October 14, 2026** (announced via @ChatGPT Sept 15, 2026) — **the OpenAI API is explicitly unaffected**; this is a consumer/product-surface retirement only. 🆕 **"Astra for Law" launched (~Sept 17, 2026)** — a legal-vertical foundation built on GPT-6 Astra with legal search, writing guidance, and 26 ecosystem plugins for law firms/legal-tech (API customers include Harvey and Legora); this is a **packaged solution, not a separately priced model** — billed at standard GPT-6 Astra API rates unless a custom enterprise contract applies.
+> **Last updated:** 2026-09-22
+> **Source:** https://developers.openai.com/api/docs/pricing · https://developers.openai.com/api/docs/models · https://developers.openai.com/api/docs/deprecations · https://openai.com/index/gpt-6-astra/ · https://openai.com/index/introducing-gpt-6-sol-and-luna/ · https://openai.com/news
+> **Scraped / verified:** 2026-09-22 — 🆕 **GPT-6 Sol and GPT-6 Luna launched**, expanding the GPT-6 family alongside GPT-6 Astra. Both are **50% cheaper** than the GPT-5.6 promotional rates they replace: GPT-6 Sol is **$2.00/$10.00** per MTok (was GPT-5.6 Sol's promotional $4.00/$20.00) and GPT-6 Luna is **$0.10/$0.50** per MTok (was GPT-5.6 Luna's $0.20/$1.20). GPT-6 Astra's pricing is unchanged at $10.00/$50.00. There is **no GPT-6 Terra** — GPT-5.6 Terra ($2.00/$12.00) remains the mid-tier model unchanged and un-replaced. Prompt caching for the GPT-6 family was also improved (higher default cache-hit rates, 30-minute cache-eligibility window, new diagnostics/dashboard, mid-conversation reasoning-effort changes that preserve cache).
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
-> **Context tiers for GPT-6 Astra, GPT-5.6, GPT-5.5, and GPT-5.4:** Standard ("short context") pricing applies for prompts **under ~272K tokens** (GPT-6 Astra) or **~270K tokens** (GPT-5.6/5.5/5.4). The long-context tier applies a pricing surcharge above that threshold — **2× input / 1.5× output** vs. short-context rates (full request/session).
+> **Context tiers for GPT-6, GPT-5.6, GPT-5.5, and GPT-5.4:** Standard ("short context") pricing applies for prompts **under ~272K tokens** (GPT-6 family) or **~270K tokens** (GPT-5.6/5.5/5.4). The long-context tier applies a pricing surcharge above that threshold — **2× input / 1.5× output** vs. short-context rates (full request/session).
 
 > **Service tiers:** Four processing tiers are documented — **Priority/Fast mode** (highest availability + predictable latency, 2× standard price), **Standard** (default), **Batch**, and **Flex** (async, 50% off standard).
+
+> 🆕 **September 22, 2026 — GPT-6 Sol and GPT-6 Luna launched, extending the GPT-6 family.** OpenAI describes these as advancing "the frontier on cost efficiency" using training methods similar to GPT-6 Astra, bringing Astra's professional-work, factuality, coding, computer-use, and alignment improvements to cheaper, faster models. **Prices are 50% lower than the GPT-5.6 promotional rates they succeed:**
+>
+> | Model | Input | Output | Change |
+> |---|---|---|---|
+> | GPT-5.6 Sol → **GPT-6 Sol** | $4.00 → **$2.00** | $20.00 → **$10.00** | 50% cheaper |
+> | GPT-5.6 Luna → **GPT-6 Luna** | $0.20 → **$0.10** | $1.20 → **$0.50** | 50% cheaper |
+>
+> Model IDs: `gpt-6-sol`, `gpt-6-luna`. Both share GPT-6 Astra's 1.05M context window, 128K max output, and `low`/`medium`/`high`/`xhigh`/`max` reasoning efforts (plus `none`, unlike Astra). Knowledge cutoffs: Sol April 20, 2026; Luna May 18, 2026. On Zapier's AutomationBench, OpenAI reports GPT-6 Sol at `xhigh` effort beats Claude Opus 5 at `max` effort for **9% of Opus 5's cost per task**, and edges out Claude Fable 5.1's fallback-inclusive score at a small fraction of the cost. On DeepSWE v1.1, GPT-6 Sol at `max` effort scores 68.8% (within 1.1 points of Claude Fable 5's best score) at **~80% lower cost per task**. **GPT-6 Astra remains OpenAI's best model overall** and is unchanged at $10.00/$50.00. **There is no GPT-6 Terra** — GPT-5.6 Terra ($2.00/$12.00 per MTok, unchanged) continues as the mid-tier "balance intelligence and cost" model, still labeled "Default" on the live model catalog. GPT-6 Sol and Luna are available now in ChatGPT Work, Codex, and the API (`gpt-6-sol`, `gpt-6-luna`); Free/Go users get GPT-6 Luna in the desktop app. See [OpenAI's announcement](https://openai.com/index/introducing-gpt-6-sol-and-luna/).
+>
+> 🆕 **September 22, 2026 — Better prompt caching for GPT-6.** OpenAI shipped an improved caching system for the whole GPT-6 family (Astra, Sol, Luna): higher default cache-hit rates, a **30-minute eligibility window** for reused shared prefixes (up from the previous minimum), a new Prompt Caching Dashboard and cache-miss diagnostics tool, and the ability to change `reasoning_effort` or enable/disable tools **mid-conversation without breaking the cache** via `configuration_update`. GitHub reports this cut the share of prompt tokens requiring fresh processing by more than 50% across billions of requests. This is a **caching-mechanics improvement, not a price change** — cache-hit tokens are still billed at 10% of standard input (90% off) per the pricing tables. See [OpenAI's post](https://openai.com/index/better-prompt-caching-for-gpt-6/).
+>
+> ⚠️ **September 22, 2026 — GPT-5.6 Sol and GPT-5.6 Luna are now 🔄 REPLACED by GPT-6 Sol/Luna, but remain fully priced and active.** `gpt-5.6-sol` continues to exist at its prior promotional rate ($4.00/$20.00 short context) — it is still the underlying model behind the `gpt-daybreak-blue-latest` alias and the baseline for `gpt-5.6-cyber` pricing in the Cyber models table. Neither model has an announced shutdown date.
 
 > 🆕 **September 21, 2026 refresh — no change to GPT-6 Astra / GPT-5.6 pricing; three new non-pricing/lifecycle items found.** Independently re-fetched the live `developers.openai.com/api/docs/pricing` page. All flagship-tier prices (`gpt-6-astra`, `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna` — Standard/Batch/Flex/Fast-mode, short- and long-context) are byte-for-byte unchanged from the September 14 refresh. GPT-5.6 Sol's promotional pricing is confirmed still in effect, "available at least through November 21, 2026."
 >
@@ -88,18 +101,52 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 | **Availability** | ChatGPT Plus/Pro/Business/Enterprise · GPT-6 Astra Pro (Pro/Business/Enterprise) · OpenAI API · Microsoft Azure/Foundry · AWS Bedrock |
 | **Notable** | New async tool calling, mid-turn steering, and mid-conversation `configuration_update` reasoning-effort changes (cache-prefix preserving); first model with default-on misalignment monitoring; uses a "recurrent depth"/"looped transformers" reasoning technique that OpenAI's own system card flags as reducing chain-of-thought monitorability under adversarial conditions; pairs with GPT-Live-1 as the reasoning backend for full-duplex voice agents; now also the foundation model behind **Astra for Law** (see below) |
 
-> 🔗 Source: [openai.com/index/gpt-6-astra](https://openai.com/index/gpt-6-astra/) · [deploymentsafety.openai.com/gpt-6-astra](https://deploymentsafety.openai.com/gpt-6-astra) (system card) · `developers.openai.com/api/docs/pricing` (re-verified September 21, 2026 — unchanged)
+> 🔗 Source: [openai.com/index/gpt-6-astra](https://openai.com/index/gpt-6-astra/) · [deploymentsafety.openai.com/gpt-6-astra](https://deploymentsafety.openai.com/gpt-6-astra) (system card) · `developers.openai.com/api/docs/pricing` (re-verified September 22, 2026 — unchanged)
 
 ---
 
-### GPT-5.6 — Sol / Terra / Luna *(🔄 Sol replaced by GPT-6 Astra as flagship — family still fully active; Sol now promotionally priced)*
+### 🆕 GPT-6 Sol and GPT-6 Luna *(Expanding the GPT-6 family — Released September 22, 2026)*
 
-> **GPT-5.6 reached General Availability on July 9, 2026** and remains fully active. As of **September 3, 2026**, GPT-6 Astra has replaced **GPT-5.6 Sol** as OpenAI's recommended flagship, and Sol's price was cut to promotional levels (at least through November 21, 2026). Terra and Luna are unaffected and remain the recommended balanced/budget tiers. ✅ Re-verified September 21, 2026 — all Sol/Terra/Luna prices below are unchanged.
+> **September 22, 2026 —** OpenAI expanded the GPT-6 family beyond Astra with **GPT-6 Sol** and **GPT-6 Luna**, trained with similar methods as Astra to bring its professional-work, factuality, coding, computer-use, and alignment gains to cheaper, faster models. Both are priced **50% below** the GPT-5.6 promotional rates they replace. **There is no GPT-6 Terra** — GPT-5.6 Terra remains the mid-tier model, unchanged and un-replaced (see below).
+
+| Field | GPT-6 Sol | GPT-6 Luna |
+|---|---|---|
+| **Model ID** | `gpt-6-sol` | `gpt-6-luna` |
+| **Released** | September 22, 2026 | September 22, 2026 |
+| **Status** | ✅ Active — replaces GPT-5.6 Sol as the "balance intelligence and cost" tier | ✅ Active — replaces GPT-5.6 Luna as the cost-sensitive, high-volume tier |
+| **Input (short ctx <272K)** | 📉 **$2.00** / MTok *(was GPT-5.6 Sol's $4.00 promo — 50% cheaper)* | 📉 **$0.10** / MTok *(was GPT-5.6 Luna's $0.20 — 50% cheaper)* |
+| **Cached input (short)** | $0.20 / MTok | $0.01 / MTok |
+| **Cache write (short, 1.25×)** | $2.50 / MTok | $0.125 / MTok |
+| **Output (short ctx)** | 📉 **$10.00** / MTok *(was $20.00 — 50% cheaper)* | 📉 **$0.50** / MTok *(was $1.20 — 58% cheaper)* |
+| **Input (long ctx >272K)** | $4.00 / MTok | $0.20 / MTok |
+| **Cached input (long)** | $0.40 / MTok | $0.02 / MTok |
+| **Cache write (long)** | $5.00 / MTok | $0.25 / MTok |
+| **Output (long ctx)** | $15.00 / MTok | $0.75 / MTok |
+| **Fast mode (short: input/cached/write/output)** | $4.00 / $0.40 / $5.00 / $20.00 | $0.20 / $0.02 / $0.25 / $1.00 |
+| **Fast mode (long: input/cached/write/output)** | $8.00 / $0.80 / $10.00 / $30.00 | $0.40 / $0.04 / $0.50 / $1.50 |
+| **Batch/Flex (short input/output)** | $1.00 / $5.00 | $0.05 / $0.25 |
+| **Batch/Flex (long input/output)** | $2.00 / $7.50 | $0.10 / $0.375 |
+| **Context window** | 1,050,000 tokens | 1,050,000 tokens |
+| **Max output** | 128,000 tokens | 128,000 tokens |
+| **Knowledge cutoff** | April 20, 2026 | May 18, 2026 |
+| **Reasoning effort** | `none`, `low`, `medium`, `high`, `xhigh`, `max` | `none`, `low`, `medium`, `high`, `xhigh`, `max` |
+| **Tools** | Functions, web search, file search, computer use — full Responses API toolset | Functions, web search, file search, computer use — full Responses API toolset |
+| **Prompt caching** | Improved default cache-hit rates; eligible shared prefixes reused within a **30-minute window**; `configuration_update` lets you change reasoning effort or tool availability mid-conversation without breaking the cache | Same improved caching as Sol |
+| **Availability** | ChatGPT Work, Codex (Plus/Pro/Business/Enterprise/Edu) · OpenAI API (`gpt-6-sol`) | ChatGPT Work, Codex, ChatGPT Free/Go desktop app · OpenAI API (`gpt-6-luna`) |
+| **Notable** | On Zapier's AutomationBench, beats Claude Opus 5 (max effort) at **9% of its cost per task** at `xhigh` effort; on Agents' Last Exam, scores 56.4% at max effort, beating Opus 5's best score at 60% lower cost; on DeepSWE v1.1, scores 68.8% at max effort — within 1.1 points of Claude Fable 5's best score at ~80% lower cost per task | At `high` effort, improves 5.4 points over GPT-5.6 Luna at 58% lower cost per task; on DeepSWE v1.1 at max effort scores 66.6% (comparable to Claude Opus 5/Fable 5 at medium effort) while costing 93–96% less per task |
+
+> 🔗 Source: [openai.com/index/introducing-gpt-6-sol-and-luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/) · [openai.com/index/better-prompt-caching-for-gpt-6](https://openai.com/index/better-prompt-caching-for-gpt-6/) · `developers.openai.com/api/docs/pricing` (verified September 22, 2026)
+
+---
+
+### GPT-5.6 — Sol / Terra / Luna *(🔄 Sol and Luna replaced by GPT-6 Sol/Luna — Terra still the active, un-replaced mid-tier)*
+
+> **GPT-5.6 reached General Availability on July 9, 2026.** As of **September 22, 2026**, **GPT-6 Sol and GPT-6 Luna have replaced GPT-5.6 Sol and GPT-5.6 Luna** as OpenAI's recommended tiers at those price points (see cards above) — both GPT-5.6 Sol and GPT-5.6 Luna remain fully API-accessible at their prior (promotional) prices, with no announced shutdown date. **GPT-5.6 Terra is unaffected — there is no GPT-6 Terra yet**, and Terra remains the live, un-replaced "balance intelligence and cost" model (still labeled "Default" on OpenAI's model catalog).
 
 | Field | GPT-5.6 Sol | GPT-5.6 Terra | GPT-5.6 Luna |
 |---|---|---|---|
 | **Model ID** | `gpt-5.6-sol` | `gpt-5.6-terra` | `gpt-5.6-luna` |
-| **Status** | ✅ Active — 🔄 Replaced by GPT-6 Astra as flagship; 📉 promotional pricing | ✅ Active — Best price/performance | ✅ Active — Fastest/cheapest tier |
+| **Status** | ✅ Active — 🔄 Replaced by GPT-6 Sol; still active (also backs the `gpt-daybreak-blue-latest` alias and `gpt-5.6-cyber` pricing baseline) | ✅ Active — **Default / mid-tier; no GPT-6 equivalent yet** | ✅ Active — 🔄 Replaced by GPT-6 Luna; still active |
 | **Input (short ctx <~270K)** | 📉 **$4.00** / MTok *(was $5.00; promo thru ≥ Nov 21, 2026)* | $2.00 / MTok | $0.20 / MTok |
 | **Cached input (short)** | 📉 **$0.40** / MTok *(was $0.50)* | $0.20 / MTok | $0.02 / MTok |
 | **Cache write (short, 1.25×)** | 📉 **$5.00** / MTok *(was $6.25)* | $2.50 / MTok | $0.25 / MTok |
@@ -128,14 +175,14 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 **Availability by plan:**
 | Surface | Access |
 |---|---|
-| ChatGPT Plus / Pro / Business / Enterprise | Sol via medium+ reasoning effort (now secondary to GPT-6 Astra as flagship) |
-| ChatGPT Free / Go | Luna (default since Aug 6, 2026 — unlimited text chats, "Think" button) |
-| ChatGPT Work & Codex | Choice of Sol, Terra, or Luna with configurable effort |
-| API | Self-serve — Sol, Terra, and Luna all reachable directly |
+| ChatGPT Plus / Pro / Business / Enterprise | GPT-6 Sol / Luna now recommended (see cards above); GPT-5.6 Sol/Terra/Luna remain reachable |
+| ChatGPT Free / Go | GPT-6 Luna (desktop app) / GPT-5.6 Luna (default since Aug 6, 2026 — unlimited text chats, "Think" button) |
+| ChatGPT Work & Codex | Choice of GPT-6 Sol/Luna, GPT-5.6 Sol/Terra/Luna, with configurable effort |
+| API | Self-serve — Sol, Terra, and Luna (both GPT-6 and GPT-5.6 generations) all reachable directly |
 
-**Notable:** GPT-5.6 Sol still holds strong benchmark standing (e.g., DeepSWE v1.1 72.7%, OSWorld 2.0 65.7%) and, at its new **$4.00/$20.00** promotional price, is now meaningfully cheaper than before while GPT-6 Astra takes over as the premium/flagship option at $10.00/$50.00. **Terra remains the price/performance story of the release** at less than a fifth of Astra's price. Luna covers high-volume classification/extraction/tagging work at the bottom of the ladder and is also the default model powering ChatGPT's free tier.
+**Notable:** GPT-5.6 Sol still holds strong benchmark standing and remains available at its **$4.00/$20.00** promotional price, but **GPT-6 Sol at $2.00/$10.00 is now the recommended replacement** at half the price with Astra-derived improvements. **GPT-5.6 Terra remains the price/performance story of the lineup** at $2.00/$12.00 — un-replaced and still labeled "Default" on OpenAI's model catalog. GPT-6 Luna undercuts GPT-5.6 Luna by roughly half on both input and output and is now the default model powering ChatGPT's free tier (desktop app).
 
-> 🔗 Source: [openai.com/index/gpt-5-6/](https://openai.com/index/gpt-5-6/) · `developers.openai.com/api/docs/pricing` (re-verified September 21, 2026 — unchanged)
+> 🔗 Source: [openai.com/index/gpt-5-6/](https://openai.com/index/gpt-5-6/) · [openai.com/index/introducing-gpt-6-sol-and-luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/) · `developers.openai.com/api/docs/pricing` (re-verified September 22, 2026 — Terra unchanged; Sol/Luna now legacy-priced alongside their GPT-6 successors)
 
 ---
 
@@ -781,15 +828,27 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### 🔄 REPLACED — GPT-5.6 Sol *(Replaced as flagship by GPT-6 Astra, Sept 3, 2026 — still fully active, now cheaper)*
+### 🔄 REPLACED — GPT-5.6 Sol *(Replaced by GPT-6 Sol, Sept 22, 2026 — still fully active)*
 
 | Field | Value |
 |---|---|
 | **Model ID** | `gpt-5.6-sol` / alias `gpt-5.6` |
-| **Status** | 🔄 REPLACED as flagship by GPT-6 Astra; still fully active at a **lower, promotional price** |
-| **Input price (short ctx)** | $4.00 / MTok *(was $5.00)* |
-| **Output price (short ctx)** | $20.00 / MTok *(was $30.00)* |
-| **Migration** | No migration needed — Sol remains a strong, now cheaper mid-premium option. Upgrade to **GPT-6 Astra** ($10/$50) for maximum capability, especially computer use and cybersecurity work |
+| **Status** | 🔄 REPLACED by GPT-6 Sol; still fully active — also backs the `gpt-daybreak-blue-latest` alias and the `gpt-5.6-cyber` pricing baseline |
+| **Input price (short ctx)** | $4.00 / MTok |
+| **Output price (short ctx)** | $20.00 / MTok |
+| **Migration** | → **GPT-6 Sol** (`gpt-6-sol`, $2.00/$10.00) — 50% cheaper with Astra-derived professional-work, factuality, and coding improvements |
+
+---
+
+### 🔄 REPLACED — GPT-5.6 Luna *(Replaced by GPT-6 Luna, Sept 22, 2026 — still fully active)*
+
+| Field | Value |
+|---|---|
+| **Model ID** | `gpt-5.6-luna` |
+| **Status** | 🔄 REPLACED by GPT-6 Luna; still fully active |
+| **Input price** | $0.20 / MTok |
+| **Output price** | $1.20 / MTok |
+| **Migration** | → **GPT-6 Luna** (`gpt-6-luna`, $0.10/$0.50) — roughly 50–58% cheaper |
 
 ---
 
@@ -869,18 +928,20 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 |---|---|
 | **Batch/Flex API** | 50% off all tokens (24 hr turnaround) |
 | **Cached input tokens** | 50–90% off depending on model |
-| **🆕 GPT-6 Astra is the new premium ceiling** | $10.00/$50.00 (short ctx) — 2.5× GPT-5.6 Sol's new promotional rate. OpenAI argues it finishes tasks in fewer tokens/retries, potentially lowering effective cost-per-task despite the higher per-token price — budget carefully and benchmark on your own workloads |
-| **📉 GPT-5.6 Sol promotional pricing** | Cut from $5.00/$30.00 to **$4.00/$20.00** (short ctx) — available at least through November 21, 2026. Now the cheapest way to access "flagship-class" GPT-5.6 |
-| **GPT-5.6 / GPT-5.5 / GPT-6 Astra long-context** | Stay under ~270–272K input tokens to avoid the 2× input / 1.5× output surcharge |
-| **🆕 gpt-5.6-cyber now priced** | $12.50/$75.00 (short ctx only) — previously unpriced; part of the Daybreak vetted-access cybersecurity program. Its predecessor `gpt-5.4-cyber` shuts down Oct 1, 2026 |
-| **🆕 Terra remains the best GPT-5.5 replacement** | GPT-5.6 Terra at $2.00/$12.00 — under half GPT-5.5's price ($5/$30) and a fifth of GPT-6 Astra's; now also the official migration target for the deprecated `o4-mini` |
-| **⚠️ o4-mini and GPT-4.1 nano are deprecated** | Both shut down **October 23, 2026** — migrate to `gpt-5.6-terra` and `gpt-5.6-luna` respectively well ahead of the deadline |
-| **⚠️ o1, o3-mini, o1-pro, gpt-image-1 also shut down Oct 23, 2026** | Migrate to `gpt-5.6-sol` (o-series) or `gpt-image-2` (image) |
+| **🆕 GPT-6 Sol and Luna are now the cheapest way into the GPT-6 family** | $2.00/$10.00 and $0.10/$0.50 respectively (short ctx) — both 50% cheaper than the GPT-5.6 promotional rates they replace |
+| **🆕 GPT-6 Astra remains the premium ceiling** | $10.00/$50.00 (short ctx) — 5× GPT-6 Sol's rate. OpenAI argues it finishes tasks in fewer tokens/retries, potentially lowering effective cost-per-task despite the higher per-token price — budget carefully and benchmark on your own workloads |
+| **📉 GPT-5.6 Sol and Luna still exist at their prior promotional prices** | $4.00/$20.00 (Sol) and $0.20/$1.20 (Luna) — no shutdown date announced, but GPT-6 Sol/Luna are the recommended, cheaper replacements |
+| **GPT-6 / GPT-5.6 / GPT-5.5 / GPT-5.4 long-context** | Stay under ~270–272K input tokens to avoid the 2× input / 1.5× output surcharge |
+| **🆕 Better GPT-6 prompt caching** | Higher default cache-hit rates, a 30-minute reuse window, and `configuration_update` to change reasoning effort/tools mid-conversation without breaking the cache — no price change, but meaningfully raises effective cache-hit rates (GitHub reports >50% fewer fresh-processed tokens) |
+| **🆕 gpt-5.6-cyber now priced** | $12.50/$75.00 (short ctx only) — previously unpriced; part of the Daybreak vetted-access cybersecurity program, still built on `gpt-5.6-sol`. Its predecessor `gpt-5.4-cyber` shuts down Oct 1, 2026 |
+| **GPT-5.6 Terra has no GPT-6 equivalent yet** | Remains OpenAI's mid-tier "Default" model at $2.00/$12.00 — still under half GPT-5.5's price ($5/$30) and a fifth of GPT-6 Astra's; also the official migration target for the deprecated `o4-mini` |
+| **⚠️ o4-mini and GPT-4.1 nano are deprecated** | Both shut down **October 23, 2026** — migrate to `gpt-5.6-terra` and `gpt-5.6-luna` (or their GPT-6 successors) respectively well ahead of the deadline |
+| **⚠️ o1, o3-mini, o1-pro, gpt-image-1 also shut down Oct 23, 2026** | Migrate to `gpt-5.6-sol`/`gpt-6-sol` (o-series) or `gpt-image-2` (image) |
 | **🆕 o3, o3-pro, and the original GPT-5 snapshots shut down Dec 11, 2026** | A distinct, later wave (notice issued June 11, 2026) — see dedicated Legacy card. Migrate `o3`/`o3-pro` traffic to `gpt-5.6-sol` well before December |
 | **🆕 GPT-5.5 leaves ChatGPT/Codex Oct 14, 2026 — API is fine** | Only ChatGPT-authenticated sessions (web/app UI, Codex-via-ChatGPT-login) are affected; API-key-based GPT-5.5 calls are unaffected and not on the Deprecations page |
-| **ChatGPT Free/Go defaults to Luna** | Free/Go consumer users get unlimited text chats on GPT-5.6 Luna plus a "Think" button — a ChatGPT product change, not an API pricing change |
+| **ChatGPT Free/Go defaults to GPT-6 Luna** | Free/Go consumer desktop-app users now get GPT-6 Luna; GPT-5.6 Luna remains the fallback default elsewhere — a ChatGPT product change, not an API pricing change |
 | **Cheap transcription option** | `gpt-transcribe` at $0.0045/min is the cheapest high-accuracy transcription model in the lineup; note `gpt-4o-transcribe`/`gpt-4o-mini-transcribe`/`whisper-1` are now deprecated (shut down Feb 26, 2027) |
-| **Regional processing** | +10% uplift for GPT-6 Astra/5.6/5.5/5.4 family data residency endpoints |
+| **Regional processing** | +10% uplift for GPT-6/5.6/5.5/5.4 family data residency endpoints |
 | **GPT-6 Astra Fast mode caveat** | Unavailable with EU data residency; no latency SLA even where available |
 | **Fine-tuning platform** | OpenAI is winding down the fine-tuning platform — no longer accessible to new users |
 | **🆕 Image models: two tiers now** | `gpt-image-2.5-sunburst`/`flare` are the new flagship ($8/$2/$30 image); `gpt-image-2` was repriced 50% cheaper ($4/$1/$15 image) and is now the value tier. Migrate off `gpt-image-1`, `gpt-image-1.5`, `gpt-image-1-mini`, and `chatgpt-image-latest` (all shutting down by Dec 1, 2026 at the latest) |
@@ -893,4 +954,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-*Sources last verified: September 21, 2026 against `developers.openai.com/api/docs/pricing`, `developers.openai.com/api/docs/models`, `developers.openai.com/api/docs/deprecations`, `developers.openai.com/api/docs/models/gpt-5.5`, `openai.com/news`, and the GPT-Live-1 / Agents API / Astra for Law launch posts. **Major updates this cycle:** (1) confirmed via the official Deprecations page that `o3`, `o3-pro`, and the original GPT-5 launch snapshot family (`gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-5-pro`, all dated `2025`) are deprecated and shut down **December 11, 2026** — a distinct, later wave from the October 23 cull, notice issued June 11, 2026; (2) GPT-5.5 will retire from ChatGPT, ChatGPT Work, and Codex on **October 14, 2026**, but the OpenAI API is explicitly unaffected; (3) "Astra for Law" launched (~Sept 17, 2026) as a GPT-6-Astra-based legal vertical solution — not a separately priced model. GPT-6 Astra and the full GPT-5.6 (Sol/Terra/Luna) pricing tables were independently re-verified and are unchanged since Sept 14. All other active and legacy model prices were re-confirmed unchanged this cycle.*
+*Sources last verified: September 22, 2026 against `developers.openai.com/api/docs/pricing`, `developers.openai.com/api/docs/models`, `developers.openai.com/api/docs/deprecations`, `developers.openai.com/api/docs/models/gpt-5.6-terra`, `openai.com/news`, and the GPT-6 Sol/Luna and prompt-caching launch posts. **Major update this cycle:** OpenAI launched **GPT-6 Sol** ($2.00/$10.00) and **GPT-6 Luna** ($0.10/$0.50) on September 22, 2026, expanding the GPT-6 family alongside Astra — both are 50%+ cheaper than the GPT-5.6 promotional rates they replace. GPT-5.6 Sol and Luna are now 🔄 REPLACED but remain fully priced and active (no shutdown date). **There is no GPT-6 Terra** — GPT-5.6 Terra ($2.00/$12.00) is unchanged and remains OpenAI's "Default" mid-tier model. OpenAI also shipped improved prompt caching for the whole GPT-6 family (higher hit rates, 30-minute reuse window, cache-preserving mid-conversation reasoning-effort changes) — a mechanics improvement, not a price change. All other active and legacy model prices confirmed unchanged since the September 21 refresh.*
