@@ -8,7 +8,9 @@ on:
 jobs:
   update-pricing:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # The agent needs 25-30 min end-to-end (research + 4 file commits); the old
+    # 20-min cap cancelled the runner while the durable session kept working.
+    timeout-minutes: 45
 
     steps:
       - name: Check out repo
@@ -27,6 +29,7 @@ jobs:
       - name: Write script
         run: |
           cat > run_agent.py <<'PY'
+          import os
           import sys
           import time
           import anthropic
@@ -44,9 +47,32 @@ jobs:
 
           client = anthropic.Anthropic()
 
+          REPO_URL = "https://github.com/Chili36/effective-invention"
+          REPO_MOUNT = "/workspace/effective-invention"
+          # Fine-grained PAT (Contents: Read and write) stored as repo secret
+          # AGENT_GITHUB_TOKEN. When present the repo is mounted into the sandbox
+          # and git push goes through Anthropic's git proxy, which injects the
+          # token at egress -- the token never enters the container. When absent
+          # we fall back to the slower MCP push-by-content path.
+          AGENT_GITHUB_TOKEN = os.environ.get("AGENT_GITHUB_TOKEN", "").strip()
+
 
           def log(msg):
               print(msg, flush=True)
+
+
+          def task_text():
+              base = ("Search for the latest 2026 pricing for Anthropic, OpenAI, and Mistral "
+                      "models, mark legacy models, and commit updated model cards to the repo.")
+              if not AGENT_GITHUB_TOKEN:
+                  return base
+              return base + (
+                  "\n\nThe repository is already cloned at %s with push access. "
+                  "Edit the markdown files in place there, then from that directory run "
+                  "`git add -A && git commit -m <message> && git push origin main`. "
+                  "Commit each provider file as soon as it is done. Do NOT push file "
+                  "contents through the GitHub MCP tool -- use git in the sandbox." % REPO_MOUNT
+              )
 
 
           def is_transient(exc):
@@ -60,13 +86,25 @@ jobs:
 
 
           def create_session():
-              session = client.beta.sessions.create(
+              kwargs = dict(
                   agent="agent_011CZwijZihnPvZcL6HjQo9F",
                   environment_id="env_01B6Hn4X4d7soRPUNnjmoT4A",
                   vault_ids=["vlt_011CZwiqKEjCEEq7PfdLYt3Y"],
                   title="Weekly pricing update",
                   betas=BETAS,
               )
+              if AGENT_GITHUB_TOKEN:
+                  kwargs["resources"] = [{
+                      "type": "github_repository",
+                      "url": REPO_URL,
+                      "mount_path": REPO_MOUNT,
+                      "authorization_token": AGENT_GITHUB_TOKEN,
+                      "checkout": {"type": "branch", "name": "main"},
+                  }]
+                  log("Mounting %s at %s (git push via proxy)." % (REPO_URL, REPO_MOUNT))
+              else:
+                  log("AGENT_GITHUB_TOKEN not set; agent will push via MCP (slower).")
+              session = client.beta.sessions.create(**kwargs)
               log("Created session %s" % session.id)
               client.beta.sessions.events.send(
                   session_id=session.id,
@@ -76,7 +114,7 @@ jobs:
                           "content": [
                               {
                                   "type": "text",
-                                  "text": "Search for the latest 2026 pricing for Anthropic, OpenAI, and Mistral models, mark legacy models, and commit updated model cards to the repo."
+                                  "text": task_text()
                               }
                           ]
                       }
@@ -223,6 +261,7 @@ jobs:
       - name: Run LLM Pricing Tracker Agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AGENT_GITHUB_TOKEN: ${{ secrets.AGENT_GITHUB_TOKEN }}
         run: |
           # Strip whitespace/newlines from the secret. GitHub secrets saved
           # with a trailing newline cause httpx.LocalProtocolError because
@@ -238,6 +277,14 @@ jobs:
       - name: Verify the agent actually committed
         if: always()
         run: |
+          # A cancelled job means the runner hit timeout-minutes (or was stopped by
+          # hand). The managed-agent session is durable and keeps running after the
+          # runner dies, so remote main usually advances a few minutes later. That is
+          # a timeout, not a credential problem -- report it as such.
+          if [ "${{ job.status }}" = "cancelled" ]; then
+            echo "::warning::Runner was cancelled before the agent finished (timeout-minutes hit?). The session keeps running server-side; check the repo for late commits and raise timeout-minutes if this recurs."
+            exit 0
+          fi
           AFTER_SHA="$(git ls-remote origin refs/heads/main | cut -f1)"
           echo "Remote main before run: ${BEFORE_SHA:-<unknown>}"
           echo "Remote main after run:  ${AFTER_SHA}"
