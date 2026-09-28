@@ -1,8 +1,8 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-09-23
+> **Last updated:** 2026-09-28
 > **Source:** https://mistral.ai/pricing · https://docs.mistral.ai/inference/pricing · https://docs.mistral.ai/getting-started/models/models_overview/ · https://docs.mistral.ai/inference/model-lifecycle · https://mistral.ai/news · https://docs.mistral.ai/resources/changelogs
-> **Scraped / verified:** 2026-09-23 — ✅ **Re-verified against the live `mistral.ai/pricing/api`, `docs.mistral.ai/inference/pricing`, and `mistral.ai/news` pages through September 23, 2026.** Every active model price (Mistral Large 3 $0.50/$1.50, Medium 3.5 $1.50/$7.50, Small 4 $0.15/$0.60, Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1/4.0, Voxtral TTS/Transcribe 2, Moderation 2 Free, Z.ai GLM-5.2/5.3, Leanstral 1.5 Free) matches the September 22 refresh byte-for-byte. Checked `mistral.ai/news` — **no new posts since the Sept 16 Mozilla partnership**; no new priced model releases, retirements, or price changes found this cycle.
+> **Scraped / verified:** 2026-09-28 — ✅ **Re-verified against the live `mistral.ai/pricing/api`, `docs.mistral.ai/inference/pricing`, and `mistral.ai/news` pages through September 28, 2026.** Every active model price (Mistral Large 3 $0.50/$1.50, Medium 3.5 $1.50/$7.50, Small 4 $0.15/$0.60, Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1/4.0, Voxtral TTS/Transcribe 2, Moderation 2 Free, Z.ai GLM-5.2/5.3, Leanstral 1.5 Free) matches the September 23 refresh byte-for-byte. Checked `mistral.ai/news` — **no new posts since the Sept 16 Mozilla partnership**; no new priced model releases, retirements, or price changes found this cycle. **Leanstral 1.5's scheduled September 30, 2026 retirement is now 2 days out** — still no successor announced.
 
 > 🆕 **September 21, 2026 refresh — key findings (still current):**
 > 1. ⚠️ **CORRECTION: Devstral 2, Devstral Small 2, and the entire Magistral family (Medium 1.0/1.1/1.2, Small 1.0/1.1/1.2) are RETIRED, not active.** Official confirmation via `docs.mistral.ai/getting-started/models/models_overview` "Deprecated & retired models" table plus third-party lifecycle tracking: these models — along with **Mistral Small 3.2** and **Mistral NeMo 12B** — were retired **July 31, 2026**, superseded by **Mistral Small 4** (`reasoning_effort: high` covers Magistral Small / Devstral Small use cases) and **Mistral Medium 3.5** (covers Magistral Medium / Devstral use cases). Prior refreshes of this tracker incorrectly carried these as "Active via `-latest` alias" — this was stale; the `-latest` aliases for these families no longer resolve to a supported model. **All moved to the Legacy/Retired section below.**
@@ -130,7 +130,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 | **Provider** | Mistral AI |
 | **Model ID** | `leanstral-1-5` |
 | **Released** | June 30, 2026 |
-| **Scheduled retirement** | September 30, 2026 (per docs.mistral.ai changelog) — now just over a week out from this refresh |
+| **Scheduled retirement** | September 30, 2026 (per docs.mistral.ai changelog) — now just **2 days** out from this refresh |
 | **Status** | ✅ Active — Labs — retirement date published |
 | **Pricing** | **Free** *(API endpoint kept highly accessible for a limited period to gather feedback)* |
 | **Context window** | 256,000 tokens |
@@ -580,7 +580,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 | **⚠️ Mistral Medium 3 / 3.1 retired August 31, 2026** | Migrate to Medium 3.5 — note this is a price increase for anyone still pinned to Medium 3's old ~$1/MTok input rate |
 | **Voxtral transcription** | Voxtral Mini Transcribe 2 (`voxtral-mini-latest`, $0.003/min, now $0.0003/min cached) for batch; Realtime ($0.006/min) for live |
 | **OCR 4.1 batch savings** | Batch-API: $2/1K pages (50% off standard $4/1K pages); cached input now $0.40/1K pages |
-| **⚠️ Leanstral 1.5 retiring Sept 30, 2026** | Free Labs endpoint (`leanstral-1-5`) — now just over a week out from this refresh; no successor announced yet |
+| **⚠️ Leanstral 1.5 retiring Sept 30, 2026** | Free Labs endpoint (`leanstral-1-5`) — now just **2 days** out from this refresh; no successor announced yet |
 | **Mistral Moderation 2 is Free** | Corrected this refresh from a previously-tracked $0.10/MTok rate |
 | **Agent API tool costs add up** | Web search and code execution are both $30/1K calls on the Agent API |
 | **Robostral Navigate / Shieldstral are unpriced** | No published API pricing — self-host only |
@@ -603,4 +603,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 
 ---
 
-*Sources last verified: September 23, 2026 against `mistral.ai/pricing/api`, `docs.mistral.ai/inference/pricing`, and `mistral.ai/news`. **This cycle:** independently re-verified every active model price on the live pricing page — all confirmed byte-for-byte unchanged since the September 22 refresh (Mistral Large 3, Medium 3.5, Small 4, Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1/4.0, Voxtral TTS/Transcribe 2, Moderation 2 Free, Z.ai GLM-5.2/5.3, Leanstral 1.5 Free). No new Mistral news posts since the Sept 16 Mozilla/Firefox partnership. No new model releases, retirements, or price changes found this cycle. **Prior cycle's major corrections (Sept 21, still in effect):** (1) Devstral 2, Devstral Small 2, and the entire Magistral family were confirmed RETIRED July 31, 2026 (previously mistracked as Active) — moved to Legacy with migration guidance to Mistral Medium 3.5 / Small 4; (2) Mistral Medium 3 and 3.1 confirmed RETIRED August 31, 2026 (previously only "Legacy"); (3) Mistral Small 3.2 and Mistral NeMo 12B confirmed RETIRED July 31, 2026.*
+*Sources last verified: September 28, 2026 against `mistral.ai/pricing/api`, `docs.mistral.ai/inference/pricing`, and `mistral.ai/news`. **This cycle:** independently re-verified every active model price on the live pricing page — all confirmed byte-for-byte unchanged since the September 23 refresh (Mistral Large 3, Medium 3.5, Small 4, Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1/4.0, Voxtral TTS/Transcribe 2, Moderation 2 Free, Z.ai GLM-5.2/5.3, Leanstral 1.5 Free). No new Mistral news posts since the Sept 16 Mozilla/Firefox partnership. No new model releases, retirements, or price changes found this cycle. Leanstral 1.5's scheduled retirement (Sept 30, 2026) is now 2 days out with still no successor announced. **Prior cycle's major corrections (Sept 21, still in effect):** (1) Devstral 2, Devstral Small 2, and the entire Magistral family were confirmed RETIRED July 31, 2026 (previously mistracked as Active) — moved to Legacy with migration guidance to Mistral Medium 3.5 / Small 4; (2) Mistral Medium 3 and 3.1 confirmed RETIRED August 31, 2026 (previously only "Legacy"); (3) Mistral Small 3.2 and Mistral NeMo 12B confirmed RETIRED July 31, 2026.*
