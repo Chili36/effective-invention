@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-09-23
+> **Last updated:** 2026-09-28
 > **Source:** https://developers.openai.com/api/docs/pricing · https://developers.openai.com/api/docs/models · https://developers.openai.com/api/docs/deprecations · https://openai.com/index/gpt-6-astra/ · https://openai.com/index/introducing-gpt-6-sol-and-luna/ · https://openai.com/index/better-prompt-caching-for-gpt-6/ · https://openai.com/news
-> **Scraped / verified:** 2026-09-23 — ✅ Re-confirmed GPT-6 Astra/Sol/Luna pricing (launched/expanded Sept 3 and Sept 22, 2026) is unchanged. 🆕 **NEW this cycle: confirmed via the official Deprecations page that the Videos API, `sora-2`, and `sora-2-pro` (+ dated snapshots) are deprecated and shut down September 24, 2026 — one day after this refresh, with no replacement model listed.** ✅ **Directly verified GPT-5.6 Terra's dedicated model page: it remains fully active and unchanged** at $2.00/$12.00 per MTok, still labeled "Default" on OpenAI's model catalog — there is still no GPT-6 Terra equivalent.
+> **Scraped / verified:** 2026-09-28 — ✅ Re-confirmed GPT-6 Astra/Sol/Luna and GPT-5.6 Terra pricing unchanged since the Sept 22–23 refresh. ✅ **The Videos API, `sora-2`, and `sora-2-pro` (+ dated snapshots) have now actually shut down on their published September 24, 2026 date** — confirmed still deprecated with no replacement listed; moved from "shutting down" to "shut down" in this refresh. 🆕 **Discovery-only: `GPT-6 Cyber` is reported (Fortune, Sept 24) to be in alpha testing via the invite-only Daybreak Red program and may be previewed at OpenAI's DevDay on September 29, 2026 (tomorrow, relative to this refresh)** — no OpenAI-published pricing, model ID, or benchmark exists yet, so per this tracker's verification-before-tracking policy it is not given a full model card. Watch for confirmation at DevDay.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–90% off** depending on model.
 
@@ -21,7 +21,9 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 >
 > 🆕 **September 22, 2026 — Better prompt caching for GPT-6.** Higher default cache-hit rates, a 30-minute eligibility window for reused shared prefixes, a new Prompt Caching Dashboard and cache-miss diagnostics tool, and the ability to change `reasoning_effort` or tools mid-conversation without breaking the cache via `configuration_update`. GitHub reports this cut the share of prompt tokens requiring fresh processing by more than 50% across billions of requests. This is a caching-mechanics improvement, not a price change.
 >
-> ⚠️ **NEW — Videos API, Sora-2, and Sora-2-Pro deprecated, shutting down September 24, 2026.** Confirmed via the official Deprecations page (notice issued March 24, 2026): the Videos API, `sora-2`, `sora-2-pro`, and their dated snapshots (`sora-2-2025-10-06`, `sora-2-2025-12-08`, `sora-2-pro-2025-10-06`) are all removed from the API on **September 24, 2026** — one day after this refresh, with **no replacement model listed**. Treat as immediately actionable for any video-generation workloads.
+> ⚠️ **Videos API, Sora-2, and Sora-2-Pro have SHUT DOWN (September 24, 2026).** Confirmed via the official Deprecations page (notice issued March 24, 2026): the Videos API, `sora-2`, `sora-2-pro`, and their dated snapshots (`sora-2-2025-10-06`, `sora-2-2025-12-08`, `sora-2-pro-2025-10-06`) were all removed from the API on **September 24, 2026**, with **no replacement model listed**. This date has now passed as of this refresh — treat any remaining integration calling these model IDs as broken.
+>
+> 🆕 **September 24, 2026 — `GPT-6 Cyber` reported in alpha (Daybreak Red), possible DevDay preview Sept 29.** Fortune and multiple outlets report OpenAI is preparing to preview a fourth cybersecurity-focused model, `GPT-6 Cyber`, succeeding `gpt-5.6-cyber` (Aug 2026), alongside an unnamed product for automated security workflows/patching. A small group of Daybreak Red customers reportedly have alpha access. **No pricing, model ID, or system card has been published by OpenAI** — discovery-only, not tracked as a card until officially confirmed.
 >
 > ⚠️ **`o3`, `o3-pro`, and the original GPT-5 launch snapshot family shut down December 11, 2026** — a separate, later wave than the October 23, 2026 cull (notice issued June 11, 2026). All map to `gpt-5.6-sol`/`terra`/`luna` per OpenAI's official mapping.
 >
@@ -210,14 +212,14 @@ Image $8.00 in / $2.00 cached / $30.00 out · Text $5.00 in / $1.25 cached (per 
 
 Image $4.00 in / $1.00 cached / $15.00 out · Text $2.50 in / $0.625 cached (per MTok)
 
-### ⚠️ Video generation — Sora-2 / Sora-2-Pro *(🆕 DEPRECATED — shuts down September 24, 2026)*
+### ⚠️ Video generation — Sora-2 / Sora-2-Pro *(❌ SHUT DOWN September 24, 2026)*
 
-> **New this refresh:** Confirmed via the official Deprecations page (notice issued March 24, 2026): the **Videos API**, `sora-2`, `sora-2-pro`, and dated snapshots `sora-2-2025-10-06`, `sora-2-2025-12-08`, `sora-2-pro-2025-10-06` are all removed from the API on **September 24, 2026**. **No replacement model is listed** ("---" for recommended replacement in OpenAI's own table). This is only one day after this refresh — treat as urgent for any workload depending on Sora-2 video generation.
+> Confirmed via the official Deprecations page (notice issued March 24, 2026): the **Videos API**, `sora-2`, `sora-2-pro`, and dated snapshots `sora-2-2025-10-06`, `sora-2-2025-12-08`, `sora-2-pro-2025-10-06` were all removed from the API on **September 24, 2026**. **No replacement model is listed** ("---" for recommended replacement in OpenAI's own table). This date has now passed — any workload still calling these model IDs is broken.
 
 | Model | Size | Price/sec (standard) | Price/sec (batch) | Shutdown |
 |---|---|---|---|---|
-| `sora-2` | 720p | $0.10 | $0.05 | **Sept 24, 2026** |
-| `sora-2-pro` | 720p/1024p/1080p | $0.30 / $0.50 / $0.70 | $0.15 / $0.25 / $0.35 | **Sept 24, 2026** |
+| `sora-2` | 720p | $0.10 | $0.05 | ❌ **Sept 24, 2026 (passed)** |
+| `sora-2-pro` | 720p/1024p/1080p | $0.30 / $0.50 / $0.70 | $0.15 / $0.25 / $0.35 | ❌ **Sept 24, 2026 (passed)** |
 
 ### Transcription Models
 
@@ -263,13 +265,13 @@ Image $4.00 in / $1.00 cached / $15.00 out · Text $2.50 in / $0.625 cached (per
 
 ## ⚠️ Legacy / Deprecated / Retired Models
 
-### 🆕 ⚠️ DEPRECATED — Videos API, Sora-2, Sora-2-Pro *(shuts down September 24, 2026)*
+### ❌ SHUT DOWN — Videos API, Sora-2, Sora-2-Pro *(shut down September 24, 2026)*
 
 | Model / system | Shutdown | Replacement |
 |---|---|---|
-| Videos API | Sept 24, 2026 | — (none listed) |
-| `sora-2` (+ dated snapshots) | Sept 24, 2026 | — (none listed) |
-| `sora-2-pro` (+ dated snapshots) | Sept 24, 2026 | — (none listed) |
+| Videos API | ❌ Sept 24, 2026 (passed) | — (none listed) |
+| `sora-2` (+ dated snapshots) | ❌ Sept 24, 2026 (passed) | — (none listed) |
+| `sora-2-pro` (+ dated snapshots) | ❌ Sept 24, 2026 (passed) | — (none listed) |
 
 ### ⚠️ DEPRECATED — GPT-5 snapshot family, o3, and o3-pro *(shuts down December 11, 2026)*
 
@@ -335,7 +337,8 @@ Image $4.00 in / $1.00 cached / $15.00 out · Text $2.50 in / $0.625 cached (per
 | **GPT-6 caching now hits more often by default** | 30-minute reuse window, `configuration_update` lets you change reasoning effort or tools mid-conversation without losing cache |
 | **GPT-6 Astra is still the premium ceiling** | $10/$50 short ctx — unchanged |
 | **GPT-5.6 Terra confirmed unchanged** | $2.00/$12.00, still "Default" on the model catalog — no GPT-6 equivalent yet; official migration target for `o4-mini` |
-| **⚠️ Sora-2 / Sora-2-Pro / Videos API shut down Sept 24, 2026** | No replacement listed — urgent for any video-generation workloads |
+| **⚠️ Sora-2 / Sora-2-Pro / Videos API SHUT DOWN Sept 24, 2026 (passed)** | No replacement listed — any workload still calling these model IDs is now broken |
+| 🆕 **GPT-6 Cyber reported in alpha (Daybreak Red), possible DevDay preview Sept 29** | No pricing/model ID published yet — discovery-only, not tracked as a card |
 | **⚠️ o3/o3-pro/GPT-5 snapshots shut down Dec 11, 2026; o1/o3-mini/o1-pro/o4-mini/gpt-4.1-nano/gpt-image-1 shut down Oct 23, 2026** | Migrate well ahead of both waves |
 | **GPT-5.5 leaves ChatGPT/Codex Oct 14, 2026 — API unaffected** | Only ChatGPT-authenticated sessions affected |
 | **Fine-tuning platform winding down** | New jobs blocked entirely from Jan 6, 2027 |
@@ -343,4 +346,4 @@ Image $4.00 in / $1.00 cached / $15.00 out · Text $2.50 in / $0.625 cached (per
 
 ---
 
-*Sources last verified: September 23, 2026 against `developers.openai.com/api/docs/pricing`, `.../api/docs/models`, `.../api/docs/models/gpt-5.6-terra`, `.../api/docs/deprecations`, and `openai.com/news`. **This cycle's finding:** confirmed a new deprecation — the Videos API, Sora-2, and Sora-2-Pro shut down September 24, 2026 with no replacement model listed. Also directly verified GPT-5.6 Terra's own model page: it is unchanged and remains the active, un-replaced "Default" mid-tier model at $2.00/$12.00. GPT-6 Astra/Sol/Luna pricing (launched Sept 3 and Sept 22, 2026) is confirmed unchanged. All other active and legacy model prices were re-confirmed unchanged.*
+*Sources last verified: September 28, 2026 against `developers.openai.com/api/docs/pricing`, `.../api/docs/models`, `.../api/docs/models/gpt-5.6-terra`, `.../api/docs/deprecations`, and `openai.com/news`. **This cycle's finding:** the Videos API, Sora-2, and Sora-2-Pro deprecation confirmed last cycle has now actually taken effect — the September 24, 2026 shutdown date has passed with no replacement model listed. Also newly discovered (not yet tracked as a priced card): reports that OpenAI is alpha-testing a fourth cybersecurity model, `GPT-6 Cyber`, with a possible preview at DevDay on September 29, 2026. GPT-6 Astra/Sol/Luna and GPT-5.6 Terra pricing (launched Sept 3 and Sept 22, 2026) is confirmed unchanged. All other active and legacy model prices were re-confirmed unchanged.*
