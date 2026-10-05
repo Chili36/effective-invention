@@ -2,8 +2,9 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-10-05 (refresh #37)
+> **Last updated:** 2026-10-05 (refresh #38 — second pass)
 > **Sources:** Official provider pricing pages — scraped/verified on date above.
+> ✅ **Refresh #38 (second pass, same day):** Re-verified Anthropic, OpenAI, and Mistral against their live pricing/model pages. No pricing or lineup changes found since refresh #37 — Claude Haiku 5.5 still unreleased, GPT-6 Cyber still unconfirmed/unpriced by OpenAI, and all Mistral deprecations (Z.ai GLM 5.2, Mixtral 8×7B/8×22B, OCR 4.0, Leanstral 1.5) hold as previously recorded.
 
 ---
 
