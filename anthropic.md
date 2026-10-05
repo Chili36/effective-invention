@@ -1,25 +1,35 @@
 # 🟠 Anthropic — Claude Model Cards
 
-> **Last updated:** 2026-09-28
-> **Source:** https://www.anthropic.com/pricing · https://claude.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing · https://www.anthropic.com/claude-opus-5-5 · https://www.anthropic.com/claude-fable-and-mythos-5-1 · https://www.anthropic.com/news
-> **Scraped / verified:** 2026-09-28 — ✅ Independently re-checked `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/models/overview`, and `anthropic.com/news` through September 28, 2026. **No new model releases, retirements, or price changes since the September 22 refresh.** Claude Opus 5.5 (launched Sept 22, 2026) remains the newest model and Anthropic's new recommended default — it replaces Claude Opus 5 at **20% cheaper tokens and 60% cheaper cache reads** ($4/$20 per MTok vs. Opus 5's $5/$25; cache reads $0.20/MTok vs. $0.50/MTok), with Anthropic estimating ~40% lower cost than Opus 5 on typical workloads. **Claude Sonnet 5.5 and Haiku 5.5 remain confirmed-but-unreleased as of Sept 28** — Anthropic's Sept 22 announcement and Mike Krieger's follow-up post still only say they will follow "in the coming weeks," with no model ID, price, benchmark, or model-card entry published yet; third-party trackers report only unverified leaks (rumored dates around Sept 30–Oct 1, an unconfirmed `claude-sonnet-5-5` string spotted behind a feature flag at a third-party client). Per this tracker's verification-before-tracking policy, no card is added until Anthropic publishes official pricing. All other active model prices (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5, Opus 5, Opus 4.8, Sonnet 5 $2/$10 permanent, Sonnet 4.6, Haiku 4.5) and the full legacy table are unchanged. Anthropic's Sept 23–26 newsroom output was research/policy-focused (Riemann zeta and N=4 super-Yang-Mills math results, a novel enzyme discovery, an Akamai cloud deal, and a D.C. Circuit ruling upholding a Pentagon supply-chain-risk designation) — none of it pricing-related.
+> **Last updated:** 2026-10-05
+> **Source:** https://www.anthropic.com/pricing · https://claude.com/pricing · https://platform.claude.com/docs/en/about-claude/models/overview · https://platform.claude.com/docs/en/about-claude/pricing · https://www.anthropic.com/news/claude-sonnet-5-5 · https://www.anthropic.com/claude-opus-5-5 · https://www.anthropic.com/claude-fable-and-mythos-5-1 · https://www.anthropic.com/news · https://endoflife.date/claude
+> **Scraped / verified:** 2026-10-05 — ✅ Re-checked `platform.claude.com/docs/en/about-claude/pricing` and `platform.claude.com/docs/en/models/overview` directly. 🆕 **September 28, 2026 — Claude Sonnet 5.5 launched**, the second model in the "Claude 5.5" family, six days after Opus 5.5. It is now Anthropic's primary Sonnet-tier model at **unchanged pricing** ($2/$10 per MTok, same as Sonnet 5) but runs 30%+ faster and scores far higher on agentic benchmarks (Terminal-Bench 4.0: 70.6% vs. Sonnet 5's 10.3%). Claude Sonnet 5 is now superseded (🔄 REPLACED, still active). 🆕 **September 30, 2026 — Anthropic deprecated Claude Sonnet 4.5**, assigning it a tentative retirement date of **November 30, 2026** on the Claude API, with `claude-sonnet-5-5` as the recommended migration target. **Claude Haiku 5.5 remains unreleased** as of this refresh — still only "in the coming weeks," with Claude Haiku 4.5's own retirement floor ("not sooner than October 15, 2026") now about 10 days out and no successor yet published.
 
-All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context (up to **97.5% off** on Fable 5.1 / Mythos 5.1 cache reads, and **95% off** on Opus 5.5 cache reads — see below).
+All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% discount** on all models. Prompt caching gives up to **90% off** on repeated input context (up to **97.5% off** on Fable 5.1 / Mythos 5.1 cache reads, and **95% off** on Opus 5.5 cache reads — see below). Claude Sonnet 5.5 uses the standard 0.1× cache-read multiplier ($0.20/MTok), not the deeper Fable/Opus 5.5 discounts.
 
-> 🆕 **September 22, 2026 — Claude Opus 5.5 launched.** The first model in Anthropic's new "Claude 5.5" family. Anthropic says it performs at the level of Claude Fable 5.1 on most work and costs 40% less to run than Opus 5 on typical workloads, thanks to lower per-token pricing plus using fewer tokens per task. It scored the best of any Claude model to date on Anthropic's automated behavioral audit (its primary alignment suite) and was evaluated pre-release by METR and Frontier Design. Claude Sonnet 5.5 and Claude Haiku 5.5 are announced to follow "in the coming weeks."
+> 🆕 **September 28, 2026 — Claude Sonnet 5.5 launched.** The second model in Anthropic's "Claude 5.5" family, released `claude-sonnet-5-5` on the Claude API, Amazon Bedrock, Google Cloud, and Microsoft Foundry. Anthropic describes it as "a faster, lower-cost complement to Claude Opus 5.5," strongest at well-scoped everyday tasks, bug fixes, and polished documents/slides/spreadsheets, with "a sharp eye for design." It is the first Sonnet-tier model to carry real-time cybersecurity safeguards, with Anthropic describing its cyber capability as comparable to Claude Opus 5.
+>
+> - **Pricing:** Unchanged from Sonnet 5 — $2.00 input / $10.00 output per MTok · Cache write (5 min): $2.50/MTok · Cache write (1 hr): $4.00/MTok · Cache read (hit): $0.20/MTok (standard 0.1× multiplier). Batch: $1.00 input / $5.00 output (50% off).
+> - **Specs:** 1,000,000-token context window · 128,000 max output tokens · adaptive thinking on by default · tool-use system prompt overhead (`auto`/`none`): 286 tokens — down from Sonnet 5's 354 tokens, matching Opus 5.5.
+> - **Performance:** Anthropic says it runs 30%+ faster than Sonnet 5 and costs up to 30% less for most work (via fewer tokens per task, not a price cut) — and that it is the first Sonnet model to beat Pokémon Red from screenshots alone, which Anthropic cites as evidence of long-horizon agentic and image-understanding gains. Anthropic's own benchmarks show Sonnet 5.5 on Terminal-Bench 4.0 at **70.6%**, ahead of both Sonnet 5 (10.3%) and Opus 5.5 (66.4%); on GDPval-AA it scores 1844 vs. Opus 5.5's 1846 — Anthropic says Opus 5.5 remains clearly stronger on complex, open-ended work.
+> - **Safety / migration notes:** Thinking blocks Sonnet 5.5 produces now work only in the account that produced them (or a linked account) — an anti-distillation measure Anthropic says is meant "to curb distillation attacks via account-switching." Migrating from Sonnet 5 is not a drop-in swap: forced tool choice (`tool_choice: any`/`tool`) behavior and effort-level calibration both change.
+> - **Availability:** Claude API (`claude-sonnet-5-5`), Claude.ai, Claude Code, Claude Cowork, Amazon Bedrock, Google Cloud, Microsoft Foundry.
+> - **Notable:** Claude Sonnet 5 is now the 🔄 **replaced** (but still active) prior-generation Sonnet. Claude Haiku 5.5 remains the only unreleased member of the Claude 5.5 family, still "in the coming weeks" per Anthropic with no ID, price, or context window published.
+>
+> 🆕 **September 30, 2026 — Claude Sonnet 4.5 deprecated; retires November 30, 2026.** Anthropic notified developers that `claude-sonnet-4-5-20250929` is deprecated on the Claude API, with a tentative retirement date of **November 30, 2026** (61 days' notice, one day above Anthropic's own 60-day minimum-notice floor) and `claude-sonnet-5-5` as the recommended replacement. The dates apply to Anthropic-operated platforms only — Amazon Bedrock and Google Cloud set their own retirement schedules for Sonnet 4.5.
+>
+> 🆕 **September 22, 2026 — Claude Opus 5.5 launched.** The first model in Anthropic's new "Claude 5.5" family. Anthropic says it performs at the level of Claude Fable 5.1 on most work and costs 40% less to run than Opus 5 on typical workloads, thanks to lower per-token pricing plus using fewer tokens per task. It scored the best of any Claude model to date on Anthropic's automated behavioral audit (its primary alignment suite) and was evaluated pre-release by METR and Frontier Design.
 >
 > - **Pricing:** $4.00 input / $20.00 output per MTok (20% cheaper than Opus 5's $5/$25) · Cache write (5 min): $5.00/MTok · Cache write (1 hr): $8.00/MTok · **Cache read (hit): $0.20/MTok — a 0.05× multiplier, 60% cheaper than Opus 5's $0.50/MTok (0.1×)**. Batch: $2.00 input / $10.00 output. Fast Mode: $8.00 input / $40.00 output (up to 2.5× speed).
 > - **Specs:** 1,000,000-token context window · 128,000 max output tokens · reliable knowledge cutoff June 2026 · thinking is **adaptive only and can no longer be disabled** (unlike Opus 5) · default reasoning effort `medium` · tool-use system prompt overhead (`auto`/`none`): 286 tokens, identical to Opus 5.
 > - **Safety:** First Opus model to launch with Fable-5.1-class safeguards on cybersecurity, biology, and anti-distillation (preserved thinking) — most cybersecurity tasks re-route to Claude Opus 4.8; advanced biology work requires the Life Sciences Verification Program. Available with zero data retention, like previous Opus models.
 > - **Benchmarks (Anthropic's own):** Terminal-Bench 4.0 66.4% (vs. Fable 5.1's 55.8%, Opus 5's 52.3%, GPT-6 Astra's 57.9%); beats GPT-6 Astra on FrontierCode at ~20% of the cost per task; matches GPT-6 Astra on Terminal-Bench 4.0 at ~40% of the cost.
 > - **Availability:** Claude API/Platform (`claude-opus-5-5`), Claude.ai, Claude Code, Claude Cowork, Amazon Web Services, Google Cloud, Microsoft Azure.
-> - **Notable:** Anthropic's `platform.claude.com/docs/en/models/overview` "Compare models" grid now recommends Opus 5.5 (not Opus 5) alongside Fable 5.1, Sonnet 5, and Haiku 4.5 as the four primary model choices. Claude Sonnet 5.5 and Haiku 5.5 are confirmed upcoming but **not yet released/priced**.
 >
 > 🆕 **September 1, 2026 — Claude Fable 5.1 and Claude Mythos 5.1 launched.** Anthropic's most-advanced models for coding and knowledge work; same underlying model, different safeguard levels. Headline price unchanged at $10/$50 per MTok, but cache-read pricing drops 75% to **$0.25/MTok (0.025×)** — Anthropic estimates this cuts typical workload costs by ~25% and highly agentic workload costs by up to ~45%. Model ID: `claude-fable-5-1`.
 >
 > ✅ **September 1, 2026 — Claude Sonnet 5's $2/$10 pricing is now PERMANENT.** The scheduled increase to $3/$15 did not occur.
 >
-> ✅ **Claude Sonnet 4 + Opus 4 RETIRED on June 15, 2026. ❌** API calls to `claude-sonnet-4-20250514` and `claude-opus-4-20250514` now return errors (except via Amazon Bedrock and Google Cloud). Migration: Sonnet 4 → Sonnet 5 or Sonnet 4.6; Opus 4 → Opus 5.5 or Opus 4.8.
+> ✅ **Claude Sonnet 4 + Opus 4 RETIRED on June 15, 2026. ❌** API calls to `claude-sonnet-4-20250514` and `claude-opus-4-20250514` now return errors (except via Amazon Bedrock and Google Cloud). Migration: Sonnet 4 → Sonnet 5.5; Opus 4 → Opus 5.5 or Opus 4.8.
 
 ---
 
@@ -54,7 +64,35 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Safety** | Fable-5.1-class safeguards on cybersecurity/biology; most cybersecurity tasks transparently fall back to Claude Opus 4.8; advanced biology work requires the Life Sciences Verification Program; first Opus model with "preserved thinking" anti-distillation protection |
 | **Notable** | Beats GPT-6 Astra on FrontierCode at ~20% of the cost per task; matches GPT-6 Astra on Terminal-Bench 4.0 (66.4%) at ~40% of the cost; ~85% fewer containment-boundary-circumvention attempts than Opus 5/Mythos 5.1 on Anthropic's alignment eval; output >30% faster than Opus 5 |
 
-> 🔜 **Claude Sonnet 5.5 and Claude Haiku 5.5** are confirmed to be following "in the coming weeks." **Still not released as of September 28, 2026 — no model ID, pricing, or benchmark published.** Unverified third-party leaks suggest a possible late-Sept/early-Oct window and a `claude-sonnet-5-5` string spotted behind a feature flag at a third-party client, but Anthropic's own docs/pricing/release-notes pages carry no entry yet — not tracked as a card until officially published.
+> 🔜 **Claude Haiku 5.5** is confirmed to be following "in the coming weeks," rounding out the Claude 5.5 family. **Still not released as of October 5, 2026 — no model ID, pricing, context window, or benchmark published.** Claude Haiku 4.5's own retirement floor ("not sooner than October 15, 2026") is now about 10 days away with no successor yet announced.
+
+---
+
+### 🆕 Claude Sonnet 5.5 *(Released September 28, 2026 — The Best Combination of Speed and Intelligence)*
+
+> The second model in Anthropic's "Claude 5.5" family, arriving six days after Opus 5.5. A faster, lower-cost complement to Opus 5.5: strongest at well-scoped everyday tasks, bug fixes, and polished documents/slides/spreadsheets. Replaces Claude Sonnet 5 as Anthropic's primary Sonnet-tier model.
+
+| Field | Value |
+|---|---|
+| **Provider** | Anthropic |
+| **Model ID** | `claude-sonnet-5-5` |
+| **Released** | September 28, 2026, 18:03 UTC |
+| **Status** | ✅ Active — **Primary Sonnet-tier model; replaces Sonnet 5** |
+| **Input price** | $2.00 / MTok *(unchanged from Sonnet 5)* |
+| **Output price** | $10.00 / MTok *(unchanged from Sonnet 5)* |
+| **Cache write (5 min)** | $2.50 / MTok |
+| **Cache write (1 hr)** | $4.00 / MTok |
+| **Cache read (cache hit)** | $0.20 / MTok *(standard 0.1× multiplier — not discounted like Fable 5.1/Opus 5.5)* |
+| **Batch input** | $1.00 / MTok *(50% off)* |
+| **Batch output** | $5.00 / MTok *(50% off)* |
+| **Context window** | 1,000,000 tokens |
+| **Max output** | 128,000 tokens |
+| **Thinking mode** | Adaptive — on by default |
+| **Tool-use system prompt (`auto`/`none`)** | 286 tokens *(down from Sonnet 5's 354 tokens; `any`/`tool` figure not yet separately published)* |
+| **Availability** | Claude API (`claude-sonnet-5-5`) · Claude.ai · Claude Code · Claude Cowork · Amazon Bedrock · Google Cloud · Microsoft Foundry |
+| **Benchmarks (Anthropic's own)** | Terminal-Bench 4.0: **70.6%** (vs. Sonnet 5's 10.3%, Opus 5.5's 66.4%) · GDPval-AA: 1844 (Opus 5.5: 1846) |
+| **Safety** | First Sonnet-tier model with real-time cybersecurity safeguards, with cyber capability Anthropic describes as comparable to Claude Opus 5; thinking blocks are now account-bound (usable only in the account that produced them, or a linked account) to curb distillation attacks via account-switching |
+| **Notable** | Anthropic says it runs 30%+ faster than Sonnet 5 and costs up to 30% less for most work (via token efficiency, not a price cut); first Sonnet model to beat Pokémon Red from screenshots alone; Anthropic's own benchmarks show it beating Opus 5.5 on agentic coding. Migrating from Sonnet 5 is **not a drop-in swap** — forced tool-choice behavior and effort-level calibration both change. |
 
 ---
 
@@ -179,14 +217,16 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 
 ---
 
-### Claude Sonnet 5 *(Default Sonnet-Tier Model — pricing permanent since Sept 1, 2026)*
+### Claude Sonnet 5 *(🔄 Replaced by Sonnet 5.5 — still active; pricing permanent since Sept 1, 2026)*
+
+> Claude Sonnet 5.5 has replaced Sonnet 5 as Anthropic's primary Sonnet-tier model at identical pricing with significant speed and benchmark gains. Sonnet 5 remains fully API-accessible with no retirement date yet.
 
 | Field | Value |
 |---|---|
 | **Provider** | Anthropic |
 | **Model ID** | `claude-sonnet-5` |
 | **Released** | June 30, 2026 |
-| **Status** | ✅ Active — **Default Sonnet-Tier Model; best combination of speed and intelligence** |
+| **Status** | ✅ Active — 🔄 Replaced by Sonnet 5.5 as the primary Sonnet-tier model (Sept 28, 2026); not sooner than June 30, 2027 retirement floor |
 | **Input price** | **$2.00 / MTok** *(permanent, not introductory)* |
 | **Output price** | **$10.00 / MTok** *(permanent, not introductory)* |
 | **Cache write (5 min)** | $2.50 / MTok |
@@ -252,11 +292,12 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Model | Extended Thinking | Adaptive Thinking | Notes |
 |---|---|---|---|
 | Claude Opus 5.5 | ❌ No | ✅ Yes (always on — cannot be disabled) | New leading model; replaces Opus 5. |
+| Claude Sonnet 5.5 | ❌ No | ✅ Yes (on by default) | Replaces Sonnet 5; same price, 30%+ faster. |
 | Claude Fable 5.1 | ❌ No | ✅ Yes (always on) | Defaults: High effort (Claude Code), Medium (Cowork/Claude.ai). |
 | Claude Mythos 5.1 | ❌ No | ✅ Yes (always on) | 🔒 Trusted access only (CVP / LSVP). |
 | Claude Opus 5 | ❌ No | ✅ Yes | 🔄 Replaced by Opus 5.5; still active. |
 | Claude Opus 4.8 | ❌ No | ✅ Yes | Fast Mode at 2× pricing. |
-| Claude Sonnet 5 | ❌ No | ✅ Yes | $2/$10 pricing permanent; effort defaults to `high`. |
+| Claude Sonnet 5 | ❌ No | ✅ Yes | 🔄 Replaced by Sonnet 5.5; $2/$10 pricing unchanged. |
 | Claude Sonnet 4.6 | ✅ Yes | ✅ Yes | Only Sonnet-tier model with Extended Thinking. |
 | Claude Haiku 4.5 | ✅ Yes | ❌ No | Fastest; extended thinking for budget reasoning. |
 
@@ -281,6 +322,7 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Model | `auto`/`none` | `any`/`tool` |
 |---|---|---|
 | Claude Opus 5.5 | 286 tokens | *(not yet separately published)* |
+| Claude Sonnet 5.5 | 286 tokens | *(not yet separately published)* |
 | Claude Opus 5 | 286 tokens | 406 tokens |
 | Claude Opus 4.8 | 290 tokens | 410 tokens |
 | Claude Opus 4.7 | 675 tokens | 804 tokens |
@@ -315,6 +357,13 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 |---|---|
 | **Pricing** | $5.00 / MTok input · $25.00 / MTok output · $0.50/MTok cache read |
 | **Migration** | → **Claude Opus 5.5** — 20% cheaper tokens, 60% cheaper cache reads |
+
+### 🔄 REPLACED — Claude Sonnet 5 *(Superseded by Sonnet 5.5, Sept 28, 2026 — still active)*
+
+| Field | Value |
+|---|---|
+| **Pricing** | $2.00 / MTok input · $10.00 / MTok output · $0.20/MTok cache read *(identical to Sonnet 5.5)* |
+| **Migration** | → **Claude Sonnet 5.5** — same price, 30%+ faster, much higher Terminal-Bench score; note forced tool-choice and effort calibration change |
 
 ### ⚠️ LEGACY — Claude Fable 5 *(Superseded by Fable 5.1)*
 
@@ -353,14 +402,15 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | **Input/Output price** | $5.00 / $25.00 per MTok |
 | **Migration** | → **Claude Opus 5.5**, **Opus 5**, or **Opus 4.8** |
 
-### ⚠️ LEGACY — Claude Sonnet 4.5
+### ⚠️ DEPRECATED — Claude Sonnet 4.5 *(Retires November 30, 2026 on the Claude API)*
 
 | Field | Value |
 |---|---|
-| **Model ID** | `claude-sonnet-4-5` |
-| **Status** | 1M context beta RETIRED April 30, 2026; max context now 200K |
+| **Model ID** | `claude-sonnet-4-5-20250929` |
+| **Status** | ⚠️ Deprecated September 30, 2026 — tentative retirement **November 30, 2026** on the Claude API (Bedrock/Google Cloud set their own schedules) |
+| **1M context beta** | RETIRED April 30, 2026; max context now 200K |
 | **Input/Output price** | $3.00 / $15.00 per MTok |
-| **Migration** | → **Claude Sonnet 5** or **Claude Sonnet 4.6** |
+| **Migration** | → **Claude Sonnet 5.5** (`claude-sonnet-5-5`), Anthropic's recommended replacement |
 
 ### ⚠️ LEGACY — Claude Opus 4.5
 
@@ -433,14 +483,15 @@ All prices are **USD per million tokens (MTok)**. Batch API gives a flat **50% d
 | Feature | Savings |
 |---|---|
 | **🆕 Opus 5.5 is now the default recommendation** | $4/$20 per MTok, 20% cheaper than Opus 5, with a 60% cheaper cache-read rate ($0.20 vs $0.50/MTok) |
+| **🆕 Sonnet 5.5 replaces Sonnet 5 at the same price** | $2/$10 per MTok, 30%+ faster, Terminal-Bench 4.0 70.6% vs Sonnet 5's 10.3% |
 | **Batch API** | 50% off input + output (all models, 24 hr turnaround) |
-| **Fable 5.1 / Opus 5.5 cache-read discounts** | Fable 5.1: $0.25/MTok (0.025×); Opus 5.5: $0.20/MTok (0.05×) — both far cheaper than the standard 0.1× multiplier |
-| **✅ Sonnet 5 pricing permanent** | $2/$10 per MTok |
-| **US-only inference (data residency)** | 1.1× pricing on Opus 4.6+, Sonnet 4.6+, Sonnet 5, Opus 5, Opus 5.5, and Fable 5.1/Mythos 5.1 |
+| **Fable 5.1 / Opus 5.5 cache-read discounts** | Fable 5.1: $0.25/MTok (0.025×); Opus 5.5: $0.20/MTok (0.05×) — both far cheaper than the standard 0.1× multiplier; Sonnet 5.5 stays on the standard 0.1× rate |
+| **⚠️ Sonnet 4.5 deprecated** | Retires November 30, 2026 on the Claude API — migrate to Sonnet 5.5 |
+| **US-only inference (data residency)** | 1.1× pricing on Opus 4.6+, Sonnet 4.6+, Sonnet 5, Sonnet 5.5, Opus 5, Opus 5.5, and Fable 5.1/Mythos 5.1 |
 | **⚠️ Sonnet 4 + Opus 4 RETIRED** | Retired June 15, 2026 ❌ on Claude API |
 | **⚠️ Opus 4.1 RETIRED** | Retired August 5, 2026 on the Claude API (still on Bedrock/Google Cloud) |
 | **Claude Managed Agents** | $0.08/session-hour runtime + standard token rates |
 
 ---
 
-*Sources last verified: September 28, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/models/overview`, `claude.com/pricing`, and `anthropic.com/news`. **This cycle:** independently re-checked all sources through September 28 — no new releases, retirements, or price changes since the September 22 refresh that introduced Claude Opus 5.5 as the new recommended default model. Claude Sonnet 5.5 and Haiku 5.5 remain announced but unreleased, with no official model ID, pricing, or model card published as of this refresh — only unverified third-party leaks exist. Anthropic's newsroom activity this cycle (Sept 23–26) was research/policy-focused, not pricing-related.*
+*Sources last verified: October 5, 2026 against `platform.claude.com/docs/en/about-claude/pricing`, `platform.claude.com/docs/en/models/overview`, `claude.com/pricing`, and `anthropic.com/news`. **This cycle:** added Claude Sonnet 5.5 (released Sept 28, 2026) as the new primary Sonnet-tier model — same $2/$10 pricing as Sonnet 5, 30%+ faster, Terminal-Bench 4.0 70.6%; Sonnet 5 moved to 🔄 REPLACED (still active). Added Claude Sonnet 4.5's new deprecation status — notified Sept 30, 2026, tentative retirement November 30, 2026 on the Claude API, migrating to Sonnet 5.5. Claude Haiku 5.5 remains unreleased, still "in the coming weeks," with Haiku 4.5's October 15, 2026 retirement floor approaching. All other active and legacy model prices re-confirmed unchanged against the official pricing table.*
