@@ -1,58 +1,42 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-09-28
-> **Source:** https://mistral.ai/pricing · https://docs.mistral.ai/inference/pricing · https://docs.mistral.ai/getting-started/models/models_overview/ · https://docs.mistral.ai/inference/model-lifecycle · https://mistral.ai/news · https://docs.mistral.ai/resources/changelogs
-> **Scraped / verified:** 2026-09-28 — ✅ **Re-verified against the live `mistral.ai/pricing/api`, `docs.mistral.ai/inference/pricing`, and `mistral.ai/news` pages through September 28, 2026.** Every active model price (Mistral Large 3 $0.50/$1.50, Medium 3.5 $1.50/$7.50, Small 4 $0.15/$0.60, Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1/4.0, Voxtral TTS/Transcribe 2, Moderation 2 Free, Z.ai GLM-5.2/5.3, Leanstral 1.5 Free) matches the September 23 refresh byte-for-byte. Checked `mistral.ai/news` — **no new posts since the Sept 16 Mozilla partnership**; no new priced model releases, retirements, or price changes found this cycle. **Leanstral 1.5's scheduled September 30, 2026 retirement is now 2 days out** — still no successor announced.
+> **Last updated:** 2026-10-05
+> **Source:** https://mistral.ai/pricing · https://docs.mistral.ai/inference/pricing · https://docs.mistral.ai/models · https://docs.mistral.ai/inference/model-lifecycle · https://docs.mistral.ai/resources/changelogs
+> **Scraped / verified:** 2026-10-05 — ✅ **Re-fetched the live `docs.mistral.ai/inference/pricing` and `docs.mistral.ai/models` pages directly.** Every active model price (Mistral Large 3 $0.50/$1.50, Medium 3.5 $1.50/$7.50, Small 4 $0.15/$0.60, Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1, Voxtral TTS/Transcribe 2, Moderation 2 Free, Z.ai GLM 5.3) is unchanged. **Three status changes found this cycle:** (1) ⚠️ **Z.ai GLM 5.2 is now deprecated**, retiring **October 31, 2026** — removed from the live pricing page, with GLM 5.3 (same $1.40/$4.40 price) as the sole active third-party model; (2) ⚠️ **Mixtral 8×7B and Mixtral 8×22B now appear in Mistral's official "Deprecated & retired models" table** — both move from this tracker's "active legacy open-weight" bucket to fully retired (no retirement date published; confirmed via `docs.mistral.ai/models`); (3) ⚠️ **OCR 4.0 is now also in the deprecated table**, fully superseded by OCR 4.1 (OCR 3 remains separately available for existing integrations, unaffected). ✅ **Leanstral 1.5's September 30, 2026 retirement has now occurred as scheduled** — confirmed via the deprecated-models table; still no successor announced.
 
 > 🆕 **September 21, 2026 refresh — key findings (still current):**
 > 1. ⚠️ **CORRECTION: Devstral 2, Devstral Small 2, and the entire Magistral family (Medium 1.0/1.1/1.2, Small 1.0/1.1/1.2) are RETIRED, not active.** Official confirmation via `docs.mistral.ai/getting-started/models/models_overview` "Deprecated & retired models" table plus third-party lifecycle tracking: these models — along with **Mistral Small 3.2** and **Mistral NeMo 12B** — were retired **July 31, 2026**, superseded by **Mistral Small 4** (`reasoning_effort: high` covers Magistral Small / Devstral Small use cases) and **Mistral Medium 3.5** (covers Magistral Medium / Devstral use cases). Prior refreshes of this tracker incorrectly carried these as "Active via `-latest` alias" — this was stale; the `-latest` aliases for these families no longer resolve to a supported model. **All moved to the Legacy/Retired section below.**
 > 2. ⚠️ **CORRECTION: Mistral Medium 3 and Medium 3.1 are RETIRED (August 31, 2026)**, not merely "Legacy" — both fully retired in favor of Mistral Medium 3.5.
-> 3. 🆕 **Z.ai GLM-5.3 added to Mistral's platform (~September 15, 2026)** — Mistral's **second** third-party hosted open model, public preview, same pricing as GLM-5.2 ($1.40/$4.40 per MTok, 1M context). New aliases `zai-glm-5` and `zai-glm-latest` now point to GLM-5.3; GLM-5.2 remains available side-by-side (not deprecated).
-> 4. 🆕 **Cached-input pricing now published for Mistral's own native models** — a first. The live pricing page now shows a **90%-off cached-input rate (0.1× multiplier)** across Mistral Large 3 ($0.05/MTok cached), Mistral Medium 3.5 ($0.15/MTok cached), Mistral Small 4 ($0.015/MTok cached), all three Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1/4.0 ($0.40/1,000 pages cached), and Voxtral Mini Transcribe 2 ($0.0003/min cached). This corrects prior refreshes' statement that "Mistral's own models do NOT offer prompt caching" — that is no longer accurate.
-> 5. 📉 **Mistral Moderation 2 is listed as Free** on the live pricing page (previously tracked at $0.10/MTok — correcting to Free).
-> 6. ℹ️ Checked `mistral.ai/news` through September 21, 2026: **Sept 16** — "Mistral and Mozilla are bringing open, private and multilingual AI to your web browser" (Firefox Smart Window partnership — product integration, non-pricing). No new priced LLM releases beyond GLM-5.3 found this cycle.
+> 3. 🆕 **Z.ai GLM-5.3 added to Mistral's platform (~September 15, 2026)** — Mistral's **second** third-party hosted open model, public preview, same pricing as GLM-5.2 ($1.40/$4.40 per MTok, 1M context). New aliases `zai-glm-5` and `zai-glm-latest` now point to GLM-5.3. **Update (Oct 5):** GLM-5.3 is now Generally Available and the platform's *only* active third-party model — GLM-5.2 was deprecated Oct 1, 2026 (see below).
+> 4. 🆕 **Cached-input pricing now published for Mistral's own native models** — a first. The live pricing page now shows a **90%-off cached-input rate (0.1× multiplier)** across Mistral Large 3 ($0.05/MTok cached), Mistral Medium 3.5 ($0.15/MTok cached), Mistral Small 4 ($0.015/MTok cached), all three Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1 ($0.40/1,000 pages cached), and Voxtral Mini Transcribe 2 ($0.0003/min cached).
+> 5. 📉 **Mistral Moderation 2 is listed as Free** on the live pricing page.
+> 6. ℹ️ Checked `mistral.ai/news` through late September 2026: **Sept 16** — "Mistral and Mozilla are bringing open, private and multilingual AI to your web browser" (Firefox Smart Window partnership — product integration, non-pricing). No new priced LLM releases beyond GLM-5.3 found.
 
 All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a **free experimentation tier** (rate-limited) — no credit card required to start. API and consumer (Vibe) subscriptions are billed **separately**. Batch API gives a flat **50% discount**; cached input tokens are now broadly available at **90% off** across both native and third-party-hosted models.
 
-> **Mistral's key differentiators:** Native EU data residency (GDPR by default) paired with GA'd regional endpoint choice (EU or US), competitive mid-tier pricing, Apache 2.0 / Modified MIT open-weight models, dedicated reasoning and coding capability now folded into Small 4 / Medium 3.5, a growing **third-party open-model marketplace** (GLM-5.2, GLM-5.3), and a 50% batch processing discount.
+> **Mistral's key differentiators:** Native EU data residency (GDPR by default) paired with GA'd regional endpoint choice (EU or US), competitive mid-tier pricing, Apache 2.0 / Modified MIT open-weight models, dedicated reasoning and coding capability now folded into Small 4 / Medium 3.5, a single actively-maintained **third-party open-model** (Z.ai GLM 5.3), and a 50% batch processing discount.
 
 ---
 
 ## ✅ Active / Recommended Models
 
-### 🆕 Z.ai GLM-5.3 *(Third-Party Open Model — Added to Mistral's Platform ~September 15, 2026)*
+### 🆕 Z.ai GLM 5.3 *(Third-Party Open Model — Now Generally Available; sole active third-party model)*
 
-> Mistral's **second** third-party hosted open model after GLM-5.2, running unmodified on Mistral's infrastructure under the same regional controls and SLA commitments as native Mistral models. Public preview.
+> Mistral's third-party hosted open model, running unmodified on Mistral's infrastructure under the same regional controls and SLA commitments as native Mistral models. Now Generally Available and the platform's **only** active third-party model, following GLM 5.2's deprecation on October 1, 2026.
 
 | Field | Value |
 |---|---|
 | **Provider** | Z.ai *(hosted on Mistral AI Studio)* |
 | **Model ID** | `zai-glm-5-3` — aliases `zai-glm-5` and `zai-glm-latest` now point to it |
 | **Added to Mistral** | ~September 15, 2026 |
-| **Status** | ✅ Active — Public Preview — **Second third-party open model on Mistral's platform** |
+| **Status** | ✅ Active — **Generally Available** — sole active third-party model on Mistral's platform |
 | **Input price** | $1.40 / MTok |
 | **Cached input price** | $0.14 / MTok *(90% off)* |
 | **Output price** | $4.40 / MTok |
 | **Context window** | 1,000,000 tokens |
 | **License** | Open |
 | **Availability** | Mistral AI Studio / La Plateforme, with EU/US Regional Endpoint choice and Priority Tier support |
-| **Notable** | Same pricing as GLM-5.2; GLM-5.2 remains available and is not deprecated. `zai-glm-latest` now resolves to 5.3 — pin `zai-glm-5-2` explicitly if you need the older snapshot |
-
----
-
-### Z.ai GLM-5.2 *(Third-Party Open Model — still active alongside GLM-5.3)*
-
-| Field | Value |
-|---|---|
-| **Provider** | Z.ai *(hosted on Mistral AI Studio)* |
-| **Model ID** | `zai-glm-5-2` |
-| **Added to Mistral** | August 11, 2026 |
-| **Status** | ✅ Active — first third-party open model on Mistral's platform; not deprecated by GLM-5.3 |
-| **Input price** | $1.40 / MTok |
-| **Cached input price** | $0.14 / MTok *(90% off)* |
-| **Output price** | $4.40 / MTok |
-| **Context window** | 1,000,000 tokens |
-| **Notable** | Specializes in long-context agentic workflows and coding. Note: the `zai-glm-latest` alias now points to GLM-5.3, not 5.2 — pin `zai-glm-5-2` if you need this exact version |
+| **Notable** | Same pricing as GLM 5.2, which it has now fully superseded. `zai-glm-latest` resolves to 5.3; pin `zai-glm-5-2` explicitly before Oct 31, 2026 if still migrating off the deprecated snapshot |
 
 ---
 
@@ -201,16 +185,16 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 | **OCR price (Batch-API)** | $2.00 / 1,000 pages *(50% off)* |
 | **Document AI price** | $5.00 / 1,000 pages |
 | **Availability** | API (Mistral Studio), Amazon SageMaker, Microsoft Foundry, self-hosted (enterprise) |
-| **Notable** | "The world's best document extraction and understanding model" per Mistral; OCR 4.0 remains available for existing integrations |
+| **Notable** | "The world's best document extraction and understanding model" per Mistral; OCR 4.0 is now fully deprecated (see Legacy section) — OCR 3 remains separately available for existing integrations |
 
 ---
 
-### ⚠️ LEGACY — OCR 4.0 *(Superseded by OCR 4.1)*
+### ⚠️ DEPRECATED — OCR 4.0 *(Now confirmed in Mistral's deprecated/retired table)*
 
 | Field | Value |
 |---|---|
-| **Model ID** | `ocr-4-0` |
-| **Status** | ⚠️ LEGACY — Superseded by OCR 4.1; available for existing integrations |
+| **Model ID** | `mistral-ocr-4-0` |
+| **Status** | ⚠️ **DEPRECATED** — now listed in `docs.mistral.ai/models`'s "Deprecated & retired models" table; fully superseded by OCR 4.1 *(upgraded this refresh from "still active for existing integrations")* |
 | **Last price** | $4.00/1K pages (standard) · $0.40/1K cached · $2.00/1K (Batch) · $5.00/1K (Document AI) — identical to 4.1 |
 | **Migration** | → **OCR 4.1** (`mistral-ocr-latest`) for confidence-score support; same price |
 
@@ -315,35 +299,11 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 
 ---
 
-### Mixtral 8x22B *(API — Legacy Open-Weight)*
-
-| Field | Value |
-|---|---|
-| **Model ID** | `open-mixtral-8x22b` |
-| **Status** | ✅ Active (API) — Legacy open-weight |
-| **Input price** | $2.00 / MTok |
-| **Output price** | $6.00 / MTok |
-| **Context window** | 65,536 tokens |
-
----
-
-### Mixtral 8x7B *(API — Legacy Open-Weight)*
-
-| Field | Value |
-|---|---|
-| **Model ID** | `open-mixtral-8x7b` |
-| **Status** | ✅ Active (API) — Legacy open-weight |
-| **Input price** | $0.70 / MTok |
-| **Output price** | $0.70 / MTok |
-| **Context window** | 32,768 tokens |
-
----
-
 ## 🌐 Regional Endpoints & Priority Tier *(GA / Public Preview — confirmed unchanged Sept 21, 2026)*
 
 | Feature | Status | Details |
 |---|---|---|
-| **Mistral Regional Endpoints** | ✅ **General Availability** | Choose EU or US inference region for supported models (including third-party models like GLM-5.2/5.3). **+10% surcharge.** |
+| **Mistral Regional Endpoints** | ✅ **General Availability** | Choose EU or US inference region for supported models (including the third-party GLM 5.3 model). **+10% surcharge.** |
 | **Mistral Priority Tier** | 🆕 **Public Preview** | Committed service levels for mission-critical workloads: custom rate limits, uptime SLA. |
 | **Cached input tokens** | 🆕 **Now broadly available** | -90% on input tokens for repeated prompts — now published for native Mistral models (Large 3, Medium 3.5, Small 4, Ministral tiers, Codestral, Codestral Embed, OCR 4.1/4.0, Voxtral Mini Transcribe 2) in addition to GLM-5.2/5.3 |
 
@@ -396,15 +356,14 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 | **Mistral Medium 3.5** | 128B (dense) | Modified MIT | Self-hosted flagship: coding + reasoning + vision |
 | **Mistral Small 4** | 119B (MoE, 6B active) | Apache 2.0 | Self-hosted multimodal reasoning + coding |
 | **Mistral Large 3 (2512)** | 675B (MoE) | Apache 2.0 | Self-hosted flagship general reasoning |
-| **Leanstral 1.5** | 119B (MoE, 6B active) | Apache 2.0 | Self-hosted Lean 4 formal proof engineering *(retiring Sept 30, 2026)* |
+| **Leanstral 1.5** | 119B (MoE, 6B active) | Apache 2.0 | *(RETIRED Sept 30, 2026 — open weights remain downloadable for self-hosting)* |
 | **Shieldstral 1.0** | 3.8B | Apache 2.0 | Self-hosted policy-adaptive text/image safety classification *(no hosted API yet)* |
 | **Voxtral Small 24B** | 24B | Apache 2.0 | Self-hosted audio understanding |
 | **Voxtral Mini Transcribe Realtime** | — | Apache 2.0 | Self-hosted real-time transcription |
 | **Voxtral TTS** | 4B | CC BY-NC 4.0 | Self-hosted TTS (non-commercial only) |
 | **OCR 4.1** | — | Premier (API) | Self-hosted document OCR (enterprise, single container) |
-| **Z.ai GLM-5.2 / GLM-5.3** | — | Open | Hosted on Mistral's platform (not self-hosted, but open-weight) — long-context agentic/coding |
-| **Mixtral 8×22B** | 141B (MoE) | Apache 2.0 | Self-hosted complex reasoning |
-| **Mixtral 8×7B** | 46.7B (MoE) | Apache 2.0 | General-purpose self-hosted |
+| **Z.ai GLM 5.3** | — | Open | Hosted on Mistral's platform (not self-hosted, but open-weight) — long-context agentic/coding; sole active third-party model (GLM 5.2 deprecated Oct 1, 2026) |
+| **Mixtral 8×22B / 8×7B** | 141B / 46.7B (MoE) | Apache 2.0 | *(RETIRED — now in Mistral's deprecated/retired table; open weights remain downloadable)* |
 | **Mistral 7B** | 7B | Apache 2.0 | Edge / on-device |
 
 > ⚠️ **Devstral 2, Devstral Small 2, and all Magistral (Medium/Small) versions are RETIRED from the hosted API (July 31, 2026)** — their open weights remain downloadable on HuggingFace for self-hosting, but Mistral itself recommends Mistral Medium 3.5 / Small 4 for hosted use going forward.
@@ -502,6 +461,52 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 
 ---
 
+### 🆕 ⚠️ DEPRECATED — Z.ai GLM 5.2 *(Retires October 31, 2026)*
+
+| Field | Value |
+|---|---|
+| **Provider** | Z.ai *(hosted on Mistral AI Studio)* |
+| **Model ID** | `zai-glm-5-2` |
+| **Status** | ⚠️ **DEPRECATED October 1, 2026 — retires October 31, 2026** *(removed from the live pricing page this refresh)* |
+| **Last price** | $1.40 / MTok input · $0.14/MTok cached · $4.40 / MTok output — identical to GLM 5.3 |
+| **Migration** | → **Z.ai GLM 5.3** (`zai-glm-5-3`) — same price, no cost impact |
+
+---
+
+### 🆕 ⚠️ RETIRED — Mixtral 8×22B *(API — now in Mistral's official deprecated/retired table)*
+
+| Field | Value |
+|---|---|
+| **Model ID** | `open-mixtral-8x22b` |
+| **Status** | ⚠️ **RETIRED** — now listed in `docs.mistral.ai/models`'s "Deprecated & retired models" table *(corrected this refresh — prior tracking listed this as still Active on the API)*; exact retirement date not separately published |
+| **Last price** | $2.00 / MTok input · $6.00 / MTok output |
+| **Migration** | → **Mistral Large 3** (`mistral-large-latest`) — open-weight successor |
+
+---
+
+### 🆕 ⚠️ RETIRED — Mixtral 8×7B *(API — now in Mistral's official deprecated/retired table)*
+
+| Field | Value |
+|---|---|
+| **Model ID** | `open-mixtral-8x7b` |
+| **Status** | ⚠️ **RETIRED** — now listed in `docs.mistral.ai/models`'s "Deprecated & retired models" table *(corrected this refresh — prior tracking listed this as still Active on the API)*; exact retirement date not separately published |
+| **Last price** | $0.70 / MTok input · $0.70 / MTok output |
+| **Migration** | → **Mistral Small 4** (`mistral-small-latest`) |
+
+---
+
+### ✅ RETIRED (confirmed) — Leanstral 1.5 *(Retired September 30, 2026 as scheduled)*
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `labs-leanstral-1-5` |
+| **Status** | ⚠️ **RETIRED September 30, 2026** — confirmed via `docs.mistral.ai/models`'s deprecated-models table *(previously tracked as "scheduled retirement," now confirmed actually occurred)* |
+| **Last price** | Free (Labs) |
+| **Migration** | No successor announced yet — route Lean 4 formal-proof workloads to Mistral Medium 3.5/Small 4 with `reasoning_effort=high` in the interim |
+
+---
+
 ### ⚠️ LEGACY — OCR 3 v25.12 *(Superseded by OCR 4 line)*
 
 | Field | Value |
@@ -523,13 +528,13 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 
 ---
 
-### ⚠️ LEGACY — Leanstral v26.03 *(🔄 Replaced by Leanstral 1.5)*
+### ⚠️ LEGACY — Leanstral v26.03 *(🔄 Replaced by Leanstral 1.5, also now retired)*
 
 | Field | Value |
 |---|---|
 | **Model ID** | `labs-leanstral-2603` |
-| **Status** | ⚠️ LEGACY — 🔄 Replaced by Leanstral 1.5; still free while accessible |
-| **Migration** | → **Leanstral 1.5** (`leanstral-1-5`) — note: also scheduled for retirement Sept 30, 2026 |
+| **Status** | ⚠️ LEGACY — 🔄 Replaced by Leanstral 1.5, which has itself now retired (Sept 30, 2026) |
+| **Migration** | No successor announced for the Leanstral line yet |
 
 ---
 
@@ -559,7 +564,6 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 | Mathstral 7B | ⚠️ LEGACY | → Mistral Small 4 (reasoning_effort=high) |
 | Mistral 7B (0.1/0.2/0.3) | ⚠️ LEGACY | → Ministral 3 3B |
 | Mistral Large / Small / Medium 1.0 | ⚠️ LEGACY | → Current generation equivalents |
-| Mixtral 8x7B / 8x22B (original) | ⚠️ LEGACY (API still active) | → Mistral Small 4 / Large 3 |
 | Mistral Moderation (24.11) | ⚠️ LEGACY | → Mistral Moderation 2 (`mistral-moderation-2603`), now Free |
 
 ---
@@ -569,23 +573,25 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 | Feature | Notes |
 |---|---|
 | **Batch API discount** | 50% off — confirmed per mistral.ai/pricing |
-| 🆕 **Prompt caching now on native Mistral models** | Large 3, Medium 3.5, Small 4, Ministral tiers, Codestral, Codestral Embed, OCR 4.1/4.0, and Voxtral Mini Transcribe 2 all now publish a 90%-off cached-input rate — no longer a GLM-5.x-only feature |
+| **Prompt caching on native Mistral models** | Large 3, Medium 3.5, Small 4, Ministral tiers, Codestral, Codestral Embed, OCR 4.1, and Voxtral Mini Transcribe 2 all publish a 90%-off cached-input rate |
 | **EU / US data residency** | Regional Endpoints GA — choose EU or US inference region (+10% surcharge) |
 | **Priority Tier (public preview)** | SLA-backed committed service levels with custom rate limits for mission-critical workloads |
 | **Free tier** | Available via La Plateforme; rate-limited; no credit card required |
-| **GLM-5.2 / GLM-5.3 for long-context agentic work** | $1.40/$4.40 per MTok, 1M context — cheaper alternative to Mistral Medium 3.5 ($1.50/$7.50) for long-context, coding-heavy workloads |
+| **🆕 GLM 5.3 is now the sole active third-party model** | $1.40/$4.40 per MTok, 1M context — GLM 5.2 deprecated Oct 1, 2026, retires Oct 31, 2026, same price migration |
 | **Classifier API fine-tuning** | Build custom classifiers from Ministral 3B ($0.10/$0.10) or 8B ($0.04/$0.04) inference |
 | **Budget reasoning** | Use Mistral Small 4 with `reasoning_effort=high` ($0.15/$0.60) — now the *only* supported reasoning-dial option since Magistral Small's retirement |
 | **⚠️ Devstral and Magistral are retired from the hosted API** | Both families (all versions) retired July 31, 2026. Route Devstral/Magistral-tier traffic to Mistral Medium 3.5 or Small 4 with `reasoning_effort` set appropriately |
 | **⚠️ Mistral Medium 3 / 3.1 retired August 31, 2026** | Migrate to Medium 3.5 — note this is a price increase for anyone still pinned to Medium 3's old ~$1/MTok input rate |
+| **🆕 Mixtral 8×7B / 8×22B now RETIRED** | Both confirmed in Mistral's deprecated/retired table this refresh — migrate to Mistral Small 4 / Large 3 |
+| **🆕 OCR 4.0 now DEPRECATED** | Fully superseded by OCR 4.1 at the same price; OCR 3 remains separately available for existing integrations |
 | **Voxtral transcription** | Voxtral Mini Transcribe 2 (`voxtral-mini-latest`, $0.003/min, now $0.0003/min cached) for batch; Realtime ($0.006/min) for live |
 | **OCR 4.1 batch savings** | Batch-API: $2/1K pages (50% off standard $4/1K pages); cached input now $0.40/1K pages |
-| **⚠️ Leanstral 1.5 retiring Sept 30, 2026** | Free Labs endpoint (`leanstral-1-5`) — now just **2 days** out from this refresh; no successor announced yet |
-| **Mistral Moderation 2 is Free** | Corrected this refresh from a previously-tracked $0.10/MTok rate |
+| **✅ Leanstral 1.5 RETIRED September 30, 2026** | Retirement occurred as scheduled; no successor announced yet |
+| **Mistral Moderation 2 is Free** | Confirmed unchanged on the live pricing page |
 | **Agent API tool costs add up** | Web search and code execution are both $30/1K calls on the Agent API |
 | **Robostral Navigate / Shieldstral are unpriced** | No published API pricing — self-host only |
-| **🆕 €3B Series D funding round** | September 8, 2026 — company milestone, no pricing impact |
-| **🆕 Mistral x Mozilla (Firefox)** | September 16, 2026 — browser integration partnership, no pricing impact |
+| **€3B Series D funding round** | September 8, 2026 — company milestone, no pricing impact |
+| **Mistral x Mozilla (Firefox)** | September 16, 2026 — browser integration partnership, no pricing impact |
 
 ---
 
@@ -603,4 +609,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 
 ---
 
-*Sources last verified: September 28, 2026 against `mistral.ai/pricing/api`, `docs.mistral.ai/inference/pricing`, and `mistral.ai/news`. **This cycle:** independently re-verified every active model price on the live pricing page — all confirmed byte-for-byte unchanged since the September 23 refresh (Mistral Large 3, Medium 3.5, Small 4, Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1/4.0, Voxtral TTS/Transcribe 2, Moderation 2 Free, Z.ai GLM-5.2/5.3, Leanstral 1.5 Free). No new Mistral news posts since the Sept 16 Mozilla/Firefox partnership. No new model releases, retirements, or price changes found this cycle. Leanstral 1.5's scheduled retirement (Sept 30, 2026) is now 2 days out with still no successor announced. **Prior cycle's major corrections (Sept 21, still in effect):** (1) Devstral 2, Devstral Small 2, and the entire Magistral family were confirmed RETIRED July 31, 2026 (previously mistracked as Active) — moved to Legacy with migration guidance to Mistral Medium 3.5 / Small 4; (2) Mistral Medium 3 and 3.1 confirmed RETIRED August 31, 2026 (previously only "Legacy"); (3) Mistral Small 3.2 and Mistral NeMo 12B confirmed RETIRED July 31, 2026.*
+*Sources last verified: October 5, 2026 against `docs.mistral.ai/inference/pricing` and `docs.mistral.ai/models`. **This cycle:** re-verified every active model price — all confirmed unchanged. Three status changes: (1) Z.ai GLM 5.2 deprecated Oct 1, 2026, retiring Oct 31, 2026, superseded by GLM 5.3 (now the platform's sole active third-party model, same price); (2) Mixtral 8×7B and Mixtral 8×22B confirmed RETIRED — both now appear in Mistral's official deprecated/retired table, correcting prior tracking that listed them as still Active; (3) OCR 4.0 confirmed DEPRECATED, fully superseded by OCR 4.1 (OCR 3 remains separately available). Leanstral 1.5's scheduled September 30, 2026 retirement has now been confirmed to have occurred, with still no successor announced. **Prior cycle's major corrections (Sept 21, still in effect):** (1) Devstral 2, Devstral Small 2, and the entire Magistral family were confirmed RETIRED July 31, 2026 (previously mistracked as Active) — moved to Legacy with migration guidance to Mistral Medium 3.5 / Small 4; (2) Mistral Medium 3 and 3.1 confirmed RETIRED August 31, 2026 (previously only "Legacy"); (3) Mistral Small 3.2 and Mistral NeMo 12B confirmed RETIRED July 31, 2026.*
