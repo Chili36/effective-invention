@@ -1,8 +1,8 @@
 # 🔵 Mistral AI — Model Cards
 
-> **Last updated:** 2026-10-05
-> **Source:** https://mistral.ai/pricing · https://docs.mistral.ai/inference/pricing · https://docs.mistral.ai/models · https://docs.mistral.ai/inference/model-lifecycle · https://docs.mistral.ai/resources/changelogs
-> **Scraped / verified:** 2026-10-05 (second pass) — ✅ **Re-fetched the live `docs.mistral.ai/inference/pricing` and `docs.mistral.ai/models` pages directly.** **No pricing or lineup changes found since this morning's refresh.** Every active model price (Mistral Large 3 $0.50/$1.50, Medium 3.5 $1.50/$7.50, Small 4 $0.15/$0.60, Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1, Voxtral TTS/Transcribe 2, Moderation 2 Free, Z.ai GLM 5.3) remains unchanged. Re-confirmed status: (1) ⚠️ Z.ai GLM 5.2 remains deprecated, retiring **October 31, 2026**, with GLM 5.3 (same $1.40/$4.40 price) as the sole active third-party model; (2) ⚠️ Mixtral 8×7B and Mixtral 8×22B remain in Mistral's official "Deprecated & retired models" table; (3) ⚠️ OCR 4.0 remains in the deprecated table, fully superseded by OCR 4.1. ✅ Leanstral 1.5's September 30, 2026 retirement remains in effect — still no successor announced.
+> **Last updated:** 2026-10-07
+> **Source:** https://mistral.ai/pricing · https://docs.mistral.ai/inference/pricing · https://docs.mistral.ai/models · https://docs.mistral.ai/inference/model-lifecycle · https://mistral.ai/news/mistral-large-4/ · https://docs.mistral.ai/resources/changelogs
+> **Scraped / verified:** 2026-10-07 — ✅ **Re-fetched the live `docs.mistral.ai/inference/pricing` page directly.** 🆕 **October 6, 2026 — Mistral Large 4 ("ML4" / "le Chonk") launched in public preview** — Mistral's largest model to date: a 1-trillion-parameter (1.05T), natively multimodal, hybrid instruct-and-reasoning MoE with 49B active parameters and a 1,000,000-token context window, natively fluent in 160+ languages. **Preview API pricing is promotional/launch pricing — 50% off list:** $0.68/MTok input · $0.07/MTok cached · $2.09/MTok output (list price: $1.36 / $0.14 / $4.18). Available today via Mistral Studio (`mistral-large-4-0`) only — **not yet open-weight**; Mistral plans to release the weights **October 27, 2026**. Mistral positions it as state-of-the-art among open-weight models on cybersecurity (82% on a vulnerability-reproduction test, the highest of any model tested; 93% on Cybench), finance, and legal benchmarks, and says several closed frontier models (including Claude Opus 5.5 and GPT-6 Astra) score near zero on the same cyber test because they refuse the task. Mistral Large 3 remains Mistral's actively-recommended **open-weight** flagship until ML4's weights ship. ✅ **Every other active model price re-confirmed unchanged**: Mistral Large 3 ($0.50/$1.50), Medium 3.5 ($1.50/$7.50), Small 4 ($0.15/$0.60), Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1, Voxtral TTS/Transcribe 2, Moderation 2 (Free), Z.ai GLM 5.3 ($1.40/$4.40). Re-confirmed status: (1) ⚠️ Z.ai GLM 5.2 remains deprecated, retiring **October 31, 2026**; (2) ⚠️ Mixtral 8×7B and Mixtral 8×22B remain retired; (3) ⚠️ OCR 4.0 remains deprecated; Leanstral 1.5's September 30, 2026 retirement remains in effect.
 
 > 🆕 **September 21, 2026 refresh — key findings (still current):**
 > 1. ⚠️ **CORRECTION: Devstral 2, Devstral Small 2, and the entire Magistral family (Medium 1.0/1.1/1.2, Small 1.0/1.1/1.2) are RETIRED, not active.** Official confirmation via `docs.mistral.ai/getting-started/models/models_overview` "Deprecated & retired models" table plus third-party lifecycle tracking: these models — along with **Mistral Small 3.2** and **Mistral NeMo 12B** — were retired **July 31, 2026**, superseded by **Mistral Small 4** (`reasoning_effort: high` covers Magistral Small / Devstral Small use cases) and **Mistral Medium 3.5** (covers Magistral Medium / Devstral use cases). Prior refreshes of this tracker incorrectly carried these as "Active via `-latest` alias" — this was stale; the `-latest` aliases for these families no longer resolve to a supported model. **All moved to the Legacy/Retired section below.**
@@ -19,6 +19,29 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 ---
 
 ## ✅ Active / Recommended Models
+
+### 🆕 Mistral Large 4 *("ML4" / "le Chonk" — Public Preview, Released October 6, 2026)*
+
+> Mistral's largest and most capable model to date, and the first step on the roadmap funded by its €3B Series D. A natively multimodal, hybrid instruct-and-reasoning MoE positioned as the strongest open-weight model developed outside China, with particular emphasis on cybersecurity, finance, and legal/knowledge work. **Public preview only — weights are not yet released** (promised October 27, 2026); the live API price shown below is **introductory/promotional (50% off list)**.
+
+| Field | Value |
+|---|---|
+| **Provider** | Mistral AI |
+| **Model ID** | `mistral-large-4-0` |
+| **Released** | October 6, 2026 (public preview) |
+| **Status** | 🆕 Active — **Public preview**; open weights due **October 27, 2026** |
+| **Input price (promo / list)** | $0.68 / MTok *(list price $1.36/MTok)* |
+| **Cached input price (promo / list)** | $0.07 / MTok *(list price $0.14/MTok)* |
+| **Output price (promo / list)** | $2.09 / MTok *(list price $4.18/MTok)* |
+| **Context window** | 1,000,000 tokens |
+| **Parameters** | 1 trillion total (1.05T per some reporting), 49B active (granular MoE) + 1.6B-parameter vision encoder |
+| **Modalities** | Text, native image input (multimodal), 160+ languages including all official EU languages |
+| **License** | Not yet open — preview API only; Apache-2.0-style open weights planned for Oct 27, 2026 |
+| **Availability** | Mistral Studio / La Plateforme (preview API) only — not yet on self-hosted infrastructure |
+| **Notable** | Mistral reports 82% on a real-vulnerability reproduction/patch test (highest of any model tested, vs. near-zero for several closed frontier models including Claude Opus 5.5 and GPT-6 Astra, which refuse the task) and 93% on Cybench; 61.7% on DeepSWE v1.1; ranks top-5 globally on the Artificial Analysis Cyber Index; trained from scratch on 3,800 NVIDIA Grace Blackwell GPUs in Mistral's own EU datacenters; RL training is still in progress and the model "continues to improve rapidly" |
+| **Cyber/defense access** | Reduced-moderation, expanded-cyber-capability variant available to vetted cybersecurity partners and state authorities during red-teaming |
+
+---
 
 ### 🆕 Z.ai GLM 5.3 *(Third-Party Open Model — Now Generally Available; sole active third-party model)*
 
@@ -353,6 +376,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 
 | Model | Parameters | License | Best For |
 |---|---|---|---|
+| 🆕 **Mistral Large 4 ("le Chonk")** | 1T total (1.05T), 49B active (MoE) | 🔜 Not yet open — API preview only | Preview-only flagship; open weights due **October 27, 2026** |
 | **Mistral Medium 3.5** | 128B (dense) | Modified MIT | Self-hosted flagship: coding + reasoning + vision |
 | **Mistral Small 4** | 119B (MoE, 6B active) | Apache 2.0 | Self-hosted multimodal reasoning + coding |
 | **Mistral Large 3 (2512)** | 675B (MoE) | Apache 2.0 | Self-hosted flagship general reasoning |
@@ -572,6 +596,7 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 
 | Feature | Notes |
 |---|---|
+| 🆕 **Mistral Large 4 preview pricing is 50% off list** | Promo: $0.68/$0.07 cached/$2.09 per MTok vs. list $1.36/$0.14/$4.18 — confirm which rate applies before budgeting a production workload; preview-only, not yet open-weight (weights due Oct 27, 2026) |
 | **Batch API discount** | 50% off — confirmed per mistral.ai/pricing |
 | **Prompt caching on native Mistral models** | Large 3, Medium 3.5, Small 4, Ministral tiers, Codestral, Codestral Embed, OCR 4.1, and Voxtral Mini Transcribe 2 all publish a 90%-off cached-input rate |
 | **EU / US data residency** | Regional Endpoints GA — choose EU or US inference region (+10% surcharge) |
@@ -609,4 +634,4 @@ All prices are **USD per million tokens (MTok)** unless noted. Mistral offers a 
 
 ---
 
-*Sources last verified: October 5, 2026 (second pass, same day) against `docs.mistral.ai/inference/pricing` and `docs.mistral.ai/models`. **This re-verification pass:** re-checked every active model price — all confirmed unchanged since the morning's refresh. Re-confirmed Z.ai GLM 5.2's October 31, 2026 retirement, Mixtral 8×7B/8×22B retired status, OCR 4.0 deprecated status, and Leanstral 1.5's completed September 30, 2026 retirement (still no successor announced). **Prior cycle's major corrections (Sept 21, still in effect):** (1) Devstral 2, Devstral Small 2, and the entire Magistral family were confirmed RETIRED July 31, 2026 (previously mistracked as Active) — moved to Legacy with migration guidance to Mistral Medium 3.5 / Small 4; (2) Mistral Medium 3 and 3.1 confirmed RETIRED August 31, 2026 (previously only "Legacy"); (3) Mistral Small 3.2 and Mistral NeMo 12B confirmed RETIRED July 31, 2026.*
+*Sources last verified: October 7, 2026 against `docs.mistral.ai/inference/pricing`, `docs.mistral.ai/models`, and `mistral.ai/news/mistral-large-4/`. **This refresh:** Mistral Large 4 ("le Chonk") launched in public preview October 6, 2026 — a 1T-parameter (49B active) natively multimodal hybrid instruct/reasoning MoE with a 1M-token context window, priced at promotional rates of $0.68/$0.07 cached/$2.09 per MTok (list price $1.36/$0.14/$4.18); open weights are not yet released and are due October 27, 2026. Every other active model price re-checked and confirmed unchanged: Mistral Large 3 ($0.50/$1.50), Medium 3.5 ($1.50/$7.50), Small 4 ($0.15/$0.60), Ministral 3 tiers, Codestral, Codestral Embed, OCR 4.1, Voxtral TTS/Transcribe 2, Moderation 2 (Free), and Z.ai GLM 5.3 ($1.40/$4.40). Re-confirmed Z.ai GLM 5.2's October 31, 2026 retirement, Mixtral 8×7B/8×22B retired status, OCR 4.0 deprecated status, and Leanstral 1.5's completed September 30, 2026 retirement (still no successor announced).*
