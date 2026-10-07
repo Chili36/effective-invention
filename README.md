@@ -2,11 +2,12 @@
 
 Up-to-date pricing and specifications for large language models from **Anthropic**, **OpenAI**, **Google Gemini**, **Mistral AI**, and top **OpenRouter picks**.
 
-> **Last updated:** 2026-10-05 (refresh #38 — second pass)
+> **Last updated:** 2026-10-07 (refresh #39)
 > **Sources:** Official provider pricing pages — scraped/verified on date above.
-> ✅ **Refresh #38 (second pass, same day):** Re-verified Anthropic, OpenAI, and Mistral against their live pricing/model pages. No pricing or lineup changes found since refresh #37 — Claude Haiku 5.5 still unreleased, GPT-6 Cyber still unconfirmed/unpriced by OpenAI, and all Mistral deprecations (Z.ai GLM 5.2, Mixtral 8×7B/8×22B, OCR 4.0, Leanstral 1.5) hold as previously recorded.
+> ✅ **Refresh #39:** Re-verified Anthropic, OpenAI, and Mistral against their live pricing/model pages. 🆕 **Claude Haiku 5.5 launched** (Oct 7) — replaces Haiku 4.5 with tiered $0.10/$0.50 (≤100K tokens) pricing and a 1M-token context window. 🆕 **Mistral Large 4 ("le Chonk") launched in public preview** (Oct 6) — a 1T-parameter open-weight-bound flagship at promotional pricing, weights due Oct 27, 2026. OpenAI pricing confirmed unchanged; new Decisions API (public beta) noted.
 
 ---
+
 
 ## 📋 Quick-Reference Index — Active Models
 
@@ -22,12 +23,14 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | **Claude Opus 4.8** *(🔄 replaced by Opus 5 — still active)* | $5.00 | $25.00 | **1M tokens** | 128k sync / 300k Batch | API, AWS Bedrock (Messages API), Vertex AI, MS Foundry (200k ctx) |
 | **Claude Sonnet 5** *(🔄 replaced by Sonnet 5.5 — still active)* | $2.00 | $10.00 | **1M tokens** | 128k sync / 300k Batch | API, Claude.ai, Claude Code, AWS Bedrock, Google Cloud, MS Foundry |
 | **Claude Sonnet 4.6** *(🔄 replaced by Sonnet 5 as default)* | $3.00 | $15.00 | **1M tokens** | 64k sync / 300k Batch | API, AWS Bedrock, Vertex AI, MS Foundry |
-| **Claude Haiku 4.5** | $1.00 | $5.00 | 200K tokens | 64k | API, AWS Bedrock (all regions), Vertex AI, MS Foundry |
+| 🆕 **Claude Haiku 5.5** *(Released Oct 7, 2026 — Fastest/Cheapest Small Model)* | $0.10 / $0.50* | $0.50 / $2.50* | **1M tokens** | 128k | Claude API, AWS Bedrock, Google Cloud, MS Foundry, Claude Platform on AWS |
+| **Claude Haiku 4.5** *(🔄 replaced by Haiku 5.5 — still active)* | $1.00 | $5.00 | 200K tokens | 64k | API, AWS Bedrock (all regions), Vertex AI, MS Foundry |
 
-> 💡 Batch API: 50% off · Prompt caching: up to 90% off (up to **97.5% off** cache reads on Fable 5.1/Mythos 5.1, **95% off** on Opus 5.5; Sonnet 5.5 stays on the standard 0.1× rate)
+> 💡 Batch API: 50% off · Prompt caching: up to 90% off (up to **97.5% off** cache reads on Fable 5.1/Mythos 5.1, **95% off** on Opus 5.5; Sonnet 5.5 stays on the standard 0.1× rate; Haiku 5.5 cache reads at $0.01/$0.05 per MTok)
+> *Claude Haiku 5.5 tiered pricing: first figure for prompts ≤100,000 tokens, second figure for prompts >100,000 tokens.
+> 🆕 **October 7, 2026 — Claude Haiku 5.5 launched**, Anthropic's fastest, cheapest, and most capable small model yet. Tiered pricing: $0.10/$0.50 per MTok for prompts ≤100K tokens, $0.50/$2.50 beyond that. 1,000,000-token context window (5× Haiku 4.5's 200K). Cheapest absolute cache-read rate of any Claude model ($0.01/MTok ≤100K). Haiku 4.5 is now 🔄 REPLACED (still active).
 > 🆕 **September 28, 2026 — Claude Sonnet 5.5 launched**, the second model in the "Claude 5.5" family. Same $2/$10 price as Sonnet 5, but runs 30%+ faster and scores 70.6% on Terminal-Bench 4.0 (vs. Sonnet 5's 10.3%, Opus 5.5's 66.4%). First Sonnet-tier model with real-time cybersecurity safeguards. Sonnet 5 is now 🔄 REPLACED (still active).
 > 🆕 **September 30, 2026 — Claude Sonnet 4.5 deprecated**, with a tentative retirement date of **November 30, 2026** on the Claude API; migrate to Sonnet 5.5.
-> 🔜 **Claude Haiku 5.5 remains unreleased** as of October 5 — still "in the coming weeks," with Haiku 4.5's own retirement floor (not sooner than Oct 15, 2026) approaching.
 > 🆕 **September 22, 2026 — Claude Opus 5.5 launched**, the first model in Anthropic's new "Claude 5.5" family. Replaces Claude Opus 5 as Anthropic's leading model at **$4.00/$20.00** per MTok (20% cheaper) with **$0.20/MTok** cache reads (60% cheaper than Opus 5's $0.50). Anthropic estimates ~40% lower cost than Opus 5 on typical workloads.
 > 🆕 Claude Fable 5.1 and Mythos 5.1 launched Sept 1, 2026 — same $10/$50 base price as Fable 5/Mythos 5, but cache-read pricing cut 75% (to $0.25/MTok), cutting typical workload costs by ~25% and highly agentic workload costs by up to ~45%.
 
@@ -67,7 +70,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 > *GPT-6 / GPT-5.6 / GPT-5.5 / GPT-5.5 Pro / GPT-5.4 Pro long-context pricing (>~270–272K tokens): standard × 2 input / × 1.5 output (× 2 for Pro models)
 > †GPT-5.4 tiered pricing: short ctx (<~270K) / long ctx (>~270K)
 > 🔧 **Tools pricing confirmed unchanged:** Web Search $10/1K calls (all models + reasoning-preview) or $25/1K calls (non-reasoning preview, free content tokens) · Computer Use (`computer-use-preview`) $1.50/$6.00 · Containers $0.03–$1.92 per 20-min session · File Search $0.10/GB-day storage + $2.50/1K tool calls · GPT-Live-1 sessions $0.05/min · Agents API no extra fee (now supports computer use).
-> ✅ Re-verified October 5, 2026 against the live `developers.openai.com/api/docs/pricing`, `developers.openai.com/api/docs/models`, `developers.openai.com/api/docs/models/gpt-5.6-terra`, `developers.openai.com/api/docs/deprecations`, and `openai.com/index/devday-2026-recap/`.
+> ✅ Re-verified October 7, 2026 against the live `developers.openai.com/api/docs/pricing`, `developers.openai.com/api/docs/models`, and `developers.openai.com/api/docs/deprecations` — no pricing changes. 🆕 New: **Decisions API** (public beta, Oct 5) powered by `gpt-6-luna`, billed input-tokens-only at $0.10/MTok.
 
 **Multimodal / Specialized:**
 
@@ -117,6 +120,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Model | Input ($/MTok) | Cached Input ($/MTok) | Output ($/MTok) | Context Window | Availability |
 |---|---|---|---|---|---|
+| 🆕 **Mistral Large 4** *("le Chonk" — Public Preview, Oct 6, 2026)* | $0.68 *(promo; list $1.36)* | $0.07 *(promo; list $0.14)* | $2.09 *(promo; list $4.18)* | **1M tokens** | Mistral Studio (preview API only — not yet open-weight) |
 | 🆕 **Z.ai GLM 5.3** *(now GA — sole active third-party model)* | $1.40 | $0.14 | $4.40 | **1M tokens** | Mistral AI Studio |
 | **Mistral Medium 3.5** *(Apr 29, 2026 — Flagship)* | $1.50 | $0.15 | $7.50 | 256K tokens | API |
 | **Mistral Large 3 (2512)** | $0.50 | $0.05 | $1.50 | 256K tokens | API |
@@ -136,6 +140,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | Ministral 3 8B | $0.15 | $0.015 | $0.15 | 256K tokens | API |
 | Ministral 3 3B | $0.10 | $0.01 | $0.10 | 256K tokens | API |
 
+> 🆕 **Mistral Large 4 ("le Chonk") launched in public preview October 6, 2026** — a 1-trillion-parameter (49B active), natively multimodal hybrid instruct/reasoning MoE with a 1M-token context window. API-preview-only; **not yet open-weight** (weights due October 27, 2026). Live preview pricing is **promotional (50% off list)**: $0.68/$0.07 cached/$2.09 per MTok vs. list $1.36/$0.14/$4.18.
 > ⚠️ **Z.ai GLM 5.2 is now DEPRECATED (Oct 1, 2026), retiring October 31, 2026** — removed from the live pricing page; GLM 5.3 is now the platform's sole active third-party model at the same price.
 > ⚠️ **Mixtral 8×7B and Mixtral 8×22B are now confirmed RETIRED** — both appear in Mistral's official "Deprecated & retired models" table this refresh, correcting prior tracking that listed them as still Active on the API. See Legacy section.
 > ⚠️ **OCR 4.0 is now DEPRECATED** — fully superseded by OCR 4.1 at the same price; OCR 3 remains separately available for existing integrations.
@@ -144,7 +149,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 > ⚠️ **Mistral Medium 3 and Medium 3.1 are RETIRED (August 31, 2026)**; **Mistral Small 3.2** and **Mistral NeMo 12B** are RETIRED (July 31, 2026).
 > 💡 Batch API: 50% off · EU/US Regional Endpoints (GA, +10% surcharge) · Mistral Priority Tier (public preview, SLA-backed)
 > 💡 Cached input published for Mistral's own native models (90% off) — Large 3, Medium 3.5, Small 4, Ministral tiers, Codestral, Codestral Embed, OCR 4.1, Voxtral Mini Transcribe 2.
-> ✅ **October 5, 2026 refresh:** Re-fetched the live `docs.mistral.ai/inference/pricing` and `docs.mistral.ai/models` pages directly. All active prices confirmed unchanged. Three status changes found: GLM 5.2 deprecated, Mixtral 8×7B/8×22B confirmed retired, OCR 4.0 confirmed deprecated.
+> ✅ **October 7, 2026 refresh:** Re-fetched the live `docs.mistral.ai/inference/pricing` page directly. Mistral Large 4 added (new public preview); every other active price confirmed unchanged since October 5.
 
 ---
 
@@ -168,10 +173,10 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Provider | Tier | File | Description |
 |---|---|---|---|
-| Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards — 🆕 Claude Opus 5.5 launched (Sept 22), replacing Opus 5 as leading model at $4/$20 (20% cheaper); re-verified Sept 28 with zero further changes; Sonnet 5.5/Haiku 5.5 still unreleased |
-| OpenAI | 1 | [openai.md](./openai.md) | Full model cards — 🆕 GPT-6 Sol & GPT-6 Luna launched (Sept 22), each 50% cheaper than the GPT-5.6 tier replaced; ❌ Sora-2/Sora-2-Pro/Videos API shutdown (Sept 24, 2026) now in effect; ✅ GPT-5.6 Terra confirmed unchanged; discovery-only unpriced GPT-6 Cyber report |
+| Anthropic | 1 | [anthropic.md](./anthropic.md) | Full model cards — 🆕 Claude Haiku 5.5 launched (Oct 7), replacing Haiku 4.5 with tiered $0.10/$0.50 pricing and a 1M-token context window; Opus 5.5/Sonnet 5.5 unchanged |
+| OpenAI | 1 | [openai.md](./openai.md) | Full model cards — ✅ Re-verified Oct 7, **zero pricing changes** since Oct 5 (GPT-6 Astra/6.1 Sol/6 Luna, GPT-5.6 family unchanged); 🆕 Decisions API (public beta) added; GPT-6 Cyber still unconfirmed/unpriced |
 | Google Gemini | 1 | [gemini.md](./gemini.md) | Full model cards incl. Gemini 3.5 Flash (new flagship), 3.1 Flash-Lite stable GA, 2.0 Flash deprecation |
-| Mistral AI | 1 | [mistral.md](./mistral.md) | Full model cards — re-verified Sept 28, 2026, **zero pricing changes** since Sept 23; Leanstral 1.5 retirement 2 days out |
+| Mistral AI | 1 | [mistral.md](./mistral.md) | Full model cards — 🆕 Mistral Large 4 ("le Chonk") launched in public preview (Oct 6), 1T-param flagship at promotional pricing, weights due Oct 27; all other active prices unchanged |
 | OpenRouter Picks | 2 | [openrouter-picks.md](./openrouter-picks.md) | One best-performing model per Tier 2 provider, all via OpenRouter |
 
 ---
@@ -196,6 +201,7 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 | ⚠️ Claude Opus 4.1 | **RETIRED** August 5, 2026 (Claude API — retired except Bedrock/Google Cloud) | $15.00 | $75.00 | → Claude Opus 5.5, 5, or 4.8 |
 | ⚠️ Claude Sonnet 4 | **RETIRED ❌ June 15, 2026** on Claude API (still on Bedrock/Google Cloud) | $3.00 | $15.00 | → Claude Sonnet 5 or Sonnet 4.6 |
 | ⚠️ Claude Opus 4 | **RETIRED ❌ June 15, 2026** on Claude API (still on Google Cloud) | $15.00 | $75.00 | → Claude Opus 5.5, 5, or 4.8 |
+| 🆕 🔄 Claude Haiku 4.5 | **REPLACED** by Claude Haiku 5.5 (Oct 7, 2026) — still fully active, no retirement date published | $1.00 | $5.00 | → Claude Haiku 5.5 (tiered $0.10/$0.50 ≤100K, 1M context) |
 | ⚠️ Claude Haiku 3.5 | **RETIRED Feb 19, 2026 ❌ (Claude API)** | $0.80 | $4.00 | → Claude Haiku 4.5 |
 | ⚠️ Claude Haiku 3 | **RETIRED Feb 19, 2026 ❌** | $0.25 | $1.25 | → Claude Haiku 4.5 |
 | ⚠️ Claude Sonnet 3.7 | **RETIRED Oct 28, 2025 ❌** | $3.00 | $15.00 | → Claude Sonnet 5 or Sonnet 4.6 |
@@ -289,6 +295,9 @@ Up-to-date pricing and specifications for large language models from **Anthropic
 
 | Date | Provider | Model | Change |
 |---|---|---|---|
+| 2026-10-07 | Anthropic | **Claude Haiku 5.5** | 🆕 **LAUNCHED** — replaces Haiku 4.5; tiered pricing $0.10/$0.50 per MTok (≤100K tokens), $0.50/$2.50 (>100K); 1M-token context window (5× Haiku 4.5's 200K); cheapest absolute cache-read rate of any Claude model ($0.01/MTok ≤100K). Haiku 4.5 now 🔄 REPLACED (still active). |
+| 2026-10-07 | Mistral | **Mistral Large 4 ("le Chonk")** | 🆕 **LAUNCHED (public preview)** — 1T-parameter (49B active) natively multimodal hybrid instruct/reasoning MoE, 1M context. Promotional pricing $0.68/$0.07 cached/$2.09 per MTok (list $1.36/$0.14/$4.18). Not yet open-weight; weights due Oct 27, 2026. |
+| 2026-10-07 | OpenAI | **Decisions API** | 🆕 **NEW PRODUCT (public beta)** — powered by `gpt-6-luna`, billed input-tokens-only at $0.10/MTok; no cache or output charges. No other OpenAI pricing changes found. |
 | 2026-10-05 | OpenAI | **GPT-6.1 Sol** | 🆕 **LAUNCHED at DevDay 2026** — replaces GPT-6 Sol on the pricing/model catalog after just 7 days; same $2/$10 price, cached input cut to $0.10/MTok (95% off). |
 | 2026-10-05 | OpenAI | **GPT-6 Astra Ultrafast** | 🆕 **PRICED** — new 6× speed tier: $60/$6/$75/$300 per MTok (short ctx). |
 | 2026-10-05 | OpenAI | **GPT-6 Cyber** | ✅ **Did NOT launch at DevDay** despite pre-event reporting — remains unconfirmed, discovery-only. |
