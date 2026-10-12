@@ -1,8 +1,8 @@
 # 🟢 OpenAI — Model Cards
 
-> **Last updated:** 2026-10-07
+> **Last updated:** 2026-10-12
 > **Source:** https://developers.openai.com/api/docs/pricing · https://developers.openai.com/api/docs/models · https://developers.openai.com/api/docs/deprecations · https://openai.com/index/devday-2026-recap/ · https://openai.com/index/introducing-gpt-6-1-sol/ · https://openai.com/index/gpt-6-astra/ · https://openai.com/news
-> **Scraped / verified:** 2026-10-07 — ✅ Re-fetched the live `developers.openai.com/api/docs/pricing` and `/api/docs/models` pages directly. **No pricing changes found since the October 5 refresh** — GPT-6 Astra ($10/$50), GPT-6.1 Sol ($2/$10), GPT-6 Luna ($0.10/$0.50), GPT-5.6 Terra/Sol/Luna, GPT-5.6 Cyber, and GPT-Rosalind Research all confirmed unchanged. 🆕 **October 5, 2026 — Decisions API launched in public beta**, powered by `gpt-6-luna`: a fast model/tool/action-selection endpoint (predicates, choices, scores) billed **input-tokens only** at $0.10/MTok — no cache-write, cache-read, or output-token charges. ℹ️ **October 5–7, 2026 — "Codex speed" infrastructure rollout:** OpenAI shipped a default ~50% output-speed increase for GPT-6 Astra and GPT-6.1 Sol across ChatGPT/Codex/Sign-in-with-ChatGPT partners (OpenCode, Pi, Amp, Devin) — an infrastructure optimization with **no price or model change**. ✅ **Re-confirmed: `GPT-6 Cyber` still has not been officially announced, priced, or dated by OpenAI** — remains discovery-only per this tracker's policy; `gpt-5.6-cyber` is still OpenAI's most advanced priced cyber model.
+> **Scraped / verified:** 2026-10-12 — ✅ Re-fetched the live `developers.openai.com/api/docs/pricing`, `/api/docs/models`, and `/api/docs/deprecations` pages directly. **No pricing changes found since the October 7 refresh** — GPT-6 Astra ($10/$50), GPT-6.1 Sol ($2/$10), GPT-6 Luna ($0.10/$0.50), and GPT-5.6 Terra ($2.00/$12.00, re-verified directly via its own model page) all confirmed unchanged. 🆕 **New model found: `gpt-rosalind-discovery`**, a second GPT-Rosalind life-sciences model now listed on the official pricing page at the same trusted-access-only pricing as `gpt-rosalind-research` ($5/$25 per MTok, $0.50 cached). ℹ️ **October 7, 2026 — GPT-6 "Intelligent UI" rolled out to ChatGPT Chat** (Plus/Pro/Business/Enterprise Oct 7, Free/Go Oct 8): lets GPT-6 compose answers with interactive graphics, buttons, forms, and charts. This is a **ChatGPT product/UI feature, not a new API model or a price change** — Work and Codex are unaffected, and OpenAI announced no new API or subscription rate alongside it. ✅ **Re-confirmed: `GPT-6 Cyber` still has not been officially announced, priced, or dated by OpenAI** — remains discovery-only per this tracker's policy; `gpt-5.6-cyber` is still OpenAI's most advanced priced cyber model.
 
 All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gives a flat **50% discount** on all models. Cached input tokens get **50–95% off** depending on model.
 
@@ -161,13 +161,14 @@ All prices are **USD per million tokens (MTok)** unless noted. Batch/Flex API gi
 
 ---
 
-### GPT-Rosalind (Research) *(Life Sciences — Trusted Access)*
+### GPT-Rosalind Research & Discovery *(Life Sciences — Trusted Access)*
 
 | Field | Value |
 |---|---|
-| **Model ID** | `gpt-rosalind-research` |
-| **Status** | ✅ Active — Trusted access only; billing starts Oct 5, 2026 |
-| **Input price** | $5.00 / MTok · **Output:** $25.00 / MTok · **Cached:** $0.50 / MTok |
+| **Model ID** | `gpt-rosalind-research` · 🆕 `gpt-rosalind-discovery` |
+| **Status** | ✅ Active — Trusted access only; billing for `gpt-rosalind-research` starts Oct 5, 2026 |
+| **Pricing (both models)** | Input $5.00 / MTok · Output $25.00 / MTok · Cached $0.50 / MTok · no cache-write pricing |
+| **Notable** | 🆕 `gpt-rosalind-discovery` newly confirmed on OpenAI's official pricing page this refresh at identical pricing to `gpt-rosalind-research`; access limited to approved internal research via the trusted-access program |
 
 ---
 
@@ -396,4 +397,4 @@ Image $4.00 in / $1.00 cached / $15.00 out · Text $2.50 in / $0.625 cached (per
 
 ---
 
-*Sources last verified: October 7, 2026 against `developers.openai.com/api/docs/pricing`, `.../api/docs/models`, `.../api/docs/deprecations`, and `openai.com/news/`. **This refresh:** no pricing or lineup changes found since October 5 — GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna, GPT-5.6 Terra/Sol/Luna/Cyber, and GPT-Rosalind Research pricing all re-confirmed unchanged. New: Decisions API launched in public beta (Oct 5, 2026), powered by `gpt-6-luna`, billed at $0.10/MTok input only (no output/cache charges). Noted a non-pricing infrastructure rollout (~50% default output-speed increase for GPT-6 Astra/GPT-6.1 Sol via subscriptions, Oct 5–7, 2026). Re-confirmed `GPT-6 Cyber` remains unannounced by OpenAI — no official pricing, model ID, or launch date published. The October 1, 2026 deprecation wave (`gpt-5.3-codex`/`gpt-5.1`/`gpt-5.4-nano`, legacy TTS) remains unchanged.*
+*Sources last verified: October 12, 2026 against `developers.openai.com/api/docs/pricing`, `.../api/docs/models`, `.../api/docs/deprecations`, and `openai.com/news/`. **This refresh:** no pricing or lineup changes found since October 7 — GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna, GPT-5.6 Terra/Sol/Luna/Cyber, and GPT-Rosalind Research pricing all re-confirmed unchanged. New: `gpt-rosalind-discovery` found on the official pricing page, a second trusted-access-only GPT-Rosalind life-sciences model at the same $5/$25 (cached $0.50) rate as `gpt-rosalind-research`. Noted a non-pricing ChatGPT feature rollout — GPT-6 "Intelligent UI" reached ChatGPT Chat Oct 7–8, 2026, with no new API or subscription rate. Re-confirmed `GPT-6 Cyber` remains unannounced by OpenAI — no official pricing, model ID, or launch date published. The October 1, 2026 deprecation wave (`gpt-5.3-codex`/`gpt-5.1`/`gpt-5.4-nano`, legacy TTS) remains unchanged.*
